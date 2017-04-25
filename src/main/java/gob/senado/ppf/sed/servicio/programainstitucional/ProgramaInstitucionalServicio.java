@@ -4,13 +4,13 @@ import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 
 public interface ProgramaInstitucionalServicio {
 
-	public abstract boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional);
+	boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional);
 
-	public abstract ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional);
+	ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional);
 
-	public abstract boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional);
+	boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional);
 
-	public abstract boolean bajaProgramaInstitucional(long idProgramaInstitucional);
+	boolean bajaProgramaInstitucional(long idProgramaInstitucional);
 
-	public abstract long contarProgramasInstitucionales();
+	long contarProgramasInstitucionales();
 }
