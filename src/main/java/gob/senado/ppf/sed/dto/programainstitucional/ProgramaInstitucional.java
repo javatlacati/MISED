@@ -5,7 +5,9 @@ import java.util.Objects;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-public class ProgramaInstitucional implements Serializable {
+import gob.senado.ppf.sed.utilidades.Formateable;
+
+public class ProgramaInstitucional implements Serializable, Formateable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -48,10 +50,10 @@ public class ProgramaInstitucional implements Serializable {
 
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof ProgramaInstitucional){
-			final ProgramaInstitucional pi = (ProgramaInstitucional)obj;
+		if (obj instanceof ProgramaInstitucional) {
+			final ProgramaInstitucional pi = (ProgramaInstitucional) obj;
 			return this.clave.equals(pi.clave) && this.nombre.equalsIgnoreCase(pi.nombre);
-		}else{
+		} else {
 			return false;
 		}
 	}

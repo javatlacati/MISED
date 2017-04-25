@@ -72,22 +72,6 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 	}
 
 	@Override
-	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
-	public String enviarJsonUsuario(long idUsuario) {
-		Usuario u = usuarioRepositorio.buscarUsuario(idUsuario);
-		Gson gson = new Gson();  
-		return gson.toJson(u);
-	}
-
-	@Override
-	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
-	public String enviarJsonUsuario(String identidad) {
-		Usuario u = usuarioRepositorio.buscarUsuario(identidad);
-		Gson gson = new Gson();  
-		return gson.toJson(u);
-	}
-
-	@Override
 	@Transactional
 	public boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion) {
 		return usuarioRepositorio.aplicarActividadExtemporanea(idUsuario, fase, activacion);

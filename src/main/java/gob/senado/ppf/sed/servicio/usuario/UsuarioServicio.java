@@ -16,10 +16,6 @@ public interface UsuarioServicio {
 
 	public abstract Usuario buscarUsuario(String identidad);
 
-	public abstract String enviarJsonUsuario(long idUsuario);
-
-	public abstract String enviarJsonUsuario(String identidad);
-
 	public abstract boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
 
 	public abstract boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);

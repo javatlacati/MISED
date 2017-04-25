@@ -57,11 +57,4 @@ public class OrganoDireccionEstrategicaServicioImpl implements OrganoDireccionEs
 		return organoDireccionEstrategicaRepositorio.contarOrganosDireccionEstrategica();
 	}
 
-	@Override
-	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
-	public String enviarJsonOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
-		OrganoDireccionEstrategica ode = organoDireccionEstrategicaRepositorio.buscarOrganoDireccionEstrategica(idOrganoDireccionEstrategica);
-		Gson gson = new Gson();
-		return gson.toJson(ode);
-	}
 }

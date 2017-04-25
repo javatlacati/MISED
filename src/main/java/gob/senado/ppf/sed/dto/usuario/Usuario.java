@@ -3,13 +3,15 @@ package gob.senado.ppf.sed.dto.usuario;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
+import gob.senado.ppf.sed.utilidades.Formateable;
+
 import java.io.Serializable;
 import java.util.List;
 
-public class Usuario implements Serializable {
+public class Usuario implements Serializable, Formateable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private long idUsuario;
 	private long idUnidadApoyo;
 	private String identidad;

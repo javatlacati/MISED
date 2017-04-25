@@ -16,5 +16,4 @@ public interface OrganoDireccionEstrategicaServicio {
 
 	public abstract long contarOrganosDireccionEstrategica();
 	
-	public abstract String enviarJsonOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 }

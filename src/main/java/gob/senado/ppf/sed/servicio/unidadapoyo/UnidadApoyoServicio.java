@@ -14,5 +14,4 @@ public interface UnidadApoyoServicio {
 
 	public abstract long contarUnidadesApoyo();
 	
-	public abstract String enviarJsonUnidadApoyo(long idOrganoDireccionEstrategica);
 }

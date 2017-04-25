@@ -49,12 +49,5 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
 		return programaInstitucionalRepositorio.contarProgramasInstitucionales();
 	}
 
-	@Override
-	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
-	public String enviarJsonProgramaInstitucional(long idProgramaInstitucional) {
-		ProgramaInstitucional pi = programaInstitucionalRepositorio.buscarProgramaInstitucional(idProgramaInstitucional);
-		Gson gson = new Gson(); 
-		return gson.toJson(pi);
-	}
 
 }

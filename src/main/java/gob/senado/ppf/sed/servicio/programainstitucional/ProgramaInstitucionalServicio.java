@@ -7,8 +7,6 @@ public interface ProgramaInstitucionalServicio {
 	public abstract boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional);
 
 	public abstract ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional);
-	
-	public abstract String enviarJsonProgramaInstitucional(long idProgramaInstitucional);
 
 	public abstract boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional);
 

@@ -51,12 +51,5 @@ public class UnidadApoyoServicioImpl implements UnidadApoyoServicio {
 		return unidadApoyoRepositorio.contarUnidadesApoyo();
 	}
 
-	@Override
-	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
-	public String enviarJsonUnidadApoyo(long idOrganoDireccionEstrategica) {
-		UnidadApoyo ua = unidadApoyoRepositorio.buscarUnidadApoyo(idOrganoDireccionEstrategica);
-		Gson gson = new Gson();
-		return gson.toJson(ua);
-	}
 
 }

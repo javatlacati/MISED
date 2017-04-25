@@ -6,7 +6,9 @@ import java.util.Objects;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-public class HistorialActividadExtemporanea implements Serializable {
+import gob.senado.ppf.sed.utilidades.Formateable;
+
+public class HistorialActividadExtemporanea implements Serializable, Formateable {
 
 	private static final long serialVersionUID = 1L;
 
