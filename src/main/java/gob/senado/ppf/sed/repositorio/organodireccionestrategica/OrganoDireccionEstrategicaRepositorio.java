@@ -4,15 +4,15 @@ import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrateg
 
 public interface OrganoDireccionEstrategicaRepositorio {
 
-	public abstract boolean altaOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
+	boolean altaOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
 
-	public abstract boolean bajaOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
+	boolean bajaOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
-	public abstract OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
+	OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
-	public abstract OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(String nombre);
+	OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(String nombre);
 
-	public abstract boolean actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
+	boolean actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
 
-	public abstract long contarOrganosDireccionEstrategica();
+	long contarOrganosDireccionEstrategica();
 }

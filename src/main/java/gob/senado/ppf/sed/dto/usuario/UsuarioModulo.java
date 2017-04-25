@@ -1,11 +1,11 @@
 package gob.senado.ppf.sed.dto.usuario;
 
-import java.io.Serializable;
-import java.util.Objects;
+import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-import gob.senado.ppf.sed.utilidades.Formateable;
+import java.io.Serializable;
+import java.util.Objects;
 
 public class UsuarioModulo implements Serializable, Formateable {
 
@@ -52,7 +52,7 @@ public class UsuarioModulo implements Serializable, Formateable {
 	public boolean equals(Object obj) {
 		if (obj instanceof UsuarioModulo) {
 			final UsuarioModulo um = (UsuarioModulo) obj;
-			return (this.idUsuario == um.idUsuario && this.idModulo == um.idModulo);
+			return this.idUsuario == um.idUsuario && this.idModulo == um.idModulo;
 		} else {
 			return false;
 		}
