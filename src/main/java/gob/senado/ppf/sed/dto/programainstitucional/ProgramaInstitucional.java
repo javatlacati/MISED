@@ -2,16 +2,10 @@ package gob.senado.ppf.sed.dto.programainstitucional;
 
 import gob.senado.ppf.sed.utilidades.Formateable;
 import lombok.*;
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
-
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import java.io.Serializable;
 
-@Getter
-@Setter
-@EqualsAndHashCode(of = {"clave","nombre"})
-@NoArgsConstructor
-@AllArgsConstructor(staticName = "from")
 public class ProgramaInstitucional implements Serializable, Formateable {
 
 	private static final long serialVersionUID = 1L;
@@ -23,6 +17,6 @@ public class ProgramaInstitucional implements Serializable, Formateable {
 
 	@Override
 	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
 	}
 }

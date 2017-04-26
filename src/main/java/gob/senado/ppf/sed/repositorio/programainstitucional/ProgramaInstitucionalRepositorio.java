@@ -1,4 +1,7 @@
+
 package gob.senado.ppf.sed.repositorio.programainstitucional;
+
+import java.util.List;
 
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 
@@ -10,6 +13,8 @@ public interface ProgramaInstitucionalRepositorio {
 	
 	ProgramaInstitucional buscarProgramaInstitucional(String claveProgramaInstitucional);
 	
+	public abstract List<ProgramaInstitucional> obtenerProgramasInstitucionales();
+	
 	boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional);
 	
 	boolean bajaProgramaInstitucional(long idProgramaInstitucional);
@@ -17,3 +22,5 @@ public interface ProgramaInstitucionalRepositorio {
 	long contarProgramasInstitucionales();
 	
 }
+
+

@@ -1,5 +1,6 @@
 package gob.senado.ppf.sed.servicio.programainstitucional.impl;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -28,6 +29,12 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
 	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
 	public ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional) {
 		return programaInstitucionalRepositorio.buscarProgramaInstitucional(idProgramaInstitucional);
+	}
+	
+	@Override
+	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
+	public List<ProgramaInstitucional> obtenerProgramasInstitucionales() {
+		return programaInstitucionalRepositorio.obtenerProgramasInstitucionales();
 	}
 
 	@Override

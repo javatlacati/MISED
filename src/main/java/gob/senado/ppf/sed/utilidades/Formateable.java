@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 public interface Formateable {
 
-	public default String json() {
+	default String json() {
 		return new Gson().toJson(this);
 	}
 }

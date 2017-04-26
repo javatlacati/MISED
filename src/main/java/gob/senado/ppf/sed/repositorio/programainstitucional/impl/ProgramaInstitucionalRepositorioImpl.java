@@ -1,5 +1,7 @@
 package gob.senado.ppf.sed.repositorio.programainstitucional.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
@@ -46,6 +48,11 @@ public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucion
 		} catch (IncorrectResultSizeDataAccessException irsdae) {
 			return null;
 		}
+	}
+	
+	@Override
+	public List<ProgramaInstitucional> obtenerProgramasInstitucionales() {
+		return jdbcTemplate.query("SELECT * FROM PROGRAMA_INSTITUCIONAL", RowMappers.ROW_MAPPER_PROGRAMA_INSTITICIONAL);
 	}
 
 	@Override

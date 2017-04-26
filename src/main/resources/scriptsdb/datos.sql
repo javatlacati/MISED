@@ -1,6 +1,6 @@
-INSERT INTO PROGRAMA_INSTITUCIONAL VALUES(1, '1.1.01.004.R001-MD003','Servicios de Apoyo Técnico', '');
-INSERT INTO PROGRAMA_INSTITUCIONAL VALUES(2,'1.1.01.004.R001-MD001', 'Servicios de Apoyo Parlamentario', '');
-INSERT INTO PROGRAMA_INSTITUCIONAL VALUES(3, '1.1.01.004.R001-MD002','Servicios de Apoyo Administrativo', '');
+INSERT INTO PROGRAMA_INSTITUCIONAL VALUES(1, '1.1.01.004.R001-MD003','Servicios de Apoyo Técnico', 'Sin descripción');
+INSERT INTO PROGRAMA_INSTITUCIONAL VALUES(2,'1.1.01.004.R001-MD001', 'Servicios de Apoyo Parlamentario', 'Sin descripción');
+INSERT INTO PROGRAMA_INSTITUCIONAL VALUES(3, '1.1.01.004.R001-MD002','Servicios de Apoyo Administrativo', 'Sin descripción');
 
 INSERT INTO ORGANO_DIRECCION_ESTRATEGICA VALUES(1, 1, 'Mesa Directiva','');
 INSERT INTO ORGANO_DIRECCION_ESTRATEGICA VALUES(2, 2, 'Secretaría General de Servicios Parlamentarios','');
@@ -46,7 +46,7 @@ INNER JOIN ACTIVIDAD_EXTEMPORANEA AE
 ON U.ID_USUARIO = AE.ID_USUARIO;
 
 INSERT INTO USUARIO VALUES (1, 19, 'benjamin.ocotzi', '$2a$04$/pjtunFYAIzCmjBennRE7OsmTaTTytUKtccJR.iM/tSaCdOTDO4O.', 
-'Benjamin Natanael', 'Ocotzi', 'Alvarez', true, 'Proveedor de Soporte', 'benist.sci@gmail.com', '', 'ROLE_ADMINISTRADOR', 'martes 11 de abril de 2017', '21:57:35.42');
+'Benjamin Natanael', 'Ocotzi', 'Alvarez', 'Proveedor de Soporte', 'benist.sci@gmail.com', '', 'ROLE_ADMINISTRADOR', 'martes 11 de abril de 2017', '21:57:35.42');
 
 INSERT INTO USUARIO_PERMISO VALUES(1, 1, true, true, true, true, true);
 

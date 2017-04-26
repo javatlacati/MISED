@@ -39,7 +39,7 @@
         <postgresql.version>42.0.0</postgresql.version>
         <hikaricp.version>2.6.1</hikaricp.version>
         <jasperreports.version>6.4.0</jasperreports.version>
-        <rxjava2.version>2.0.8</rxjava2.version>
+
         <!--handles-->
         <findbugs.disabled>true</findbugs.disabled>
         <jxr.disabled>true</jxr.disabled>
@@ -213,11 +213,6 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>io.reactivex.rxjava2</groupId>
-            <artifactId>rxjava</artifactId>
-            <version>${rxjava2.version}</version>
-        </dependency>
 
         <!--testing dependencies-->
         <dependency>

@@ -5,7 +5,6 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 import gob.senado.ppf.sed.utilidades.Formateable;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -37,6 +36,6 @@ public class Usuario implements Serializable, Formateable {
 
 	@Override
 	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
 	}
 }
