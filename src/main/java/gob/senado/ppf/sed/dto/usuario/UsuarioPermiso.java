@@ -3,10 +3,11 @@ package gob.senado.ppf.sed.dto.usuario;
 import java.io.Serializable;
 import java.util.Objects;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import gob.senado.ppf.sed.utilidades.Formateable;
+
 
 public class UsuarioPermiso implements Serializable, Formateable {
 
@@ -93,7 +94,7 @@ public class UsuarioPermiso implements Serializable, Formateable {
 	
 	@Override
 	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
 	}
 
 }

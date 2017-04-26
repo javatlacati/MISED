@@ -1,5 +1,7 @@
 package gob.senado.ppf.sed.servicio.programainstitucional.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -8,6 +10,7 @@ import com.google.gson.Gson;
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 import gob.senado.ppf.sed.repositorio.programainstitucional.ProgramaInstitucionalRepositorio;
 import gob.senado.ppf.sed.servicio.programainstitucional.ProgramaInstitucionalServicio;
+import io.reactivex.Observable;
 
 @Service(value = "programaInstitucionalServicio")
 public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalServicio {
@@ -29,6 +32,12 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
 	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
 	public ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional) {
 		return programaInstitucionalRepositorio.buscarProgramaInstitucional(idProgramaInstitucional);
+	}
+	
+	@Override
+	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
+	public List<ProgramaInstitucional> obtenerProgramasInstitucionales() {
+		return programaInstitucionalRepositorio.obtenerProgramasInstitucionales();
 	}
 
 	@Override

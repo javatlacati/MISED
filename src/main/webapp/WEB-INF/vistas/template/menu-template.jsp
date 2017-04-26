@@ -31,13 +31,13 @@
                 <ol class="list">
                     <li class="header"><fmt:message key="mensaje.label-menu" /></li>    
                     <li id="inicio-menu">
-                        <a href="/PPFMISED/inicio.htm">
+                        <a href="/MISED/inicio.htm">
                             <i class="material-icons">home</i>
                             <span><fmt:message key="mensaje.inicio" /></span>
                         </a>
                     </li>    
                     <li id="inicio-menu">
-                        <a href="/PPFMISED/mi-perfil.htm">
+                        <a href="/MISED/mi-perfil.htm">
                             <i class="material-icons">account_box</i>
                             <span><fmt:message key="mensaje.informacion-personal" /></span>
                         </a>
@@ -254,21 +254,21 @@
                         </a>
                         <ol class="ml-menu">
                         	<li id="opcion-programa-institucional">
-                                <a href="/PPFMISED/administrador/programa-institucional/gestion.htm">
+                                <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
                                 	<i class="material-icons">view_agenda</i>
                                     <span>Programas Institucionales</span>
                                 </a>
                             </li>
                             
                             <li id="opcion-organo-direccion-estrategica">
-                            	<a href="/PPFMISED/administrador/organo-direccion-estrategica/gestion.htm">
+                            	<a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
                                 	<i class="material-icons">book</i>
                                     <span>Órganos de Dirección Estratégica</span>
                                 </a>
                             </li>
                         	
                         	<li id="opcion-unidad-apoyo">
-                            	<a href="/PPFMISED/administrador/unidad-apoyo/gestion.htm">
+                            	<a href="/MISED/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
                                 	<i class="material-icons">bookmark_border</i>
                                     <span>Unidades de Apoyo</span>
                                 </a>
@@ -281,45 +281,45 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li id="sub-opcion-captura-usuario">
-                                        <a href="/PPFMISED/administrador/usuarios/captura-usuarios.htm">
+                                        <a href="/MISED/administrador/usuarios/captura-usuarios.htm">
                                             Captura de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-busqueda-usuario">
-                                        <a href="/PPFMISED/administrador/usuarios/busqueda-usuarios.htm">
+                                        <a href="/MISED/administrador/usuarios/busqueda-usuarios.htm">
                                             Búsqueda de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-permisos-usuario">
-                                        <a href="/PPFMISED/administrador/usuarios/permisos-usuarios.htm">
+                                        <a href="/MISED/administrador/usuarios/permisos-usuarios.htm">
                                             Permisos de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-actualizacion-usuario">
-                                        <a href="/PPFMISED/administrador/usuarios/actualizar-usuarios.htm">
+                                        <a href="/MISED/administrador/usuarios/actualizar-usuarios.htm">
                                             Actualización de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-baja-usuario">
-                                        <a href="/PPFMISED/administrador/usuarios/baja-usuarios.htm">
+                                        <a href="/MISED/administrador/usuarios/baja-usuarios.htm">
                                             Baja de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-reestablecer-contrasena-usuario">
-                                        <a href="/PPFMISED/administrador/usuarios/reestablecer-credenciales-usuarios.htm">
+                                        <a href="/MISED/administrador/usuarios/reestablecer-credenciales-usuarios.htm">
                                             Reestablecer Contraseña de Usuario
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li id="opcion-aviso-y-archivo-sistema">
-                                <a href="/PPFMISED/administrador/avisos/gestion.htm">
+                                <a href="/MISED/administrador/avisos/gestion.htm">
                                 	<i class="material-icons">cast_connected</i>
                                     <span>Avisos y Archivos del Sistema</span>
                                 </a>
                             </li>
                             <li id="opcion-configuracion-fechas">
-                                <a href="/PPFMISED/administrador/ejercicios-fiscales/gestion.htm">
+                                <a href="/MISED/administrador/ejercicios-fiscales/gestion.htm">
                                 	<i class="material-icons">event</i>
                                     <span>Configuración de Fechas de Captura del Sistema</span>
                                 </a>
@@ -432,6 +432,8 @@
                                     </li>
                                 </ul>
                             </li>
+                            
+                            
                             <li id="opcion-informes-cuatrimestrales-admin">
                                 <a class="menu-toggle">
 		                            <i class="material-icons">insert_drive_file</i>
@@ -455,7 +457,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="opcion-cuadros-mando-admin">
+                            
+                            
+                            <li class="opcion-cuadros-mando-admin" style="margin-bottom: 60px;">
                                 <a class="menu-toggle">
 		                            <i class="material-icons">grid_on</i>
 		                            <span>Cuadros de Mando</span>
@@ -482,27 +486,28 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>   
+                            </li>  
+
                         </ol>     
                     </li>
 					</sec:authorize>	
-					<sec:authorize access="hasRole('SEGP')">
-					<li id="inicio-menu">
-                        <a href="/PPFMISED/sadsadasdasdasd.htm">
-                            <i class="material-icons">label</i>
-                            <span>Auditoria de la Gestión Parlamentaria</span>
-                        </a>
-                    </li> 	
-                    </sec:authorize>
+<!-- 					<sec:authorize access="hasRole('SEGP')"> -->
+<!-- 					<li id="inicio-menu"> -->
+<!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
+<!--                             <i class="material-icons">label</i> -->
+<!--                             <span>Auditoria de la Gestión Parlamentaria</span> -->
+<!--                         </a> -->
+<!--                     </li> 	 -->
+<!--                     </sec:authorize> -->
                     
-                    <sec:authorize access="hasRole('SEGA')">
-                    <li id="inicio-menu">
-                        <a href="/PPFMISED/sadsadasdasdasd.htm">
-                            <i class="material-icons">label</i>
-                            <span>Auditoria de la Gestión Administrativa</span>
-                        </a>
-                    </li> 	
-                    </sec:authorize>	
+<!--                     <sec:authorize access="hasRole('SEGA')"> -->
+<!--                     <li id="inicio-menu"> -->
+<!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
+<!--                             <i class="material-icons">label</i> -->
+<!--                             <span>Auditoria de la Gestión Administrativa</span> -->
+<!--                         </a> -->
+<!--                     </li> 	 -->
+<!--                     </sec:authorize>	 -->
                     	
 			        <li id="cerrar-sesion">
 				       <form method="post" id="frmCierreSesion" action="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />">
