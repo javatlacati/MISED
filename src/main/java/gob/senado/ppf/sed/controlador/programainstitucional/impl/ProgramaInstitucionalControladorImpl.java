@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import gob.senado.ppf.sed.controlador.programainstitucional.ProgramaInstitucionalControlador;
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 import gob.senado.ppf.sed.servicio.programainstitucional.ProgramaInstitucionalServicio;
-import io.reactivex.Observable;
 
 @Controller(value = "programaInstitucionalControlador")
 @RequestMapping(value = "/administrador")

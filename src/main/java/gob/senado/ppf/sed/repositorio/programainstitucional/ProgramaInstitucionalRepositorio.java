@@ -1,3 +1,4 @@
+
 package gob.senado.ppf.sed.repositorio.programainstitucional;
 
 import java.util.List;
@@ -21,3 +22,5 @@ public interface ProgramaInstitucionalRepositorio {
 	long contarProgramasInstitucionales();
 	
 }
+
+

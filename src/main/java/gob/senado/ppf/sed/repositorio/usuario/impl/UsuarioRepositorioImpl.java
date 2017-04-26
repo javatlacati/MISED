@@ -1,7 +1,10 @@
 package gob.senado.ppf.sed.repositorio.usuario.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import gob.senado.ppf.sed.dto.usuario.Usuario;
+import gob.senado.ppf.sed.repositorio.usuario.UsuarioRepositorio;
+import gob.senado.ppf.sed.utilidades.Activacion;
+import gob.senado.ppf.sed.utilidades.Fase;
+import gob.senado.ppf.sed.utilidades.RowMappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
@@ -9,11 +12,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-import gob.senado.ppf.sed.dto.usuario.Usuario;
-import gob.senado.ppf.sed.repositorio.usuario.UsuarioRepositorio;
-import gob.senado.ppf.sed.utilidades.Activacion;
-import gob.senado.ppf.sed.utilidades.Fase;
-import gob.senado.ppf.sed.utilidades.RowMappers;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 @Repository(value = "usuarioRepositorio")
 public class UsuarioRepositorioImpl implements UsuarioRepositorio {
@@ -75,7 +76,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			return pst;
 		});
 
-		return (rowsAffectedUsuario > 0) && (rowsAffectedUsuarioPermiso > 0) && (rowsAffectedActividadExtemporanea > 0);
+		return rowsAffectedUsuario > 0 && rowsAffectedUsuarioPermiso > 0 && rowsAffectedActividadExtemporanea > 0;
 	}
 
 	@Override
@@ -131,7 +132,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			return pst;
 		});
 
-		return (rowsAffectedUsuario > 0) && (rowsAffectedUsuarioPermiso > 0) && (rowsAffectedActividadExtemporanea > 0);
+		return rowsAffectedUsuario > 0 && rowsAffectedUsuarioPermiso > 0 && rowsAffectedActividadExtemporanea > 0;
 	}
 
 	@Override

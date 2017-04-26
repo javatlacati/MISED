@@ -44,10 +44,10 @@ public class SesionControladorImpl implements SesionControlador {
 			@RequestParam(value = "logout", required = false) String logout) {
 		ModelAndView model = new ModelAndView("login/login");
 		if (error != null) {
-			model.addObject("error", "Has escrito mal tu usuario o contraseña.");
+			model.addObject("error", "Has escrito mal tu usuario o contrase\u00f1a.");
 		}
 		if (logout != null) {
-			model.addObject("message", "Cierre de sesión exitosamente.");
+			model.addObject("message", "Cierre de sesi\u00f3n exitosamente.");
 		}
 		return model;
 	}
