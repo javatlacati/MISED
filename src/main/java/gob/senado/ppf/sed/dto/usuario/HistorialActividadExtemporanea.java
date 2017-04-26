@@ -18,6 +18,9 @@ public class HistorialActividadExtemporanea implements Serializable, Formateable
 
 	private long idHistorialActividadExtemporanea;
 	private long idActividadExtemporanea;
+	/**
+	 * Identificador &uacute;nico de cada usuario.
+	 */
 	private long idUsuario;
 	private boolean solicitoFasePlaneacion;
 	private boolean solicitoFaseCalendarizacion;

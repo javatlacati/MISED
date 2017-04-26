@@ -41,15 +41,30 @@ public class Usuario implements Serializable, Formateable {
      * Segundo apellido del usuario del sistema.
      */
     private String apellidoMaterno;
+    /**
+     * Nombre del puesto laboral que ocupa.
+     */
     private String puestoLaboral;
     /**
      * Direcci&oacute;n de correo electr&oacute;nico del usuario.
      * Se espera que sea un coreo elect[onico institucional.
      */
     private String correoElectronico;
+    /**
+     * Numero de extensi&oacute;n.
+     */
     private String extensionTelefonica;
+    /**
+     * Nombre del rol de usuario que ocupa en el sistema.
+     */
     private String rolDesignado;
+    /**
+     * Fecha en que se registr&oacute; en el sistema.
+     */
     private String fechaRegistro;
+    /**
+     * Hora en que se rergistr&oacute; en el sistema.
+     */
     private String horaRegistro;
     private UsuarioPermiso usuarioPermiso;
     private ActividadExtemporanea actividadExtemporanea;

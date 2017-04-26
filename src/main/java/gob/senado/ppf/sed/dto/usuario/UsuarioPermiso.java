@@ -17,6 +17,9 @@ public class UsuarioPermiso implements Serializable, Formateable {
 	private static final long serialVersionUID = 1L;
 
 	private long idPermiso;
+	/**
+	 * Identificador &uacute;nico de cada usuario.
+	 */
 	private long idUsuario;
 	private boolean puedeConsultar;
 	private boolean puedeActualizar;
