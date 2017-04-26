@@ -2,11 +2,8 @@ package gob.senado.ppf.sed.dto.usuario;
 
 import gob.senado.ppf.sed.utilidades.Formateable;
 import lombok.*;
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
-import java.io.Serializable;
-import java.util.Objects;
-
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
 

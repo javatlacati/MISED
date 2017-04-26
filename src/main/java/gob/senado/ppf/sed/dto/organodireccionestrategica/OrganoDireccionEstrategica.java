@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Setter
 @EqualsAndHashCode(of = {"nombre"})
 @NoArgsConstructor
-@AllArgsConstructor(staticName = "from")// Person person = Person.from(123123L,123123L,"ssdfsdf","asd");
+@AllArgsConstructor(staticName = "from")
 public class OrganoDireccionEstrategica implements Serializable, Formateable {
 
     private static final long serialVersionUID = 1L;
