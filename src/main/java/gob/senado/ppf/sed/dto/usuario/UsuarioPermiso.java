@@ -9,43 +9,62 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@EqualsAndHashCode(of = {"idUsuario","idPermiso"})
+@EqualsAndHashCode(of = {"idUsuario", "idPermiso"})
 @NoArgsConstructor
 @AllArgsConstructor(staticName = "from")
 public class UsuarioPermiso implements Serializable, Formateable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private long idPermiso;
-	/**
-	 * Identificador &uacute;nico de cada usuario.
-	 */
-	private long idUsuario;
-	private boolean puedeConsultar;
-	private boolean puedeActualizar;
-	private boolean puedeAgregar;
-	private boolean puedeBorrar;
-	private boolean puedeAutenticarse;
+    private long idPermiso;
+    /**
+     * Identificador &uacute;nico de cada usuario.
+     */
+    private long idUsuario;
+    /**
+     * Permiso de consulta.
+     */
+    private boolean puedeConsultar;
+    /**
+     * Permiso de modificaci&oacute;n.
+     */
+    private boolean puedeActualizar;
+    /**
+     * Permiso de inserci&oacute;n de nuevos registros.
+     */
+    private boolean puedeAgregar;
+    /**
+     * Permiso de eliminaci&oacute;n..
+     */
+    private boolean puedeBorrar;
+    /**
+     * Permiso de Autentificaci&oacute;n.
+     */
+    private boolean puedeAutenticarse;
 
-	public boolean puedeActualizar() {
-		return puedeActualizar;
-	}
+    public boolean puedeConsultar() {
+        return puedeConsultar;
+    }
 
-	public boolean puedeAgregar() {
-		return puedeAgregar;
-	}
+    public boolean puedeActualizar() {
+        return puedeActualizar;
+    }
 
-	public boolean puedeBorrar() {
-		return puedeBorrar;
-	}
+    public boolean puedeAgregar() {
+        return puedeAgregar;
+    }
 
-	public boolean puedeAutenticarse() {
-		return puedeAutenticarse;
-	}
+    public boolean puedeBorrar() {
+        return puedeBorrar;
+    }
 
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-	}
+    public boolean puedeAutenticarse() {
+        return puedeAutenticarse;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+    }
 
 }
