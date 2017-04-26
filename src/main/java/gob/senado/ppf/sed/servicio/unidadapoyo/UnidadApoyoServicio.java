@@ -4,14 +4,14 @@ import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
 
 public interface UnidadApoyoServicio {
 	
-	public abstract boolean altaUnidadApoyo(UnidadApoyo unidadApoyo);
+	boolean altaUnidadApoyo(UnidadApoyo unidadApoyo);
 
-	public abstract boolean bajaUnidadApoyo(long idUnidadApoyo);
+	boolean bajaUnidadApoyo(long idUnidadApoyo);
 
-	public abstract UnidadApoyo buscarUnidadApoyo(long idOrganoDireccionEstrategica);
+	UnidadApoyo buscarUnidadApoyo(long idOrganoDireccionEstrategica);
 
-	public abstract boolean actualizarUnidadApoyo(UnidadApoyo unidadApoyo);
+	boolean actualizarUnidadApoyo(UnidadApoyo unidadApoyo);
 
-	public abstract long contarUnidadesApoyo();
+	long contarUnidadesApoyo();
 	
 }

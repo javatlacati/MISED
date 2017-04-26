@@ -4,30 +4,43 @@ import gob.senado.ppf.sed.dto.usuario.Usuario;
 import gob.senado.ppf.sed.utilidades.Activacion;
 import gob.senado.ppf.sed.utilidades.Fase;
 
+/**
+ * Capa de servicios para tareas de administraci&oacute;n de usuarios del sistema.
+ */
 public interface UsuarioServicio {
 
-	boolean altaUsuario(Usuario usuario);
+    /**
+     * Permite dar de alta el usuario especificado en el sistema.
+     *
+     * @param usuario Objeto con los datos de un usuario
+     */
+    boolean altaUsuario(Usuario usuario);
 
-	boolean actualizarUsuario(Usuario usuario);
+    /**
+     * Permite modificar la informaci&oacute;n de un usuario existente en el sistema.
+     *
+     * @param usuario Objeto con los datos de un usuario
+     */
+    boolean actualizarUsuario(Usuario usuario);
 
-	boolean bajaUsuario(long idUsuario);
+    boolean bajaUsuario(long idUsuario);
 
-	Usuario buscarUsuario(long idUsuario);
+    Usuario buscarUsuario(long idUsuario);
 
-	Usuario buscarUsuario(String identidad);
+    Usuario buscarUsuario(String identidad);
 
-	boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
+    boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
 
-	boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);
+    boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);
 
-	boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);
+    boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);
 
-	long contarUsuarios();
+    long contarUsuarios();
 
-	long contarUsuariosPorUnidadApoyo(long idUnidadApoyo);
+    long contarUsuariosPorUnidadApoyo(long idUnidadApoyo);
 
-	long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
+    long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
-	long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
+    long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
 
 }
