@@ -14,7 +14,9 @@ public class InicializadorAplicacionWeb implements WebApplicationInitializer {
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
 		rootContext.register(ConfiguracionParaExtras.class, 
 				ConfiguracionParaDataSource.class,
-				ConfiguracionParaSeguridad.class);
+				ConfiguracionParaSeguridad.class,
+				ConfiguracionParaWebSocket.class,
+				ConfiguracionParaSeguridadWebSocket.class);
 
 		// Manage the lifecycle of the root application context
 		container.addListener(new ContextLoaderListener(rootContext));

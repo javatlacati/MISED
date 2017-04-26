@@ -131,6 +131,7 @@
     <spring:url value="/resources/js/admin.js" var="adminJs" />
     <spring:url value="/resources/js/funciones/constantes.js" var="constantes" />
     <spring:url value="/resources/js/funciones/fx-gestion-programa-institucional.js" var="fxGestionProgramaInstitucional" />
+    <spring:url value="/resources/js/funciones/prototipos/programa-institucional.js" var="prototypeProgramaInstitucional" />
     <spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin" />
     
    
@@ -155,6 +156,7 @@
     <script src="${adminJs}"></script>
     <script src="${constantes}"></script>
     <script src="${fxLogin}"></script>
+    <script src="${prototypeProgramaInstitucional}"></script>
     <script src="${fxGestionProgramaInstitucional}"></script>
     
 
