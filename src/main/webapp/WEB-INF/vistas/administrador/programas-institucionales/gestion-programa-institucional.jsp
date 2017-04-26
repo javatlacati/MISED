@@ -66,9 +66,12 @@
                         <li>
                            	<i class="material-icons">build</i> Administración del Sistema
                         </li>
+                        <li>
+                           Programas Institucionales
+                        </li>
                         <li class="active">
                            <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
-                           		<i class="material-icons">view_agenda</i> Programas Institucionales
+                           		<i class="material-icons">view_agenda</i> Administración de Programas Institucionales 
                            </a>
                         </li>
                      </ol>
@@ -89,20 +92,21 @@
                             width="100%" cellspacing="0" style="color: black;">
                                 <thead>
                                     <tr>
-                                        <th>Clave</th>
-                                        <th>Nombre</th>
-                                        <th>Descripcion</th>
+                                        <th>Clave de Programa Institucional</th>
+                                        <th>Nombre de Programa Institucional</th>
+                                        <th>Descripción de Programa Institucional</th>
+                                        <th>Acciones Permitidas</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                              			<th>Clave</th>
-                                        <th>Nombre</th>
-                                        <th>Descripcion</th>
+                              			<th>Clave de Programa Institucional</th>
+                                        <th>Nombre de Programa Institucional</th>
+                                        <th>Descripción de Programa Institucional</th>
+                                        <th>Acciones Permitidas</th>
                                     </tr>
                                 </tfoot>
-                                <tbody>
-                                </tbody>
+                                <tbody></tbody>
                             </table>
                         </div>
                     </div>
@@ -130,7 +134,7 @@
     <spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin" />
     
    
-    <spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.flash.min.js" var="buttonsFlashJs" />
+
     <spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js" />
     <spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs" />
     <spring:url value="/resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js" var="dataTablesButtonsJs" />
@@ -153,7 +157,7 @@
     <script src="${fxLogin}"></script>
     <script src="${fxGestionProgramaInstitucional}"></script>
     
-    <script src="${buttonsFlashJs}"></script>
+
     <script src="${buttonsHtml5Js}"></script>
     <script src="${buttonsPrintJs}"></script>
     <script src="${dataTablesButtonsJs}"></script>

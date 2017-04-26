@@ -253,11 +253,22 @@
                             <span>Administración del Sistema</span>
                         </a>
                         <ol class="ml-menu">
-                        	<li id="opcion-programa-institucional">
-                                <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
+                        
+                        
+                            <li id="opcion-programa-institucional">
+                                <a class="menu-toggle">
                                 	<i class="material-icons">view_agenda</i>
                                     <span>Programas Institucionales</span>
                                 </a>
+                                <ul class="ml-menu">
+                                    <li id="sub-opcion-administracion-programas-institucionales">
+                                        <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
+                                            Administración de Programas Institucionales
+                                        </a>
+                                    </li>
+                                    
+     
+                                </ul>
                             </li>
                             
                             <li id="opcion-organo-direccion-estrategica">

@@ -27,15 +27,17 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
 		return new ModelAndView("administrador/programas-institucionales/gestion-programa-institucional");
 	}
 
-	@Override
-	@PostMapping(value = "/programa-institucional/programas-institucionales.do")
-	public HttpEntity<List<ProgramaInstitucional>> obtenerProgramasInstitucionales() {
-		return new ResponseEntity<List<ProgramaInstitucional>>(programaInstitucionalServicio.obtenerProgramasInstitucionales(), HttpStatus.OK);
-//		response.setCharacterEncoding("UTF-8");
-//		response.setContentType("application/json; charset=ISO-8859-1");
-//		response.setHeader("Cache-Control", "no-store");
-//		return new Gson().toJson(programaInstitucionalServicio.obtenerProgramasInstitucionales());
 
+	@Override
+	@PostMapping(value = "/programa-institucional/programas-institucionales.json")
+	public HttpEntity<List<ProgramaInstitucional>> obtenerProgramasInstitucionales() {
+		List<ProgramaInstitucional> programasInstitucionales = programaInstitucionalServicio
+				.obtenerProgramasInstitucionales();
+		if (programasInstitucionales.size() > 0) {
+			return new ResponseEntity<List<ProgramaInstitucional>>(programasInstitucionales, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<List<ProgramaInstitucional>>(programasInstitucionales, HttpStatus.NO_CONTENT);
+		}
 	}
 
 }
