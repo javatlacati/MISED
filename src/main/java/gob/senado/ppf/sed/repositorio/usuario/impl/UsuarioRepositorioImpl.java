@@ -190,14 +190,14 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			break;
 		}
 		sql.append("WHERE id_usuario = ?");
-		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.getInterruptor(), idUsuario }) > 0;
+		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.isInterruptor(), idUsuario }) > 0;
 	}
 
 	@Override
 	public boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("UPDATE USUARIO_PERMISO SET puede_autenticarse = ? WHERE id_usuario = ?");
-		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.getInterruptor(), idUsuario }) > 0;
+		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.isInterruptor(), idUsuario }) > 0;
 	}
 
 	@Override

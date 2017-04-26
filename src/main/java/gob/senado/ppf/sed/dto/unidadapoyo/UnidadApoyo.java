@@ -1,11 +1,16 @@
 package gob.senado.ppf.sed.dto.unidadapoyo;
 
-import java.io.Serializable;
-import java.util.Objects;
+import gob.senado.ppf.sed.utilidades.Formateable;
+import lombok.*;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import gob.senado.ppf.sed.utilidades.Formateable;
+import java.io.Serializable;
 
+@Getter
+@Setter
+@EqualsAndHashCode(of = {"nombre"})
+@NoArgsConstructor
+@AllArgsConstructor(staticName = "from")
 public class UnidadApoyo implements Serializable, Formateable {
 
 	private static final long serialVersionUID = 1L;
@@ -13,53 +18,6 @@ public class UnidadApoyo implements Serializable, Formateable {
 	private long idOrganoDireccionEstrategica;
 	private String nombre;
 	private String proposito;
-
-	public long getIdUnidadaApoyo() {
-		return idUnidadaApoyo;
-	}
-
-	public void setIdUnidadaApoyo(long idUnidadaApoyo) {
-		this.idUnidadaApoyo = idUnidadaApoyo;
-	}
-
-	public long getIdOrganoDireccionEstrategica() {
-		return idOrganoDireccionEstrategica;
-	}
-
-	public void setIdOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
-		this.idOrganoDireccionEstrategica = idOrganoDireccionEstrategica;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getProposito() {
-		return proposito;
-	}
-
-	public void setProposito(String proposito) {
-		this.proposito = proposito;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof UnidadApoyo) {
-			final UnidadApoyo ua = (UnidadApoyo) obj;
-			return this.nombre.equalsIgnoreCase(ua.nombre);
-		} else {
-			return false;
-		}
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(this.nombre);
-	}
 
 	@Override
 	public String toString() {

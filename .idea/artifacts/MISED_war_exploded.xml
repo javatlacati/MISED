@@ -71,8 +71,6 @@
           <element id="library" level="project" name="Maven: org.olap4j:olap4j:0.9.7.309-JS-3" />
           <element id="library" level="project" name="Maven: com.google.zxing:core:3.2.1" />
           <element id="library" level="project" name="Maven: com.ibm.icu:icu4j:57.1" />
-          <element id="library" level="project" name="Maven: io.reactivex.rxjava2:rxjava:2.0.8" />
-          <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
