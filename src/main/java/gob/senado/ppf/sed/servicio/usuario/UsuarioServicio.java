@@ -23,10 +23,25 @@ public interface UsuarioServicio {
      */
     boolean actualizarUsuario(Usuario usuario);
 
+    /**
+     * Permite dar de baja un usuario del sistema.
+     *
+     * @param idUsuario identifdicador &uacute;nico del usuario a dar de baja
+     */
     boolean bajaUsuario(long idUsuario);
 
+    /**
+     * Permite dar de buscar un usuario del sistema.
+     *
+     * @param idUsuario identifdicador &uacute;nico del usuario a dar de baja
+     */
     Usuario buscarUsuario(long idUsuario);
 
+    /**
+     * Permite dar de buscar un usuario del sistema.
+     *
+     * @param identidad
+     */
     Usuario buscarUsuario(String identidad);
 
     boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
@@ -35,12 +50,33 @@ public interface UsuarioServicio {
 
     boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);
 
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema.
+     */
     long contarUsuarios();
 
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a una unidad especificada.
+     *
+     * @param idUnidadApoyo identificador único de la unidad de apoyo a la que los usuarios que se desean buscar petenecen
+     * @see gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo
+     */
     long contarUsuariosPorUnidadApoyo(long idUnidadApoyo);
 
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a un &oacute;rgano de direcci&oacute;n estrat&eacute;gica especificado.
+     *
+     * @param idOrganoDireccionEstrategica identificador &uacute;nico del &oacute;rgano de direcci&oacute;n estrat&eacute;gica al que los usuarios que se desean buscar petenecen
+     * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
+     */
     long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a un Programa Institucional especificado.
+     *
+     * @param idProgramaInstitucional identificador &uacute;nico del Programa Institucional al que los usuarios que se desean buscar petenecen
+     * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
+     */
     long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
 
 }
