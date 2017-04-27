@@ -213,6 +213,18 @@
             <version>${jasperreports.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.0-801.jdbc4</version>
+        </dependency>
+
 
         <!--testing dependencies-->
         <dependency>
@@ -246,6 +258,7 @@
         	<groupId>org.projectlombok</groupId>
         	<artifactId>lombok</artifactId>
         	<version>1.16.8</version>
+            <scope>provided</scope>
         </dependency>
 
 
