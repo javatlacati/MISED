@@ -4,30 +4,79 @@ import gob.senado.ppf.sed.dto.usuario.Usuario;
 import gob.senado.ppf.sed.utilidades.Activacion;
 import gob.senado.ppf.sed.utilidades.Fase;
 
+/**
+ * Capa de servicios para tareas de administraci&oacute;n de usuarios del sistema.
+ */
 public interface UsuarioServicio {
 
-	public abstract boolean altaUsuario(Usuario usuario);
+    /**
+     * Permite dar de alta el usuario especificado en el sistema.
+     *
+     * @param usuario Objeto con los datos de un usuario
+     */
+    boolean altaUsuario(Usuario usuario);
 
-	public abstract boolean actualizarUsuario(Usuario usuario);
+    /**
+     * Permite modificar la informaci&oacute;n de un usuario existente en el sistema.
+     *
+     * @param usuario Objeto con los datos de un usuario
+     */
+    boolean actualizarUsuario(Usuario usuario);
 
-	public abstract boolean bajaUsuario(long idUsuario);
+    /**
+     * Permite dar de baja un usuario del sistema.
+     *
+     * @param idUsuario identifdicador &uacute;nico del usuario a dar de baja
+     */
+    boolean bajaUsuario(long idUsuario);
 
-	public abstract Usuario buscarUsuario(long idUsuario);
+    /**
+     * Permite dar de buscar un usuario del sistema.
+     *
+     * @param idUsuario identifdicador &uacute;nico del usuario a dar de baja
+     */
+    Usuario buscarUsuario(long idUsuario);
 
-	public abstract Usuario buscarUsuario(String identidad);
+    /**
+     * Permite dar de buscar un usuario del sistema.
+     *
+     * @param identidad
+     */
+    Usuario buscarUsuario(String identidad);
 
-	public abstract boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
+    boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
 
-	public abstract boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);
+    boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);
 
-	public abstract boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);
+    boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);
 
-	public abstract long contarUsuarios();
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema.
+     */
+    long contarUsuarios();
 
-	public abstract long contarUsuariosPorUnidadApoyo(long idUnidadApoyo);
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a una unidad especificada.
+     *
+     * @param idUnidadApoyo identificador único de la unidad de apoyo a la que los usuarios que se desean buscar petenecen
+     * @see gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo
+     */
+    long contarUsuariosPorUnidadApoyo(long idUnidadApoyo);
 
-	public abstract long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a un &oacute;rgano de direcci&oacute;n estrat&eacute;gica especificado.
+     *
+     * @param idOrganoDireccionEstrategica identificador &uacute;nico del &oacute;rgano de direcci&oacute;n estrat&eacute;gica al que los usuarios que se desean buscar petenecen
+     * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
+     */
+    long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
-	public abstract long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
+    /**
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a un Programa Institucional especificado.
+     *
+     * @param idProgramaInstitucional identificador &uacute;nico del Programa Institucional al que los usuarios que se desean buscar petenecen
+     * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
+     */
+    long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
 
 }
