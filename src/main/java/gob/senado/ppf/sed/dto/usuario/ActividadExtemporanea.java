@@ -3,7 +3,6 @@ package gob.senado.ppf.sed.dto.usuario;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import lombok.*;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
 import java.io.Serializable;
 
 @Getter

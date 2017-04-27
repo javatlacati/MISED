@@ -242,11 +242,10 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency> <!-- Will be picked by javac -->
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.8</version>
-            <scope>provided</scope>
+        <dependency>
+        	<groupId>org.projectlombok</groupId>
+        	<artifactId>lombok</artifactId>
+        	<version>1.16.8</version>
         </dependency>
 
 
