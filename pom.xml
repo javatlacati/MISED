@@ -47,6 +47,7 @@
         <pmd.disabled>false</pmd.disabled>
         <checkstyle.disabled>false</checkstyle.disabled>
         <surefire.disabled>false</surefire.disabled>
+        <deslombookear>true</deslombookear>
     </properties>
 
     <dependencies>
@@ -213,7 +214,6 @@
         </dependency>
 
 
-
         <!--testing dependencies-->
         <dependency>
             <groupId>junit</groupId>
@@ -253,6 +253,8 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -276,6 +278,28 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.16.8.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>delombok</goal>
+                        </goals>
+                        <configuration>
+                            <addOutputDirectory>true</addOutputDirectory>
+                            <sourceDirectory>src/main/java</sourceDirectory>
+                            <skip>${deslombookear}</skip>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
@@ -409,25 +433,6 @@
                     </targetClasses>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.projectlombok</groupId>-->
-                <!--<artifactId>lombok-maven-plugin</artifactId>-->
-                <!--<version>1.16.6.1</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>delombok</id>-->
-                        <!--<phase>generate-sources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>delombok</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<addOutputDirectory>false</addOutputDirectory>-->
-                            <!--<sourceDirectory>src/main/java</sourceDirectory>-->
-                            <!--<encoding>UTF-8</encoding>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
         </plugins>
         <finalName>MISED</finalName>
     </build>
