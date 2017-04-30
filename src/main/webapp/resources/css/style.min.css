@@ -1,4 +1,4 @@
-﻿@import url(materialize.css);
+@import url(materialize.css);
 
 .navbar {
 	font-family: "Roboto", sans-serif;
@@ -2564,8 +2564,7 @@
 	color: #fff !important;
 }
 
-@
--ms-keyframes spin {
+@-ms-keyframes spin {
 	from {-ms-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
@@ -2582,8 +2581,7 @@ to {
 }
 
 }
-@
--moz-keyframes spin {
+@-moz-keyframes spin {
 	from {-moz-transform: rotate(0deg);
 	-ms-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
@@ -2600,8 +2598,7 @@ to {
 }
 
 }
-@
--webkit-keyframes spin {
+@-webkit-keyframes spin {
 	from {-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	-ms-transform: rotate(0deg);
@@ -2618,8 +2615,7 @@ to {
 }
 
 }
-@
-keyframes spin {
+@keyframes spin {
 	from {-moz-transform: rotate(0deg);
 	-ms-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
