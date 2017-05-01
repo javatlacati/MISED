@@ -256,45 +256,66 @@ body {
 .col-purple .navbar .navbar-brand :focus {
   color: #fff;
 }
-.col-purple .navbar .nav > li > a:hover,
-.col-purple .navbar .nav > li > a:focus,
-.col-purple .navbar .nav .open > a,
-.col-purple .navbar .nav .open > a:hover,
-.col-purple .navbar .nav .open > a:focus {
-  background-color: rgba(0, 0, 0, 0.05);
-}
 .col-purple .navbar .nav > li > a {
   color: #fff;
+}
+.col-purple .navbar .nav > li > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-purple .navbar .nav > li > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-purple .navbar .nav .open > a {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-purple .navbar .nav .open > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-purple .navbar .nav .open > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .col-purple .navbar .bars {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
   margin-left: -10px;
   margin-top: 4px;
 }
-.col-purple .navbar .bars:hover {
+.col-purple .navbar .bars :hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-.col-deep-purple .navbar .navbar-brand,
-.col-deep-purple .navbar .navbar-brand:hover,
-.col-deep-purple .navbar .navbar-brand:active,
-.col-deep-purple .navbar .navbar-brand:focus {
+.col-deep-purple .navbar .navbar-brand :hover {
   color: #fff;
 }
-.col-deep-purple .navbar .nav > li > a:hover,
-.col-deep-purple .navbar .nav > li > a:focus,
-.col-deep-purple .navbar .nav .open > a,
-.col-deep-purple .navbar .nav .open > a:hover,
-.col-deep-purple .navbar .nav .open > a:focus {
-  background-color: rgba(0, 0, 0, 0.05);
+.col-deep-purple .navbar .navbar-brand :active {
+  color: #fff;
+}
+.col-deep-purple .navbar .navbar-brand :focus {
+  color: #fff;
 }
 .col-deep-purple .navbar .nav > li > a {
   color: #fff;
 }
-.col-deep-purple .navbar .bars {
+.col-deep-purple .navbar .nav > li > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-deep-purple .navbar .nav > li > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-deep-purple .navbar .nav .open > a {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-deep-purple .navbar .nav .open > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-deep-purple .navbar .nav .open > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-deep-purple .navbar .nav .bars {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
@@ -303,7 +324,7 @@ body {
   margin-left: -10px;
   margin-top: 4px;
 }
-.col-deep-purple .navbar .bars:hover {
+.col-deep-purple .navbar .nav .bars :hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
 .col-indigo .navbar .navbar-brand,
@@ -4315,12 +4336,20 @@ section.content {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-.bootstrap-select .dropdown-toggle:focus,
-.bootstrap-select .dropdown-toggle:active {
+.bootstrap-select .dropdown-toggle :focus {
   outline: none !important;
 }
-.bootstrap-select .bs-searchbox,
-.bootstrap-select .bs-actionsbox,
+.bootstrap-select .dropdown-toggle :active {
+  outline: none !important;
+}
+.bootstrap-select .bs-searchbox {
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid #e9e9e9;
+}
+.bootstrap-select .bs-actionsbox {
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid #e9e9e9;
+}
 .bootstrap-select .bs-donebutton {
   padding: 0 0 5px 0;
   border-bottom: 1px solid #e9e9e9;
@@ -5584,7 +5613,7 @@ section.content {
   position: relative;
   border-bottom: 1px solid #ddd;
 }
-.form-group .form-line:after {
+.form-group .form-line :after {
   content: '';
   position: absolute;
   left: 0;
@@ -5614,23 +5643,23 @@ section.content {
   -webkit-transition: .2s;
   transition: .2s;
 }
-.form-group .form-line.error:after {
+.form-group .form-line .error:after {
   border-bottom: 2px solid #f44336;
 }
-.form-group .form-line.success:after {
+.form-group .form-line .success:after {
   border-bottom: 2px solid #4caf50;
 }
-.form-group .form-line.warning:after {
+.form-group .form-line .warning:after {
   border-bottom: 2px solid #ffc107;
 }
-.form-group .form-line.focused:after {
+.form-group .form-line .focused :after {
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
   -o-transform: scaleX(1);
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
-.form-group .form-line.focused .form-label {
+.form-group .form-line .focused .form-label {
   top: -10px;
   left: 0;
   font-size: 12px;
