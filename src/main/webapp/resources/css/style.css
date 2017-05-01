@@ -97,6 +97,8 @@ body {
   left: 1.4285714285714286em;
   left: 2rem;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
@@ -121,6 +123,8 @@ body {
   left: 1.4285714285714286em;
   left: 2rem;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
@@ -216,7 +220,11 @@ body {
   font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-red .navbar .bars :hover {
@@ -257,7 +265,11 @@ body {
   font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-pink .navbar .bars :hover {
@@ -298,7 +310,11 @@ body {
   font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-purple .navbar .bars :hover {
@@ -335,9 +351,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-deep-purple .navbar .nav .bars :hover {
@@ -371,9 +393,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-indigo .navbar .bars :hover {
@@ -399,9 +427,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-blue .navbar .bars:hover {
@@ -427,9 +461,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-light-blue .navbar .bars:hover {
@@ -455,9 +495,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-cyan .navbar .bars:hover {
@@ -483,9 +529,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-teal .navbar .bars:hover {
@@ -511,9 +563,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-green .navbar .bars:hover {
@@ -539,9 +597,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-light-green .navbar .bars:hover {
@@ -567,9 +631,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-lime .navbar .bars:hover {
@@ -595,9 +665,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-yellow .navbar .bars:hover {
@@ -623,9 +699,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-amber .navbar .bars:hover {
@@ -651,9 +733,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-orange .navbar .bars:hover {
@@ -679,9 +767,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-deep-orange .navbar .bars:hover {
@@ -707,9 +801,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-brown .navbar .bars:hover {
@@ -735,9 +835,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-grey .navbar .bars:hover {
@@ -763,9 +869,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-blue-grey .navbar .bars:hover {
@@ -791,9 +903,15 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-black .navbar .bars:hover {
@@ -823,7 +941,11 @@ body {
   font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-white .navbar .bars:hover {
@@ -843,9 +965,13 @@ body {
 }
 .material-icons .md-30 {
   font-size: 30px;
+  font-size: 2.142857142857143em;
+  font-size: 3rem;
 }
 .material-icons .md-32 {
   font-size: 32px;
+  font-size: 2.2857142857142856em;
+  font-size: 3.2rem;
 }
 .material-icons .md-36 {
   font-size: 36px;
@@ -1131,6 +1257,8 @@ body {
 }
 .m-l--10 {
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
 }
 .m-t--10 {
   margin-top: -10px;
@@ -1185,6 +1313,8 @@ body {
 }
 .m-r-10 {
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
 }
 .m-b-10 {
   margin-bottom: 10px;
@@ -1806,6 +1936,8 @@ body {
 }
 .font-13 {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
 }
 .font-14 {
   font-size: 14px;
@@ -1815,6 +1947,8 @@ body {
 }
 .font-16 {
   font-size: 16px;
+  font-size: 1.1428571428571428em;
+  font-size: 1.6rem;
 }
 .font-17 {
   font-size: 17px;
@@ -1833,6 +1967,8 @@ body {
 }
 .font-22 {
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
 }
 .font-23 {
   font-size: 23px;
@@ -1857,12 +1993,16 @@ body {
 }
 .font-30 {
   font-size: 30px;
+  font-size: 2.142857142857143em;
+  font-size: 3rem;
 }
 .font-31 {
   font-size: 31px;
 }
 .font-32 {
   font-size: 32px;
+  font-size: 2.2857142857142856em;
+  font-size: 3.2rem;
 }
 .font-33 {
   font-size: 33px;
@@ -1956,6 +2096,8 @@ body {
   color: #666 !important;
   font-weight: normal;
   font-size: 16px;
+  font-size: 1.1428571428571428em;
+  font-size: 1.6rem;
 }
 .block-header h2 small {
   display: block;
@@ -2293,6 +2435,8 @@ body {
 }
 .demo-button-groups .btn-group {
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
 }
 .demo-button-toolbar .btn-toolbar {
   float: left;
@@ -2303,12 +2447,18 @@ body {
 }
 .demo-single-button-dropdowns > .btn-group {
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
 }
 .demo-splite-button-dropdowns > .btn-group {
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
 }
 .demo-dropup .dropup {
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
 }
 .demo-checkbox label,
 .demo-radio-button label {
@@ -2336,11 +2486,15 @@ body {
 }
 .demo-color-box .color-name {
   font-size: 16px;
+  font-size: 1.1428571428571428em;
+  font-size: 1.6rem;
   margin-bottom: 5px;
 }
 .demo-color-box .color-code,
 .demo-color-box .color-class-name {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
 }
 .demo-image-copyright {
   text-align: right;
@@ -2679,6 +2833,8 @@ section.content {
   border-radius: 2px;
   border: none;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   outline: none;
 }
 .btn:not (.btn-link ):not (.btn-circle ):hover {
@@ -3165,6 +3321,8 @@ section.content {
 .card .header .header-dropdown {
   position: absolute;
   top: 20px;
+  top: 1.4285714285714286em;
+  top: 2rem;
   right: 15px;
   list-style: none;
 }
@@ -3327,6 +3485,8 @@ section.content {
 }
 .info-box .content .text {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   margin-top: 11px;
   color: #555;
 }
@@ -3417,6 +3577,8 @@ section.content {
 }
 .info-box-2 .content .text {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   margin-top: 11px;
   color: #555;
 }
@@ -3510,6 +3672,8 @@ section.content {
 }
 .info-box-3 .content .text {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   margin-top: 11px;
   color: #555;
 }
@@ -3600,6 +3764,8 @@ section.content {
 }
 .info-box-4 .content .text {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   margin-top: 11px;
   color: #555;
 }
@@ -3705,6 +3871,8 @@ section.content {
   height: 25px;
   line-height: 21px;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   font-weight: normal;
 }
 [type="checkbox"]:checked + label:before {
@@ -3898,6 +4066,8 @@ section.content {
   height: 25px;
   line-height: 25px;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   font-weight: normal;
 }
 [type="radio"]:checked + label {
@@ -3905,6 +4075,8 @@ section.content {
   height: 25px;
   line-height: 25px;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   font-weight: normal;
 }
 [type="radio"].radio-col-red:checked + label:after {
@@ -4141,6 +4313,8 @@ section.content {
 .switch label {
   font-weight: normal;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
 }
 .switch label .lever {
   margin: 0 14px;
@@ -4452,6 +4626,8 @@ section.content {
 }
 .tooltip {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
 }
 .tooltip .tooltip-inner {
   -webkit-border-radius: 0;
@@ -4477,6 +4653,8 @@ section.content {
 }
 .popover .popover-content {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   color: #777;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -4637,6 +4815,8 @@ section.content {
 .modal .modal-header .modal-title {
   font-weight: bold;
   font-size: 16px;
+  font-size: 1.1428571428571428em;
+  font-size: 1.6rem;
 }
 .modal .modal-content {
   -webkit-border-radius: 0;
@@ -5774,6 +5954,8 @@ fieldset[disabled] .form-control {
   border-radius: 0;
   background-color: transparent;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   margin-bottom: 10px;
 }
 .breadcrumb li a {
@@ -6242,6 +6424,8 @@ fieldset[disabled] .form-control {
 .list-group .active .list-group-item-text {
   color: #dfe9f1;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
 }
 .list-group .active .list-group-item-text:hover,
 .list-group .active .list-group-item-text:active,
@@ -6675,6 +6859,8 @@ fieldset[disabled] .form-control {
 .pagination-lg > li:first-child > a .material-icons,
 .pagination-lg > li:last-child > a .material-icons {
   font-size: 30px;
+  font-size: 2.142857142857143em;
+  font-size: 3rem;
   position: relative;
   top: -3px;
   left: -10px;
@@ -6685,9 +6871,13 @@ fieldset[disabled] .form-control {
 .media .media-body {
   color: #777;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
 }
 .media .media-body .media-heading {
   font-size: 16px;
+  font-size: 1.1428571428571428em;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #333;
 }
@@ -7065,6 +7255,8 @@ fieldset[disabled] .form-control {
 }
 .page-loader-wrapper p {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   margin-top: 10px;
   font-weight: bold;
   color: #444;
@@ -7208,6 +7400,8 @@ fieldset[disabled] .form-control {
   top: 18px;
   left: 20px;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
@@ -7299,9 +7493,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-red .navbar .bars:hover {
@@ -7327,9 +7527,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-pink .navbar .bars:hover {
@@ -7355,9 +7561,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-purple .navbar .bars:hover {
@@ -7383,9 +7595,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-deep-purple .navbar .bars:hover {
@@ -7411,9 +7629,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-indigo .navbar .bars:hover {
@@ -7439,9 +7663,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-blue .navbar .bars:hover {
@@ -7467,9 +7697,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-light-blue .navbar .bars:hover {
@@ -7495,9 +7731,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-cyan .navbar .bars:hover {
@@ -7523,9 +7765,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-teal .navbar .bars:hover {
@@ -7551,9 +7799,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-green .navbar .bars:hover {
@@ -7579,9 +7833,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-light-green .navbar .bars:hover {
@@ -7607,9 +7867,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-lime .navbar .bars:hover {
@@ -7635,9 +7901,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-yellow .navbar .bars:hover {
@@ -7663,9 +7935,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-amber .navbar .bars:hover {
@@ -7691,9 +7969,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-orange .navbar .bars:hover {
@@ -7719,9 +8003,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-deep-orange .navbar .bars:hover {
@@ -7747,9 +8037,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-brown .navbar .bars:hover {
@@ -7775,9 +8071,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-grey .navbar .bars:hover {
@@ -7803,9 +8105,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-blue-grey .navbar .bars:hover {
@@ -7831,9 +8139,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-black .navbar .bars:hover {
@@ -7859,9 +8173,15 @@ fieldset[disabled] .form-control {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
+  margin-right: 0.7142857142857143em;
+  margin-right: 1rem;
   margin-left: -10px;
+  margin-left: -0.7142857142857143em;
+  margin-left: -1rem;
   margin-top: 4px;
 }
 .col-white .navbar .bars:hover {
@@ -7881,6 +8201,8 @@ fieldset[disabled] .form-control {
 }
 .dropdown-menu .header {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   font-weight: bold;
   min-width: 270px;
   border-bottom: 1px solid #eee;
@@ -7893,6 +8215,8 @@ fieldset[disabled] .form-control {
 .dropdown-menu ul.menu.tasks h4 {
   color: #333;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   margin: 0 0 8px 0;
 }
 .dropdown-menu ul.menu.tasks h4 small {
@@ -7944,6 +8268,8 @@ fieldset[disabled] .form-control {
 .dropdown-menu ul.menu .menu-info h4 {
   margin: 0;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   color: #333;
 }
 .dropdown-menu ul.menu .menu-info p {
@@ -7953,6 +8279,8 @@ fieldset[disabled] .form-control {
 }
 .dropdown-menu ul.menu .menu-info p .material-icons {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   color: #aaa;
   position: relative;
   top: 2px;
@@ -8037,6 +8365,8 @@ fieldset[disabled] .form-control {
 }
 .sidebar .legal .copyright {
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   white-space: nowrap;
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
@@ -8055,6 +8385,8 @@ fieldset[disabled] .form-control {
   overflow: hidden;
   margin-top: 5px;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
 }
 .sidebar .user-info {
   padding: 13px 15px 12px 15px;
@@ -8262,6 +8594,8 @@ fieldset[disabled] .form-control {
 .right-sidebar .nav-tabs {
   font-weight: 600;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   width: 100%;
   margin-left: 2px;
 }
@@ -8514,18 +8848,28 @@ fieldset[disabled] .form-control {
 .search-bar .search-icon {
   position: absolute;
   top: 20px;
+  top: 1.4285714285714286em;
+  top: 2rem;
   left: 14px;
 }
 .search-bar .search-icon .material-icons {
   font-size: 32px;
+  font-size: 2.2857142857142856em;
+  font-size: 3.2rem;
   color: #999;
 }
 .search-bar .close-search {
   position: absolute;
   cursor: pointer;
   font-size: 30px;
+  font-size: 2.142857142857143em;
+  font-size: 3rem;
   top: 16px;
+  top: 1.1428571428571428em;
+  top: 1.6rem;
   right: 18px;
+  right: 1.2857142857142858em;
+  right: 1.8rem;
 }
 .search-bar .close-search .material-icons {
   color: #999;
@@ -8541,6 +8885,8 @@ fieldset[disabled] .form-control {
 .search-bar input[type="text"] {
   width: 100%;
   font-size: 16px;
+  font-size: 1.1428571428571428em;
+  font-size: 1.6rem;
   padding: 25px 60px 23px 56px;
   border: none;
 }
@@ -8608,6 +8954,8 @@ fieldset[disabled] .form-control {
   border-radius: 2px;
   border: none;
   font-size: 13px;
+  font-size: 0.9285714285714286em;
+  font-size: 1.3rem;
   outline: none;
 }
 .dataTables_wrapper .dt-buttons a.dt-button :active {
