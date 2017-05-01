@@ -795,6 +795,8 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
   margin-left: -10px;
@@ -803,28 +805,28 @@ body {
 .col-white .navbar .bars:hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-.material-icons.md-18 {
+.material-icons .md-18 {
   font-size: 18px;
 }
-.material-icons.md-24 {
+.material-icons .md-24 {
   font-size: 24px;
 }
-.material-icons.md-26 {
+.material-icons .md-26 {
   font-size: 26px;
 }
-.material-icons.md-28 {
+.material-icons .md-28 {
   font-size: 28px;
 }
-.material-icons.md-30 {
+.material-icons .md-30 {
   font-size: 30px;
 }
-.material-icons.md-32 {
+.material-icons .md-32 {
   font-size: 32px;
 }
-.material-icons.md-36 {
+.material-icons .md-36 {
   font-size: 36px;
 }
-.material-icons.md-48 {
+.material-icons .md-48 {
   font-size: 48px;
 }
 .m-l--125 {
@@ -1946,14 +1948,16 @@ body {
   color: #fff;
 }
 .bg-red .content .text,
-.bg-red .content .number {
+.bg-red .bg-red .content .number {
   color: #fff !important;
 }
 .bg-pink {
   background-color: #e91e63 !important;
   color: #fff;
 }
-.bg-pink .content .text,
+.bg-pink .content .text {
+  color: #fff !important;
+}
 .bg-pink .content .number {
   color: #fff !important;
 }
@@ -1961,8 +1965,10 @@ body {
   background-color: #9c27b0 !important;
   color: #fff;
 }
-.bg-purple .content .text,
-.bg-purple .content .number {
+.bg-purple .content .text {
+  color: #fff !important;
+}
+.bg-purple .bg-purple .content .number {
   color: #fff !important;
 }
 .bg-deep-purple {
@@ -8478,7 +8484,7 @@ fieldset[disabled] .form-control {
   -webkit-transition: .25s;
   transition: .25s;
 }
-.search-bar.open {
+.search-bar .open {
   top: 0;
 }
 .search-bar .search-icon {
@@ -8505,7 +8511,7 @@ fieldset[disabled] .form-control {
   -webkit-transition: .5s;
   transition: .5s;
 }
-.search-bar .close-search .material-icons:hover {
+.search-bar .close-search .material-icons :hover {
   opacity: .5;
 }
 .search-bar input[type="text"] {
@@ -8615,6 +8621,8 @@ html.ie11 .sidebar .menu .list .ml-menu li.active a:not (.menu-toggle ).toggled:
 }
 html.ie11 .sidebar .user-info .info-container {
   top: 15px;
+  top: 1.0714285714285714em;
+  top: 1.5rem;
 }
 html.ie11 .search-bar input[type="text"] {
   padding: 26px 60px 26px 56px;
