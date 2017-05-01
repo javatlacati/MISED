@@ -14,30 +14,29 @@ INSERT INTO UNIDAD_APOYO VALUES(3, 2,'Dirección General de Apoyo Parlamentario',
 INSERT INTO UNIDAD_APOYO VALUES(4, 2,'Coordinación del Cuerpo Técnico Profesional', '');
 INSERT INTO UNIDAD_APOYO VALUES(5, 2,'Dirección General de Archivo Histórico y Memoria Legislativa', '');
 INSERT INTO UNIDAD_APOYO VALUES(6, 2,'Dirección General de Proceso Legislativo', '');
-INSERT INTO UNIDAD_APOYO VALUES(7, 2,'Biblioteca Melchor Ocampo', '');
 
-INSERT INTO UNIDAD_APOYO VALUES(8, 3,'Secretaría General de Servicios Administrativos', '');
-INSERT INTO UNIDAD_APOYO VALUES(9, 3,'Dirección General de Recursos Humanos', '');
-INSERT INTO UNIDAD_APOYO VALUES(10, 3,'Dirección General de Informática y Telecomunicaciones', '');
-INSERT INTO UNIDAD_APOYO VALUES(11, 3,'Dirección General de Recursos Materiales y Servicios Generales', '');
-INSERT INTO UNIDAD_APOYO VALUES(12, 3,'Unidad de Eventos', '');
-INSERT INTO UNIDAD_APOYO VALUES(13, 3,'Dirección General de Asuntos Jurídicos', '');
-INSERT INTO UNIDAD_APOYO VALUES(14, 3,'Unidad de Atención a Senadores', '');
-INSERT INTO UNIDAD_APOYO VALUES(15, 3,'Dirección General de Resguardo Parlamentario', '');
-INSERT INTO UNIDAD_APOYO VALUES(16, 3,'Dirección General de Servicios Médicos', '');
-INSERT INTO UNIDAD_APOYO VALUES(17, 3,'Unidad de Modernización Administrativa', '');
-INSERT INTO UNIDAD_APOYO VALUES(18, 3,'Tesorería', '');
-INSERT INTO UNIDAD_APOYO VALUES(19, 3,'Dirección General de Programación, Presupuesto y Finanzas', '');
-INSERT INTO UNIDAD_APOYO VALUES(20, 3,'Unidad de Pago a Senadores', '');
-INSERT INTO UNIDAD_APOYO VALUES(21, 3,'Dirección General de Contabilidad', '');
+INSERT INTO UNIDAD_APOYO VALUES(7, 3,'Secretaría General de Servicios Administrativos', '');
+INSERT INTO UNIDAD_APOYO VALUES(8, 3,'Dirección General de Recursos Humanos', '');
+INSERT INTO UNIDAD_APOYO VALUES(9, 3,'Dirección General de Informática y Telecomunicaciones', '');
+INSERT INTO UNIDAD_APOYO VALUES(10, 3,'Dirección General de Recursos Materiales y Servicios Generales', '');
+INSERT INTO UNIDAD_APOYO VALUES(11, 3,'Unidad de Eventos', '');
+INSERT INTO UNIDAD_APOYO VALUES(12, 3,'Dirección General de Asuntos Jurídicos', '');
+INSERT INTO UNIDAD_APOYO VALUES(13, 3,'Unidad de Atención a Senadores', '');
+INSERT INTO UNIDAD_APOYO VALUES(14, 3,'Dirección General de Resguardo Parlamentario', '');
+INSERT INTO UNIDAD_APOYO VALUES(15, 3,'Dirección General de Servicios Médicos', '');
+INSERT INTO UNIDAD_APOYO VALUES(16, 3,'Unidad de Modernización Administrativa', '');
+INSERT INTO UNIDAD_APOYO VALUES(17, 3,'Tesorería', '');
+INSERT INTO UNIDAD_APOYO VALUES(18, 3,'Dirección General de Programación, Presupuesto y Finanzas', '');
+INSERT INTO UNIDAD_APOYO VALUES(19, 3,'Unidad de Pago a Senadores', '');
+INSERT INTO UNIDAD_APOYO VALUES(20, 3,'Dirección General de Contabilidad', '');
 
-INSERT INTO UNIDAD_APOYO VALUES(22, 1,'Centro de Estudios Internacionales Gilberto Bosques', '');
-INSERT INTO UNIDAD_APOYO VALUES(23, 1,'Unidad de Enlace para la Transparencia y el Acceso a la Información Pública del Senado', '');
-INSERT INTO UNIDAD_APOYO VALUES(24, 1,'Contraloría Interna', '');
-INSERT INTO UNIDAD_APOYO VALUES(25, 1,'Centro de Capacitación y Formación Permanente', '');
-INSERT INTO UNIDAD_APOYO VALUES(26, 1,'Instituto Belisario Domínguez', '');
-INSERT INTO UNIDAD_APOYO VALUES(27, 1,'Coordinación de Comunicación Social', '');
-INSERT INTO UNIDAD_APOYO VALUES(28, 1,'Canal del Congreso', '');
+INSERT INTO UNIDAD_APOYO VALUES(21, 1,'Centro de Estudios Internacionales Gilberto Bosques', '');
+INSERT INTO UNIDAD_APOYO VALUES(22, 1,'Unidad de Enlace para la Transparencia y el Acceso a la Información Pública del Senado', '');
+INSERT INTO UNIDAD_APOYO VALUES(23, 1,'Contraloría Interna', '');
+INSERT INTO UNIDAD_APOYO VALUES(24, 1,'Centro de Capacitación y Formación Permanente', '');
+INSERT INTO UNIDAD_APOYO VALUES(25, 1,'Instituto Belisario Domínguez', '');
+INSERT INTO UNIDAD_APOYO VALUES(26, 1,'Coordinación de Comunicación Social', '');
+INSERT INTO UNIDAD_APOYO VALUES(27, 1,'Canal del Congreso', '');
 
 SELECT * FROM USUARIO U
 INNER JOIN USUARIO_PERMISO UP
@@ -51,4 +50,6 @@ INSERT INTO USUARIO VALUES (1, 19, 'benjamin.ocotzi', '$2a$04$/pjtunFYAIzCmjBenn
 INSERT INTO USUARIO_PERMISO VALUES(1, 1, true, true, true, true, true);
 
 INSERT INTO ACTIVIDAD_EXTEMPORANEA VALUES(1, 1, false, false, false, false, false);
+
+
 
