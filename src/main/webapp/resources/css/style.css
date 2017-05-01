@@ -5,10 +5,24 @@ and open the template in the editor.
 */
 /*
     Created on : 30/04/2017, 04:29:13 PM
-    Author     : Core i7
+    Author     : Javatlacati
 */
 /*@import url(../../../webapp/js/libs/materialize/css/materialize.min.css);*/
 @import url(materialize.css);
+body {
+  background-image: url(../images/fondo3.jpg);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 65s linear infinite;
+}
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
 .navbar {
   font-family: "Roboto", sans-serif;
   -webkit-border-radius: 0;
