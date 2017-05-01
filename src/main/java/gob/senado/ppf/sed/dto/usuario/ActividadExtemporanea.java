@@ -4,7 +4,6 @@ import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import java.io.Serializable;
 
-
 public class ActividadExtemporanea implements Serializable, Formateable {
 
 	private static final long serialVersionUID = 1L;

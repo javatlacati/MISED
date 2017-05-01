@@ -58,4 +58,3 @@ INSERT INTO USUARIO VALUES (2, 18, 'ruslan.lopez', '$2a$10$8UnZCnafgrZoSC/WARL5u
 'martes 11 de abril de 2017', '21:57:35.42');
 INSERT INTO USUARIO_PERMISO VALUES(2, 2, true, true, true, true, true);
 INSERT INTO ACTIVIDAD_EXTEMPORANEA VALUES(2, 2, false, false, false, false, false);
-

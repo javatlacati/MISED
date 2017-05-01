@@ -27,8 +27,8 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 		final StringBuilder sqlUsuario = new StringBuilder();
 		sqlUsuario.append("INSERT INTO USUARIO (id_unidad_apoyo, identidad, clave_acceso, nombre, ")
 				.append("apellido_paterno, apellido_materno, puesto_laboral, correo_electronico, ")
-				.append("extension_telefonica, rol_designado, fecha_registro, hora_registro) ")
-				.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				.append("extension_telefonica, rol_designado, tipo_usuario, fecha_registro, hora_registro) ")
+				.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		int rowsAffectedUsuario = jdbcTemplate.update((Connection con) -> {
 			PreparedStatement pst = con.prepareStatement(sqlUsuario.toString(), new String[] { "id_usuario" });
@@ -42,6 +42,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			pst.setString(8, usuario.getCorreoElectronico());
 			pst.setString(9, usuario.getExtensionTelefonica());
 			pst.setString(10, usuario.getRolDesignado());
+			pst.setString(11, usuario.getTipoUsuario());
 			pst.setString(11, usuario.getFechaRegistro());
 			pst.setString(12, usuario.getHoraRegistro());
 			return pst;
@@ -61,22 +62,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			pst.setBoolean(6, usuario.getUsuarioPermiso().puedeAutenticarse());
 			return pst;
 		});
-
-		final StringBuilder sqlActivExtemp = new StringBuilder();
-		sqlActivExtemp.append("INSERT INTO ACTIVIDAD_EXTEMPORANEA(id_usuario, fase_planeacion, fase_calendarizacion, ")
-				.append("fase_primer_cuatrimestre, fase_segundo_cuatrimestre, fase_tercer_cuatrimestre) VALUES (?, ?, ?, ?, ?, ?)");
-		int rowsAffectedActividadExtemporanea = jdbcTemplate.update((Connection con) -> {
-			PreparedStatement pst = con.prepareStatement(sqlActivExtemp.toString());
-			pst.setLong(1, llavePrimariaUsuario);
-			pst.setBoolean(2, usuario.getActividadExtemporanea().estaEnFasePlaneacion());
-			pst.setBoolean(3, usuario.getActividadExtemporanea().estaEnFaseCalendarizacion());
-			pst.setBoolean(4, usuario.getActividadExtemporanea().estaEnFasePrimerCuatrimestre());
-			pst.setBoolean(5, usuario.getActividadExtemporanea().estaEnFaseSegundoCuatrimestre());
-			pst.setBoolean(6, usuario.getActividadExtemporanea().estaEnFaseTercerCuatrimestre());
-			return pst;
-		});
-
-		return rowsAffectedUsuario > 0 && rowsAffectedUsuarioPermiso > 0 && rowsAffectedActividadExtemporanea > 0;
+		return rowsAffectedUsuario > 0 && rowsAffectedUsuarioPermiso > 0;
 	}
 
 	@Override
@@ -84,8 +70,8 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 		final StringBuilder sqlUsuario = new StringBuilder();
 		sqlUsuario.append("UPDATE USUARIO SET id_unidad_apoyo = ?, nombre = ?, ")
 				.append("apellido_paterno = ?, apellido_materno = ?, puesto_laboral = ?, ")
-				.append("correo_electronico = ?, extension_telefonica = ?, rol_designado = ?")
-				.append("WHERE id_usuario = ?");
+				.append("correo_electronico = ?, extension_telefonica = ?, rol_designado = ?, ")
+				.append("tipo_usuario = ? WHERE id_usuario = ?");
 		int rowsAffectedUsuario = jdbcTemplate.update((Connection con) -> {
 			PreparedStatement pst = con.prepareStatement(sqlUsuario.toString());
 			pst.setLong(1, usuario.getIdUnidadApoyo());
@@ -96,7 +82,8 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			pst.setString(6, usuario.getCorreoElectronico());
 			pst.setString(7, usuario.getExtensionTelefonica());
 			pst.setString(8, usuario.getRolDesignado());
-			pst.setLong(9, usuario.getIdUsuario());
+			pst.setString(9, usuario.getTipoUsuario());
+			pst.setLong(10, usuario.getIdUsuario());
 			return pst;
 		});
 
@@ -116,23 +103,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			return pst;
 		});
 
-		final StringBuilder sqlActivExtemp = new StringBuilder();
-		sqlActivExtemp.append("UPDATE ACTIVIDAD_EXTEMPORANEA SET fase_planeacion = ?, fase_calendarizacion = ?, ")
-				.append("fase_primer_cuatrimestre = ?, fase_segundo_cuatrimestre = ?, fase_tercer_cuatrimestre = ? ")
-				.append("WHERE id_actividad_extemporanea = ? AND id_usuario = ?");
-		int rowsAffectedActividadExtemporanea = jdbcTemplate.update((Connection con) -> {
-			PreparedStatement pst = con.prepareStatement(sqlActivExtemp.toString());
-			pst.setBoolean(1, usuario.getActividadExtemporanea().estaEnFasePlaneacion());
-			pst.setBoolean(2, usuario.getActividadExtemporanea().estaEnFaseCalendarizacion());
-			pst.setBoolean(3, usuario.getActividadExtemporanea().estaEnFasePrimerCuatrimestre());
-			pst.setBoolean(4, usuario.getActividadExtemporanea().estaEnFaseSegundoCuatrimestre());
-			pst.setBoolean(5, usuario.getActividadExtemporanea().estaEnFaseTercerCuatrimestre());
-			pst.setLong(6, usuario.getActividadExtemporanea().getIdActividadExtemporanea());
-			pst.setLong(7, usuario.getIdUsuario());
-			return pst;
-		});
-
-		return rowsAffectedUsuario > 0 && rowsAffectedUsuarioPermiso > 0 && rowsAffectedActividadExtemporanea > 0;
+		return rowsAffectedUsuario > 0 && rowsAffectedUsuarioPermiso > 0;
 	}
 
 	@Override
@@ -169,31 +140,6 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 	}
 
 	@Override
-	public boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion) {
-		StringBuilder sql = new StringBuilder();
-		sql.append("UPDATE ACTIVIDAD_EXTEMPORANEA SET ");
-		switch (fase) {
-		case FASE_PLANEACION:
-			sql.append("fase_planeacion = ? ");
-			break;
-		case FASE_CALENDARIZACION:
-			sql.append("fase_calendarizacion = ? ");
-			break;
-		case FASE_PRIMER_CUATRIMESTRE:
-			sql.append("fase_primer_cuatrimestre = ? ");
-			break;
-		case FASE_SEGUNDO_CUATRIMESTRE:
-			sql.append("fase_segundo_cuatrimestre = ? ");
-			break;
-		case FASE_TERCER_CUATRIMESTRE:
-			sql.append("fase_tercer_cuatrimestre = ? ");
-			break;
-		}
-		sql.append("WHERE id_usuario = ?");
-		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.getEstadoInterruptor(), idUsuario }) > 0;
-	}
-
-	@Override
 	public boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("UPDATE USUARIO_PERMISO SET puede_autenticarse = ? WHERE id_usuario = ?");
@@ -208,7 +154,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 
 	@Override
 	public long contarUsuarios() {
-		return jdbcTemplate.queryForObject("SELECT total_conteo FROM CONTAR_USUARIOS", Long.class);
+		return jdbcTemplate.queryForObject("SELECT TOTAL_CONTEO FROM CONTAR_USUARIOS", Long.class);
 	}
 
 	@Override

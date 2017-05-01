@@ -51,6 +51,9 @@ public class Usuario implements Serializable, Formateable {
 	 * Nombre del rol de usuario que ocupa en el sistema.
 	 */
 	private String rolDesignado;
+
+	private String tipoUsuario;
+
 	/**
 	 * Fecha en que se registr&oacute; en el sistema.
 	 */
@@ -60,7 +63,6 @@ public class Usuario implements Serializable, Formateable {
 	 */
 	private String horaRegistro;
 	private UsuarioPermiso usuarioPermiso;
-	private ActividadExtemporanea actividadExtemporanea;
 	/**
 	 * M&oacute;dulos en los que tiene permisos el usuario actual.
 	 */
@@ -154,6 +156,14 @@ public class Usuario implements Serializable, Formateable {
 		this.rolDesignado = rolDesignado;
 	}
 
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
 	public String getFechaRegistro() {
 		return fechaRegistro;
 	}
@@ -176,14 +186,6 @@ public class Usuario implements Serializable, Formateable {
 
 	public void setUsuarioPermiso(UsuarioPermiso usuarioPermiso) {
 		this.usuarioPermiso = usuarioPermiso;
-	}
-
-	public ActividadExtemporanea getActividadExtemporanea() {
-		return actividadExtemporanea;
-	}
-
-	public void setActividadExtemporanea(ActividadExtemporanea actividadExtemporanea) {
-		this.actividadExtemporanea = actividadExtemporanea;
 	}
 
 	public List<UsuarioModulo> getUsuarioModulos() {
