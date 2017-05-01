@@ -44,6 +44,10 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter{
 		filter.setEncoding("UTF-8");
 		filter.setForceEncoding(true);
 		http.addFilterBefore(filter, CsrfFilter.class);
+		http.headers()
+		.xssProtection()
+		.xssProtectionEnabled(true)
+		.block(true);
 		http.authorizeRequests()
 		.antMatchers("/administrador/**").hasRole("ADMINISTRADOR")
 		.antMatchers("/inicio-sesion").permitAll()

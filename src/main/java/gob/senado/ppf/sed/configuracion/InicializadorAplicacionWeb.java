@@ -12,8 +12,8 @@ public class InicializadorAplicacionWeb implements WebApplicationInitializer {
 	public void onStartup(ServletContext container) {
 		// Create the 'root' Spring application context
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-		rootContext.register(ConfiguracionParaExtras.class, 
-				ConfiguracionParaDataSource.class,
+		rootContext.register(ConfiguracionParaExtras.class, ConfiguracionParaDataSource.class,
+				ConfiguracionParaWebSocket.class, ConfiguracionParaWebSocketHandlers.class,
 				ConfiguracionParaSeguridad.class);
 
 		// Manage the lifecycle of the root application context
@@ -26,6 +26,7 @@ public class InicializadorAplicacionWeb implements WebApplicationInitializer {
 		// Register and map the dispatcher servlet
 		ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher",
 				new DispatcherServlet(dispatcherServlet));
+		dispatcher.setAsyncSupported(true);
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
 

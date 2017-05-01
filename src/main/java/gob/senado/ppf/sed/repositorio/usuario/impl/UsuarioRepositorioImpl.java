@@ -68,11 +68,11 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 		int rowsAffectedActividadExtemporanea = jdbcTemplate.update((Connection con) -> {
 			PreparedStatement pst = con.prepareStatement(sqlActivExtemp.toString());
 			pst.setLong(1, llavePrimariaUsuario);
-			pst.setBoolean(2, usuario.getActividadExtemporanea().isFasePlaneacion());
-			pst.setBoolean(3, usuario.getActividadExtemporanea().isFaseCalendarizacion());
-			pst.setBoolean(4, usuario.getActividadExtemporanea().isFasePrimerCuatrimestre());
-			pst.setBoolean(5, usuario.getActividadExtemporanea().isFaseSegundoCuatrimestre());
-			pst.setBoolean(6, usuario.getActividadExtemporanea().isFaseTercerCuatrimestre());
+			pst.setBoolean(2, usuario.getActividadExtemporanea().estaEnFasePlaneacion());
+			pst.setBoolean(3, usuario.getActividadExtemporanea().estaEnFaseCalendarizacion());
+			pst.setBoolean(4, usuario.getActividadExtemporanea().estaEnFasePrimerCuatrimestre());
+			pst.setBoolean(5, usuario.getActividadExtemporanea().estaEnFaseSegundoCuatrimestre());
+			pst.setBoolean(6, usuario.getActividadExtemporanea().estaEnFaseTercerCuatrimestre());
 			return pst;
 		});
 
@@ -122,11 +122,11 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 				.append("WHERE id_actividad_extemporanea = ? AND id_usuario = ?");
 		int rowsAffectedActividadExtemporanea = jdbcTemplate.update((Connection con) -> {
 			PreparedStatement pst = con.prepareStatement(sqlActivExtemp.toString());
-			pst.setBoolean(1, usuario.getActividadExtemporanea().isFasePlaneacion());
-			pst.setBoolean(2, usuario.getActividadExtemporanea().isFaseCalendarizacion());
-			pst.setBoolean(3, usuario.getActividadExtemporanea().isFasePrimerCuatrimestre());
-			pst.setBoolean(4, usuario.getActividadExtemporanea().isFaseSegundoCuatrimestre());
-			pst.setBoolean(5, usuario.getActividadExtemporanea().isFaseTercerCuatrimestre());
+			pst.setBoolean(1, usuario.getActividadExtemporanea().estaEnFasePlaneacion());
+			pst.setBoolean(2, usuario.getActividadExtemporanea().estaEnFaseCalendarizacion());
+			pst.setBoolean(3, usuario.getActividadExtemporanea().estaEnFasePrimerCuatrimestre());
+			pst.setBoolean(4, usuario.getActividadExtemporanea().estaEnFaseSegundoCuatrimestre());
+			pst.setBoolean(5, usuario.getActividadExtemporanea().estaEnFaseTercerCuatrimestre());
 			pst.setLong(6, usuario.getActividadExtemporanea().getIdActividadExtemporanea());
 			pst.setLong(7, usuario.getIdUsuario());
 			return pst;
@@ -190,14 +190,14 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 			break;
 		}
 		sql.append("WHERE id_usuario = ?");
-		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.isInterruptor(), idUsuario }) > 0;
+		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.getEstadoInterruptor(), idUsuario }) > 0;
 	}
 
 	@Override
 	public boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("UPDATE USUARIO_PERMISO SET puede_autenticarse = ? WHERE id_usuario = ?");
-		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.isInterruptor(), idUsuario }) > 0;
+		return jdbcTemplate.update(sql.toString(), new Object[] { activacion.getEstadoInterruptor(), idUsuario }) > 0;
 	}
 
 	@Override

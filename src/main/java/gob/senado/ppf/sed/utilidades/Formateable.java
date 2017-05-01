@@ -7,11 +7,13 @@ import com.google.gson.Gson;
  * Provee una implementaci&oacute;n por defecto basada en GSON.
  */
 public interface Formateable {
+	
+	public static final String UTF_8 = "UTF-8";
 
     /**
      * Obtiene una representaci&oacute;n de la instancia del objeto actual en formato JSON.
      */
-    default String json() {
+    public default String json() {
         return new Gson().toJson(this);
     }
 }

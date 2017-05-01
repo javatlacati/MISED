@@ -1,18 +1,22 @@
 package gob.senado.ppf.sed.repositorio.organodireccionestrategica;
 
+import java.util.List;
+
 import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
 
 public interface OrganoDireccionEstrategicaRepositorio {
 
-	boolean altaOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
+	public abstract boolean altaOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
 
-	boolean bajaOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
+	public abstract boolean bajaOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
-	OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
+	public abstract OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
-	OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(String nombre);
+	public abstract OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(String nombre);
+	
+	public abstract  List<OrganoDireccionEstrategica> obtenerOrganosDireccionEstrategica();
 
-	boolean actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
+	public abstract boolean actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica ode);
 
-	long contarOrganosDireccionEstrategica();
+	public abstract long contarOrganosDireccionEstrategica();
 }

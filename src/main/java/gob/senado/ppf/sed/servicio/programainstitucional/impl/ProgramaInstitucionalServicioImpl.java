@@ -11,16 +11,16 @@ import gob.senado.ppf.sed.servicio.programainstitucional.ProgramaInstitucionalSe
 
 @Service(value = "programaInstitucionalServicio")
 public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalServicio {
-	
+
 	@Autowired
 	private ProgramaInstitucionalRepositorio programaInstitucionalRepositorio;
 
 	@Override
 	@Transactional
 	public boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional) {
-		if(programaInstitucionalRepositorio.buscarProgramaInstitucional(programaInstitucional.getClave()) == null){
+		if (programaInstitucionalRepositorio.buscarProgramaInstitucional(programaInstitucional.getClave()) == null) {
 			return programaInstitucionalRepositorio.altaProgramaInstitucional(programaInstitucional);
-		}else{
+		} else {
 			return false;
 		}
 	}
@@ -30,7 +30,7 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
 	public ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional) {
 		return programaInstitucionalRepositorio.buscarProgramaInstitucional(idProgramaInstitucional);
 	}
-	
+
 	@Override
 	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
 	public List<ProgramaInstitucional> obtenerProgramasInstitucionales() {
@@ -39,8 +39,23 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
 
 	@Override
 	@Transactional
-	public boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional) {
-		return programaInstitucionalRepositorio.actualizarProgramaInstitucional(programaInstitucional);
+	public boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional) {	
+		final ProgramaInstitucional programaInstitucionalActual = programaInstitucionalRepositorio
+				.buscarProgramaInstitucional(programaInstitucional.getIdProgramaInstitucional());
+		final ProgramaInstitucional programaInstitucionalCoincidente = programaInstitucionalRepositorio
+				.buscarProgramaInstitucional(programaInstitucional.getClave());
+		if (programaInstitucionalActual != null) {
+			if ((programaInstitucionalCoincidente != null) && programaInstitucionalCoincidente
+					.getIdProgramaInstitucional() == programaInstitucionalActual.getIdProgramaInstitucional()) {
+				return programaInstitucionalRepositorio.actualizarProgramaInstitucional(programaInstitucional);
+			} else if (programaInstitucionalCoincidente == null) {
+				return programaInstitucionalRepositorio.actualizarProgramaInstitucional(programaInstitucional);
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
 	}
 
 	@Override
@@ -54,6 +69,5 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
 	public long contarProgramasInstitucionales() {
 		return programaInstitucionalRepositorio.contarProgramasInstitucionales();
 	}
-
 
 }
