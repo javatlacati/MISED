@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gob.senado.ppf.sed.configuracion;
 
 import java.io.IOException;
@@ -20,16 +15,16 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class FiltroXSS implements Filter {
 
-    private FilterConfig filterConfig;
+    private FilterConfig filtroXss;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        this.filterConfig = filterConfig;
+        this.filtroXss = filterConfig;
     }
 
     @Override
     public void destroy() {
-        this.filterConfig = null;
+        this.filtroXss = null;
     }
 
     @Override

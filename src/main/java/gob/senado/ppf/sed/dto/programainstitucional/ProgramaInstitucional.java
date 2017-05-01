@@ -3,7 +3,6 @@ package gob.senado.ppf.sed.dto.programainstitucional;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.web.util.HtmlUtils;
 import java.io.Serializable;
 
 public class ProgramaInstitucional implements Serializable, Formateable {
@@ -28,7 +27,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
 	}
 
 	public void setClave(String clave) {
-		this.clave = HtmlUtils.htmlEscape(clave, Formateable.UTF_8);
+		this.clave = clave;
 	}
 
 	public String getNombre() {
@@ -36,7 +35,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = HtmlUtils.htmlEscape(nombre, Formateable.UTF_8);
+		this.nombre = nombre;
 	}
 
 	public String getDescripcion() {
@@ -44,7 +43,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
 	}
 
 	public void setDescripcion(String descripcion) {
-		this.descripcion = HtmlUtils.htmlEscape(descripcion, Formateable.UTF_8);
+		this.descripcion = descripcion;
 	}
 
 	@Override

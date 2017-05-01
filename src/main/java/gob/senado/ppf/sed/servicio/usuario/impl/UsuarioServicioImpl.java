@@ -1,16 +1,16 @@
 package gob.senado.ppf.sed.servicio.usuario.impl;
 
-import gob.senado.ppf.sed.dto.usuario.ActividadExtemporanea;
 import gob.senado.ppf.sed.dto.usuario.Usuario;
 import gob.senado.ppf.sed.repositorio.usuario.UsuarioRepositorio;
 import gob.senado.ppf.sed.servicio.usuario.UsuarioServicio;
-import gob.senado.ppf.sed.utilidades.*;
+import gob.senado.ppf.sed.utilidades.Activacion;
+import gob.senado.ppf.sed.utilidades.Fecha;
+import gob.senado.ppf.sed.utilidades.Hora;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -33,13 +33,6 @@ public class UsuarioServicioImpl implements UsuarioServicio {
             usuario.setClaveAcceso(passwordEncoder.encode(usuario.getClaveAcceso()));
             usuario.setFechaRegistro(Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
             usuario.setHoraRegistro(Hora.FORMATO_HORA_PRESENTACION.format(LocalTime.now()));
-            ActividadExtemporanea ae = Suppliers.ACTIVIDAD_EXTEMPORANEA.get();
-            ae.setFasePlaneacion(false);
-            ae.setFaseCalendarizacion(false);
-            ae.setFasePrimerCuatrimestre(false);
-            ae.setFaseSegundoCuatrimestre(false);
-            ae.setFaseTercerCuatrimestre(false);
-            usuario.setActividadExtemporanea(ae);
             return usuarioRepositorio.altaUsuario(usuario);
         } else {
             return false;
@@ -80,15 +73,6 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     @Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
     public Usuario buscarUsuario(String identidad) {
         return usuarioRepositorio.buscarUsuario(identidad);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    @Transactional
-    public boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion) {
-        return usuarioRepositorio.aplicarActividadExtemporanea(idUsuario, fase, activacion);
     }
 
     /**

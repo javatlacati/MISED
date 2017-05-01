@@ -44,8 +44,6 @@ public interface UsuarioServicio {
      */
     Usuario buscarUsuario(String identidad);
 
-    boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
-
     boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);
 
     boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);

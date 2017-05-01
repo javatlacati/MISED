@@ -45,11 +45,19 @@ INNER JOIN ACTIVIDAD_EXTEMPORANEA AE
 ON U.ID_USUARIO = AE.ID_USUARIO;
 
 INSERT INTO USUARIO VALUES (1, 19, 'benjamin.ocotzi', '$2a$04$/pjtunFYAIzCmjBennRE7OsmTaTTytUKtccJR.iM/tSaCdOTDO4O.', 
-'Benjamin Natanael', 'Ocotzi', 'Alvarez', 'Proveedor de Soporte', 'benist.sci@gmail.com', '', 'ROLE_ADMINISTRADOR', 'martes 11 de abril de 2017', '21:57:35.42');
+'Benjamin Natanael', 'Ocotzi', 'Alvarez', 'Proveedor de Soporte', 'benist.sci@gmail.com', '', 'ROLE_ADMINISTRADOR', 
+'martes 11 de abril de 2017', '21:57:35.42');
 
 INSERT INTO USUARIO_PERMISO VALUES(1, 1, true, true, true, true, true);
 
 INSERT INTO ACTIVIDAD_EXTEMPORANEA VALUES(1, 1, false, false, false, false, false);
+
+
+INSERT INTO USUARIO VALUES (2, 18, 'ruslan.lopez', '$2a$10$8UnZCnafgrZoSC/WARL5u.usGM0O2MpyGBPg6/hR7LuMKXTslYZtq',
+'Ruslan', 'López', 'López', 'Tester y Diseñador Grafico', 'rustland@gmail.com','','ROLE_ADMINISTRADOR', 
+'martes 11 de abril de 2017', '21:57:35.42');
+INSERT INTO USUARIO_PERMISO VALUES(2, 2, true, true, true, true, true);
+INSERT INTO ACTIVIDAD_EXTEMPORANEA VALUES(2, 2, false, false, false, false, false);
 
 
 

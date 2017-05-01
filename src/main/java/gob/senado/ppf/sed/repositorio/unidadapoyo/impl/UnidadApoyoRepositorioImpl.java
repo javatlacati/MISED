@@ -2,6 +2,9 @@ package gob.senado.ppf.sed.repositorio.unidadapoyo.impl;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
 import gob.senado.ppf.sed.repositorio.unidadapoyo.UnidadApoyoRepositorio;
@@ -37,13 +40,18 @@ public class UnidadApoyoRepositorioImpl implements UnidadApoyoRepositorio {
 		return jdbcTemplate.queryForObject("SELECT * FROM UNIDAD_APOYO WHERE nombre = ?",
 				new Object[] { nombreUnidadApoyo }, RowMappers.ROW_MAPPER_UNIDAD_APOYO);
 	}
+	
+	@Override
+	public List<UnidadApoyo> obtenerUnidadesApoyo() {
+		return jdbcTemplate.query("SELECT * FROM UNIDAD_APOYO", RowMappers.ROW_MAPPER_UNIDAD_APOYO);
+	}
 
 	@Override
 	public boolean actualizarUnidadApoyo(UnidadApoyo ua) {
 		return jdbcTemplate.update(
 				"UPDATE unidad_apoyo SET id_organo_direccion_estrategica = ?, nombre = ?, proposito = ? WHERE id_unidad_apoyo = ?",
 				new Object[] { ua.getIdOrganoDireccionEstrategica(), ua.getNombre(), ua.getProposito(),
-						ua.getIdUnidadaApoyo() }) > 0;
+						ua.getIdUnidadApoyo() }) > 0;
 	}
 
 	@Override

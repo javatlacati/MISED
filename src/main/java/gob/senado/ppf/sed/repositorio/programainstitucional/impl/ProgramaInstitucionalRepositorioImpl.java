@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 import gob.senado.ppf.sed.repositorio.programainstitucional.ProgramaInstitucionalRepositorio;
@@ -72,5 +73,10 @@ public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucion
 	@Override
 	public long contarProgramasInstitucionales() {
 		return jdbcTemplate.queryForObject("SELECT total_conteo FROM CONTAR_PROGRAMAS_INSTITUCIONALES", Long.class);
+	}
+	
+	public static void main(String[] args) {
+		 BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		 System.out.println(encoder.encode("1234"));
 	}
 }

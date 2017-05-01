@@ -36,7 +36,7 @@ public class OrganoDireccionEstrategica implements Serializable, Formateable {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = HtmlUtils.htmlEscape(nombre, Formateable.UTF_8);
+		this.nombre = nombre;
 	}
 
 	public String getDescripcion() {
@@ -44,7 +44,7 @@ public class OrganoDireccionEstrategica implements Serializable, Formateable {
 	}
 
 	public void setDescripcion(String descripcion) {
-		this.descripcion = HtmlUtils.htmlEscape(descripcion, Formateable.UTF_8);
+		this.descripcion = descripcion;
 	}
 
 	@Override

@@ -3,23 +3,22 @@ package gob.senado.ppf.sed.dto.unidadapoyo;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.web.util.HtmlUtils;
 import java.io.Serializable;
 
 public class UnidadApoyo implements Serializable, Formateable {
 
 	private static final long serialVersionUID = 1L;
-	private long idUnidadaApoyo;
+	private long idUnidadApoyo;
 	private long idOrganoDireccionEstrategica;
 	private String nombre;
 	private String proposito;
 
-	public long getIdUnidadaApoyo() {
-		return idUnidadaApoyo;
+	public long getIdUnidadApoyo() {
+		return idUnidadApoyo;
 	}
 
-	public void setIdUnidadaApoyo(long idUnidadaApoyo) {
-		this.idUnidadaApoyo = idUnidadaApoyo;
+	public void setIdUnidadApoyo(long idUnidadApoyo) {
+		this.idUnidadApoyo = idUnidadApoyo;
 	}
 
 	public long getIdOrganoDireccionEstrategica() {
@@ -35,7 +34,7 @@ public class UnidadApoyo implements Serializable, Formateable {
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = HtmlUtils.htmlEscape(nombre, Formateable.UTF_8);
+		this.nombre = nombre;
 	}
 
 	public String getProposito() {
@@ -43,7 +42,7 @@ public class UnidadApoyo implements Serializable, Formateable {
 	}
 
 	public void setProposito(String proposito) {
-		this.proposito = HtmlUtils.htmlEscape(proposito, Formateable.UTF_8);
+		this.proposito = proposito;
 	}
 
 	@Override
