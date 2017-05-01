@@ -130,7 +130,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append("SELECT * FROM USUARIO U INNER JOIN USUARIO_PERMISO UP ON U.ID_USUARIO = UP.ID_USUARIO ").append(
-					"INNER JOIN ACTIVIDAD_EXTEMPORANEA AE ON U.ID_USUARIO = AE.ID_USUARIO WHERE U.IDENTIDAD = ?");
+					"INNER JOIN ACTIVIDAD_EXTEMPORANEA AE ON U.ID_USUARIO = AE.ID_USUARIO WHERE U.IDENTIDAD = \'?\'");
 			return jdbcTemplate.queryForObject(sql.toString(), new Object[] { identidad }, RowMappers.ROW_MAPPER_USUARIO);
 		} catch (EmptyResultDataAccessException erdae) {
 			return null;
