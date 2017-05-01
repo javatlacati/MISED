@@ -24,49 +24,60 @@ import java.time.LocalDate;
 
 @Controller(value = "sesionControlador")
 public class SesionControladorImpl implements SesionControlador {
-	
-	@Autowired
-	private UsuarioServicio usuarioServicio;
-	
-	@Autowired
-	private UnidadApoyoServicio unidadApoyoServicio;
-	
-	@Autowired
-	private OrganoDireccionEstrategicaServicio organoDireccionEstrategicaServicio;
-	
-	@Autowired
-	private ProgramaInstitucionalServicio programaInstitucionalServicio;
-	
 
-	@Override
-	@GetMapping(value = "/inicio-sesion")
-	public ModelAndView vistaInicioSesion(@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout) {
-		ModelAndView model = new ModelAndView("login/login");
-		if (error != null) {
-			model.addObject("error", "Has escrito mal tu usuario o contrase\u00f1a.");
-		}
-		if (logout != null) {
-			model.addObject("message", "Cierre de sesi\u00f3n exitosamente.");
-		}
-		return model;
-	}
+    /**
+     * Servicio de administración de usuarios.
+     */
+    @Autowired
+    private UsuarioServicio usuarioServicio;
 
-	@Override
-	@GetMapping(value = {"/inicio.htm" ,"/"})
-	public ModelAndView vistaMenuPrincipal(HttpSession sesion, HttpServletResponse response, HttpServletRequest request, Principal principal) {
-		ModelAndView mv = new ModelAndView("login/inicio");
-		HttpSession session = request.getSession();
-		session.setMaxInactiveInterval(1800);
-		Usuario u = usuarioServicio.buscarUsuario(principal.getName());
-		UnidadApoyo ua = unidadApoyoServicio.buscarUnidadApoyo(u.getIdUnidadApoyo());
-		OrganoDireccionEstrategica ode = organoDireccionEstrategicaServicio.buscarOrganoDireccionEstrategica(ua.getIdOrganoDireccionEstrategica());
-		ProgramaInstitucional pi = programaInstitucionalServicio.buscarProgramaInstitucional(ode.getIdProgramaInstitucional());
-		mv.addObject("programaInstitucional", pi.getClave()+" "+pi.getNombre());
-		mv.addObject("organoDireccionEstrategica", ode.getNombre());
-		mv.addObject("unidadApoyo", ua.getNombre());
-		mv.addObject("fechaActual", Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
-		mv.addObject("nombreCompleto", u.getNombre()+" "+u.getApellidoPaterno()+" "+u.getApellidoMaterno());
-		return mv; 
-	}
+    /**
+     * Servicio de administración de unidades de apoyo.
+     */
+    @Autowired
+    private UnidadApoyoServicio unidadApoyoServicio;
+
+    /**
+     * Servicio de administración de órganos de dirección estratégica.
+     */
+    @Autowired
+    private OrganoDireccionEstrategicaServicio organoDireccionEstrategicaServicio;
+
+    /**
+     * Servicio de administración de programas institucionales.
+     */
+    @Autowired
+    private ProgramaInstitucionalServicio programaInstitucionalServicio;
+
+    @Override
+    @GetMapping(value = "/inicio-sesion")
+    public ModelAndView vistaInicioSesion(@RequestParam(value = "error", required = false) String error,
+            @RequestParam(value = "logout", required = false) String logout) {
+        ModelAndView model = new ModelAndView("login/login");
+        if (error != null) {
+            model.addObject("error", "Has escrito mal tu usuario o contrase\u00f1a.");
+        }
+        if (logout != null) {
+            model.addObject("message", "Cierre de sesi\u00f3n exitosamente.");
+        }
+        return model;
+    }
+
+    @Override
+    @GetMapping(value = {"/inicio.htm", "/"})
+    public ModelAndView vistaMenuPrincipal(HttpSession sesion, HttpServletResponse response, HttpServletRequest request, Principal principal) {
+        ModelAndView mv = new ModelAndView("login/inicio");
+        HttpSession session = request.getSession();
+        session.setMaxInactiveInterval(1800);
+        Usuario u = usuarioServicio.buscarUsuario(principal.getName());
+        UnidadApoyo ua = unidadApoyoServicio.buscarUnidadApoyo(u.getIdUnidadApoyo());
+        OrganoDireccionEstrategica ode = organoDireccionEstrategicaServicio.buscarOrganoDireccionEstrategica(ua.getIdOrganoDireccionEstrategica());
+        ProgramaInstitucional pi = programaInstitucionalServicio.buscarProgramaInstitucional(ode.getIdProgramaInstitucional());
+        mv.addObject("programaInstitucional", pi.getClave() + " " + pi.getNombre());
+        mv.addObject("organoDireccionEstrategica", ode.getNombre());
+        mv.addObject("unidadApoyo", ua.getNombre());
+        mv.addObject("fechaActual", Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
+        mv.addObject("nombreCompleto", u.getNombre() + " " + u.getApellidoPaterno() + " " + u.getApellidoMaterno());
+        return mv;
+    }
 }
