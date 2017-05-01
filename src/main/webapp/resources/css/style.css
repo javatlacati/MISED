@@ -81,6 +81,8 @@ body {
   transform: scale(1);
   font-family: 'Material Icons';
   font-size: 24px;
+  font-size: 1.7142857142857142em;
+  font-size: 2.4rem;
   position: absolute;
   top: 18px;
   left: 20px;
@@ -150,8 +152,10 @@ body {
   top: 2px;
   right: 6px;
   font-size: 10px;
+  font-size: 0.7142857142857143em;
+  font-size: 1rem;
   line-height: 15px;
-  background-color: #000;
+  background-color: #000000;
   padding: 0 4px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -192,6 +196,8 @@ body {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
   margin-left: -10px;
@@ -200,38 +206,54 @@ body {
 .col-red .navbar .bars :hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-.col-pink .navbar .navbar-brand,
-.col-pink .navbar .navbar-brand:hover,
-.col-pink .navbar .navbar-brand:active,
-.col-pink .navbar .navbar-brand:focus {
+.col-pink .navbar .navbar-brand {
   color: #fff;
 }
-.col-pink .navbar .nav > li > a:hover,
-.col-pink .navbar .nav > li > a:focus,
-.col-pink .navbar .nav .open > a,
-.col-pink .navbar .nav .open > a:hover,
-.col-pink .navbar .nav .open > a:focus {
-  background-color: rgba(0, 0, 0, 0.05);
+.col-pink .navbar .navbar-brand :hover {
+  color: #fff;
+}
+.col-pink .navbar .navbar-brand :active {
+  color: #fff;
+}
+.col-pink .navbar .navbar-brand :focus {
+  color: #fff;
 }
 .col-pink .navbar .nav > li > a {
   color: #fff;
+}
+.col-pink .navbar .nav > li > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-pink .navbar .nav > li > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-pink .navbar .nav .open > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-pink .navbar .nav .open > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .col-pink .navbar .bars {
   float: left;
   padding: 10px 20px;
   font-size: 22px;
+  font-size: 1.5714285714285714em;
+  font-size: 2.2rem;
   color: #fff;
   margin-right: 10px;
   margin-left: -10px;
   margin-top: 4px;
 }
-.col-pink .navbar .bars:hover {
+.col-pink .navbar .bars :hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-.col-purple .navbar .navbar-brand,
-.col-purple .navbar .navbar-brand:hover,
-.col-purple .navbar .navbar-brand:active,
-.col-purple .navbar .navbar-brand:focus {
+.col-purple .navbar .navbar-brand :hover {
+  color: #fff;
+}
+.col-purple .navbar .navbar-brand :active {
+  color: #fff;
+}
+.col-purple .navbar .navbar-brand :focus {
   color: #fff;
 }
 .col-purple .navbar .nav > li > a:hover,
@@ -8209,6 +8231,7 @@ fieldset[disabled] .form-control {
 }
 .login-page .login-box a {
   font-size: 14px;
+  font-size: 1em;
   font-size: 1.4rem;
   text-decoration: none;
   color: #00bcd4;
@@ -8221,6 +8244,7 @@ fieldset[disabled] .form-control {
 }
 .login-page .login-box .logo a {
   font-size: 36px;
+  font-size: 2.5714285714285716em;
   font-size: 3.6rem;
   display: block;
   width: 100%;
@@ -8436,8 +8460,13 @@ fieldset[disabled] .form-control {
   -ms-box-shadow: none;
   box-shadow: none;
 }
-.dataTables_wrapper select:active,
-.dataTables_wrapper select:focus {
+.dataTables_wrapper select :active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+.dataTables_wrapper select :focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
@@ -8456,8 +8485,10 @@ fieldset[disabled] .form-control {
   font-size: 12px;
   border-bottom: 1px solid #ddd;
 }
-.dataTables_wrapper input[type="search"]:focus,
-.dataTables_wrapper input[type="search"]:active {
+.dataTables_wrapper input[type="search"] :focus {
+  border-bottom: 2px solid #1f91f3;
+}
+.dataTables_wrapper input[type="search"] :active {
   border-bottom: 2px solid #1f91f3;
 }
 .dataTables_wrapper .dt-buttons {
@@ -8480,7 +8511,7 @@ fieldset[disabled] .form-control {
   font-size: 13px;
   outline: none;
 }
-.dataTables_wrapper .dt-buttons a.dt-button:active {
+.dataTables_wrapper .dt-buttons a.dt-button :active {
   opacity: .8;
 }
 .lg-outer .lg-thumb-item,
