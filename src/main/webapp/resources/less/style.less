@@ -11,14 +11,20 @@ and open the template in the editor.
 /*@import url(../../../webapp/js/libs/materialize/css/materialize.min.css);*/
 @import url(materialize.css);
 
+//colores
+@negroobscuro: #000000;
+@grisobscuro: #555;
+@blanco: #fff;
+@grisclaro: #e9e9e9;
+
 @baseFontSize: 14; //px
 
 // mixins zone
 .fontsizepx2rem(@pxs) {
-  @remValue: @pxs/10;
-  @pxValue: @pxs;
-  font-size: ~"@{pxValue}px"; 
-  font-size: ~"@{remValue}rem";
+    @remValue: @pxs/10;
+    @pxValue: @pxs;
+    font-size: ~"@{pxValue}px"; 
+    font-size: ~"@{remValue}rem";
 }
 
 .navbar {
