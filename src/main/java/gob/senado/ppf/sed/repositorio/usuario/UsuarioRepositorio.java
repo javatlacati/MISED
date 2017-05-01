@@ -6,28 +6,28 @@ import gob.senado.ppf.sed.utilidades.Fase;
 
 public interface UsuarioRepositorio {
 
-	boolean altaUsuario(Usuario usuario);
+	public abstract boolean altaUsuario(Usuario usuario);
 
-	boolean actualizarUsuario(Usuario usuario);
+	public abstract boolean actualizarUsuario(Usuario usuario);
 
-	boolean bajaUsuario(long idUsuario);
+	public abstract boolean bajaUsuario(long idUsuario);
 
-	Usuario buscarUsuario(long idUsuario);
+	public abstract Usuario buscarUsuario(long idUsuario);
 
-	Usuario buscarUsuario(String identidad);
+	public abstract Usuario buscarUsuario(String identidad);
 
-	boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
+	public abstract boolean aplicarActividadExtemporanea(long idUsuario, Fase fase, Activacion activacion);
 	
-	boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);
+	public abstract boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion);
 	
-	boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);
+	public abstract boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso);
 
-	long contarUsuarios();
+	public abstract long contarUsuarios();
 
-	long contarUsuariosPorUnidadApoyo(long idUnidadApoyo);
+	public abstract long contarUsuariosPorUnidadApoyo(long idUnidadApoyo);
 
-	long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
+	public abstract long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 	
-	long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
+	public abstract long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
 
 }

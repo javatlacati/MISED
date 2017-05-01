@@ -1,5 +1,7 @@
 package gob.senado.ppf.sed.servicio.organodireccionestrategica.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -44,9 +46,30 @@ public class OrganoDireccionEstrategicaServicioImpl implements OrganoDireccionEs
 	}
 
 	@Override
+	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
+	public List<OrganoDireccionEstrategica> obtenerOrganosDireccionEstrategica() {
+		return organoDireccionEstrategicaRepositorio.obtenerOrganosDireccionEstrategica();
+	}
+
+	@Override
 	@Transactional
 	public boolean actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica ode) {
-		return organoDireccionEstrategicaRepositorio.altaOrganoDireccionEstrategica(ode);
+		final OrganoDireccionEstrategica odeActual = organoDireccionEstrategicaRepositorio
+				.buscarOrganoDireccionEstrategica(ode.getIdOrganoDireccionEstrategica());
+		final OrganoDireccionEstrategica odeCoincidente = organoDireccionEstrategicaRepositorio
+				.buscarOrganoDireccionEstrategica(ode.getNombre());
+		if (odeActual != null) {
+			if ((odeCoincidente != null) && odeCoincidente.getIdOrganoDireccionEstrategica() == odeActual
+					.getIdOrganoDireccionEstrategica()) {
+				return organoDireccionEstrategicaRepositorio.actualizarOrganoDireccionEstrategica(ode);
+			}else if(odeCoincidente == null){
+				return organoDireccionEstrategicaRepositorio.actualizarOrganoDireccionEstrategica(ode);
+			}else{
+				return false;
+			}
+		} else {
+			return false;
+		}
 	}
 
 	@Override

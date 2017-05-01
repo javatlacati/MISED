@@ -75,7 +75,7 @@ public interface UsuarioServicio {
      * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a un Programa Institucional especificado.
      *
      * @param idProgramaInstitucional identificador &uacute;nico del Programa Institucional al que los usuarios que se desean buscar petenecen
-     * @see gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional
+     * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
      */
     long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional);
 

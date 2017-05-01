@@ -1,29 +1,54 @@
 package gob.senado.ppf.sed.dto.organodireccionestrategica;
 
 import gob.senado.ppf.sed.utilidades.Formateable;
-import lombok.*;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
+import org.springframework.web.util.HtmlUtils;
 import java.io.Serializable;
 
-@Getter
-@Setter
-@EqualsAndHashCode(of = {"nombre"})
-@NoArgsConstructor
-@AllArgsConstructor(staticName = "from")
 public class OrganoDireccionEstrategica implements Serializable, Formateable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private long idOrganoDireccionEstrategica;
-    private long idProgramaInstitucional;
-    private String nombre;
-    private String descripcion;
+	private long idOrganoDireccionEstrategica;
+	private long idProgramaInstitucional;
+	private String nombre;
+	private String descripcion;
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
+	public long getIdOrganoDireccionEstrategica() {
+		return idOrganoDireccionEstrategica;
+	}
+
+	public void setIdOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
+		this.idOrganoDireccionEstrategica = idOrganoDireccionEstrategica;
+	}
+
+	public long getIdProgramaInstitucional() {
+		return idProgramaInstitucional;
+	}
+
+	public void setIdProgramaInstitucional(long idProgramaInstitucional) {
+		this.idProgramaInstitucional = idProgramaInstitucional;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = HtmlUtils.htmlEscape(nombre, Formateable.UTF_8);
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = HtmlUtils.htmlEscape(descripcion, Formateable.UTF_8);
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+	}
 }

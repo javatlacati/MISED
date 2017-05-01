@@ -1,5 +1,6 @@
 package gob.senado.ppf.sed.repositorio.organodireccionestrategica.impl;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -38,11 +39,16 @@ public class OrganoDireccionEstrategicaRepositorioImpl implements OrganoDireccio
 		return jdbcTemplate.queryForObject("SELECT * FROM ORGANO_DIRECCION_ESTRATEGICA WHERE nombre = ?",
 				new Object[] { nombre }, RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
 	}
+	
+	@Override
+	public List<OrganoDireccionEstrategica> obtenerOrganosDireccionEstrategica() {
+		return jdbcTemplate.query("SELECT * FROM ORGANO_DIRECCION_ESTRATEGICA", RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
+	}
 
 	@Override
 	public boolean actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica ode) {
 		return jdbcTemplate.update(
-				"UPDATE ORGANO_DIRECCION_ESTRATEGICA SET id_programa_institucional=?, nombre=?, descripcion WHERE id_organo_direccion_estrategica = ?",
+				"UPDATE ORGANO_DIRECCION_ESTRATEGICA SET id_programa_institucional = ?, nombre = ?, descripcion = ? WHERE id_organo_direccion_estrategica = ?",
 				new Object[] { ode.getIdProgramaInstitucional(), ode.getNombre(), ode.getDescripcion(),
 						ode.getIdOrganoDireccionEstrategica() }) > 0;
 	}

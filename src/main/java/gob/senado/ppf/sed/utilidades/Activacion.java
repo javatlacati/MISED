@@ -1,11 +1,9 @@
 package gob.senado.ppf.sed.utilidades;
 
-import lombok.Getter;
 
 /**
  * Fases en la activaci&oacute;n de un usuario.
  */
-@Getter
 public enum Activacion {
 
     ACTIVADO(true, "activado"),
@@ -18,6 +16,14 @@ public enum Activacion {
         this.interruptor = interruptor;
         this.tipo = activacion;
     }
+    
+    public String getTipo() {
+		return tipo;
+	}
+    
+    public boolean getEstadoInterruptor() {
+		return interruptor;
+	}
 
     @Override
     public String toString() {

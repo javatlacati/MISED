@@ -1,70 +1,99 @@
 package gob.senado.ppf.sed.dto.usuario;
 
 import gob.senado.ppf.sed.utilidades.Formateable;
-import lombok.*;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
 import java.io.Serializable;
 
-@Getter
-@Setter
-@EqualsAndHashCode(of = {"idUsuario", "idPermiso"})
-@NoArgsConstructor
-@AllArgsConstructor(staticName = "from")
 public class UsuarioPermiso implements Serializable, Formateable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private long idPermiso;
-    /**
-     * Identificador &uacute;nico de cada usuario.
-     */
-    private long idUsuario;
-    /**
-     * Permiso de consulta.
-     */
-    private boolean puedeConsultar;
-    /**
-     * Permiso de modificaci&oacute;n.
-     */
-    private boolean puedeActualizar;
-    /**
-     * Permiso de inserci&oacute;n de nuevos registros.
-     */
-    private boolean puedeAgregar;
-    /**
-     * Permiso de eliminaci&oacute;n..
-     */
-    private boolean puedeBorrar;
-    /**
-     * Permiso de Autentificaci&oacute;n.
-     */
-    private boolean puedeAutenticarse;
+	private long idPermiso;
+	/**
+	 * Identificador &uacute;nico de cada usuario.
+	 */
+	private long idUsuario;
+	/**
+	 * Permiso de consulta.
+	 */
+	private boolean puedeConsultar;
+	/**
+	 * Permiso de modificaci&oacute;n.
+	 */
+	private boolean puedeActualizar;
+	/**
+	 * Permiso de inserci&oacute;n de nuevos registros.
+	 */
+	private boolean puedeAgregar;
+	/**
+	 * Permiso de eliminaci&oacute;n..
+	 */
+	private boolean puedeBorrar;
+	/**
+	 * Permiso de Autentificaci&oacute;n.
+	 */
+	private boolean puedeAutenticarse;
 
-    public boolean puedeConsultar() {
-        return puedeConsultar;
-    }
+	public long getIdPermiso() {
+		return idPermiso;
+	}
 
-    public boolean puedeActualizar() {
-        return puedeActualizar;
-    }
+	public void setIdPermiso(long idPermiso) {
+		this.idPermiso = idPermiso;
+	}
 
-    public boolean puedeAgregar() {
-        return puedeAgregar;
-    }
+	public long getIdUsuario() {
+		return idUsuario;
+	}
 
-    public boolean puedeBorrar() {
-        return puedeBorrar;
-    }
+	public void setIdUsuario(long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
-    public boolean puedeAutenticarse() {
-        return puedeAutenticarse;
-    }
+	public void setPuedeConsultar(boolean puedeConsultar) {
+		this.puedeConsultar = puedeConsultar;
+	}
 
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-    }
+	public void setPuedeActualizar(boolean puedeActualizar) {
+		this.puedeActualizar = puedeActualizar;
+	}
+
+	public void setPuedeAgregar(boolean puedeAgregar) {
+		this.puedeAgregar = puedeAgregar;
+	}
+
+	public void setPuedeBorrar(boolean puedeBorrar) {
+		this.puedeBorrar = puedeBorrar;
+	}
+
+	public void setPuedeAutenticarse(boolean puedeAutenticarse) {
+		this.puedeAutenticarse = puedeAutenticarse;
+	}
+
+	public boolean puedeConsultar() {
+		return puedeConsultar;
+	}
+
+	public boolean puedeActualizar() {
+		return puedeActualizar;
+	}
+
+	public boolean puedeAgregar() {
+		return puedeAgregar;
+	}
+
+	public boolean puedeBorrar() {
+		return puedeBorrar;
+	}
+
+	public boolean puedeAutenticarse() {
+		return puedeAutenticarse;
+	}
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+	}
 
 }
