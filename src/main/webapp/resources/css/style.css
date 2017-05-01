@@ -54,7 +54,11 @@ body {
   text-decoration: none;
   color: #fff;
   width: 20px;
+  width: 1.4285714285714286em;
+  width: 2rem;
   height: 20px;
+  height: 1.4285714285714286em;
+  height: 2rem;
   margin-top: -4px;
   margin-right: 17px;
 }
@@ -62,6 +66,8 @@ body {
   content: '';
   font-family: 'Material Icons';
   font-size: 26px;
+  font-size: 1.8571428571428572em;
+  font-size: 2.6rem;
 }
 .navbar .navbar-collapse.in {
   overflow: visible;
@@ -85,7 +91,11 @@ body {
   font-size: 2.4rem;
   position: absolute;
   top: 18px;
+  top: 1.2857142857142858em;
+  top: 1.8rem;
   left: 20px;
+  left: 1.4285714285714286em;
+  left: 2rem;
   margin-right: 10px;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -101,9 +111,15 @@ body {
   content: '';
   font-family: 'Material Icons';
   font-size: 24px;
+  font-size: 1.7142857142857142em;
+  font-size: 2.4rem;
   position: absolute;
   top: 18px;
+  top: 1.2857142857142858em;
+  top: 1.8rem;
   left: 20px;
+  left: 1.4285714285714286em;
+  left: 2rem;
   margin-right: 10px;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -333,15 +349,23 @@ body {
 .col-indigo .navbar .navbar-brand:focus {
   color: #fff;
 }
-.col-indigo .navbar .nav > li > a:hover,
-.col-indigo .navbar .nav > li > a:focus,
-.col-indigo .navbar .nav .open > a,
-.col-indigo .navbar .nav .open > a:hover,
-.col-indigo .navbar .nav .open > a:focus {
-  background-color: rgba(0, 0, 0, 0.05);
-}
 .col-indigo .navbar .nav > li > a {
   color: #fff;
+}
+.col-indigo .navbar .nav > li > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-indigo .navbar .nav > li > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-indigo .navbar .nav .open > a {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-indigo .navbar .nav .open > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-indigo .navbar .nav .open > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .col-indigo .navbar .bars {
   float: left;
@@ -352,7 +376,7 @@ body {
   margin-left: -10px;
   margin-top: 4px;
 }
-.col-indigo .navbar .bars:hover {
+.col-indigo .navbar .bars :hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
 .col-blue .navbar .navbar-brand,
