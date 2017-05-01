@@ -20,7 +20,7 @@ and open the template in the editor.
 @baseFontSize: 14; //px
 
 // mixins zone
-.fontsizepx2rem(@pxs) {
+.fontsizepx(@pxs) {
     @remValue: @pxs/10;
     @pxValue: @pxs;
     font-size: ~"@{pxValue}px"; 
@@ -185,34 +185,58 @@ and open the template in the editor.
     border-radius: 3px;
 }
 
-.col-red .navbar .navbar-brand, .col-red .navbar .navbar-brand:hover,
-.col-red .navbar .navbar-brand:active, .col-red .navbar .navbar-brand:focus
-{
-    color: #fff;
-}
 
-.col-red .navbar .nav>li>a:hover, .col-red .navbar .nav>li>a:focus,
-.col-red .navbar .nav .open>a, .col-red .navbar .nav .open>a:hover,
-.col-red .navbar .nav .open>a:focus {
-    background-color: rgba(0, 0, 0, .05);
-}
-
-.col-red .navbar .nav>li>a {
-    color: #fff;
-}
-
-.col-red .navbar .bars {
-    float: left;
-    padding: 10px 20px;
-    font-size: 22px;
-    color: #fff;
-    margin-right: 10px;
-    margin-left: -10px;
-    margin-top: 4px;
-}
-
-.col-red .navbar .bars:hover {
-    background-color: rgba(0, 0, 0, .08);
+.col-red{
+    .navbar {
+        .navbar-brand{
+            color: @blanco;
+            :hover{
+                color: @blanco;
+            }
+            :active{
+                color: @blanco;
+            }
+            :focus{
+                color: @blanco;
+            }
+        }
+        .nav{
+            >li{
+                >a{
+                    color: @blanco;
+                    :hover{
+                        background-color: rgba(0, 0, 0, .05);
+                    }
+                    :focus{
+                        background-color: rgba(0, 0, 0, .05);
+                    }
+                }
+            }
+            .open{
+                >a{
+                    background-color: rgba(0, 0, 0, .05);
+                    :hover{
+                        background-color: rgba(0, 0, 0, .05);
+                    }
+                    :focus{
+                        background-color: rgba(0, 0, 0, .05);
+                    }
+                }
+            }
+        }
+        .bars {
+            float: left;
+            padding: 10px 20px;
+            font-size: 22px;
+            color: #fff;
+            margin-right: 10px;
+            margin-left: -10px;
+            margin-top: 4px;
+            :hover {
+                background-color: rgba(0, 0, 0, .08);
+            }
+        }
+    }
 }
 
 .col-pink .navbar .navbar-brand, .col-pink .navbar .navbar-brand:hover,
@@ -9771,7 +9795,7 @@ section.content {
         .logo {
             margin-bottom: 20px;
             a {
-                font-size: 36px;
+                .fontsizepx(36);
                 display: block;
                 width: 100%;
                 text-align: center;

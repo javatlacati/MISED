@@ -144,21 +144,35 @@ and open the template in the editor.
   -ms-border-radius: 3px;
   border-radius: 3px;
 }
-.col-red .navbar .navbar-brand,
-.col-red .navbar .navbar-brand:hover,
-.col-red .navbar .navbar-brand:active,
-.col-red .navbar .navbar-brand:focus {
+.col-red .navbar .navbar-brand {
   color: #fff;
 }
-.col-red .navbar .nav > li > a:hover,
-.col-red .navbar .nav > li > a:focus,
-.col-red .navbar .nav .open > a,
-.col-red .navbar .nav .open > a:hover,
-.col-red .navbar .nav .open > a:focus {
-  background-color: rgba(0, 0, 0, 0.05);
+.col-red .navbar .navbar-brand :hover {
+  color: #fff;
+}
+.col-red .navbar .navbar-brand :active {
+  color: #fff;
+}
+.col-red .navbar .navbar-brand :focus {
+  color: #fff;
 }
 .col-red .navbar .nav > li > a {
   color: #fff;
+}
+.col-red .navbar .nav > li > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-red .navbar .nav > li > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-red .navbar .nav .open > a {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-red .navbar .nav .open > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.col-red .navbar .nav .open > a :focus {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .col-red .navbar .bars {
   float: left;
@@ -169,7 +183,7 @@ and open the template in the editor.
   margin-left: -10px;
   margin-top: 4px;
 }
-.col-red .navbar .bars:hover {
+.col-red .navbar .bars :hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
 .col-pink .navbar .navbar-brand,
@@ -8175,6 +8189,7 @@ fieldset[disabled] .form-control {
 }
 .login-page .login-box .logo a {
   font-size: 36px;
+  font-size: 3.6rem;
   display: block;
   width: 100%;
   text-align: center;
