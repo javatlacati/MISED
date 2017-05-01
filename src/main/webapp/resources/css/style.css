@@ -9,6 +9,22 @@ and open the template in the editor.
 */
 /*@import url(../../../webapp/js/libs/materialize/css/materialize.min.css);*/
 @import url(materialize.css);
+body {
+  background-image: url(../images/fondo3.jpg);
+}
+body :before {
+  content: "";
+  display: block;
+  position: fixed;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.02);
+}
 .navbar {
   font-family: "Roboto", sans-serif;
   -webkit-border-radius: 0;
@@ -5433,7 +5449,7 @@ section.content {
   -o-transition: 0.25s ease-in;
   -webkit-transition: 0.25s ease-in;
   transition: 0.25s ease-in;
-  border-bottom: 2px solid #1f91f3;
+  border-bottom: 2px solid #d4dbd5;
 }
 .input-group .form-line + .input-group-addon {
   padding-right: 0;
@@ -8181,11 +8197,15 @@ fieldset[disabled] .form-control {
 }
 .login-page .login-box a {
   font-size: 14px;
+  font-size: 1.4rem;
   text-decoration: none;
   color: #00bcd4;
 }
 .login-page .login-box .logo {
   margin-bottom: 20px;
+  background-color: #7D8F81;
+  border-radius: 2%;
+  padding-bottom: 12px;
 }
 .login-page .login-box .logo a {
   font-size: 36px;
