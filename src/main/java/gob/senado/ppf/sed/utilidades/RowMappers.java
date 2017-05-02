@@ -5,7 +5,6 @@ import org.springframework.jdbc.core.RowMapper;
 import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
-import gob.senado.ppf.sed.dto.usuario.ActividadExtemporanea;
 import gob.senado.ppf.sed.dto.usuario.Usuario;
 import gob.senado.ppf.sed.dto.usuario.UsuarioPermiso;
 

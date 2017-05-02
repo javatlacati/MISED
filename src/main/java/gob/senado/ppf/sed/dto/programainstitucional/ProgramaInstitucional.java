@@ -3,9 +3,12 @@ package gob.senado.ppf.sed.dto.programainstitucional;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
 import java.io.Serializable;
 
+/**
+ * 
+ * @author Benjamin Natanael Ocotzi Alvarez
+ */
 public class ProgramaInstitucional implements Serializable, Formateable {
 
     private static final long serialVersionUID = 1L;
