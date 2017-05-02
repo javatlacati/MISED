@@ -11,17 +11,11 @@ and open the template in the editor.
 /*@import url(../../../webapp/js/libs/materialize/css/materialize.min.css);*/
 @import url(materialize.css);
 
-body{
-    background-image: url(../images/fondo3.jpg);
-    background-position: 0px 0px;
-    background-repeat: repeat-x;
-    animation: animatedBackground 65s linear infinite;
-}
-
 @keyframes animatedBackground {
     from { background-position: 0 0; }
     to { background-position: 100% 0; }
 }
+
 
 //colores
 @negroobscuro: #000000;
@@ -8665,51 +8659,48 @@ section.content {
     section.content {
         margin-left: 15px;
     }
-    .bars:after{
-        font-family: 'Material Icons';
-        font-size: 24px;
-        position: absolute;
-        top: 18px;
-        left: 20px;
-        .marginRightPx(10);
-        -moz-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        -moz-transition: all .3s;
-        -o-transition: all .3s;
-        -webkit-transition: all .3s;
-        transition: all .3s;
-        content: '';
-        -moz-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-        -webkit-transform: scale(0);
-        transform: scale(0);
-    }
-    .bars:before {
-        font-family: 'Material Icons';
-        font-size: 24px;
-        position: absolute;
-        top: 18px;
-        left: 20px;
-        .marginRightPx(10);
-        -moz-transform: scale(0);
-        -ms-transform: scale(0);
-        -o-transform: scale(0);
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        -moz-transition: all .3s;
-        -o-transition: all .3s;
-        -webkit-transition: all .3s;
-        transition: all .3s;
-        content: '';
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-        -webkit-transform: scale(1);
-        transform: scale(1);
+    .bars{
+        :after{
+            font-family: 'Material Icons';
+            font-size: 24px;
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            .marginRightPx(10);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -moz-transition: all .3s;
+            -o-transition: all .3s;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            content: '';
+        }
+        :before {
+            font-family: 'Material Icons';
+            font-size: 24px;
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            .marginRightPx(10);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -moz-transition: all .3s;
+            -o-transition: all .3s;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            content: '';
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
     }
     .navbar-brand {
         margin-left: 30px;
@@ -9897,6 +9888,9 @@ section.content {
 /**css espec�fico apra la p�gina de login*/
 .login-page {
     background-image: url(../images/fondo3.jpg);
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    animation: animatedBackground 65s linear infinite;
     :before{
         content:"";
         display:block;
