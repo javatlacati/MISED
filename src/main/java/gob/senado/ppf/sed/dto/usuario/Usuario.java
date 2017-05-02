@@ -3,201 +3,262 @@ package gob.senado.ppf.sed.dto.usuario;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.io.Serializable;
 import java.util.List;
 
+// Person person = Person.from(123123L,123123L,"ssdfsdf","asd");
 public class Usuario implements Serializable, Formateable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * Identificador &uacute;nico de cada usuario.
-	 */
-	private long idUsuario;
-	/**
-	 * Unidad de apoyo a la que petenece este usuario.
-	 *
-	 * @see gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo
-	 */
-	private long idUnidadApoyo;
-	private String identidad;
-	private String claveAcceso;
-	/**
-	 * Nombre del usuario del sistema.
-	 */
-	private String nombre;
-	/**
-	 * Primer apellido del usuario del sistema.
-	 */
-	private String apellidoPaterno;
-	/**
-	 * Segundo apellido del usuario del sistema.
-	 */
-	private String apellidoMaterno;
-	/**
-	 * Nombre del puesto laboral que ocupa.
-	 */
-	private String puestoLaboral;
-	/**
-	 * Direcci&oacute;n de correo electr&oacute;nico del usuario. Se espera que
-	 * sea un coreo elect[onico institucional.
-	 */
-	private String correoElectronico;
-	/**
-	 * Numero de extensi&oacute;n.
-	 */
-	private String extensionTelefonica;
-	/**
-	 * Nombre del rol de usuario que ocupa en el sistema.
-	 */
-	private String rolDesignado;
+    /**
+     * Identificador &uacute;nico de cada usuario.
+     */
+    private long idUsuario;
+    /**
+     * Unidad de apoyo a la que petenece este usuario.
+     *
+     * @see gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo
+     */
+    private long idUnidadApoyo;
+    /**
+     * El nickname de usuario.
+     */
+    private String identidad;
+    /**
+     * Password del usuario.
+     */
+    private String claveAcceso;
+    /**
+     * Nombre del usuario del sistema.
+     */
+    private String nombre;
+    /**
+     * Primer apellido del usuario del sistema.
+     */
+    private String apellidoPaterno;
+    /**
+     * Segundo apellido del usuario del sistema.
+     */
+    private String apellidoMaterno;
+    /**
+     * Nombre del puesto laboral que ocupa.
+     */
+    private String puestoLaboral;
+    /**
+     * Direcci&oacute;n de correo electr&oacute;nico del usuario. Se espera que
+     * sea un coreo elect[onico institucional.
+     */
+    private String correoElectronico;
+    /**
+     * Numero de extensi&oacute;n.
+     */
+    private String extensionTelefonica;
+    /**
+     * Nombre del rol de usuario que ocupa en el sistema.
+     */
+    private String rolDesignado;
 
-	private String tipoUsuario;
+    private String tipoUsuario;
 
-	/**
-	 * Fecha en que se registr&oacute; en el sistema.
-	 */
-	private String fechaRegistro;
-	/**
-	 * Hora en que se rergistr&oacute; en el sistema.
-	 */
-	private String horaRegistro;
-	private UsuarioPermiso usuarioPermiso;
-	/**
-	 * M&oacute;dulos en los que tiene permisos el usuario actual.
-	 */
-	private List<UsuarioModulo> usuarioModulos;
+    /**
+     * Fecha en que se registr&oacute; en el sistema.
+     */
+    private String fechaRegistro;
+    /**
+     * Hora en que se rergistr&oacute; en el sistema.
+     */
+    private String horaRegistro;
+    /**
+     * Permisos parar el usuario actual.
+     */
+    private UsuarioPermiso usuarioPermiso;
+    /**
+     * M&oacute;dulos en los que tiene permisos el usuario actual.
+     */
+    private List<UsuarioModulo> usuarioModulos;
 
-	public long getIdUsuario() {
-		return idUsuario;
-	}
+    @java.beans.ConstructorProperties({"idUsuario", "idUnidadApoyo", "identidad", "claveAcceso", "nombre", "apellidoPaterno", "apellidoMaterno", "puestoLaboral", "correoElectronico", "extensionTelefonica", "rolDesignado", "tipoUsuario", "fechaRegistro", "horaRegistro", "usuarioPermiso", "usuarioModulos"})
+    private Usuario(long idUsuario, long idUnidadApoyo, String identidad, String claveAcceso, String nombre, String apellidoPaterno, String apellidoMaterno, String puestoLaboral, String correoElectronico, String extensionTelefonica, String rolDesignado, String tipoUsuario, String fechaRegistro, String horaRegistro, UsuarioPermiso usuarioPermiso, List<UsuarioModulo> usuarioModulos) {
+        this.idUsuario = idUsuario;
+        this.idUnidadApoyo = idUnidadApoyo;
+        this.identidad = identidad;
+        this.claveAcceso = claveAcceso;
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.puestoLaboral = puestoLaboral;
+        this.correoElectronico = correoElectronico;
+        this.extensionTelefonica = extensionTelefonica;
+        this.rolDesignado = rolDesignado;
+        this.tipoUsuario = tipoUsuario;
+        this.fechaRegistro = fechaRegistro;
+        this.horaRegistro = horaRegistro;
+        this.usuarioPermiso = usuarioPermiso;
+        this.usuarioModulos = usuarioModulos;
+    }
 
-	public void setIdUsuario(long idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+    public Usuario() {
+    }
 
-	public long getIdUnidadApoyo() {
-		return idUnidadApoyo;
-	}
+    public static Usuario from(long idUsuario, long idUnidadApoyo, String identidad, String claveAcceso, String nombre, String apellidoPaterno, String apellidoMaterno, String puestoLaboral, String correoElectronico, String extensionTelefonica, String rolDesignado, String tipoUsuario, String fechaRegistro, String horaRegistro, UsuarioPermiso usuarioPermiso, List<UsuarioModulo> usuarioModulos) {
+        return new Usuario(idUsuario, idUnidadApoyo, identidad, claveAcceso, nombre, apellidoPaterno, apellidoMaterno, puestoLaboral, correoElectronico, extensionTelefonica, rolDesignado, tipoUsuario, fechaRegistro, horaRegistro, usuarioPermiso, usuarioModulos);
+    }
 
-	public void setIdUnidadApoyo(long idUnidadApoyo) {
-		this.idUnidadApoyo = idUnidadApoyo;
-	}
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+    }
 
-	public String getIdentidad() {
-		return identidad;
-	}
+    public long getIdUsuario() {
+        return this.idUsuario;
+    }
 
-	public void setIdentidad(String identidad) {
-		this.identidad = identidad;
-	}
+    public long getIdUnidadApoyo() {
+        return this.idUnidadApoyo;
+    }
 
-	public String getClaveAcceso() {
-		return claveAcceso;
-	}
+    public String getIdentidad() {
+        return this.identidad;
+    }
 
-	public void setClaveAcceso(String claveAcceso) {
-		this.claveAcceso = claveAcceso;
-	}
+    public String getClaveAcceso() {
+        return this.claveAcceso;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getApellidoPaterno() {
+        return this.apellidoPaterno;
+    }
 
-	public String getApellidoPaterno() {
-		return apellidoPaterno;
-	}
+    public String getApellidoMaterno() {
+        return this.apellidoMaterno;
+    }
 
-	public void setApellidoPaterno(String apellidoPaterno) {
-		this.apellidoPaterno = apellidoPaterno;
-	}
+    public String getPuestoLaboral() {
+        return this.puestoLaboral;
+    }
 
-	public String getApellidoMaterno() {
-		return apellidoMaterno;
-	}
+    public String getCorreoElectronico() {
+        return this.correoElectronico;
+    }
 
-	public void setApellidoMaterno(String apellidoMaterno) {
-		this.apellidoMaterno = apellidoMaterno;
-	}
+    public String getExtensionTelefonica() {
+        return this.extensionTelefonica;
+    }
 
-	public String getPuestoLaboral() {
-		return puestoLaboral;
-	}
+    public String getRolDesignado() {
+        return this.rolDesignado;
+    }
 
-	public void setPuestoLaboral(String puestoLaboral) {
-		this.puestoLaboral = puestoLaboral;
-	}
+    public String getTipoUsuario() {
+        return this.tipoUsuario;
+    }
 
-	public String getCorreoElectronico() {
-		return correoElectronico;
-	}
+    public String getFechaRegistro() {
+        return this.fechaRegistro;
+    }
 
-	public void setCorreoElectronico(String correoElectronico) {
-		this.correoElectronico = correoElectronico;
-	}
+    public String getHoraRegistro() {
+        return this.horaRegistro;
+    }
 
-	public String getExtensionTelefonica() {
-		return extensionTelefonica;
-	}
+    public UsuarioPermiso getUsuarioPermiso() {
+        return this.usuarioPermiso;
+    }
 
-	public void setExtensionTelefonica(String extensionTelefonica) {
-		this.extensionTelefonica = extensionTelefonica;
-	}
+    public List<UsuarioModulo> getUsuarioModulos() {
+        return this.usuarioModulos;
+    }
 
-	public String getRolDesignado() {
-		return rolDesignado;
-	}
+    public void setIdUsuario(long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-	public void setRolDesignado(String rolDesignado) {
-		this.rolDesignado = rolDesignado;
-	}
+    public void setIdUnidadApoyo(long idUnidadApoyo) {
+        this.idUnidadApoyo = idUnidadApoyo;
+    }
 
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
+    public void setIdentidad(String identidad) {
+        this.identidad = identidad;
+    }
 
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
+    public void setClaveAcceso(String claveAcceso) {
+        this.claveAcceso = claveAcceso;
+    }
 
-	public String getFechaRegistro() {
-		return fechaRegistro;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setFechaRegistro(String fechaRegistro) {
-		this.fechaRegistro = fechaRegistro;
-	}
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
 
-	public String getHoraRegistro() {
-		return horaRegistro;
-	}
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
+    }
 
-	public void setHoraRegistro(String horaRegistro) {
-		this.horaRegistro = horaRegistro;
-	}
+    public void setPuestoLaboral(String puestoLaboral) {
+        this.puestoLaboral = puestoLaboral;
+    }
 
-	public UsuarioPermiso getUsuarioPermiso() {
-		return usuarioPermiso;
-	}
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
 
-	public void setUsuarioPermiso(UsuarioPermiso usuarioPermiso) {
-		this.usuarioPermiso = usuarioPermiso;
-	}
+    public void setExtensionTelefonica(String extensionTelefonica) {
+        this.extensionTelefonica = extensionTelefonica;
+    }
 
-	public List<UsuarioModulo> getUsuarioModulos() {
-		return usuarioModulos;
-	}
+    public void setRolDesignado(String rolDesignado) {
+        this.rolDesignado = rolDesignado;
+    }
 
-	public void setUsuarioModulos(List<UsuarioModulo> usuarioModulos) {
-		this.usuarioModulos = usuarioModulos;
-	}
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
 
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-	}
+    public void setFechaRegistro(String fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    public void setHoraRegistro(String horaRegistro) {
+        this.horaRegistro = horaRegistro;
+    }
+
+    public void setUsuarioPermiso(UsuarioPermiso usuarioPermiso) {
+        this.usuarioPermiso = usuarioPermiso;
+    }
+
+    public void setUsuarioModulos(List<UsuarioModulo> usuarioModulos) {
+        this.usuarioModulos = usuarioModulos;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) return true;
+        if (!(o instanceof Usuario)) return false;
+        final Usuario other = (Usuario) o;
+        if (!other.canEqual((Object) this)) return false;
+        final Object this$identidad = this.getIdentidad();
+        final Object other$identidad = other.getIdentidad();
+        if (this$identidad == null ? other$identidad != null : !this$identidad.equals(other$identidad)) return false;
+        return true;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $identidad = this.getIdentidad();
+        result = result * PRIME + ($identidad == null ? 43 : $identidad.hashCode());
+        return result;
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof Usuario;
+    }
 }

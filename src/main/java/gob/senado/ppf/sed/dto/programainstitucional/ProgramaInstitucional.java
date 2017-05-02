@@ -3,51 +3,90 @@ package gob.senado.ppf.sed.dto.programainstitucional;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.io.Serializable;
 
 public class ProgramaInstitucional implements Serializable, Formateable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private long idProgramaInstitucional;
-	private String clave;
-	private String nombre;
-	private String descripcion;
+    private long idProgramaInstitucional;
+    private String clave;
+    private String nombre;
+    private String descripcion;
 
-	public long getIdProgramaInstitucional() {
-		return idProgramaInstitucional;
-	}
+    @java.beans.ConstructorProperties({"idProgramaInstitucional", "clave", "nombre", "descripcion"})
+    private ProgramaInstitucional(long idProgramaInstitucional, String clave, String nombre, String descripcion) {
+        this.idProgramaInstitucional = idProgramaInstitucional;
+        this.clave = clave;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
 
-	public void setIdProgramaInstitucional(long idProgramaInstitucional) {
-		this.idProgramaInstitucional = idProgramaInstitucional;
-	}
+    public ProgramaInstitucional() {
+    }
 
-	public String getClave() {
-		return clave;
-	}
+    public static ProgramaInstitucional from(long idProgramaInstitucional, String clave, String nombre, String descripcion) {
+        return new ProgramaInstitucional(idProgramaInstitucional, clave, nombre, descripcion);
+    }
 
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public long getIdProgramaInstitucional() {
+        return this.idProgramaInstitucional;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getClave() {
+        return this.clave;
+    }
 
-	public String getDescripcion() {
-		return descripcion;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
-	}
+    public void setIdProgramaInstitucional(long idProgramaInstitucional) {
+        this.idProgramaInstitucional = idProgramaInstitucional;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) return true;
+        if (!(o instanceof ProgramaInstitucional)) return false;
+        final ProgramaInstitucional other = (ProgramaInstitucional) o;
+        if (!other.canEqual((Object) this)) return false;
+        final Object this$nombre = this.getNombre();
+        final Object other$nombre = other.getNombre();
+        if (this$nombre == null ? other$nombre != null : !this$nombre.equals(other$nombre)) return false;
+        return true;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $nombre = this.getNombre();
+        result = result * PRIME + ($nombre == null ? 43 : $nombre.hashCode());
+        return result;
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof ProgramaInstitucional;
+    }
 }
