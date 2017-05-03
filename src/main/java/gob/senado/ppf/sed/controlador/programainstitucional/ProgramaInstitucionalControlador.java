@@ -5,7 +5,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
 
 public interface ProgramaInstitucionalControlador {

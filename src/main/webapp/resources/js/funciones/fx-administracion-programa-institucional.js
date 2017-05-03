@@ -211,7 +211,7 @@ function validarCamposProgramaInstitucional({idProgramaInstitucional = "", clave
 
 function bajaProgramaInstitucional(idProgramaInstitucional) {
     swal({
-        title: "¿Estás realmente seguro de borrar este Programa Institucional?",
+        title: "�Est�s realmente seguro de borrar este Programa Institucional?",
         text: "Se borrara este programa institucional permanentemente con todos sus órganos de dirección estratégica y unidades de apoyo asociadas!",
         type: "warning",
         showCancelButton: true,
