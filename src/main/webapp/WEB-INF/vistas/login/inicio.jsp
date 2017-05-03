@@ -16,7 +16,8 @@
         <spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss"/>
         <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss"/>
         <spring:url value="/resources/css/style.min.css" var="styleCss"/>
-        <spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss"/>
+        <%--<spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss"/>--%>
+        <spring:url value="/resources/css/mytheme-black.min.css" var="temaNegro"/>
             
         <link href="${fontRoboto}" rel="stylesheet" type="text/css">
         <link href="${materialIcons}" rel="stylesheet" type="text/css">
@@ -26,7 +27,8 @@
         <link href="${mdPreloaderCss}" rel="stylesheet"/>
         <link href="${sweetAlertCss}" rel="stylesheet">
         <link href="${styleCss}" rel="stylesheet">
-        <link href="${allThemesCss}" rel="stylesheet"/>
+        <%--<link href="${allThemesCss}" rel="stylesheet"/>--%>
+        <link href="${temaNegro}" rel="stylesheet"/>
     </head>
     <body class="theme-black">
         <div class="page-loader-wrapper">

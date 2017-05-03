@@ -2274,7 +2274,7 @@ and open the template in the editor.
   color: #fff !important;
 }
 .bg-grey {
-  background-color: #9e9e9e !important;
+  background-color: #555 !important;
   color: #fff;
 }
 .bg-grey .content .text,
@@ -6404,7 +6404,7 @@ fieldset[disabled] .form-control {
   font-weight: bold;
 }
 .breadcrumb-bg-grey {
-  background-color: #9e9e9e !important;
+  background-color: #555 !important;
 }
 .breadcrumb-bg-grey li {
   color: #fff !important;

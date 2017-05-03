@@ -65,7 +65,7 @@
                     </div>
                     <div class="input-group">
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Contrase&ntilde;a" required>
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                         </div>
                     </div>
