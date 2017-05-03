@@ -28,26 +28,30 @@ public class SesionControladorImpl implements SesionControlador {
     /**
      * Servicio de administraci&oacute;n de usuarios.
      */
-    @Autowired
-    private UsuarioServicio usuarioServicio;
+    private final UsuarioServicio usuarioServicio;
 
     /**
      * Servicio de administraci&oacute;n de unidades de apoyo.
      */
-    @Autowired
-    private UnidadApoyoServicio unidadApoyoServicio;
+    private final UnidadApoyoServicio unidadApoyoServicio;
 
     /**
      * Servicio de administraci&oacute;n de &oacute;rganos de direcci&oacute;n estrat&eacute;gica.
      */
-    @Autowired
-    private OrganoDireccionEstrategicaServicio organoDireccionEstrategicaServicio;
+    private final OrganoDireccionEstrategicaServicio organoDireccionEstrategicaServicio;
 
     /**
      * Servicio de administraci&oacute;n de programas institucionales.
      */
+    private final ProgramaInstitucionalServicio programaInstitucionalServicio;
+
     @Autowired
-    private ProgramaInstitucionalServicio programaInstitucionalServicio;
+    public SesionControladorImpl(UsuarioServicio usuarioServicio, UnidadApoyoServicio unidadApoyoServicio, OrganoDireccionEstrategicaServicio organoDireccionEstrategicaServicio, ProgramaInstitucionalServicio programaInstitucionalServicio) {
+        this.usuarioServicio = usuarioServicio;
+        this.unidadApoyoServicio = unidadApoyoServicio;
+        this.organoDireccionEstrategicaServicio = organoDireccionEstrategicaServicio;
+        this.programaInstitucionalServicio = programaInstitucionalServicio;
+    }
 
     @Override
     @GetMapping(value = "/inicio-sesion")
