@@ -11,3 +11,4 @@ spring:
     connectionTimeout: 1000
     usuario: postgres
     contrasena: DDANH42Cr2O7
+    #adminadmin
