@@ -7,13 +7,12 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import java.io.Serializable;
 
 /**
- * <p>
- * Clase que representa un objeto de transferencia de datos de un <b>Programa Institucional</b>, este objeto tiene como responsabilidad
+ * Representa un objeto de transferencia de datos de un <b>Programa Institucional</b>.
+ * Este objeto tiene como responsabilidad
  * representar un conjunto de instrumentos de pol&iacute;tica, para coadyuvar los objetivos, prioridades, estrategias y pol&iacute;ticas
  * definidas del PND, esto quiere decir que un <b>Programa Institucional</b> es un macro elemento que es la suma de los esfuerzos
  * coordinados por los &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica (ODE&acute;s) que a su vez coordinan distintas Unidades de Apoyo (UA&acute;s) siendo los ODE&acute;s
  * y UA&acute;s agrupados por <b>Programa Institucional</b>.
- * </p>
  *
  * @author Benjamin Natanael Ocotzi Alvarez
  * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
@@ -160,11 +159,10 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         if (o == this) return true;
         if (!(o instanceof ProgramaInstitucional)) return false;
         final ProgramaInstitucional other = (ProgramaInstitucional) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$nombre = this.getNombre();
         final Object other$nombre = other.getNombre();
-        if (this$nombre == null ? other$nombre != null : !this$nombre.equals(other$nombre)) return false;
-        return true;
+        return this$nombre == null ? other$nombre == null : this$nombre.equals(other$nombre);
     }
 
     public int hashCode() {
@@ -175,7 +173,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         return result;
     }
 
-    protected boolean canEqual(Object other) {
+    private boolean canEqual(Object other) {
         return other instanceof ProgramaInstitucional;
     }
 }
