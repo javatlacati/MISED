@@ -1,29 +1,29 @@
 package gob.senado.ppf.sed.servicio.unidadapoyo.impl;
 
-import java.util.List;
-
+import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
+import gob.senado.ppf.sed.repositorio.unidadapoyo.UnidadApoyoRepositorio;
+import gob.senado.ppf.sed.servicio.unidadapoyo.UnidadApoyoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
-import gob.senado.ppf.sed.repositorio.unidadapoyo.UnidadApoyoRepositorio;
-import gob.senado.ppf.sed.servicio.unidadapoyo.UnidadApoyoServicio;
+
+import java.util.List;
 
 @Service(value = "unidadApoyoServicio")
 public class UnidadApoyoServicioImpl implements UnidadApoyoServicio {
 
+	private final UnidadApoyoRepositorio unidadApoyoRepositorio;
+
 	@Autowired
-	private UnidadApoyoRepositorio unidadApoyoRepositorio;
+	public UnidadApoyoServicioImpl(UnidadApoyoRepositorio unidadApoyoRepositorio) {
+		this.unidadApoyoRepositorio = unidadApoyoRepositorio;
+	}
 
 	@Override
 	@Transactional
 	public boolean altaUnidadApoyo(UnidadApoyo unidadApoyo) {
-		if (unidadApoyoRepositorio.buscarUnidadApoyo(unidadApoyo.getNombre()) == null) {
-			return unidadApoyoRepositorio.altaUnidadApoyo(unidadApoyo);
-		} else {
-			return false;
-		}
+		return unidadApoyoRepositorio.buscarUnidadApoyo(unidadApoyo.getNombre()) == null && unidadApoyoRepositorio.altaUnidadApoyo(unidadApoyo);
 	}
 
 	@Override

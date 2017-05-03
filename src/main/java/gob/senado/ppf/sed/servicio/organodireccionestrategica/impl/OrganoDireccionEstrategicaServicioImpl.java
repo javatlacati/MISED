@@ -1,28 +1,29 @@
 package gob.senado.ppf.sed.servicio.organodireccionestrategica.impl;
 
-import java.util.List;
+import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
+import gob.senado.ppf.sed.repositorio.organodireccionestrategica.OrganoDireccionEstrategicaRepositorio;
+import gob.senado.ppf.sed.servicio.organodireccionestrategica.OrganoDireccionEstrategicaServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
-import gob.senado.ppf.sed.repositorio.organodireccionestrategica.OrganoDireccionEstrategicaRepositorio;
-import gob.senado.ppf.sed.servicio.organodireccionestrategica.OrganoDireccionEstrategicaServicio;
+
+import java.util.List;
 
 @Service(value = "organoDireccionEstrategicaServicio")
 public class OrganoDireccionEstrategicaServicioImpl implements OrganoDireccionEstrategicaServicio {
 
+	private final OrganoDireccionEstrategicaRepositorio organoDireccionEstrategicaRepositorio;
+
 	@Autowired
-	private OrganoDireccionEstrategicaRepositorio organoDireccionEstrategicaRepositorio;
+	public OrganoDireccionEstrategicaServicioImpl(OrganoDireccionEstrategicaRepositorio organoDireccionEstrategicaRepositorio) {
+		this.organoDireccionEstrategicaRepositorio = organoDireccionEstrategicaRepositorio;
+	}
 
 	@Override
 	@Transactional
 	public boolean altaOrganoDireccionEstrategica(OrganoDireccionEstrategica ode) {
-		if (organoDireccionEstrategicaRepositorio.buscarOrganoDireccionEstrategica(ode.getNombre()) == null) {
-			return organoDireccionEstrategicaRepositorio.altaOrganoDireccionEstrategica(ode);
-		} else {
-			return false;
-		}
+		return organoDireccionEstrategicaRepositorio.buscarOrganoDireccionEstrategica(ode.getNombre()) == null && organoDireccionEstrategicaRepositorio.altaOrganoDireccionEstrategica(ode);
 	}
 
 	@Override
