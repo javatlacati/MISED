@@ -1,0 +1,72 @@
+@negroobscuro: #000000;
+@blanco: #fff;
+@grisobscuro: #555;
+
+
+.theme-black {
+  .navbar {
+    background-color: @negroobscuro;
+  }
+  .navbar-brand {
+    color: @blanco;
+    :hover {
+      color: @blanco;
+    }
+    :active {
+      color: @blanco;
+    }
+    :focus {
+      color: @blanco;
+    }
+  }
+  .nav {
+    > li > a {
+      color: @blanco;
+      :hover {
+        background-color: transparent;
+      }
+      :focus {
+        background-color: transparent;
+      }
+    }
+    .open > a {
+      background-color: transparent;
+      :hover {
+        background-color: transparent;
+      }
+      :focus {
+        background-color: transparent;
+      }
+    }
+  }
+  .bars {
+    color: @blanco;
+  }
+  .sidebar {
+    .menu .list {
+      li.active {
+        background-color: transparent;
+        > :first-child {
+          i {
+            color: @negroobscuro;
+          }
+          span {
+            color: @negroobscuro;
+          }
+        }
+        .toggled {
+          background-color: transparent;
+        }
+        .ml-menu {
+          background-color: transparent;
+        }
+      }
+    }
+    .legal {
+      background-color: @blanco;
+      .copyright a {
+        color: @negroobscuro !important;
+      }
+    }
+  }
+}
