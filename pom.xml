@@ -47,7 +47,6 @@
         <pmd.disabled>false</pmd.disabled>
         <checkstyle.disabled>false</checkstyle.disabled>
         <surefire.disabled>false</surefire.disabled>
-        <deslombookear>true</deslombookear>
     </properties>
 
     <dependencies>
@@ -254,12 +253,12 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
+<!--        <dependency>
         	<groupId>org.projectlombok</groupId>
         	<artifactId>lombok</artifactId>
         	<version>1.16.8</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
 
 
     </dependencies>
@@ -288,27 +287,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok-maven-plugin</artifactId>
-                <version>1.16.8.0</version>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>delombok</goal>
-                        </goals>
-                        <configuration>
-                            <addOutputDirectory>true</addOutputDirectory>
-                            <sourceDirectory>src/main/java</sourceDirectory>
-                            <skip>${deslombookear}</skip>
-                        </configuration>
-                    </execution>
-                </executions>
-                <configuration>
-                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 
@@ -441,7 +419,7 @@
                     <!--<siteReportDirectory>${basedir}/target/site/</siteReportDirectory>-->
                     <basedir>${basedir}</basedir>
                     <targetClasses>
-                        <class>mx.ine.sg.service.ws.dto.*</class>
+                        <class>gob.senado.ppf.sed</class>
                     </targetClasses>
                 </configuration>
             </plugin>

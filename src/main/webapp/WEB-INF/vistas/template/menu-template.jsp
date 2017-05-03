@@ -262,7 +262,7 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li id="sub-opcion-administracion-programas-institucionales">
-                                        <a href="/administrador/programa-institucional/administracion-programas-institucionales.htm">
+                                        <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
                                             Administraci&oacute;n de Programas Institucionales
                                         </a>
                                     </li>

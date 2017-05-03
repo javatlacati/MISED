@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller(value = "programaInstitucionalControlador")
+
 @RequestMapping(value = "/administrador")
 public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucionalControlador {
 
