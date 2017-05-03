@@ -46,7 +46,7 @@
     <div class="login-box">
         <div class="logo">
             <a><b>MISED</b></a>
-            <small>Módulo Informático del Sistema de Evaluación del Desempeño</small>
+            <small>M&oacute;dulo Inform&aacute;tico del Sistema de Evaluaci&oacute;n del Desempe&ntilde;o</small>
         </div>
         <div class="card">
             <div class="body"> 
@@ -57,7 +57,7 @@
 				<div class="msg" id="msg-cs">${message}</div>
 			</c:if>
                 <form name='login' action="<c:url value='/inicio-sesion' />" method='POST'>
-                    <div class="msg">Ingrese su usuario y contraseña para iniciar sesión.</div>
+                    <div class="msg">Ingrese su usuario y contrase&ntilde;a para iniciar sesi&oacute;n.</div>
                     <div class="input-group">
                         <div class="form-line">
                             <input type="text" class="form-control" name="username" id="username" placeholder="Nombre de usuario" autocomplete="off" required autofocus>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6 align-right">
-                            <a href="forgot-password.html">Olvide mi contraseña</a>
+                            <a href="<c:url value='/forgot' />">Olvide mi contrase&ntilde;a</a>
                         </div>
                     </div>
                 </form>

@@ -56,7 +56,7 @@ public class SesionControladorImpl implements SesionControlador {
     @Override
     @GetMapping(value = "/inicio-sesion")
     public ModelAndView vistaInicioSesion(@RequestParam(value = "error", required = false) String error,
-            @RequestParam(value = "logout", required = false) String logout) {
+                                          @RequestParam(value = "logout", required = false) String logout) {
         ModelAndView model = new ModelAndView("login/login");
         if (error != null) {
             model.addObject("error", "Has escrito mal tu usuario o contrase\u00f1a.");
@@ -82,6 +82,21 @@ public class SesionControladorImpl implements SesionControlador {
         mv.addObject("unidadApoyo", ua.getNombre());
         mv.addObject("fechaActual", Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
         mv.addObject("nombreCompleto", u.getNombre() + " " + u.getApellidoPaterno() + " " + u.getApellidoMaterno());
+        return mv;
+    }
+
+    @Override
+    @GetMapping(value = "/forgot")
+    public ModelAndView vistaPasswordOlvidado() {
+        return new ModelAndView("login/forgot");
+    }
+
+    @Override
+    @GetMapping(value = {"/forgot.htm"})
+    public ModelAndView vistaConcretaPasswordOlvidado(HttpSession sesion, HttpServletResponse response, HttpServletRequest request, Principal principal) {
+        ModelAndView mv = new ModelAndView("login/forgot");
+        HttpSession session = request.getSession();
+        session.setMaxInactiveInterval(1800);
         return mv;
     }
 }

@@ -53,6 +53,7 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 				.antMatchers("/administrador/**").hasRole("ADMINISTRADOR")
 				.antMatchers("/inicio-sesion").permitAll()
+				.antMatchers("/forgot").permitAll()
 				.anyRequest().authenticated()
 				.and()
 				.formLogin().loginPage("/inicio-sesion").permitAll()
