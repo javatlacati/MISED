@@ -7,9 +7,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>MISED</name>
     <url>http://maven.apache.org</url>
-    <description>MÃ³dulo InformÃ¡tico del Sistema de EvaluaciÃ³n del DesempeÃ±o</description>
+    <description>Módulo Informático del Sistema de Evaluación del Desempeño</description>
     <organization>
-        <name>Senado de la RepÃºblica</name>
+        <name>Senado de la República</name>
         <url>http://www.senado.gob.mx</url>
     </organization>
     <developers>
