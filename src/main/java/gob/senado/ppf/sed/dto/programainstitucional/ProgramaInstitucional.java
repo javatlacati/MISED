@@ -3,50 +3,59 @@ package gob.senado.ppf.sed.dto.programainstitucional;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.io.Serializable;
 
 /**
  * <p>
  * Clase que representa un objeto de transferencia de datos de un <b>Programa Institucional</b>, este objeto tiene como responsabilidad
- * representar un conjunto de instrumentos de política, para coadyuvar los objetivos, prioridades, estrategias y políticas
+ * representar un conjunto de instrumentos de pol&iacute;tica, para coadyuvar los objetivos, prioridades, estrategias y pol&iacute;ticas
  * definidas del PND, esto quiere decir que un <b>Programa Institucional</b> es un macro elemento que es la suma de los esfuerzos
- * coordinados por los Órganos de Dirección Estratégica (ODE´s) que a su vez coordinan distintas Unidades de Apoyo (UA´s) siendo los ODE´s
- * y UA´s agrupados por <b>Programa Institucional</b>.
+ * coordinados por los &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica (ODE&acute;s) que a su vez coordinan distintas Unidades de Apoyo (UA&acute;s) siendo los ODE&acute;s
+ * y UA&acute;s agrupados por <b>Programa Institucional</b>.
  * </p>
  *
+ * @author Benjamin Natanael Ocotzi Alvarez
  * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
  * @see gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo
- *
- * @author Benjamin Natanael Ocotzi Alvarez
  */
 public class ProgramaInstitucional implements Serializable, Formateable {
-    
+
     private static final long serialVersionUID = 1L;
-    
-    /** Variable que almacena el identificador numérico del programa institucional */
+
+    /**
+     * Identificador num&eacute;rico del programa institucional
+     */
     private long idProgramaInstitucional;
-    
-    /** Variable que almacena la clave alfanumérica del programa institucional */
+
+    /**
+     * Clave alfanum&eacute;rica del programa institucional
+     */
     private String clave;
-    
-    /** Variable que almacena el nombre del programa institucional */
+
+    /**
+     * Nombre del programa institucional
+     */
     private String nombre;
-    
-    /** Variable que almacena la descripción del programa institucional */
+
+    /**
+     * Descripci&oacute;n del programa institucional
+     */
     private String descripcion;
-    
+
     /**
      * Constructor por defecto para la clase ProgramaInstitucional.
      */
     public ProgramaInstitucional() {
     }
-    
+
     /**
      * Contructor privado para la clase ProgramaInstitucional
-     * @param idProgramaInstitucional identificador numérico del Programa Institucional
-     * @param clave Clave alfanumérica del Programa Institucional
-     * @param nombre nombre del Programa Institucional
-     * @param descripcion descripción del Programa Institucional
+     *
+     * @param idProgramaInstitucional identificador num&eacute;rico del Programa Institucional
+     * @param clave                   Clave alfanum&eacute;rica del Programa Institucional
+     * @param nombre                  nombre del Programa Institucional
+     * @param descripcion             descripci&oacute;n del Programa Institucional
      */
     @java.beans.ConstructorProperties({"idProgramaInstitucional", "clave", "nombre", "descripcion"})
     private ProgramaInstitucional(long idProgramaInstitucional, String clave, String nombre, String descripcion) {
@@ -55,14 +64,15 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-    
+
     /**
      * Metodo estatico de conveniencia para obtener una instancia de la clase ProgramaInstitucional recibiendo como parametros todos los
      * atributos de esta clase.
-     * @param idProgramaInstitucional identificador numérico del Programa Institucional
-     * @param clave Clave alfanumérica del Programa Institucional
-     * @param nombre nombre del Programa Institucional
-     * @param descripcion descripción del Programa Institucional
+     *
+     * @param idProgramaInstitucional identificador num&eacute;rico del Programa Institucional
+     * @param clave                   Clave alfanum&eacute;rica del Programa Institucional
+     * @param nombre                  nombre del Programa Institucional
+     * @param descripcion             descripci&oacute;n del Programa Institucional
      * @return Una nueva instancia de la clase ProgramaInstitucional con todos sus atributos configurados.
      */
     public static ProgramaInstitucional from(long idProgramaInstitucional, String clave, String nombre, String descripcion) {
@@ -73,71 +83,79 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
-    
+
     /**
-     * Metodo que retorna el identificador numérico del Programa Institucional.
-     * @return Identificador numérico del Programa Institucional.
+     * Retorna el identificador num&eacute;rico del Programa Institucional.
+     *
+     * @return Identificador num&eacute;rico del Programa Institucional.
      */
     public long getIdProgramaInstitucional() {
         return this.idProgramaInstitucional;
     }
-    
+
     /**
-     * Metodo que retorna la clave alfanumérica del Programa Institucional.
-     * @return Clave alfanumérica del Programa Institucional.
+     * Retorna la clave alfanum&eacute;rica del Programa Institucional.
+     *
+     * @return Clave alfanum&eacute;rica del Programa Institucional.
      */
     public String getClave() {
         return this.clave;
     }
-    
+
     /**
-     * Metodo que retorna el nombre del Programa Institucional.
+     * Retorna el nombre del Programa Institucional.
+     *
      * @return Nombre del Programa Institucional.
      */
     public String getNombre() {
         return this.nombre;
     }
-    
+
     /**
-     * Metodo que retorna la descripción del Programa Institucional.
-     * @return Descripción del Programa Institucional.
+     * Retorna la descripci&oacute;n del Programa Institucional.
+     *
+     * @return Descripci&oacute;n del Programa Institucional.
      */
     public String getDescripcion() {
         return this.descripcion;
     }
-    
+
     /**
-     * Metodo que configura el identificador del Programa Institucional.
-     * @param idProgramaInstitucional Identificador numérico del Programa Institucional.
+     * Configura el identificador del Programa Institucional.
+     *
+     * @param idProgramaInstitucional Identificador num&eacute;rico del Programa Institucional.
      */
     public void setIdProgramaInstitucional(long idProgramaInstitucional) {
         this.idProgramaInstitucional = idProgramaInstitucional;
     }
-    
+
     /**
-     * Metodo que configura la clave alfanumérica del Programa Institucional.
-     * @param clave Clave alfanumérica del Programa Institucional.
+     * Configura la clave alfanum&eacute;rica del Programa Institucional.
+     *
+     * @param clave Clave alfanum&eacute;rica del Programa Institucional.
      */
     public void setClave(String clave) {
         this.clave = clave;
     }
-    
+
     /**
-     * Metodo que configura el nombre del Programa Institucional.
+     * Configura el nombre del Programa Institucional.
+     *
      * @param nombre Nombre del Programa Institucional.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     /**
-     * Metodo que configura la descripcion de un Programa Institucional.
-     * @param descripcion Descripción del Programa Institucional.
+     * Configura la descripcion de un Programa Institucional.
+     *
+     * @param descripcion Descripci&oacute;n del Programa Institucional.
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
     public boolean equals(Object o) {
         if (o == this) return true;
         if (!(o instanceof ProgramaInstitucional)) return false;
@@ -148,7 +166,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         if (this$nombre == null ? other$nombre != null : !this$nombre.equals(other$nombre)) return false;
         return true;
     }
-    
+
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
@@ -156,7 +174,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         result = result * PRIME + ($nombre == null ? 43 : $nombre.hashCode());
         return result;
     }
-    
+
     protected boolean canEqual(Object other) {
         return other instanceof ProgramaInstitucional;
     }
