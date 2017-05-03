@@ -129,8 +129,6 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
             StringBuilder sql = new StringBuilder();
             sql.append("SELECT * FROM USUARIO U INNER JOIN USUARIO_PERMISO UP ON U.ID_USUARIO = UP.ID_USUARIO ").append(
                     "WHERE U.IDENTIDAD = ?");
-            //TODO remover logger
-            System.out.println(sql.toString().replaceAll("\\?", identidad));
             return jdbcTemplate.queryForObject(sql.toString(), new Object[]{identidad}, RowMappers.ROW_MAPPER_USUARIO);
         } catch (EmptyResultDataAccessException erdae) {
             return null;
