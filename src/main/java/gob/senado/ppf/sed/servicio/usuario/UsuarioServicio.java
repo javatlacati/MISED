@@ -2,7 +2,6 @@ package gob.senado.ppf.sed.servicio.usuario;
 
 import gob.senado.ppf.sed.dto.usuario.Usuario;
 import gob.senado.ppf.sed.utilidades.Activacion;
-import gob.senado.ppf.sed.utilidades.Fase;
 
 /**
  * Capa de servicios para tareas de administraci&oacute;n de usuarios del sistema.
@@ -26,7 +25,7 @@ public interface UsuarioServicio {
     /**
      * Permite dar de baja un usuario del sistema.
      *
-     * @param idUsuario identifdicador &uacute;nico del usuario a dar de baja
+     * @param idUsuario identificador &uacute;nico del usuario a dar de baja
      */
     boolean bajaUsuario(long idUsuario);
 

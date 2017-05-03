@@ -17,11 +17,15 @@ import java.time.LocalTime;
 @Service(value = "usuarioServicio")
 public class UsuarioServicioImpl implements UsuarioServicio {
 
-    @Autowired
-    private UsuarioRepositorio usuarioRepositorio;
+    private final UsuarioRepositorio usuarioRepositorio;
+
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    public UsuarioServicioImpl(UsuarioRepositorio usuarioRepositorio, PasswordEncoder passwordEncoder) {
+        this.usuarioRepositorio = usuarioRepositorio;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     /**
      * {@inheritDoc}
