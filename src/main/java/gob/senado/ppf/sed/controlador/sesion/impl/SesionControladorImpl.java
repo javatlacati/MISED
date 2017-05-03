@@ -26,25 +26,25 @@ import java.time.LocalDate;
 public class SesionControladorImpl implements SesionControlador {
 
     /**
-     * Servicio de administración de usuarios.
+     * Servicio de administraci&oacute;n de usuarios.
      */
     @Autowired
     private UsuarioServicio usuarioServicio;
 
     /**
-     * Servicio de administración de unidades de apoyo.
+     * Servicio de administraci&oacute;n de unidades de apoyo.
      */
     @Autowired
     private UnidadApoyoServicio unidadApoyoServicio;
 
     /**
-     * Servicio de administración de órganos de dirección estratégica.
+     * Servicio de administraci&oacute;n de &oacute;rganos de direcci&oacute;n estrat&eacute;gica.
      */
     @Autowired
     private OrganoDireccionEstrategicaServicio organoDireccionEstrategicaServicio;
 
     /**
-     * Servicio de administración de programas institucionales.
+     * Servicio de administraci&oacute;n de programas institucionales.
      */
     @Autowired
     private ProgramaInstitucionalServicio programaInstitucionalServicio;
