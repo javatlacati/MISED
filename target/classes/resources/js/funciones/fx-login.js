@@ -1,3 +1,0 @@
-function cerrarSesion(){
-	$("#frmCierreSesion").submit();
-}
