@@ -79,25 +79,32 @@ public class ConfiguracionParaDataSource {
     @Value("${maximumPoolSize}")
     private String maximumPoolSize;
     
-    /** Variable que almacena */
+    /** Variable que almacena el tiempo minimo que una conexion puede permanecer sin realizar ninguna transacción antes de ser devuelta a la pisina de conexiones. */
     @Value("${minimumIdle}")
     private String minimumIdle;
     
-    /**  */
+    /** Variable que almacena el tiempo en que una conexion puede estar fuera del pool de conexiones sin recibir ningun log indicando que hay posiblemente un estancamiento de la conexión. */
     @Value("${leakDetectionThreshold}")
     private String leakDetectionThreshold;
     
-    /**  */
+    /** Variable que almancena el tiempo en milisegundos para la espera de recibir una nueva conexión desde el pool. */
     @Value("${connectionTimeout}")
     private String connectionTimeout;
     
-    
+    /**
+     * Bean de configuración que crea un JbdcTemplate reutilizable para las capas superiores.
+     * @return JdbcTemplate que permite realizar consultar y transacciones a las demas capas superiores.
+     */
     @Bean
     @Scope("prototype")
     public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
     
+    /**
+     * Bean de configuración que crea un objeto que almacena las propiedades de la configuración para la pisina de conexiones a la base de datos.
+     * @return HikariConfig objeto que guarda las propiedades para la conexión a la base de datos y la pisina de conexiones.
+     */
     @Bean
     public HikariConfig hikariConfig() {
         HikariConfig configParaHikari = new HikariConfig();
@@ -115,11 +122,20 @@ public class ConfiguracionParaDataSource {
         return configParaHikari;
     }
     
+    /**
+     * Bean de configuración que administra las transacciones a la base de datos.
+     * @param dataSource
+     * @return PlatformTransactionManager que administra las transacciones de los metodos que tengan la anotación @Transactional.
+     */
     @Bean
     public PlatformTransactionManager transactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
     
+    /**
+     * Bean de configuración que retorna una implementación de un DataSource que establece el puente de conexión a la base de datos.
+     * @return DataSource implementado por Hikari.
+     */
     @Bean
     public DataSource dataSource() {
         return new HikariDataSource(hikariConfig());
