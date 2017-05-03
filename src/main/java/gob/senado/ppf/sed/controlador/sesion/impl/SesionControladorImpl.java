@@ -70,19 +70,24 @@ public class SesionControladorImpl implements SesionControlador {
     @Override
     @GetMapping(value = {"/inicio.htm", "/"})
     public ModelAndView vistaMenuPrincipal(HttpSession sesion, HttpServletResponse response, HttpServletRequest request, Principal principal) {
-        ModelAndView mv = new ModelAndView("login/inicio");
         HttpSession session = request.getSession();
         session.setMaxInactiveInterval(1800);
-        Usuario u = usuarioServicio.buscarUsuario(principal.getName());
-        UnidadApoyo ua = unidadApoyoServicio.buscarUnidadApoyo(u.getIdUnidadApoyo());
-        OrganoDireccionEstrategica ode = organoDireccionEstrategicaServicio.buscarOrganoDireccionEstrategica(ua.getIdOrganoDireccionEstrategica());
-        ProgramaInstitucional pi = programaInstitucionalServicio.buscarProgramaInstitucional(ode.getIdProgramaInstitucional());
-        mv.addObject("programaInstitucional", pi.getClave() + " " + pi.getNombre());
-        mv.addObject("organoDireccionEstrategica", ode.getNombre());
-        mv.addObject("unidadApoyo", ua.getNombre());
-        mv.addObject("fechaActual", Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
-        mv.addObject("nombreCompleto", u.getNombre() + " " + u.getApellidoPaterno() + " " + u.getApellidoMaterno());
-        return mv;
+        if (principal != null) {
+            ModelAndView mv = new ModelAndView("login/inicio");
+            Usuario u = usuarioServicio.buscarUsuario(principal.getName());
+            UnidadApoyo ua = unidadApoyoServicio.buscarUnidadApoyo(u.getIdUnidadApoyo());
+            OrganoDireccionEstrategica ode = organoDireccionEstrategicaServicio.buscarOrganoDireccionEstrategica(ua.getIdOrganoDireccionEstrategica());
+            ProgramaInstitucional pi = programaInstitucionalServicio.buscarProgramaInstitucional(ode.getIdProgramaInstitucional());
+            mv.addObject("programaInstitucional", pi.getClave() + " " + pi.getNombre());
+            mv.addObject("organoDireccionEstrategica", ode.getNombre());
+            mv.addObject("unidadApoyo", ua.getNombre());
+            mv.addObject("fechaActual", Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
+            mv.addObject("nombreCompleto", u.getNombre() + " " + u.getApellidoPaterno() + " " + u.getApellidoMaterno());
+            return mv;
+        } else {
+            return vistaInicioSesion(null, null);
+        }
+
     }
 
     @Override

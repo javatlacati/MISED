@@ -3,7 +3,7 @@
         <div class="navbar-header">
             <a href="#" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="#" class="bars"></a>
-            <a class="navbar-brand" href="/MISED/inicio.htm">
+            <a class="navbar-brand" href="/inicio.htm">
                 <fmt:message key="mensaje.nombre-aplicacion" />
             </a>
         </div>     
@@ -31,13 +31,13 @@
             <ol class="list">
                 <li class="header"><fmt:message key="mensaje.label-menu" /></li>
                 <li id="inicio-menu">
-                    <a href="/MISED/inicio.htm">
+                    <a href="/inicio.htm">
                         <i class="material-icons">home</i>
                         <span><fmt:message key="mensaje.inicio" /></span>
                     </a>
                 </li>
                 <li id="inicio-menu">
-                    <a href="/MISED/mi-perfil.htm">
+                    <a href="/mi-perfil.htm">
                         <i class="material-icons">account_box</i>
                         <span><fmt:message key="mensaje.informacion-personal" /></span>
                     </a>
@@ -262,7 +262,7 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li id="sub-opcion-administracion-programas-institucionales">
-                                        <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
+                                        <a href="/administrador/programa-institucional/administracion-programas-institucionales.htm">
                                             Administraci&oacute;n de Programas Institucionales
                                         </a>
                                     </li>
@@ -279,7 +279,7 @@
                             </li>
                                 
                             <li id="opcion-unidad-apoyo">
-                                <a href="/MISED/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
+                                <a href="/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
                                     <i class="material-icons">bookmark_border</i>
                                     <span>Unidades de Apoyo</span>
                                 </a>
@@ -292,45 +292,45 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li id="sub-opcion-captura-usuario">
-                                        <a href="/MISED/administrador/usuarios/captura-usuarios.htm">
+                                        <a href="/administrador/usuarios/captura-usuarios.htm">
                                             Captura de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-busqueda-usuario">
-                                        <a href="/MISED/administrador/usuarios/busqueda-usuarios.htm">
+                                        <a href="/administrador/usuarios/busqueda-usuarios.htm">
                                             B&uacute;squeda de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-permisos-usuario">
-                                        <a href="/MISED/administrador/usuarios/permisos-usuarios.htm">
+                                        <a href="/administrador/usuarios/permisos-usuarios.htm">
                                             Permisos de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-actualizacion-usuario">
-                                        <a href="/MISED/administrador/usuarios/actualizar-usuarios.htm">
+                                        <a href="/administrador/usuarios/actualizar-usuarios.htm">
                                             Actualizaci&oacute;n de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-baja-usuario">
-                                        <a href="/MISED/administrador/usuarios/baja-usuarios.htm">
+                                        <a href="/administrador/usuarios/baja-usuarios.htm">
                                             Baja de Usuarios
                                         </a>
                                     </li>
                                     <li id="sub-opcion-reestablecer-contrasena-usuario">
-                                        <a href="/MISED/administrador/usuarios/reestablecer-credenciales-usuarios.htm">
+                                        <a href="/administrador/usuarios/reestablecer-credenciales-usuarios.htm">
                                             Reestablecer Contrase&ntilde;a de Usuario
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li id="opcion-aviso-y-archivo-sistema">
-                                <a href="/MISED/administrador/avisos/gestion.htm">
+                                <a href="/administrador/avisos/gestion.htm">
                                     <i class="material-icons">cast_connected</i>
                                     <span>Avisos y Archivos del Sistema</span>
                                 </a>
                             </li>
                             <li id="opcion-configuracion-fechas">
-                                <a href="/MISED/administrador/ejercicios-fiscales/gestion.htm">
+                                <a href="/administrador/ejercicios-fiscales/gestion.htm">
                                     <i class="material-icons">event</i>
                                     <span>Configuraci&oacute;n de Fechas de Captura del Sistema</span>
                                 </a>
