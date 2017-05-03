@@ -881,13 +881,21 @@ and open the template in the editor.
 .col-blue-grey .navbar .bars:hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-.col-black .navbar .navbar-brand,
-.col-black .navbar .navbar-brand:hover,
-.col-black .navbar .navbar-brand:active,
-.col-black .navbar .navbar-brand:focus {
+.col-black .navbar .navbar-brand {
   color: #fff;
 }
-.col-black .navbar .nav > li > a:hover,
+.col-black .navbar .navbar-brand :hover {
+  color: #fff;
+}
+.col-black .navbar .navbar-brand :active {
+  color: #fff;
+}
+.col-black .navbar .navbar-brand :focus {
+  color: #fff;
+}
+.col-black .navbar .nav > li > a :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
 .col-black .navbar .nav > li > a:focus,
 .col-black .navbar .nav .open > a,
 .col-black .navbar .nav .open > a:hover,
@@ -8454,7 +8462,6 @@ fieldset[disabled] .form-control {
   width: 300px;
   overflow: hidden;
   display: inline-block;
-  height: calc(30vh);
   position: fixed;
   top: 70px;
   left: 0;
