@@ -22,10 +22,11 @@ and open the template in the editor.
 //colores
 @negroobscuro: #000000;
 @grisobscuro: #555;
-@blanco: #fff;
-@grisclaro: #e9e9e9;
 @verdepalma: #7D8F81;
+@grismedio:#9e9e9e;
 @verdepalmaclaro: #d4dbd5;
+@grisclaro: #e9e9e9;
+@blanco: #fff;
 
 @baseFontSize: 14; //px
 
@@ -2640,7 +2641,7 @@ and open the template in the editor.
 }
 
 .bg-grey {
-  background-color: #9e9e9e !important;
+  background-color: @grisobscuro !important;
   color: @blanco;
 }
 
@@ -2744,7 +2745,7 @@ and open the template in the editor.
 }
 
 .col-grey {
-  color: #9e9e9e !important;
+  color: @grismedio !important;
 }
 
 .col-blue-grey {
@@ -3115,7 +3116,7 @@ and open the template in the editor.
 }
 
 .demo-choose-skin .grey {
-  background-color: #9e9e9e;
+  background-color: @grismedio;
 }
 
 .demo-choose-skin .blue-grey {
@@ -4482,8 +4483,8 @@ section.content {
 }
 
 [type="checkbox"]:checked.chk-col-grey + label:before {
-  border-right: 2px solid #9e9e9e;
-  border-bottom: 2px solid #9e9e9e;
+  border-right: 2px solid @grismedio;
+  border-bottom: 2px solid @grismedio;
 }
 
 [type="checkbox"]:checked.chk-col-blue-grey + label:before {
@@ -4601,8 +4602,8 @@ section.content {
 }
 
 [type="checkbox"].filled-in:checked.chk-col-grey + label:after {
-  border: 2px solid #9e9e9e;
-  background-color: #9e9e9e;
+  border: 2px solid @grismedio;
+  background-color: @grismedio;
 }
 
 [type="checkbox"].filled-in:checked.chk-col-blue-grey + label:after {
@@ -4722,8 +4723,8 @@ section.content {
 }
 
 [type="radio"].radio-col-grey:checked + label:after {
-  background-color: #9e9e9e;
-  border-color: #9e9e9e;
+  background-color: @grismedio;
+  border-color: @grismedio;
 }
 
 [type="radio"].radio-col-blue-grey:checked + label:after {
@@ -4895,12 +4896,12 @@ section.content {
 }
 
 [type="radio"].with-gap.radio-col-grey:checked + label:before {
-  border: 2px solid #9e9e9e;
+  border: 2px solid @grismedio;
 }
 
 [type="radio"].with-gap.radio-col-grey:checked + label:after {
-  background-color: #9e9e9e;
-  border: 2px solid #9e9e9e;
+  background-color: @grismedio;
+  border: 2px solid @grismedio;
 }
 
 [type="radio"].with-gap.radio-col-blue-grey:checked + label:before {
@@ -5152,7 +5153,7 @@ section.content {
 }
 
 .switch label input[type=checkbox]:checked + .lever.switch-col-grey:after {
-  background-color: #9e9e9e;
+  background-color: @grismedio;
 }
 
 .switch label input[type=checkbox]:checked:not (:disabled ) ~ .lever.switch-col-blue-grey:active:after {
@@ -5474,7 +5475,7 @@ section.content {
     border-bottom: 2px solid #795548;
   }
   .tab-col-grey > li > a:before {
-    border-bottom: 2px solid #9e9e9e;
+    border-bottom: 2px solid @grismedio;
   }
   .tab-col-blue-grey > li > a:before {
     border-bottom: 2px solid #607d8b;
@@ -5898,7 +5899,7 @@ section.content {
 }
 
 .modal-col-grey {
-  background-color: #9e9e9e;
+  background-color: @grismedio;
 }
 
 .modal-col-grey .modal-body, .modal-col-grey .modal-title {
@@ -6288,11 +6289,11 @@ section.content {
 }
 
 .panel-group .panel-col-grey {
-  border: 1px solid #9e9e9e;
+  border: 1px solid @grismedio;
 }
 
 .panel-group .panel-col-grey .panel-title {
-  background-color: #9e9e9e !important;
+  background-color: @grismedio !important;
   color: @blanco;
 }
 
@@ -6513,7 +6514,7 @@ section.content {
 
 .full-body .panel-col-grey .panel-body {
   border-top-color: @blanco !important;
-  background-color: #9e9e9e;
+  background-color: @grismedio;
   color: @blanco;
 }
 
@@ -7327,12 +7328,12 @@ section.content {
 }
 
 .breadcrumb-col-grey li a {
-  color: #9e9e9e !important;
+  color: @grismedio !important;
   font-weight: bold;
 }
 
 .breadcrumb-bg-grey {
-  background-color: #9e9e9e !important;
+  background-color: @grisobscuro !important;
 }
 
 .breadcrumb-bg-grey li {
@@ -7807,17 +7808,17 @@ section.content {
 }
 
 .list-group .pl-grey {
-  stroke: #9e9e9e;
+  stroke: @grismedio;
 }
 
 .list-group .list-group-bg-grey {
-  background-color: #9e9e9e;
+  background-color: @grismedio;
   border: none;
   color: @blanco;
 }
 
 .list-group .list-group-bg-grey:hover, .list-group .list-group-bg-grey:focus {
-  background-color: #9e9e9e;
+  background-color: @grismedio;
   color: @blanco;
   opacity: .8;
 }
@@ -8471,7 +8472,7 @@ section.content {
   }
 
   .pl-grey {
-    stroke: #9e9e9e;
+    stroke: @grismedio;
   }
 
   .pl-blue-grey {
