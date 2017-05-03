@@ -64,14 +64,14 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">             
                     <ol class="breadcrumb breadcrumb-bg-grey">
                         <li>
-                           	<i class="material-icons">build</i> Administración del Sistema
+                           	<i class="material-icons">build</i> Administraci&oacute;n del Sistema
                         </li>
                         <li>
                            Programas Institucionales
                         </li>
                         <li class="active">
                            <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
-                           		<i class="material-icons">view_agenda</i> Administración de Programas Institucionales 
+                           		<i class="material-icons">view_agenda</i> Administraci&oacute;n de Programas Institucionales
                            </a>
                         </li>
                      </ol>
@@ -113,7 +113,7 @@
 												<div class="form-line">
 													<form:textarea path="descripcion" id="nueva-descripcion"
 														maxlength="1200" cssClass="form-control"></form:textarea>
-													<label class="form-label">Descripción del programa institucional</label>
+													<label class="form-label">Descripci&oacute;n del programa institucional</label>
 												</div>
 											</div>
 										</div>
@@ -149,7 +149,7 @@
                                     <tr>
                                         <th>Clave de Programa Institucional</th>
                                         <th>Nombre de Programa Institucional</th>
-                                        <th>Descripción de Programa Institucional</th>
+                                        <th>Descripci&oacute;n de Programa Institucional</th>
                                         <th>Acciones Permitidas</th>
                                     </tr>
                                 </thead>
@@ -157,7 +157,7 @@
                                     <tr>
                               			<th>Clave de Programa Institucional</th>
                                         <th>Nombre de Programa Institucional</th>
-                                        <th>Descripción de Programa Institucional</th>
+                                        <th>Descripci&oacute;n de Programa Institucional</th>
                                         <th>Acciones Permitidas</th>
                                     </tr>
                                 </tfoot>
@@ -196,7 +196,7 @@
 													<div class="form-group form-float">
 														<div class="form-line">
 															<form:textarea path="descripcion" id="descripcion" maxlength="1200" cssClass="form-control"></form:textarea>
-															<label class="form-label">Descripción del programa institucional</label>
+															<label class="form-label">Descripci&oacute;n del programa institucional</label>
 														</div>
 													</div>
 												</div>
