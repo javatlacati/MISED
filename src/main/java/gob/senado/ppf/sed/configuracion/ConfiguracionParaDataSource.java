@@ -137,7 +137,7 @@ public class ConfiguracionParaDataSource {
     
     /**
      * Bean de configuración que administra las transacciones a la base de datos.
-     * @param dataSource
+     * @param dataSource DataSource que crea el puente de conexión a la base de datos.
      * @return PlatformTransactionManager que administra las transacciones de los metodos que tengan la anotación @Transactional.
      */
     @Bean
