@@ -12,7 +12,7 @@ public enum Activacion {
     private final boolean interruptor;
     private final String tipo;
 
-    private Activacion(boolean interruptor, String activacion) {
+    Activacion(boolean interruptor, String activacion) {
         this.interruptor = interruptor;
         this.tipo = activacion;
     }

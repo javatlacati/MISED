@@ -9,7 +9,7 @@ public enum Fase {
 	
 	private String fase;
 	
-	private Fase(String fase){
+	Fase(String fase){
 		this.fase = fase;
 	}
 	
