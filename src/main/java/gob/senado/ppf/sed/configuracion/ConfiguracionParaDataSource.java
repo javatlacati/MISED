@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import javax.sql.DataSource;
 
 /**
@@ -31,15 +30,13 @@ import javax.sql.DataSource;
  * <li>Define el Bean JdbcTemplate que sera usado en todos nuestros <b>@Repositoy</b> de nuestra aplicaci&oacute;n con todas las configuraciones contempladas para la persistencia
  * (pisina de conexions, transacciones, datasource, etc).</li>
  * </ol>
- *
- * @author Benjamin Natanael Ocotzi Alvarez
  * @see org.springframework.transaction.annotation.Transactional
- * @see EnableTransactionManagement
- * @see DataSource
- * @see HikariConfig
- * @see HikariDataSource
- * @see Configuration
- * @see JdbcTemplate
+ * @see org.springframework.transaction.annotation.EnableTransactionManagement
+ * @see javax.sql.DataSource
+ * @see com.zaxxer.hikari.HikariConfig
+ * @see com.zaxxer.hikari.HikariDataSource
+ * @see org.springframework.context.annotation.Configuration
+ * @see org.springframework.jdbc.core.JdbcTemplate
  */
 @Configuration
 @EnableTransactionManagement
@@ -94,28 +91,33 @@ public class ConfiguracionParaDataSource {
      */
     @Value("${maximumPoolSize}")
     private String maximumPoolSize;
-
-    /**
-     * Variable que almacena
-     */
+    
+    /** Variable que almacena el tiempo minimo que una conexion puede permanecer sin realizar ninguna transacción antes de ser devuelta a la pisina de conexiones. */
     @Value("${minimumIdle}")
     private String minimumIdle;
-
-    /**  */
+    
+    /** Variable que almacena el tiempo en que una conexion puede estar fuera del pool de conexiones sin recibir ningun log indicando que hay posiblemente un estancamiento de la conexión. */
     @Value("${leakDetectionThreshold}")
     private String leakDetectionThreshold;
-
-    /**  */
+    
+    /** Variable que almancena el tiempo en milisegundos para la espera de recibir una nueva conexión desde el pool. */
     @Value("${connectionTimeout}")
     private String connectionTimeout;
-
-
+    
+    /**
+     * Bean de configuración que crea un JbdcTemplate reutilizable para las capas superiores.
+     * @return JdbcTemplate que permite realizar consultar y transacciones a las demas capas superiores.
+     */
     @Bean
     @Scope("prototype")
     public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
 
+    /**
+     * Bean de configuración que crea un objeto que almacena las propiedades de la configuración para la pisina de conexiones a la base de datos.
+     * @return HikariConfig objeto que guarda las propiedades para la conexión a la base de datos y la pisina de conexiones.
+     */
     @Bean
     public HikariConfig hikariConfig() {
         HikariConfig configParaHikari = new HikariConfig();
@@ -132,12 +134,21 @@ public class ConfiguracionParaDataSource {
         configParaHikari.setConnectionTimeout(Integer.valueOf(connectionTimeout));
         return configParaHikari;
     }
-
+    
+    /**
+     * Bean de configuración que administra las transacciones a la base de datos.
+     * @param dataSource DataSource que crea el puente de conexión a la base de datos.
+     * @return PlatformTransactionManager que administra las transacciones de los metodos que tengan la anotación @Transactional.
+     */
     @Bean
     public PlatformTransactionManager transactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
-
+    
+    /**
+     * Bean de configuración que retorna una implementación de un DataSource que establece el puente de conexión a la base de datos.
+     * @return DataSource implementado por Hikari.
+     */
     @Bean
     public DataSource dataSource() {
         return new HikariDataSource(hikariConfig());
