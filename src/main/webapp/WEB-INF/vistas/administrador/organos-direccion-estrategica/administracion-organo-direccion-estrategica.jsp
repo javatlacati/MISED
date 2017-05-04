@@ -71,8 +71,8 @@
                                 Programas Institucionales
                             </li>
                             <li class="active">
-                                <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
-                                    <i class="material-icons">view_agenda</i> Administraci&oacute;n de Programas Institucionales
+                                <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
+                                    <i class="material-icons">view_agenda</i> Administraci&oacute;n de Órganos de Dirección Estratégica
                                 </a>
                             </li>
                         </ol>
@@ -84,27 +84,18 @@
                         <div class="card">
                             <div class="header">
                                 <ol class="breadcrumb breadcrumb-bg-grey">
-                                    <li class="active"><h3>Captura de Programa Institucional</h3></li>
+                                    <li class="active"><h3>Captura de Órgano de Dirección Estratégica</h3></li>
                                 </ol>
                             </div>
                             <div class="body">																		
-                                <form:form methodParam="POST" commandName="programaInstitucional" id="frm-Registro-Programa-Institucional" htmlEscape="true">
+                                <form:form methodParam="POST" commandName="organoDireccionEstrategica" id="frm-Registro-Organo-Direccion-Estrategica" htmlEscape="true">
                                     <fieldset>
                                         <div class="col-sm-12 col-md-12 col-lg-12">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                    <form:input type="text" path="clave" id="nueva-clave"
-                                                                cssClass="form-control" autocomplete="off" maxlength="100" />
-                                                    <label class="form-label">Clave del programa institucional</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <div class="form-group form-float">
-                                                <div class="form-line">
                                                     <form:input type="text" path="nombre" id="nuevo-nombre"
-                                                                cssClass="form-control" autocomplete="off" maxlength="250" />
-                                                    <label class="form-label">Nombre del programa institucional</label>
+                                                                cssClass="form-control" autocomplete="off" maxlength="100" />
+                                                    <label class="form-label">Nombre del órgano de dirección estratégica</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -113,14 +104,14 @@
                                                 <div class="form-line">
                                                     <form:textarea path="descripcion" id="nueva-descripcion"
                                                                    maxlength="1200" cssClass="form-control"></form:textarea>
-                                                        <label class="form-label">Descripci&oacute;n del programa institucional</label>
+                                                        <label class="form-label">Descripci&oacute;n del órgano de dirección estratégica</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group form-float">
                                                     <button type="button" class="btn btn-success waves-effect" 
-                                                            onclick="capturaProgramaInstitucional();">Guardar programa institucional</button>
+                                                            onclick="capturaProgramaInstitucional();">Guardar órgano de dirección estratégica</button>
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -136,15 +127,12 @@
                     <div class="card">
                         <div class="header">
                             <ol class="breadcrumb breadcrumb-bg-grey">
-                                <li class="active"><h3>Busqueda y Actualización de Programas Institucionales</h3></li>
+                                <li class="active"><h3>Busqueda y Actualización de Órganos de Dirección Estratégica</h3></li>
                             </ol>
                         </div>
-                        
-                        
-                        
+  
                         <div class="body">
-                            
-                            <table id="tabla-programas-institucionales" 
+                            <table id="tabla-organos-direccion-estrategica" 
                                    class="table table-striped display responsive nowrap text-justify" 
                                    width="100%" cellspacing="0" style="color: black;">
                                 <thead>
@@ -174,23 +162,14 @@
                                             <h4 class="modal-title" id="defaultModalLabel">Editar Programa Institucional</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form:form methodParam="POST" commandName="programaInstitucional" id="frm-Actualizar-Programa-Institucional" htmlEscape="true">
+                                            <form:form methodParam="POST" commandName="organoDireccionEstrategica" id="frm-Actualizar-Programa-Institucional" htmlEscape="true">
                                                 <fieldset>
                                                     <div class="col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <form:input type="hidden" path="idProgramaInstitucional" id="idProgramaInstitucional" />
-                                                                <form:input type="text" path="clave" id="clave" cssClass="form-control" autocomplete="off" maxlength="100" /> 
-                                                                <label class="form-label">Clave del programa institucional</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-12 col-md-12 col-lg-12">
-                                                        <div class="form-group form-float">
-                                                            <div class="form-line">
-                                                                <form:input type="text" path="nombre" id="nombre" cssClass="form-control"
-                                                                            autocomplete="off" maxlength="250" /> 
-                                                                <label class="form-label">Nombre del programa institucional</label>
+                                                                <form:input type="hidden" path="idOrganoDireccionEstrategica" id="idOrganoDireccionEstrategica" />
+                                                                <form:input type="text" path="nombre" id="nombre" cssClass="form-control" autocomplete="off" maxlength="100" /> 
+                                                                <label class="form-label">Nombre del órgano de dirección estratégica</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -198,7 +177,7 @@
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
                                                                 <form:textarea path="descripcion" id="descripcion" maxlength="1200" cssClass="form-control"></form:textarea>
-                                                                    <label class="form-label">Descripci&oacute;n del programa institucional</label>
+                                                                    <label class="form-label">Descripci&oacute;n del órgano de dirección estratégica</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -232,8 +211,13 @@
     <spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs" />
     <spring:url value="/resources/js/admin.js" var="adminJs" />
     <spring:url value="/resources/js/funciones/constantes.js" var="constantes" />
+    
+    
     <spring:url value="/resources/js/funciones/fx-administracion-programa-institucional.js" var="fxAdministracionProgramaInstitucional" />
     <spring:url value="/resources/js/funciones/prototipos/programa-institucional.js" var="prototypeProgramaInstitucional" />
+    
+    
+    
     <spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin" />
     <spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js" />
     <spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs" />
@@ -255,8 +239,8 @@
     <script src="${adminJs}"></script>
     <script src="${constantes}"></script>
     <script src="${fxLogin}"></script>
-    <script src="${prototypeProgramaInstitucional}"></script>
-    <script src="${fxAdministracionProgramaInstitucional}"></script>
+<!--    <script src="${prototypeProgramaInstitucional}"></script>
+    <script src="${fxAdministracionProgramaInstitucional}"></script>-->
     <script src="${buttonsHtml5Js}"></script>
     <script src="${buttonsPrintJs}"></script>
     <script src="${dataTablesButtonsJs}"></script>

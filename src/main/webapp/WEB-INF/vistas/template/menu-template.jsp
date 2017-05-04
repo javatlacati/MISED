@@ -265,17 +265,22 @@
                                         <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
                                             Administraci&oacute;n de Programas Institucionales
                                         </a>
-                                    </li>
-                                        
-                                        
+                                    </li>   
                                 </ul>
                             </li>
                                 
                             <li id="opcion-organo-direccion-estrategica">
-                                <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
+                                <a class="menu-toggle">
                                     <i class="material-icons">book</i>
                                     <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
                                 </a>
+                                <ul class="ml-menu">
+                                    <li id="sub-opcion-administracion-organos-direccion-estrategica">
+                                         <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
+                                            <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
+                                         </a>
+                                    </li>   
+                                </ul>
                             </li>
                                 
                             <li id="opcion-unidad-apoyo">

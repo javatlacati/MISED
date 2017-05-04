@@ -30,7 +30,7 @@ public class OrganoDireccionEstrategicaControladorImpl implements OrganoDireccio
     }
     
     @Override
-    @GetMapping(value = "/organo-direccion-estrategica/administracion-organo-direccion-estrategica.htm")
+    @GetMapping(value = "/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm")
     public ModelAndView vistaAdministracionOrganosDireccionEstrategica() {
         return new ModelAndView("administrador/organos-direccion-estrategica/administracion-organo-direccion-estrategica",
                 "organoDireccionEstrategica", Suppliers.ORGANO_DIRECCION_ESTRATEGICA.get());
