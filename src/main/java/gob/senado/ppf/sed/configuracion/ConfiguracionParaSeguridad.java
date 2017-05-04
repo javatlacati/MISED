@@ -82,16 +82,17 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
 
     /**
      * Configura la seguridad de las comunicaciones entre el navegador del usuario y el servidor.
+     * <br>
      * Para ello:
-     * <p>
-     * Filtra contenido XSS en una petici&oacute;n.
-     * Filtra peticiones de acuerdo a los roles de usuario
-     * Redirecciona a una pagina de inicio si la autenticaci&oacute;n es correcta en
-     * caso contrario a otra
-     * Registra de sesiones( se limita a una sesi&oacute;n por usuario y navegador)
+     * <ol>
+     * <li>Filtra contenido XSS en una petici&oacute;n.</li>
+     * <li>Filtra peticiones de acuerdo a los roles de usuario</li>
+     * <li>Redirecciona a una pagina de inicio si la autenticaci&oacute;n es correcta en caso contrario a otra</li>
+     * <li>Registra de sesiones( se limita a una sesi&oacute;n por usuario y navegador)</li>
+     * </ol>
      *
      * @param http objeto que permite configurar la seguridad para las peticiones.
-     * @throws Exception
+     * @throws Exception cuando hay alg[un problema al configurar
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
