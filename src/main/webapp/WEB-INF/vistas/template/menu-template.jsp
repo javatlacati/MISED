@@ -3,7 +3,7 @@
         <div class="navbar-header">
             <a href="#" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="#" class="bars"></a>
-            <a class="navbar-brand" href="/inicio.htm">
+            <a class="navbar-brand" href="/MISED/inicio.htm">
                 <fmt:message key="mensaje.nombre-aplicacion" />
             </a>
         </div>     
@@ -31,13 +31,13 @@
             <ol class="list">
                 <li class="header"><fmt:message key="mensaje.label-menu" /></li>
                 <li id="inicio-menu">
-                    <a href="/inicio.htm">
+                    <a href="/MISED/inicio.htm">
                         <i class="material-icons">home</i>
                         <span><fmt:message key="mensaje.inicio" /></span>
                     </a>
                 </li>
                 <li id="inicio-menu">
-                    <a href="/mi-perfil.htm">
+                    <a href="/MISED/mi-perfil.htm">
                         <i class="material-icons">account_box</i>
                         <span><fmt:message key="mensaje.informacion-personal" /></span>
                     </a>
@@ -324,13 +324,13 @@
                                 </ul>
                             </li>
                             <li id="opcion-aviso-y-archivo-sistema">
-                                <a href="/administrador/avisos/gestion.htm">
+                                <a href="/MISED/administrador/avisos/gestion.htm">
                                     <i class="material-icons">cast_connected</i>
                                     <span>Avisos y Archivos del Sistema</span>
                                 </a>
                             </li>
                             <li id="opcion-configuracion-fechas">
-                                <a href="/administrador/ejercicios-fiscales/gestion.htm">
+                                <a href="/MISED/administrador/ejercicios-fiscales/gestion.htm">
                                     <i class="material-icons">event</i>
                                     <span>Configuraci&oacute;n de Fechas de Captura del Sistema</span>
                                 </a>

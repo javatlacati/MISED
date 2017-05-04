@@ -9,6 +9,8 @@ import com.google.gson.Gson;
 public interface Formateable {
     /**
      * Obtiene una representaci&oacute;n de la instancia del objeto actual en formato JSON.
+     *
+     * @return representaci&oacute;n en JSON del objeto actual
      */
     default String json() {
         return new Gson().toJson(this);
