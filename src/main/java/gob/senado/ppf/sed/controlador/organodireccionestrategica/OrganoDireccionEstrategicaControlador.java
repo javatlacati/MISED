@@ -4,6 +4,7 @@ import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrateg
 import java.util.List;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
 
 public interface OrganoDireccionEstrategicaControlador {
@@ -12,11 +13,11 @@ public interface OrganoDireccionEstrategicaControlador {
     
     public abstract HttpEntity<List<OrganoDireccionEstrategica>> obtenerOrganosDireccionEstrategica();
     
-    public abstract ResponseEntity<OrganoDireccionEstrategica> registroOrganoDireccionEstrategica();
+    public abstract ResponseEntity<OrganoDireccionEstrategica> registroOrganoDireccionEstrategica(OrganoDireccionEstrategica organoDireccionEstrategica);
     
-    public abstract ResponseEntity<OrganoDireccionEstrategica> bajaOrganoDireccionEstrategica();
+    public abstract ResponseEntity<OrganoDireccionEstrategica> bajaOrganoDireccionEstrategica(String idOrganoDireccionEstrategica);
     
     public abstract HttpEntity<OrganoDireccionEstrategica> buscarOrganoDireccionEstrategica(String idOrganoDireccionEstrategica);
     
-    public abstract ResponseEntity<OrganoDireccionEstrategica> actualizarOrganosDireccionEstrategica(OrganoDireccionEstrategica organoDireccionEstrategica);
+    public abstract ResponseEntity<OrganoDireccionEstrategica> actualizarOrganosDireccionEstrategica(OrganoDireccionEstrategica organoDireccionEstrategica, BindingResult result);
 }
