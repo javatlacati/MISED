@@ -60,7 +60,7 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
      * Metodo de configuración que permite especificar que tipo de autenticación, hasheo de contraseñas y consultas se manejaran
      * en la aplicación para que un usuario tenga acceso.
      * @param auth AuthenticationManagerBuilder objeto de configuracion que define las politicas de Autenticación
-     * @throws Exception
+     * @throws Exception si el DataSource no existe o la consulta SQL esta mal escrita.
      */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -71,6 +71,14 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery(ConfiguracionParaSeguridad.AUTORIDADES_POR_USUARIO);
     }
     
+    /**
+     * Metodo de configuración que filtra contenido XSS en una peticion, filtra peticiones de acuerdo
+     * a los roles de usuario, redirecciona a una pagina de inicio si la autenticación es correcta en
+     * caso contrario a otra, se hace un registro de sesiones, se limita a una sesión por usuario y
+     * navegador.
+     * @param http objeto que permite configurar la seguridad para las peticiones.
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         CharacterEncodingFilter filter = new CharacterEncodingFilter("UTF-8", true);
@@ -79,7 +87,6 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
                 .xssProtection()
                 .xssProtectionEnabled(true)
                 .block(true);
-        
         http.authorizeRequests()
                 .antMatchers("/administrador/**").hasRole("ADMINISTRADOR")
                 .antMatchers("/inicio-sesion", "/inicio.htm", "/").permitAll()
@@ -106,16 +113,31 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
                 .sessionRegistry(sessionRegistry());
     }
     
+    /**
+     * Metodo de configuración que ignora todo el contenido de la carpeta 
+     * resources (recursos de la aplicacion tales como las hojas de estilos, 
+     * scripts, etc).
+     * @param web
+     * @throws Exception 
+     */
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/resources/**");
     }
     
+    /**
+     * Bean de configuración que permite obtener una instancia de un hasheador de cadenas.
+     * @return PasswordEncoder para hashear cadenas de texto.
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
     
+    /**
+     * Bean de configuración que permite guardar un registro de las sesiones de usuario.
+     * @return SessionRegistry objeto que almacena el numero de sesiones activas en la aplicación.
+     */
     @Bean
     public SessionRegistry sessionRegistry() {
         return new SessionRegistryImpl();
