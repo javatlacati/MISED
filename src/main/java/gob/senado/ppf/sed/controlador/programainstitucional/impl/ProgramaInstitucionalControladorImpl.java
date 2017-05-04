@@ -38,10 +38,10 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
     public HttpEntity<List<ProgramaInstitucional>> obtenerProgramasInstitucionales() {
         List<ProgramaInstitucional> programasInstitucionales = programaInstitucionalServicio
                 .obtenerProgramasInstitucionales();
-        if (programasInstitucionales.size() > 0) {
-            return new ResponseEntity<>(programasInstitucionales, HttpStatus.OK);
-        } else {
+        if (programasInstitucionales.isEmpty()) {
             return new ResponseEntity<>(programasInstitucionales, HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(programasInstitucionales, HttpStatus.OK);
         }
     }
 
