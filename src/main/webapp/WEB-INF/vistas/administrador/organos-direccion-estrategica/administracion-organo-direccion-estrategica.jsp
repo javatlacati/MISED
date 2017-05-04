@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <sec:csrfMetaTags/>
-        <title>MISED :: Administración de Órganos de Dirección Estratégica </title>
+        <title>MISED :: Administraci&oacute;n de &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica </title>
         <link rel="icon" href="../../favicon.ico" type="image/x-icon">
         <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" var="fontRoboto" />
         <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons" />
@@ -72,7 +72,7 @@
                             </li>
                             <li class="active">
                                 <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
-                                    <i class="material-icons">view_agenda</i> Administraci&oacute;n de Órganos de Dirección Estratégica
+                                    <i class="material-icons">view_agenda</i> Administraci&oacute;n de &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica
                                 </a>
                             </li>
                         </ol>
@@ -84,7 +84,7 @@
                         <div class="card">
                             <div class="header">
                                 <ol class="breadcrumb breadcrumb-bg-grey">
-                                    <li class="active"><h3>Captura de Órgano de Dirección Estratégica</h3></li>
+                                    <li class="active"><h3>Captura de &Oacute;rgano de Direcci&oacute;n Estrat&eacute;gica</h3></li>
                                 </ol>
                             </div>
                             <div class="body">																		
@@ -104,14 +104,14 @@
                                                 <div class="form-line">
                                                     <form:textarea path="descripcion" id="nueva-descripcion"
                                                                    maxlength="1200" cssClass="form-control"></form:textarea>
-                                                        <label class="form-label">Descripci&oacute;n del órgano de dirección estratégica</label>
+                                                        <label class="form-label">Descripci&oacute;n del &oacute;rgano de direcci&oacute;n estrat&eacute;gica</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group form-float">
                                                     <button type="button" class="btn btn-success waves-effect" 
-                                                            onclick="capturaProgramaInstitucional();">Guardar órgano de dirección estratégica</button>
+                                                            onclick="capturaProgramaInstitucional();">Guardar &oacute;rgano de direcci&oacute;n estrat&eacute;gica</button>
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -127,7 +127,7 @@
                     <div class="card">
                         <div class="header">
                             <ol class="breadcrumb breadcrumb-bg-grey">
-                                <li class="active"><h3>Busqueda y Actualización de Órganos de Dirección Estratégica</h3></li>
+                                <li class="active"><h3>Busqueda y Actualizaci&oacute;n de &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</h3></li>
                             </ol>
                         </div>
   
@@ -169,7 +169,7 @@
                                                             <div class="form-line">
                                                                 <form:input type="hidden" path="idOrganoDireccionEstrategica" id="idOrganoDireccionEstrategica" />
                                                                 <form:input type="text" path="nombre" id="nombre" cssClass="form-control" autocomplete="off" maxlength="100" /> 
-                                                                <label class="form-label">Nombre del órgano de dirección estratégica</label>
+                                                                <label class="form-label">Nombre del &oacute;rgano de direcci&oacute;n estrat&eacute;gica</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -177,7 +177,7 @@
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
                                                                 <form:textarea path="descripcion" id="descripcion" maxlength="1200" cssClass="form-control"></form:textarea>
-                                                                    <label class="form-label">Descripci&oacute;n del órgano de dirección estratégica</label>
+                                                                    <label class="form-label">Descripci&oacute;n del &oacute;rgano de direcci&oacute;n estrat&eacute;gica</label>
                                                                 </div>
                                                             </div>
                                                         </div>
