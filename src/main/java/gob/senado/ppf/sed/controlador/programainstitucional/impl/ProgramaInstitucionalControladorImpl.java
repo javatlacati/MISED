@@ -15,24 +15,23 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller(value = "programaInstitucionalControlador")
-
 @RequestMapping(value = "/administrador")
 public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucionalControlador {
-
+    
     private final ProgramaInstitucionalServicio programaInstitucionalServicio;
-
+    
     @Autowired
     public ProgramaInstitucionalControladorImpl(ProgramaInstitucionalServicio programaInstitucionalServicio) {
         this.programaInstitucionalServicio = programaInstitucionalServicio;
     }
-
+    
     @Override
     @GetMapping(value = "/programa-institucional/administracion-programas-institucionales.htm")
     public ModelAndView vistaAdministracionProgramasInstitucionales() {
         return new ModelAndView("administrador/programas-institucionales/administracion-programa-institucional",
                 "programaInstitucional", Suppliers.PROGRAMA_INSTITUCIONAL.get());
     }
-
+    
     @Override
     @PostMapping(value = "/programa-institucional/programas-institucionales.json")
     public HttpEntity<List<ProgramaInstitucional>> obtenerProgramasInstitucionales() {
@@ -44,7 +43,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(programasInstitucionales, HttpStatus.OK);
         }
     }
-
+    
     @Override
     @PostMapping(value = "/programa-institucional/registro-programa-institucional")
     public ResponseEntity<ProgramaInstitucional> registroProgramaInstitucional(
@@ -55,7 +54,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
-
+    
     @Override
     @PostMapping(value = "/programa-institucional/baja-programa-institucional/{idProgramaInstitucional}")
     public ResponseEntity<ProgramaInstitucional> bajaProgramaInstitucional(
@@ -77,7 +76,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
-
+    
     @Override
     @PostMapping(value = "/programa-institucional/buscar-programa-institucional/{idProgramaInstitucional}")
     public HttpEntity<ProgramaInstitucional> buscarProgramaInstitucional(
@@ -95,7 +94,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
-
+    
     @Override
     @PostMapping(value = "/programa-institucional/actualizar-programa-institucional")
     public ResponseEntity<ProgramaInstitucional> actualizarProgramaInstitucional(
@@ -112,5 +111,5 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
+    
 }
