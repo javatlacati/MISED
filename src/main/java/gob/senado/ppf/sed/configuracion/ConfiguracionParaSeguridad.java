@@ -129,12 +129,12 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * Como parte de la configuración de seguridad ignora recursos que no se debend e mostrar al usuario.
+     * Como parte de la configuraci&oacute;n de seguridad ignora recursos que no se debend e mostrar al usuario.
      * Ignora el contenido de la carpeta resources (recursos de la aplicacion tales como las hojas de estilos,
      * scripts, etc).
      *
-     * @param web
-     * @throws Exception
+     * @param web configuraci&oacute;n de la seguridad web
+     * @throws Exception si hay problemas al realizar la configurraci&oacute;n
      */
     @Override
     public void configure(WebSecurity web) throws Exception {
