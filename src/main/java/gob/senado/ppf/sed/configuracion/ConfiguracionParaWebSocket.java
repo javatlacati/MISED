@@ -1,6 +1,6 @@
 package gob.senado.ppf.sed.configuracion;
 
-import gob.senado.ppf.sed.componente.programainstitucional.OrganoDireccionEstrategicaWebSocketHandler;
+import gob.senado.ppf.sed.componente.organodireccionestrategica.OrganoDireccionEstrategicaWebSocketHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;

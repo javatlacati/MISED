@@ -1,6 +1,6 @@
 package gob.senado.ppf.sed.configuracion;
 
-import gob.senado.ppf.sed.componente.programainstitucional.OrganoDireccionEstrategicaWebSocketHandler;
+import gob.senado.ppf.sed.componente.organodireccionestrategica.OrganoDireccionEstrategicaWebSocketHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import gob.senado.ppf.sed.componente.programainstitucional.ProgramaInstitucionalWebSocketHandler;

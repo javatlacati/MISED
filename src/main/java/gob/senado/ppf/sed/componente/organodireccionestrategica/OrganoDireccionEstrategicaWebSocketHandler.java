@@ -1,4 +1,4 @@
-package gob.senado.ppf.sed.componente.programainstitucional;
+package gob.senado.ppf.sed.componente.organodireccionestrategica;
 
 import java.io.IOException;
 import java.util.List;
