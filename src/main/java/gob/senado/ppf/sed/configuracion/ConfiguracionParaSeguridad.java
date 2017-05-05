@@ -33,8 +33,8 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     /**
-     * Consulta que obtiene la identidad (nombre de usuario) y la contraseña hasheada de la tabla usuario junto con
-     * sus permisos si la condición de que la identidad sea igual a la del valor literal y si tiene el permiso de autenticarse se cumple.
+     * Consulta que obtiene la identidad (nombre de usuario) y la contrase&ntilde;a hasheada de la tabla usuario junto con
+     * sus permisos si la condici&oacute;n de que la identidad sea igual a la del valor literal y si tiene el permiso de autenticarse se cumple.
      */
     private static final String USUARIOS_POR_USUARIO = "SELECT U.IDENTIDAD, U.CLAVE_ACCESO, UP.PUEDE_AUTENTICARSE FROM USUARIO U " +
             "INNER JOIN USUARIO_PERMISO UP ON U.ID_USUARIO = UP.ID_USUARIO WHERE U.IDENTIDAD = ? AND UP.PUEDE_AUTENTICARSE = true";
@@ -51,11 +51,11 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
     private static final int LIMITE_SESIONES_POR_USUARIO = 1;
 
     /**
-     * Crea la configuración de seguridad con la ayuda de un orígen de datos.
+     * Crea la configuraci&oacute;n de seguridad con la ayuda de un or&iacute;gen de datos.
      * <p>
-     * Parar el caso de esta aplicación el origen de datos será una base de datos.
+     * Parar el caso de esta aplicaci&oacute;n el origen de datos ser&aacute; una base de datos.
      *
-     * @param dataSource puente de conexión a la base de datos.
+     * @param dataSource puente de conexi&oacute;n a la base de datos.
      */
     @Autowired
     public ConfiguracionParaSeguridad(DataSource dataSource) {
@@ -92,7 +92,7 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
      * </ol>
      *
      * @param http objeto que permite configurar la seguridad para las peticiones.
-     * @throws Exception cuando hay alg[un problema al configurar
+     * @throws Exception cuando hay alg&uacute;n problema al configurar
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
