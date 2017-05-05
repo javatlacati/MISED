@@ -11,7 +11,8 @@ import java.io.Serializable;
  * Este objeto tiene como responsabilidad
  * representar un conjunto de instrumentos de pol&iacute;tica, para coadyuvar los objetivos, prioridades, estrategias y pol&iacute;ticas
  * definidas del PND, esto quiere decir que un <b>Programa Institucional</b> es un macro elemento que es la suma de los esfuerzos
- * coordinados por los &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica (ODE&acute;s) que a su vez coordinan distintas Unidades de Apoyo (UA&acute;s) siendo los ODE&acute;s
+ * coordinados por los &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica (ODE&acute;s) que a su vez coordinan distintas Unidades de 
+ * Apoyo (UA&acute;s) siendo los ODE&acute;s
  * y UA&acute;s agrupados por <b>Programa Institucional</b>.
  *
  * @author Benjamin Natanael Ocotzi Alvarez

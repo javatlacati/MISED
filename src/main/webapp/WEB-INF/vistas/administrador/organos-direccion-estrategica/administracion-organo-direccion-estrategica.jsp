@@ -15,19 +15,21 @@
         <spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss" />
         <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss" />
         <spring:url value="/resources/css/style.min.css" var="styleCss" />
+        <spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss" />
         <spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss" /> 
         <spring:url value="/resources/plugins/remodal/remodal-default-theme.css" var="remodalDefaultThemeCss" />
         <spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss"/>
         <spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css" var="dataTablesBootstrapCss" />
         <spring:url value="/resources/plugins/jquery-datatable/responsive.dataTables.min.css" var="responsiveDataTableCss"/>
-        <link href="${fontRoboto}" rel="stylesheet" type="text/css">
-        <link href="${materialIcons}" rel="stylesheet" type="text/css">
-        <link href="${bootstrapCss}" rel="stylesheet">
+        <link href="${fontRoboto}" rel="stylesheet" type="text/css"/>
+        <link href="${materialIcons}" rel="stylesheet" type="text/css"/>
+        <link href="${bootstrapCss}" rel="stylesheet" />
         <link href="${wavesCss}" rel="stylesheet" />
         <link href="${animateCss}" rel="stylesheet" />
         <link href="${mdPreloaderCss}" rel="stylesheet" />
-        <link href="${sweetAlertCss}" rel="stylesheet">
-        <link href="${styleCss}" rel="stylesheet">
+        <link href="${sweetAlertCss}" rel="stylesheet" />
+        <link href="${styleCss}" rel="stylesheet" />
+        <link href="${bootstrapSelectCss}" rel="stylesheet" />
         <link href="${allThemesCss}" rel="stylesheet" />
         <link href="${bootstrapSelectCss}" rel="stylesheet" />
         <link href="${dataTablesBootstrapCss}" rel="stylesheet" />
@@ -88,13 +90,24 @@
                                 </ol>
                             </div>
                             <div class="body">																		
-                                <form:form methodParam="POST" commandName="organoDireccionEstrategica" id="frm-Registro-Organo-Direccion-Estrategica" htmlEscape="true">
+                                <form method="POST" id="frm-Registro-Organo-Direccion-Estrategica">
                                     <fieldset>
                                         <div class="col-sm-12 col-md-12 col-lg-12">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                    <form:input type="text" path="nombre" id="nuevo-nombre"
-                                                                cssClass="form-control" autocomplete="off" maxlength="100" />
+                                                    <p>
+                                                        <b>Seleccione el Programa Institucional para esta nuevo órgano de dirección estratégico:</b>
+                                                    </p>
+                                                    <select class="form-control" name="idProgramaInstitucional" id="selector-id-programaInstitucional">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group form-float">
+                                                <div class="form-line">
+                                                    <input type="text" name="nombre" id="nuevo-nombre" 
+                                                           css="form-control" autocomplete="off" maxlength="100" />
                                                     <label class="form-label">Nombre del órgano de dirección estratégica</label>
                                                 </div>
                                             </div>
@@ -102,8 +115,8 @@
                                         <div class="col-sm-12 col-md-12 col-lg-12">
                                             <div class="form-group form-float">
                                                 <div class="form-line">
-                                                    <form:textarea path="descripcion" id="nueva-descripcion"
-                                                                   maxlength="1200" cssClass="form-control"></form:textarea>
+                                                    <textarea name="descripcion" id="nueva-descripcion"
+                                                                   maxlength="1200" class="form-control"></textarea>
                                                         <label class="form-label">Descripci&oacute;n del &oacute;rgano de direcci&oacute;n estrat&eacute;gica</label>
                                                     </div>
                                                 </div>
@@ -111,11 +124,11 @@
                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group form-float">
                                                     <button type="button" class="btn btn-success waves-effect" 
-                                                            onclick="capturaProgramaInstitucional();">Guardar &oacute;rgano de direcci&oacute;n estrat&eacute;gica</button>
+                                                            onclick="capturaOrganoDireccionEstrategica();">Guardar &oacute;rgano de direcci&oacute;n estrat&eacute;gica</button>
                                                 </div>
                                             </div>
                                         </fieldset>
-                                </form:form>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -130,24 +143,22 @@
                                 <li class="active"><h3>Busqueda y Actualizaci&oacute;n de &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</h3></li>
                             </ol>
                         </div>
-  
+                        
                         <div class="body">
                             <table id="tabla-organos-direccion-estrategica" 
                                    class="table table-striped display responsive nowrap text-justify" 
                                    width="100%" cellspacing="0" style="color: black;">
                                 <thead>
                                     <tr>
-                                        <th>Clave de Programa Institucional</th>
-                                        <th>Nombre de Programa Institucional</th>
-                                        <th>Descripci&oacute;n de Programa Institucional</th>
+                                        <th>Nombre del Órgano de Dirección Estratégica</th>
+                                        <th>Descripci&oacute;n del Órgano de Dirección Estrategica</th>
                                         <th>Acciones Permitidas</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Clave de Programa Institucional</th>
-                                        <th>Nombre de Programa Institucional</th>
-                                        <th>Descripci&oacute;n de Programa Institucional</th>
+                                        <th>Nombre del Órgano de Dirección Estratégica</th>
+                                        <th>Descripci&oacute;n del Órgano de Dirección Estrategica</th>
                                         <th>Acciones Permitidas</th>
                                     </tr>
                                 </tfoot>
@@ -211,9 +222,9 @@
     <spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs" />
     <spring:url value="/resources/js/admin.js" var="adminJs" />
     <spring:url value="/resources/js/funciones/constantes.js" var="constantes" />
+    <spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
     
-    
-    <spring:url value="/resources/js/funciones/fx-administracion-programa-institucional.js" var="fxAdministracionProgramaInstitucional" />
+    <spring:url value="/resources/js/funciones/fx-administracion-organo-direccion-estrategica.js" var="fxAdministracionOrganoDireccionEstrategica" />
     <spring:url value="/resources/js/funciones/prototipos/programa-institucional.js" var="prototypeProgramaInstitucional" />
     
     
@@ -238,9 +249,10 @@
     <script src="${wavesJs}"></script>
     <script src="${adminJs}"></script>
     <script src="${constantes}"></script>
+    <script src="${bootstrapSelectJs}"></script>
     <script src="${fxLogin}"></script>
-<!--    <script src="${prototypeProgramaInstitucional}"></script>
-    <script src="${fxAdministracionProgramaInstitucional}"></script>-->
+<!--    <script src="${prototypeProgramaInstitucional}"></script>-->    
+    <script src="${fxAdministracionOrganoDireccionEstrategica}"></script>
     <script src="${buttonsHtml5Js}"></script>
     <script src="${buttonsPrintJs}"></script>
     <script src="${dataTablesButtonsJs}"></script>

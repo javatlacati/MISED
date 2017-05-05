@@ -13,7 +13,7 @@ const LENGUAJE = {
 	"sLoadingRecords" : "Cargando...",
 	"oPaginate" : {
 		"sFirst" : "Primero",
-		"sLast" : "Ãšltimo",
+		"sLast" : "Último",
 		"sNext" : "Siguiente",
 		"sPrevious" : "Anterior"
 	},

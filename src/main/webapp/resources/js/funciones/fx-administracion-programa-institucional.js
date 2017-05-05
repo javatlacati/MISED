@@ -128,7 +128,7 @@ function obtenerProgramaInstitucional(idProgramaInstitucional){
         	$("#descripcion").val(pi.descripcion);
         },
         error: function() {
-            swal("ERROR", "Se ha perdido la comunicaciÃ³n con el servidor Ã³ el recurso que busca ya no existe!, intentelo mas tarde.");
+            swal("ERROR", "Se ha perdido la comunicación con el servidor ó el recurso que busca ya no existe!, intentelo mas tarde.");
         }
     });
 }

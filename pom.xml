@@ -24,6 +24,8 @@
     </developers>
 
     <properties>
+        <rxjava2.version>2.1.0</rxjava2.version>
+        <reactive-streams.version>1.0.0.final</reactive-streams.version>
         <quartz.version>2.2.3</quartz.version>
         <jackson.version>2.8.8</jackson.version>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
@@ -50,6 +52,19 @@
     </properties>
 
     <dependencies>
+        
+        <dependency>
+            <groupId>io.reactivex.rxjava2</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>${rxjava2.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.reactivestreams</groupId>
+            <artifactId>reactive-streams</artifactId>
+            <version>${reactive-streams.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
@@ -253,10 +268,10 @@
             <scope>test</scope>
         </dependency>
 
-<!--        <dependency>
-        	<groupId>org.projectlombok</groupId>
-        	<artifactId>lombok</artifactId>
-        	<version>1.16.8</version>
+        <!--        <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.8</version>
             <scope>provided</scope>
         </dependency>-->
 
