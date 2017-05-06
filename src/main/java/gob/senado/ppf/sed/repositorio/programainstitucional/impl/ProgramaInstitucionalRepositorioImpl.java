@@ -1,16 +1,17 @@
 package gob.senado.ppf.sed.repositorio.programainstitucional.impl;
 
 import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
-import java.util.List;
+import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
+import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
+import gob.senado.ppf.sed.repositorio.programainstitucional.ProgramaInstitucionalRepositorio;
+import gob.senado.ppf.sed.utilidades.RowMappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
-import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
-import gob.senado.ppf.sed.repositorio.programainstitucional.ProgramaInstitucionalRepositorio;
-import gob.senado.ppf.sed.utilidades.RowMappers;
+
+import java.util.List;
 
 @Repository(value = "programaInstitucionalRepositorio")
 public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucionalRepositorio {
@@ -26,8 +27,8 @@ public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucion
     @Override
     public boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional) {
         return jdbcTemplate.update("INSERT INTO PROGRAMA_INSTITUCIONAL(clave, nombre, descripcion) VALUES (?, ?, ?)",
-                new Object[] { programaInstitucional.getClave(), programaInstitucional.getNombre(),
-                    programaInstitucional.getDescripcion() }) > 0;
+                programaInstitucional.getClave(), programaInstitucional.getNombre(),
+                programaInstitucional.getDescripcion()) > 0;
     }
     
     @Override
@@ -83,14 +84,14 @@ public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucion
     public boolean actualizarProgramaInstitucional(ProgramaInstitucional pi) {
         return jdbcTemplate.update(
                 "UPDATE PROGRAMA_INSTITUCIONAL SET clave = ?, nombre = ?, descripcion = ? WHERE id_programa_institucional = ?",
-                new Object[] { pi.getClave(), pi.getNombre(), pi.getDescripcion(),
-                    pi.getIdProgramaInstitucional() }) > 0;
+                pi.getClave(), pi.getNombre(), pi.getDescripcion(),
+                pi.getIdProgramaInstitucional()) > 0;
     }
     
     @Override
     public boolean bajaProgramaInstitucional(long idProgramaInstitucional) {
         return jdbcTemplate.update("DELETE FROM PROGRAMA_INSTITUCIONAL WHERE id_programa_institucional = ?",
-                new Object[] { idProgramaInstitucional }) > 0;
+                idProgramaInstitucional) > 0;
     }
     
     @Override
