@@ -1,5 +1,7 @@
 package gob.senado.ppf.sed.componente.organodireccionestrategica;
 
+import io.reactivex.Observable;
+import io.reactivex.Single;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -16,23 +18,24 @@ public class OrganoDireccionEstrategicaWebSocketHandler extends TextWebSocketHan
     
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        sesionesWebSocket.add(session);
+        Single.just(session)
+                .subscribe(sesionesWebSocket::add, log::error);
+        
     }
     
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        try{
-            for(WebSocketSession wss: sesionesWebSocket){
-                session.sendMessage(message);
-            }
-        }catch(IOException e){
-            log.error("Problema enviando mensaje por socket",e);
-        }
+       Observable.fromArray(sesionesWebSocket.toArray(new WebSocketSession[0]))
+               .subscribe(ws->ws.sendMessage(message), 
+                       throwableWebSocketSession -> 
+                            log.error("Problema enviando mensaje por websocket ",
+                                        throwableWebSocketSession));
     }
     
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) {
-        sesionesWebSocket.remove(session);
+         Single.just(session).subscribe(sesionesWebSocket::remove,
+                throwableWebSocketSession -> log.error("Problema removiendo el websocket ", throwableWebSocketSession));
     }
     
     

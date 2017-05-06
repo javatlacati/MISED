@@ -1,4 +1,4 @@
-package gob.senado.ppf.sed.repositorio.organizaciontecnicaadministrativa.impl;
+package gob.senado.ppf.sed.servicio.organizaciontecnicaadministrativa.impl;
 
 import gob.senado.ppf.sed.dto.organizaciontecnicaadministrativa.OrganizacionTecnicaAdministrativa;
 import gob.senado.ppf.sed.repositorio.organizaciontecnicaadministrativa.OrganizacionTecnicaAdministrativaRepositorio;
@@ -23,6 +23,21 @@ public class OrganizacionTecnicaAdministrativaServicioImpl implements Organizaci
     @Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
     public List<OrganizacionTecnicaAdministrativa> obtenerOrganizacionesTecnicasAdministrativas() {
         return organizacionTecnicaAdministrativaRepositorio.obtenerOrganizacionesTecnicasAdministrativas();
+    }
+
+    @Override
+    public List<OrganizacionTecnicaAdministrativa> obtenerOrganizacionesTecnicasAdministrativasPorIdProgramaInstitucional(long idProgramaInstitucional) {
+        return organizacionTecnicaAdministrativaRepositorio.obtenerOrganizacionesTecnicasAdministrativasPorIdProgramaInstitucional(idProgramaInstitucional);
+    }
+
+    @Override
+    public List<OrganizacionTecnicaAdministrativa> obtenerOrganizacionesTecnicasAdministrativasPorIdOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
+        return organizacionTecnicaAdministrativaRepositorio.obtenerOrganizacionesTecnicasAdministrativasPorIdOrganoDireccionEstrategica(idOrganoDireccionEstrategica);
+    }
+
+    @Override
+    public List<OrganizacionTecnicaAdministrativa> obtenerOrganizacionesTecnicasAdministrativasPorIdUnidadApoyo(long idUnidadApoyo) {
+        return organizacionTecnicaAdministrativaRepositorio.obtenerOrganizacionesTecnicasAdministrativasPorIdUnidadApoyo(idUnidadApoyo);
     }
     
 }

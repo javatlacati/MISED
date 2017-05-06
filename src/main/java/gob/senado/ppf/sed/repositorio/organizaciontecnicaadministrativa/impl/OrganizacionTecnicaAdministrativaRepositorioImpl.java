@@ -29,5 +29,41 @@ public class OrganizacionTecnicaAdministrativaRepositorioImpl implements Organiz
         return jdbcTemplate.query(sql.toString(), RowMappers.ROW_MAPPER_ORGANIZACION_TECNICA_ADMINISTRATIVA);
     }
     
+    @Override
+    public List<OrganizacionTecnicaAdministrativa> obtenerOrganizacionesTecnicasAdministrativasPorIdProgramaInstitucional(long idProgramaInstitucional) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT * FROM PROGRAMA_INSTITUCIONAL PI ")
+                .append("INNER JOIN ORGANO_DIRECCION_ESTRATEGICA ODE ")
+                .append("ON PI.ID_PROGRAMA_INSTITUCIONAL = ODE.ID_PROGRAMA_INSTITUCIONAL ")
+                .append("INNER JOIN UNIDAD_APOYO UA ")
+                .append("ON ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = UA.ID_ORGANO_DIRECCION_ESTRATEGICA ")
+                .append("WHERE PI.ID_PROGRAMA_INSTITUCIONAL = ?");
+        return jdbcTemplate.query(sql.toString(), new Object[]{idProgramaInstitucional}, RowMappers.ROW_MAPPER_ORGANIZACION_TECNICA_ADMINISTRATIVA);
+    }
+    
+    @Override
+    public List<OrganizacionTecnicaAdministrativa> obtenerOrganizacionesTecnicasAdministrativasPorIdOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT * FROM PROGRAMA_INSTITUCIONAL PI ")
+                .append("INNER JOIN ORGANO_DIRECCION_ESTRATEGICA ODE ")
+                .append("ON PI.ID_PROGRAMA_INSTITUCIONAL = ODE.ID_PROGRAMA_INSTITUCIONAL ")
+                .append("INNER JOIN UNIDAD_APOYO UA ")
+                .append("ON ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = UA.ID_ORGANO_DIRECCION_ESTRATEGICA ")
+                .append("WHERE ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = ?");
+        return jdbcTemplate.query(sql.toString(), new Object[]{idOrganoDireccionEstrategica}, RowMappers.ROW_MAPPER_ORGANIZACION_TECNICA_ADMINISTRATIVA);
+    }
+    
+    @Override
+    public List<OrganizacionTecnicaAdministrativa> obtenerOrganizacionesTecnicasAdministrativasPorIdUnidadApoyo(long idUnidadApoyo) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT * FROM PROGRAMA_INSTITUCIONAL PI ")
+                .append("INNER JOIN ORGANO_DIRECCION_ESTRATEGICA ODE ")
+                .append("ON PI.ID_PROGRAMA_INSTITUCIONAL = ODE.ID_PROGRAMA_INSTITUCIONAL ")
+                .append("INNER JOIN UNIDAD_APOYO UA ")
+                .append("ON ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = UA.ID_ORGANO_DIRECCION_ESTRATEGICA ")
+                .append("WHERE UA.ID_UNIDAD_APOYO = ?");
+        return jdbcTemplate.query(sql.toString(), new Object[]{idUnidadApoyo}, RowMappers.ROW_MAPPER_ORGANIZACION_TECNICA_ADMINISTRATIVA);
+    }
+    
     
 }
