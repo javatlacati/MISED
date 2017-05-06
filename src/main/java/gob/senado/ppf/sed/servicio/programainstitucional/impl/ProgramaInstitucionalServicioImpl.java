@@ -22,14 +22,15 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
     @Override
     @Transactional
     public boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional) {
-        return programaInstitucionalRepositorio.buscarProgramaInstitucional(programaInstitucional.getClave()) == null 
+        return programaInstitucionalRepositorio.buscarProgramaInstitucional(programaInstitucional.getClave()) == null
                 && programaInstitucionalRepositorio.altaProgramaInstitucional(programaInstitucional);
     }
     
     @Override
     @Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
     public ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional) {
-        return programaInstitucionalRepositorio.buscarProgramaInstitucional(idProgramaInstitucional);
+        return programaInstitucionalRepositorio
+                .buscarProgramaInstitucional(idProgramaInstitucional);
     }
     
     @Override

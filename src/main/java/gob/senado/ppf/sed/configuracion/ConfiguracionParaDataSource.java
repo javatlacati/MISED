@@ -120,7 +120,6 @@ public class ConfiguracionParaDataSource {
      * @return JdbcTemplate que permite realizar consultar y transacciones a las demas capas superiores.
      */
     @Bean
-    @Scope("prototype")
     public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }

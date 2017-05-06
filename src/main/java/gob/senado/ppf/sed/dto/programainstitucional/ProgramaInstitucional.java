@@ -1,10 +1,14 @@
 package gob.senado.ppf.sed.dto.programainstitucional;
 
+import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
+import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Representa un objeto de transferencia de datos de un <b>Programa Institucional</b>.
@@ -42,6 +46,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
      * Descripci&oacute;n del programa institucional
      */
     private String descripcion;
+    
 
     /**
      * Constructor por defecto para la clase ProgramaInstitucional.
@@ -52,10 +57,12 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     /**
      * Contructor privado para la clase ProgramaInstitucional
      *
-     * @param idProgramaInstitucional identificador num&eacute;rico del Programa Institucional
-     * @param clave                   Clave alfanum&eacute;rica del Programa Institucional
-     * @param nombre                  nombre del Programa Institucional
-     * @param descripcion             descripci&oacute;n del Programa Institucional
+     * @param idProgramaInstitucional              identificador num&eacute;rico del Programa Institucional
+     * @param clave                                Clave alfanum&eacute;rica del Programa Institucional
+     * @param nombre                               nombre del Programa Institucional
+     * @param descripcion                          Descripci&oacute;n del Programa Institucional
+     * @param organosDireccionEstrategicaAdscritos Lista de organos de direccion estrategica adscritos a este programa institucional
+     * @param unidadesApoyoAdscritas               Lista de unidades de apoyo adscritas a este programa institucional
      */
     @java.beans.ConstructorProperties({"idProgramaInstitucional", "clave", "nombre", "descripcion"})
     private ProgramaInstitucional(long idProgramaInstitucional, String clave, String nombre, String descripcion) {
@@ -155,7 +162,8 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    
+    
     public boolean equals(Object o) {
         if (o == this) return true;
         if (!(o instanceof ProgramaInstitucional)) return false;

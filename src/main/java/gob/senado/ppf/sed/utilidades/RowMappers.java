@@ -44,6 +44,8 @@ public class RowMappers {
 		pi.setClave(rs.getString(2));
 		pi.setNombre(rs.getString(3));
 		pi.setDescripcion(rs.getString(4));
+                
+                
 		return pi;
 	};
 	
