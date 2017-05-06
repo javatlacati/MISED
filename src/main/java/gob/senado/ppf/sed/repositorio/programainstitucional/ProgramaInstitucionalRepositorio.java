@@ -8,25 +8,25 @@ import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
 import java.util.List;
 
 public interface ProgramaInstitucionalRepositorio {
-	
-	boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional);
-	
-	ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional);
-	
-	ProgramaInstitucional buscarProgramaInstitucional(String claveProgramaInstitucional);
-	
-	List<ProgramaInstitucional> obtenerProgramasInstitucionales();
-        
-        List<OrganoDireccionEstrategica> obtenerOrganosDireccionEstrategicaPorIdProgramaInstitucional(long idProgramaInstitucional);
-        
-        List<UnidadApoyo> obtenerUnidadesApoyoPorIdProgramaInstitucional(long idProgramaInstitucional);
-	
-	boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional);
-	
-	boolean bajaProgramaInstitucional(long idProgramaInstitucional);
-	
-	long contarProgramasInstitucionales();
-	
+
+    boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional);
+
+    ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional);
+
+    ProgramaInstitucional buscarProgramaInstitucional(String claveProgramaInstitucional);
+
+    List<ProgramaInstitucional> obtenerProgramasInstitucionales();
+
+    List<OrganoDireccionEstrategica> obtenerOrganosDireccionEstrategicaPorIdProgramaInstitucional(long idProgramaInstitucional);
+
+    List<UnidadApoyo> obtenerUnidadesApoyoPorIdProgramaInstitucional(long idProgramaInstitucional);
+
+    boolean actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional);
+
+    boolean bajaProgramaInstitucional(long idProgramaInstitucional);
+
+    long contarProgramasInstitucionales();
+
 }
 
 
