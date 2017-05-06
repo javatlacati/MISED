@@ -100,7 +100,7 @@ public class OrganoDireccionEstrategicaControladorImpl implements OrganoDireccio
     
     @Override
     @PostMapping(value = "/organo-direccion-estrategica/actualizar-organo-direccion-estrategica")
-    public ResponseEntity<OrganoDireccionEstrategica> actualizarOrganosDireccionEstrategica(
+    public ResponseEntity<OrganoDireccionEstrategica> actualizarOrganoDireccionEstrategica(
             @ModelAttribute(name = "organoDireccionEstrategica") OrganoDireccionEstrategica organoDireccionEstrategica, BindingResult result) {
         final OrganoDireccionEstrategica OrganoDireccionEstrategicaRegistrado = organoDireccionEstrategicaServicio
                 .buscarOrganoDireccionEstrategica(organoDireccionEstrategica.getIdOrganoDireccionEstrategica());

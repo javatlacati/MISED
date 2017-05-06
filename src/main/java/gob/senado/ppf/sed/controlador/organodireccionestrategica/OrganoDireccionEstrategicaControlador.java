@@ -20,5 +20,5 @@ public interface OrganoDireccionEstrategicaControlador {
     
     HttpEntity<OrganoDireccionEstrategica> buscarOrganoDireccionEstrategica(String idOrganoDireccionEstrategica);
     
-    ResponseEntity<OrganoDireccionEstrategica> actualizarOrganosDireccionEstrategica(OrganoDireccionEstrategica organoDireccionEstrategica, BindingResult result);
+    ResponseEntity<OrganoDireccionEstrategica> actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica organoDireccionEstrategica, BindingResult result);
 }
