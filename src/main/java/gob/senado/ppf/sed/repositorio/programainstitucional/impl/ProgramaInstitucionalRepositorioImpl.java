@@ -1,17 +1,16 @@
 package gob.senado.ppf.sed.repositorio.programainstitucional.impl;
 
 import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
-import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
-import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
-import gob.senado.ppf.sed.repositorio.programainstitucional.ProgramaInstitucionalRepositorio;
-import gob.senado.ppf.sed.utilidades.RowMappers;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
+import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
+import gob.senado.ppf.sed.repositorio.programainstitucional.ProgramaInstitucionalRepositorio;
+import gob.senado.ppf.sed.utilidades.RowMappers;
 
 @Repository(value = "programaInstitucionalRepositorio")
 public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucionalRepositorio {
@@ -124,14 +123,14 @@ public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucion
     public boolean actualizarProgramaInstitucional(ProgramaInstitucional pi) {
         return jdbcTemplate.update(
                 "UPDATE PROGRAMA_INSTITUCIONAL SET clave = ?, nombre = ?, descripcion = ? WHERE id_programa_institucional = ?",
-                pi.getClave(), pi.getNombre(), pi.getDescripcion(),
-                pi.getIdProgramaInstitucional()) > 0;
+                new Object[] { pi.getClave(), pi.getNombre(), pi.getDescripcion(),
+                    pi.getIdProgramaInstitucional() }) > 0;
     }
     
     @Override
     public boolean bajaProgramaInstitucional(long idProgramaInstitucional) {
         return jdbcTemplate.update("DELETE FROM PROGRAMA_INSTITUCIONAL WHERE id_programa_institucional = ?",
-                idProgramaInstitucional) > 0;
+                new Object[] { idProgramaInstitucional }) > 0;
     }
     
     @Override
