@@ -27,7 +27,7 @@ import javax.sql.DataSource;
  * DataSource tiene su propia implementacion: <b>HikariDataSource</b>, el cual recibe todos los parametros de configuraci&oacute;n de nuestro
  * archivo <b>aplicacion/datasource.yml</b> y los almacena en una propiedad de la clase HikariConfig, que esta sera pasada al constructor
  * de la implementacion del DataSource.</li>
- * <li>Define el Bean JdbcTemplate que sera usado en todos nuestros <b>@Repositoy</b> de nuestra aplicaci&oacute;n con todas las configuraciones 
+ * <li>Define el Bean JdbcTemplate que sera usado en todos nuestros <b>@Repositoy</b> de nuestra aplicaci&oacute;n con todas las configuraciones
  * contempladas para la persistencia (pisina de conexions, transacciones, datasource, etc).</li>
  * </ol>
  *
@@ -100,7 +100,7 @@ public class ConfiguracionParaDataSource {
     private String minimumIdle;
 
     /**
-     * Tiempo en que una conexi&oacute;n puede estar fuera del pool de conexiones sin recibir ningun log indicando que hay 
+     * Tiempo en que una conexi&oacute;n puede estar fuera del pool de conexiones sin recibir ningun log indicando que hay
      * posiblemente un estancamiento de la conexi&oacute;n.
      */
     @Value("${leakDetectionThreshold}")

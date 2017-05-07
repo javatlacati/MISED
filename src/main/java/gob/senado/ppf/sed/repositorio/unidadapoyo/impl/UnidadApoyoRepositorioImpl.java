@@ -1,30 +1,35 @@
 package gob.senado.ppf.sed.repositorio.unidadapoyo.impl;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
 import gob.senado.ppf.sed.repositorio.unidadapoyo.UnidadApoyoRepositorio;
 import gob.senado.ppf.sed.utilidades.RowMappers;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository(value = "unidadApoyoRepositorio")
 public class UnidadApoyoRepositorioImpl implements UnidadApoyoRepositorio {
     
+    private final JdbcTemplate jdbcTemplate;
+
     @Autowired
-    private JdbcTemplate jdbcTemplate;
-    
+    public UnidadApoyoRepositorioImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
     @Override
     public boolean altaUnidadApoyo(UnidadApoyo ua) {
         return jdbcTemplate.update(
-                "INSERT INTO UNIDAD_APOYO(id_organo_direccion_estrategica, nombre, proposito) VALUES (?, ?, ?",
-                new Object[] { ua.getIdOrganoDireccionEstrategica(), ua.getNombre(), ua.getProposito() }) > 0;
+                "INSERT INTO UNIDAD_APOYO(id_organo_direccion_estrategica, nombre, proposito) VALUES (?, ?, ?)",
+                ua.getIdOrganoDireccionEstrategica(), ua.getNombre(), ua.getProposito()) > 0;
     }
     
     @Override
     public boolean bajaUnidadApoyo(long idUnidadApoyo) {
         return jdbcTemplate.update("DELETE FROM UNIDAD_APOYO WHERE id_unidad_apoyo = ?",
-                new Object[] { idUnidadApoyo }) > 0;
+                idUnidadApoyo) > 0;
     }
     
     @Override
