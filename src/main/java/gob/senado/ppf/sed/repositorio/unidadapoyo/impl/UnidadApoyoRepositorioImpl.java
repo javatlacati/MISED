@@ -48,8 +48,7 @@ public class UnidadApoyoRepositorioImpl implements UnidadApoyoRepositorio {
     public boolean actualizarUnidadApoyo(UnidadApoyo ua) {
         return jdbcTemplate.update(
                 "UPDATE unidad_apoyo SET id_organo_direccion_estrategica = ?, nombre = ?, proposito = ? WHERE id_unidad_apoyo = ?",
-                new Object[] { ua.getIdOrganoDireccionEstrategica(), ua.getNombre(), ua.getProposito(),
-                    ua.getIdUnidadApoyo() }) > 0;
+                new Object[] { ua.getIdOrganoDireccionEstrategica(), ua.getNombre(), ua.getProposito(), ua.getIdUnidadApoyo() }) > 0;
     }
     
     @Override

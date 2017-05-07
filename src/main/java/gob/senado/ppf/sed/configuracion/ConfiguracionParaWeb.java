@@ -15,64 +15,64 @@ import org.springframework.web.servlet.view.JstlView;
 import java.util.Locale;
 
 @Configuration
-@ComponentScan(basePackages = { 
-		"gob.senado.ppf.sed.componente", "gob.senado.ppf.sed.controlador",
-		"gob.senado.ppf.sed.servicio", "gob.senado.ppf.sed.repositorio" 
-		})
+@ComponentScan(basePackages = {
+    "gob.senado.ppf.sed.componente", "gob.senado.ppf.sed.controlador",
+    "gob.senado.ppf.sed.servicio", "gob.senado.ppf.sed.repositorio"
+})
 @EnableWebMvc
 public class ConfiguracionParaWeb extends WebMvcConfigurerAdapter {
-
-	@Bean
-	public ViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver("/WEB-INF/vistas/",".jsp");
-		viewResolver.setViewClass(JstlView.class);
-		return viewResolver;
-	}
-
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
-	}
-
-	@Override
-	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-		configurer.enable();
-	}
-
-	@Bean(name = "messageSource")
-	public ReloadableResourceBundleMessageSource messageSource() {
-		ReloadableResourceBundleMessageSource resource = new ReloadableResourceBundleMessageSource();
-		resource.setBasename("classpath:i18n/mensajes");
-		resource.setDefaultEncoding("ISO-8859-1");
-		return resource;
-	}
-
-	@Bean
-	public CookieLocaleResolver localeResolver() {
-		CookieLocaleResolver localeResolver = new CookieLocaleResolver();
-		localeResolver.setDefaultLocale(new Locale("es"));
-		localeResolver.setCookieName("locale-cookie");
-		localeResolver.setCookieMaxAge(36000);
-		return localeResolver;
-	}
-
-	@Bean
-	public LocaleChangeInterceptor localeInterceptor() {
-		LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
-		interceptor.setParamName("lang");
-		return interceptor;
-	}
-
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(localeInterceptor());
-	}
-
-	@Bean
-	public CommonsMultipartResolver multipartResolver() {
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("UTF-8");
-		return resolver;
-	}
-
+    
+    @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver("/WEB-INF/vistas/",".jsp");
+        viewResolver.setViewClass(JstlView.class);
+        return viewResolver;
+    }
+    
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    }
+    
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+    
+    @Bean(name = "messageSource")
+    public ReloadableResourceBundleMessageSource messageSource() {
+        ReloadableResourceBundleMessageSource resource = new ReloadableResourceBundleMessageSource();
+        resource.setBasename("classpath:i18n/mensajes");
+        resource.setDefaultEncoding("ISO-8859-1");
+        return resource;
+    }
+    
+    @Bean
+    public CookieLocaleResolver localeResolver() {
+        CookieLocaleResolver localeResolver = new CookieLocaleResolver();
+        localeResolver.setDefaultLocale(new Locale("es"));
+        localeResolver.setCookieName("locale-cookie");
+        localeResolver.setCookieMaxAge(36000);
+        return localeResolver;
+    }
+    
+    @Bean
+    public LocaleChangeInterceptor localeInterceptor() {
+        LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
+        interceptor.setParamName("lang");
+        return interceptor;
+    }
+    
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(localeInterceptor());
+    }
+    
+    @Bean
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setDefaultEncoding("UTF-8");
+        return resolver;
+    }
+    
 }

@@ -1,21 +1,16 @@
 package gob.senado.ppf.sed.dto.programainstitucional;
 
-import gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica;
-import gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
 import java.io.Serializable;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Representa un objeto de transferencia de datos de un <b>Programa Institucional</b>.
  * Este objeto tiene como responsabilidad
  * representar un conjunto de instrumentos de pol&iacute;tica, para coadyuvar los objetivos, prioridades, estrategias y pol&iacute;ticas
  * definidas del PND, esto quiere decir que un <b>Programa Institucional</b> es un macro elemento que es la suma de los esfuerzos
- * coordinados por los &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica (ODE&acute;s) que a su vez coordinan distintas Unidades de 
+ * coordinados por los &Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica (ODE&acute;s) que a su vez coordinan distintas Unidades de
  * Apoyo (UA&acute;s) siendo los ODE&acute;s
  * y UA&acute;s agrupados por <b>Programa Institucional</b>.
  *
@@ -24,36 +19,39 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @see gob.senado.ppf.sed.dto.unidadapoyo.UnidadApoyo
  */
 public class ProgramaInstitucional implements Serializable, Formateable {
-
+    
     private static final long serialVersionUID = 1L;
-
+    
     /**
      * Identificador num&eacute;rico del programa institucional
      */
     private long idProgramaInstitucional;
-
+    
     /**
      * Clave alfanum&eacute;rica del programa institucional
      */
     private String clave;
-
+    
     /**
      * Nombre del programa institucional
      */
     private String nombre;
-
+    
     /**
      * Descripci&oacute;n del programa institucional
      */
     private String descripcion;
     
-
+    private long totalOrganosDireccionEstrategicaAdscritos;
+    
+    private long totalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos;
+    
     /**
      * Constructor por defecto para la clase ProgramaInstitucional.
      */
     public ProgramaInstitucional() {
     }
-
+    
     /**
      * Contructor privado para la clase ProgramaInstitucional
      *
@@ -71,7 +69,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-
+    
     /**
      * Metodo estatico de conveniencia para obtener una instancia de la clase ProgramaInstitucional recibiendo como parametros todos los
      * atributos de esta clase.
@@ -85,12 +83,12 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public static ProgramaInstitucional from(long idProgramaInstitucional, String clave, String nombre, String descripcion) {
         return new ProgramaInstitucional(idProgramaInstitucional, clave, nombre, descripcion);
     }
-
+    
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
-
+    
     /**
      * Retorna el identificador num&eacute;rico del Programa Institucional.
      *
@@ -99,7 +97,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public long getIdProgramaInstitucional() {
         return this.idProgramaInstitucional;
     }
-
+    
     /**
      * Retorna la clave alfanum&eacute;rica del Programa Institucional.
      *
@@ -108,7 +106,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public String getClave() {
         return this.clave;
     }
-
+    
     /**
      * Retorna el nombre del Programa Institucional.
      *
@@ -117,7 +115,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public String getNombre() {
         return this.nombre;
     }
-
+    
     /**
      * Retorna la descripci&oacute;n del Programa Institucional.
      *
@@ -126,7 +124,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public String getDescripcion() {
         return this.descripcion;
     }
-
+    
     /**
      * Configura el identificador del Programa Institucional.
      *
@@ -135,7 +133,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public void setIdProgramaInstitucional(long idProgramaInstitucional) {
         this.idProgramaInstitucional = idProgramaInstitucional;
     }
-
+    
     /**
      * Configura la clave alfanum&eacute;rica del Programa Institucional.
      *
@@ -144,7 +142,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public void setClave(String clave) {
         this.clave = clave;
     }
-
+    
     /**
      * Configura el nombre del Programa Institucional.
      *
@@ -153,7 +151,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    
     /**
      * Configura la descripcion de un Programa Institucional.
      *
@@ -163,6 +161,21 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         this.descripcion = descripcion;
     }
     
+    public long getTotalOrganosDireccionEstrategicaAdscritos() {
+        return totalOrganosDireccionEstrategicaAdscritos;
+    }
+    
+    public long getTotalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos() {
+        return totalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos;
+    }
+    
+    public void setTotalOrganosDireccionEstrategicaAdscritos(long totalOrganosDireccionEstrategicaAdscritos) {
+        this.totalOrganosDireccionEstrategicaAdscritos = totalOrganosDireccionEstrategicaAdscritos;
+    }
+    
+    public void setTotalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos(long totalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos) {
+        this.totalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos = totalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos;
+    }
     
     public boolean equals(Object o) {
         if (o == this) return true;
@@ -173,7 +186,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         final Object other$nombre = other.getNombre();
         return this$nombre == null ? other$nombre == null : this$nombre.equals(other$nombre);
     }
-
+    
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
@@ -181,7 +194,7 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         result = result * PRIME + ($nombre == null ? 43 : $nombre.hashCode());
         return result;
     }
-
+    
     private boolean canEqual(Object other) {
         return other instanceof ProgramaInstitucional;
     }

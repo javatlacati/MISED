@@ -21,38 +21,51 @@ public class OrganoDireccionEstrategicaRepositorioImpl implements OrganoDireccio
     @Override
     public boolean altaOrganoDireccionEstrategica(OrganoDireccionEstrategica ode) {
         return jdbcTemplate.update(
-                "INSERT INTO ORGANO_DIRECCION_ESTRATEGICA(id_programa_institucional, nombre, descripcion) VALUES (?, ?, ?)",
+                "INSERT INTO ORGANO_DIRECCION_ESTRATEGICA(ID_PROGRAMA_INSTITUCIONAL, NOMBRE, DESCRIPCION) VALUES (?, ?, ?)",
                 new Object[] { ode.getIdProgramaInstitucional(), ode.getNombre(), ode.getDescripcion() }) > 0;
     }
     
     @Override
     public boolean bajaOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
-        return jdbcTemplate.update("DELETE FROM ORGANO_DIRECCION_ESTRATEGICA WHERE id_organo_direccion_estrategica = ?",
+        return jdbcTemplate.update("DELETE FROM ORGANO_DIRECCION_ESTRATEGICA WHERE ID_ORGANO_DIRECCION_ESTRATEGICA = ?",
                 new Object[] { idOrganoDireccionEstrategica }) > 0;
     }
     
     @Override
     public OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
-        return jdbcTemplate.queryForObject(
-                "SELECT * FROM ORGANO_DIRECCION_ESTRATEGICA WHERE id_organo_direccion_estrategica = ?",
-                new Object[] { idOrganoDireccionEstrategica }, RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT ODE.*, (SELECT COUNT(UA.ID_UNIDAD_APOYO) FROM UNIDAD_APOYO UA ")
+                .append("WHERE UA.ID_ORGANO_DIRECCION_ESTRATEGICA = ODE.ID_ORGANO_DIRECCION_ESTRATEGICA) ")
+                .append("AS NUMERO_UNIDADES_APOYO_ADSCRITAS FROM ORGANO_DIRECCION_ESTRATEGICA ODE ")
+                .append("WHERE ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = ?");
+        return jdbcTemplate.queryForObject(sql.toString(), new Object[] { idOrganoDireccionEstrategica },
+                RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
     }
     
     @Override
     public OrganoDireccionEstrategica buscarOrganoDireccionEstrategica(String nombre) {
-        return jdbcTemplate.queryForObject("SELECT * FROM ORGANO_DIRECCION_ESTRATEGICA WHERE nombre = ?",
-                new Object[] { nombre }, RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT ODE.*, (SELECT COUNT(UA.ID_UNIDAD_APOYO) FROM UNIDAD_APOYO UA ")
+                .append("WHERE UA.ID_ORGANO_DIRECCION_ESTRATEGICA = ODE.ID_ORGANO_DIRECCION_ESTRATEGICA) ")
+                .append("AS NUMERO_UNIDADES_APOYO_ADSCRITAS FROM ORGANO_DIRECCION_ESTRATEGICA ODE ")
+                .append("WHERE ODE.NOMBRE = ?");
+        return jdbcTemplate.queryForObject(sql.toString(), new Object[] { nombre },
+                RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
     }
     
     @Override
     public List<OrganoDireccionEstrategica> obtenerOrganosDireccionEstrategica() {
-        return jdbcTemplate.query("SELECT * FROM ORGANO_DIRECCION_ESTRATEGICA", RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT ODE.*, (SELECT COUNT(UA.ID_UNIDAD_APOYO) FROM UNIDAD_APOYO UA ")
+                .append("WHERE UA.ID_ORGANO_DIRECCION_ESTRATEGICA = ODE.ID_ORGANO_DIRECCION_ESTRATEGICA) ")
+                .append("AS NUMERO_UNIDADES_APOYO_ADSCRITAS FROM ORGANO_DIRECCION_ESTRATEGICA ODE ");
+        return jdbcTemplate.query(sql.toString(), RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
     }
     
     @Override
     public boolean actualizarOrganoDireccionEstrategica(OrganoDireccionEstrategica ode) {
         return jdbcTemplate.update(
-                "UPDATE ORGANO_DIRECCION_ESTRATEGICA SET id_programa_institucional = ?, nombre = ?, descripcion = ? WHERE id_organo_direccion_estrategica = ?",
+                "UPDATE ORGANO_DIRECCION_ESTRATEGICA SET ID_PROGRAMA_INSTITUCIONAL = ?, NOMBRE = ?, DESCRIPCION = ? WHERE ID_ORGANO_DIRECCION_ESTRATEGICA = ?",
                 new Object[] { ode.getIdProgramaInstitucional(), ode.getNombre(), ode.getDescripcion(),
                     ode.getIdOrganoDireccionEstrategica() }) > 0;
     }

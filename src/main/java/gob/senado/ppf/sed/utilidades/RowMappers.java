@@ -45,6 +45,8 @@ public class RowMappers {
         pi.setClave(rs.getString(2));
         pi.setNombre(rs.getString(3));
         pi.setDescripcion(rs.getString(4));
+        pi.setTotalOrganosDireccionEstrategicaAdscritos(rs.getLong(5));
+        pi.setTotalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos(rs.getLong(6));
         return pi;
     };
     
@@ -54,6 +56,7 @@ public class RowMappers {
         ode.setIdProgramaInstitucional(rs.getLong(2));
         ode.setNombre(rs.getString(3));
         ode.setDescripcion(rs.getString(4));
+        ode.setTotalUnidadesApoyoAdscritas(rs.getLong(5));
         return ode;
     };
     
@@ -71,18 +74,22 @@ public class RowMappers {
         OrganoDireccionEstrategica ode = Suppliers.ORGANO_DIRECCION_ESTRATEGICA.get();
         UnidadApoyo ua = Suppliers.UNIDAD_APOYO.get();
         OrganizacionTecnicaAdministrativa ota = Suppliers.ORGANIZACION_TECNICA_ADMINISTRATIVA.get();
+       
         pi.setIdProgramaInstitucional(rs.getLong(1));
         pi.setClave(rs.getString(2));
         pi.setNombre(rs.getString(3));
         pi.setDescripcion(rs.getString(4));
-        ode.setIdOrganoDireccionEstrategica(rs.getLong(5));
-        ode.setIdProgramaInstitucional(rs.getLong(6));
-        ode.setNombre(rs.getString(7));
-        ode.setDescripcion(rs.getString(8));
-        ua.setIdUnidadApoyo(rs.getLong(9));
-        ua.setIdOrganoDireccionEstrategica(rs.getLong(10));
-        ua.setNombre(rs.getString(11));
-        ua.setProposito(rs.getString(12));
+        pi.setTotalOrganosDireccionEstrategicaAdscritos(rs.getLong(5));
+        pi.setTotalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos(rs.getLong(6));
+        ode.setIdOrganoDireccionEstrategica(rs.getLong(7));
+        ode.setIdProgramaInstitucional(rs.getLong(8));
+        ode.setNombre(rs.getString(9));
+        ode.setDescripcion(rs.getString(10));
+        ode.setTotalUnidadesApoyoAdscritas(rs.getLong(11));
+        ua.setIdUnidadApoyo(rs.getLong(12));
+        ua.setIdOrganoDireccionEstrategica(rs.getLong(13));
+        ua.setNombre(rs.getString(14));
+        ua.setProposito(rs.getString(15));
         ota.setProgramInstitucional(pi);
         ota.setOrganoDireccionEstrategica(ode);
         ota.setUnidadApoyo(ua);
