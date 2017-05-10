@@ -4,6 +4,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Created by Administrador on 21/04/2017.
@@ -39,10 +40,15 @@ public class UsuarioTest {
 
     @Test
     public void getIdentidad() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getIdentidad());
     }
 
     @Test
     public void setIdentidad() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setIdentidad("Brayan");
+        assertEquals("Brayan", usuario.getIdentidad());
     }
 
     @Test
