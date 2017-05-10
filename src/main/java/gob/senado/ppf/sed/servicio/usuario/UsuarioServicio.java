@@ -43,7 +43,7 @@ public interface UsuarioServicio {
     /**
      * Permite dar de buscar un usuario del sistema.
      *
-     * @param identidad
+     * @param identidad nickname de usuario
      * @return objeto con los datosd del usuario u objeto vacio en otro caso
      */
     Usuario buscarUsuario(String identidad);
@@ -73,12 +73,12 @@ public interface UsuarioServicio {
      *
      * @param idOrganoDireccionEstrategica identificador &uacute;nico del &oacute;rgano de direcci&oacute;n estrat&eacute;gica al que los usuarios que se desean buscar petenecen
      * @return numero de usuarios
-     * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica\
+     * @see gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica
      */
     long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica);
 
     /**
-     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema perrtenecientes a un Programa Institucional especificado.
+     * Obtiene el n&uacute;mero total de usuarios que tiene el sistema pertenecientes a un Programa Institucional especificado.
      *
      * @param idProgramaInstitucional identificador &uacute;nico del Programa Institucional al que los usuarios que se desean buscar petenecen
      * @return numero de usuarios
