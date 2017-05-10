@@ -21,6 +21,13 @@
                 <role>Desarrollador</role>
             </roles>
         </developer>
+        <developer>
+            <name>Ruslan López Carro</name>
+            <email>scherzo16@gmail.com</email>
+            <roles>
+                <role>Desarrollador</role>
+            </roles>
+        </developer>
     </developers>
 
     <properties>
