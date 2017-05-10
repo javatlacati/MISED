@@ -44,7 +44,7 @@ public class UnidadApoyoServicioImpl implements UnidadApoyoServicio {
         final UnidadApoyo uaActual = unidadApoyoRepositorio.buscarUnidadApoyo(unidadApoyo.getIdUnidadApoyo());
         final UnidadApoyo uaCoincidente = unidadApoyoRepositorio.buscarUnidadApoyo(unidadApoyo.getNombre());
         if(uaActual != null){
-            if((uaCoincidente != null) && uaCoincidente.getIdUnidadApoyo() == uaActual.getIdUnidadApoyo()){
+            if(uaCoincidente != null && uaCoincidente.getIdUnidadApoyo() == uaActual.getIdUnidadApoyo()){
                 return unidadApoyoRepositorio.actualizarUnidadApoyo(unidadApoyo);
             }else if(uaCoincidente == null){
                 return unidadApoyoRepositorio.actualizarUnidadApoyo(unidadApoyo);
