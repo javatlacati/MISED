@@ -7,9 +7,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>MISED</name>
     <url>http://maven.apache.org</url>
-    <description>Módulo Informático del Sistema de Evaluación del Desempeño</description>
+    <description>Modulo Informatico del Sistema de Evaluacion del DesempeÃ±o</description>
     <organization>
-        <name>Senado de la República</name>
+        <name>Senado de la Republica</name>
         <url>http://www.senado.gob.mx</url>
     </organization>
     <developers>
@@ -43,8 +43,8 @@
         <jasperreports.version>6.4.0</jasperreports.version>
 
         <!--handles-->
-        <findbugs.disabled>true</findbugs.disabled>
-        <jxr.disabled>true</jxr.disabled>
+        <findbugs.disabled>false</findbugs.disabled>
+        <jxr.disabled>false</jxr.disabled>
         <javadoc.disabled>false</javadoc.disabled>
         <pmd.disabled>false</pmd.disabled>
         <checkstyle.disabled>false</checkstyle.disabled>
@@ -401,7 +401,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>3.0.4</version>
                 <configuration>
                     <xmlOutput>true</xmlOutput>
                     <!-- <includeFilterFile>${qa.fidbugs.ruleset.path}</includeFilterFile> -->
