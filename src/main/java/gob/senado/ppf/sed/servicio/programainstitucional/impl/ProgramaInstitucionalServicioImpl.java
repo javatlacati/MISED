@@ -47,7 +47,7 @@ public class ProgramaInstitucionalServicioImpl implements ProgramaInstitucionalS
         final ProgramaInstitucional programaInstitucionalCoincidente = programaInstitucionalRepositorio
                 .buscarProgramaInstitucional(programaInstitucional.getClave());
         if (programaInstitucionalActual != null) {
-            if ((programaInstitucionalCoincidente != null) && programaInstitucionalCoincidente
+            if (programaInstitucionalCoincidente != null && programaInstitucionalCoincidente
                     .getIdProgramaInstitucional() == programaInstitucionalActual.getIdProgramaInstitucional()) {
                 return programaInstitucionalRepositorio.actualizarProgramaInstitucional(programaInstitucional);
             } else if (programaInstitucionalCoincidente == null) {
