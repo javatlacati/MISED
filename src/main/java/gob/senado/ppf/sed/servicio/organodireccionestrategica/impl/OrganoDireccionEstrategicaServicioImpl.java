@@ -58,7 +58,7 @@ public class OrganoDireccionEstrategicaServicioImpl implements OrganoDireccionEs
         final OrganoDireccionEstrategica odeCoincidente = organoDireccionEstrategicaRepositorio
                 .buscarOrganoDireccionEstrategica(ode.getNombre());
         if (odeActual != null) {
-            if ((odeCoincidente != null) && odeCoincidente.getIdOrganoDireccionEstrategica() == odeActual
+            if (odeCoincidente != null && odeCoincidente.getIdOrganoDireccionEstrategica() == odeActual
                     .getIdOrganoDireccionEstrategica()) {
                 return organoDireccionEstrategicaRepositorio.actualizarOrganoDireccionEstrategica(ode);
             }else if(odeCoincidente == null){
