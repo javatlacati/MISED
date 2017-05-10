@@ -16,14 +16,14 @@ import java.io.IOException;
  */
 public class FiltroXSS implements Filter {
 
-    private FilterConfig filterConfig;
+//    private FilterConfig filterConfig;
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        this.filterConfig = filterConfig;
+//        this.filterConfig = filterConfig;
     }
 
     /**
@@ -31,7 +31,7 @@ public class FiltroXSS implements Filter {
      */
     @Override
     public void destroy() {
-        this.filterConfig = null;
+//        this.filterConfig = null;
     }
 
     /**
