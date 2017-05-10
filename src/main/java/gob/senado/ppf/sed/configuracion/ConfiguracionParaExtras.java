@@ -8,8 +8,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * Clase de configuración que se encarga de cargar los archivos yml
- * para ser posteriormente asignados a las demas clases de configuración.
+ * Clase de configuraci&oacute;n que se encarga de cargar los archivos yml
+ * para ser posteriormente asignados a las demas clases de configuraci&oacute;n.
  *
  * @author Benjamin Natanael Ocotzi Alvarez
  */
@@ -25,7 +25,7 @@ public class ConfiguracionParaExtras {
     }
    
     /**
-     * Bean de configuración que se encarga de leer todos los properties pero se ha cambiado la implementacion para
+     * Bean de configuraci&oacute;n que se encarga de leer todos los properties pero se ha cambiado la implementacion para
      * que lea archivo .yml de la carpeta aplicacion/.
      * @return PropertySourcesPlaceholderConfigurer objeto que lee los archivos .yml
      */
