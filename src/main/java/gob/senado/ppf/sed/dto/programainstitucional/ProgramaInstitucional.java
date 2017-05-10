@@ -59,8 +59,6 @@ public class ProgramaInstitucional implements Serializable, Formateable {
      * @param clave                                Clave alfanum&eacute;rica del Programa Institucional
      * @param nombre                               nombre del Programa Institucional
      * @param descripcion                          Descripci&oacute;n del Programa Institucional
-     * @param organosDireccionEstrategicaAdscritos Lista de organos de direccion estrategica adscritos a este programa institucional
-     * @param unidadesApoyoAdscritas               Lista de unidades de apoyo adscritas a este programa institucional
      */
     @java.beans.ConstructorProperties({"idProgramaInstitucional", "clave", "nombre", "descripcion"})
     private ProgramaInstitucional(long idProgramaInstitucional, String clave, String nombre, String descripcion) {
@@ -68,6 +66,8 @@ public class ProgramaInstitucional implements Serializable, Formateable {
         this.clave = clave;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        //@param organosDireccionEstrategicaAdscritos Lista de organos de direccion estrategica adscritos a este programa institucional
+        // @param unidadesApoyoAdscritas               Lista de unidades de apoyo adscritas a este programa institucional
     }
     
     /**
