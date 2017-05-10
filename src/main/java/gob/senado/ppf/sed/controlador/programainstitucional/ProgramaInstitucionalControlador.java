@@ -9,16 +9,16 @@ import java.util.List;
 
 public interface ProgramaInstitucionalControlador {
 
-	public abstract ModelAndView vistaAdministracionProgramasInstitucionales();
+	ModelAndView vistaAdministracionProgramasInstitucionales();
 
-	public abstract HttpEntity<List<ProgramaInstitucional>> obtenerProgramasInstitucionales();
+	HttpEntity<List<ProgramaInstitucional>> obtenerProgramasInstitucionales();
 	
-	public abstract ResponseEntity<ProgramaInstitucional> registroProgramaInstitucional(ProgramaInstitucional programaInstitucional);
+	ResponseEntity<ProgramaInstitucional> registroProgramaInstitucional(ProgramaInstitucional programaInstitucional);
 	
-	public abstract ResponseEntity<ProgramaInstitucional> bajaProgramaInstitucional(String idProgramaInstitucional);
+	ResponseEntity<ProgramaInstitucional> bajaProgramaInstitucional(String idProgramaInstitucional);
 	
-	public abstract HttpEntity<ProgramaInstitucional> buscarProgramaInstitucional(String idProgramaInstitucional);
+	HttpEntity<ProgramaInstitucional> buscarProgramaInstitucional(String idProgramaInstitucional);
 	
-	public abstract ResponseEntity<ProgramaInstitucional> actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional, BindingResult result);
+	ResponseEntity<ProgramaInstitucional> actualizarProgramaInstitucional(ProgramaInstitucional programaInstitucional, BindingResult result);
 
 }
