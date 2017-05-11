@@ -10,47 +10,75 @@
         <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
                     var="fontRoboto"/>
         <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons"/>
-        <spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>
-        <spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss"/>
-        <spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss"/>
-        <spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss"/>
-        <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss"/>
-        <spring:url value="/resources/css/style.min.css" var="styleCss"/>
+        <%--<spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>--%>
+        <%--<spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss"/>--%>
+        <%--<spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss"/>--%>
+        <%--<spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss"/>--%>
+        <%--<spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss"/>--%>
+        <%--<spring:url value="/resources/css/style.min.css" var="styleCss"/>--%>
         <%--<spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss"/>--%>
-        <spring:url value="/resources/css/mytheme-black.min.css" var="temaNegro"/>
-            
+        <%--<spring:url value="/resources/css/mytheme-black.min.css" var="temaNegro"/>--%>
+        <spring:url value="/resources/plugins/materialize-css/css/materialize.css" var="materializeCss"/>
+
         <link href="${fontRoboto}" rel="stylesheet" type="text/css">
         <link href="${materialIcons}" rel="stylesheet" type="text/css">
-        <link href="${bootstrapCss}" rel="stylesheet">
-        <link href="${wavesCss}" rel="stylesheet"/>
-        <link href="${animateCss}" rel="stylesheet"/>
-        <link href="${mdPreloaderCss}" rel="stylesheet"/>
-        <link href="${sweetAlertCss}" rel="stylesheet">
-        <link href="${styleCss}" rel="stylesheet">
+        <%--<link href="${bootstrapCss}" rel="stylesheet">--%>
+        <%--<link href="${wavesCss}" rel="stylesheet"/>--%>
+        <%--<link href="${animateCss}" rel="stylesheet"/>--%>
+        <%--<link href="${mdPreloaderCss}" rel="stylesheet"/>--%>
+        <%--<link href="${sweetAlertCss}" rel="stylesheet">--%>
+        <%--<link href="${styleCss}" rel="stylesheet">--%>
         <%--<link href="${allThemesCss}" rel="stylesheet"/>--%>
-        <link href="${temaNegro}" rel="stylesheet"/>
+        <%--<link href="${temaNegro}" rel="stylesheet"/>--%>
+        <link href="${materializeCss}" rel="stylesheet"/>
+        <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
+        <spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializeJS"/>
+        <!-- Jquery Core Js -->
+        <script src="${jQueryJs}"></script>
+        <script src="${materializeJS}"></script>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function () {
+                $('.preloader-background').delay(1700).fadeOut('slow');
+
+                $('.preloader-wrapper')
+                    .delay(1700)
+                    .fadeOut();
+            });
+        </script>
+        <style>
+            .preloader-background {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #aee;
+
+                position: fixed;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        </style>
     </head>
-    <body class="theme-black">
-        <div class="page-loader-wrapper">
-            <div class="loader">
-                <div class="md-preloader pl-size-md">
-                    <svg viewbox="0 0 75 75">
-                    <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4"/>
-                    </svg>
+    <body>
+        <div class="preloader-background">
+            <div class="preloader-wrapper active">
+                <div class="spinner-layer spinner-red-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
                 </div>
-                <p><spring:message code="mensaje.espere"/></p>
             </div>
         </div>
-        <div class="overlay"></div>
-        <div class="search-bar">
-            <div class="search-icon">
-                <i class="material-icons">search</i>
-            </div>
-            <input type="text" placeholder="Comience a escribir.">
-            <div class="close-search">
-                <i class="material-icons">close</i>
-            </div>
-        </div>
+
+
         <%@include file="../template/menu-template.jsp" %>
         <section class="content">
             <div class="container-fluid">
@@ -100,28 +128,33 @@
                         </div>
                     </div>
                 </div>
-                <%--<div class="parallax-container">--%>
-                <%--<div class="parallax"><img src="../../../resources/images/image-gallery/1.jpg"></div>--%>
-                <%--</div>--%>
+                <div class="parallax-container">
+                <div class="parallax"><img src="../../../resources/images/image-gallery/1.jpg"></div>
+                </div>
             </div>
         </section>
             
-        <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
-        <spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>
-        <spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>
-        <spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>
-        <spring:url value="/resources/js/admin.js" var="adminJs"/>
-        <spring:url value="resources/js/funciones/fx-login.js" var="fxLogin"/>
-        <script src="${jQueryJs}"></script>
-        <script src="${bootstrapJs}"></script>
-        <script src="${sweetAlertJs}"></script>
-        <script src="${wavesJs}"></script>
-        <script src="${adminJs}"></script>
-        <script src="${fxLogin}"></script>
-        <%--<script>--%>
-        <%--$(document).ready(function () {--%>
-        <%--$('.parallax').parallax();--%>
-        <%--});--%>
-        <%--</script>--%>
+        <%--<spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>--%>
+        <%--<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>--%>
+        <%--<spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializecssJs"/>--%>
+        <%--<spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>--%>
+        <%--<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>--%>
+        <%--<spring:url value="/resources/js/admin.js" var="adminJs"/>--%>
+        <%--<spring:url value="resources/js/funciones/fx-login.js" var="fxLogin"/>--%>
+        <%--<script src="${jQueryJs}"></script>--%>
+        <%--<script src="${bootstrapJs}"></script>--%>
+        <%--<script src="${sweetAlertJs}"></script>--%>
+        <%--<script src="${wavesJs}"></script>--%>
+        <%--<script src="${adminJs}"></script>--%>
+        <%--<script src="${fxLogin}"></script>--%>
+        <%--<script src="${materializecssJs}"></script>--%>
+        <script>
+            $(document).ready(function () {
+                $('.parallax').parallax();
+                $(".button-collapsable").sideNav();
+//                $('.button-collapse').sideNav('show');
+            });
+
+        </script>
     </body>
 </html>

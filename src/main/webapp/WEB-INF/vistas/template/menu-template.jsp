@@ -1,82 +1,101 @@
-<nav class="navbar">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-            <a href="#" class="bars"></a>
-            <a class="navbar-brand" href="/MISED/inicio.htm">
-                <fmt:message key="mensaje.nombre-aplicacion" />
-            </a>
-        </div>     
-    </div>
-</nav>
-<section>
-    <aside id="leftsidebar" class="sidebar">
-        <div class="user-info">
-            <div class="info-container">
-                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-                <div class="email"></div>
-                <div class="btn-group user-helper-dropdown">
-                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                    <ul class="dropdown-menu pull-right">
-                        <li><a href="#"><i class="material-icons">person</i>Perfil</a></li>
-                        <li role="seperator" class="divider"></li>
-                        <li><a href="#"><i class="material-icons">build</i>Configuraci&oacute;n</a></li>
-                        <li role="seperator" class="divider"></li>
-                        <li><a href="#"><i class="material-icons">input</i>Cerrar sesi&oacute;n</a></li>
-                    </ul>
-                </div>
+<nav class="black">
+    <div class="nav-wrapper">
+        <div class="container-fluid">
+            <div class="left">
+                <a href="#" data-activates="slide-out" class="waves-effect waves-light btn button-collapsable"><i
+                        class="material-icons small">menu</i></a>
+            </div>
+            <div class="navbar-header">
+                <%--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>--%>
+                <a class="brand-logo center" href="/MISED/inicio.htm">
+                    <fmt:message key="mensaje.nombre-aplicacion"/>
+                </a>
+            </div>
+            <div class="right hide-on-med-and-down">
+                <%--<div class="search-bar">--%>
+                <%--<div class="search-icon">--%>
+                <%--<i class="material-icons">search</i>--%>
+                <%--</div>--%>
+                <%--<input type="text" placeholder="Comience a escribir.">--%>
+                <%--<div class="close-search">--%>
+                <%--<i class="material-icons">close</i>--%>
+                <%--</div>--%>
+                <%--</div>--%>
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" placeholder="Comience a escribir." required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="menu">
-            <ol class="list">
-                <li class="header"><fmt:message key="mensaje.label-menu" /></li>
-                <li id="inicio-menu">
-                    <a href="/MISED/inicio.htm">
-                        <i class="material-icons">home</i>
-                        <span><fmt:message key="mensaje.inicio" /></span>
-                    </a>
-                </li>
-                <li id="inicio-menu">
-                    <a href="/MISED/mi-perfil.htm">
-                        <i class="material-icons">account_box</i>
-                        <span><fmt:message key="mensaje.informacion-personal" /></span>
-                    </a>
-                </li>
-                <li id="arbol-objetivos-menu">
-                    <a class="menu-toggle">
-                        <i class="material-icons">format_shapes</i>
-                        <span><fmt:message key="mensaje.arbol-menu" /></span>
-                    </a>
-                    <ol class="ml-menu">
+    </div>
+</nav>
+
+<ul id="slide-out" class="side-nav">
+    <li>
+        <div class="userView">
+            <div class="background">
+                <img src="../../../resources/images/image-gallery/1.jpg">
+            </div>
+            <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#!name"><span class="white-text name">John Doe</span></a>
+            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div>
+    </li>
+    <li class="header"><fmt:message key="mensaje.label-menu"/></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a href="/MISED/inicio.htm"><i class="material-icons">home</i><span><fmt:message
+            key="mensaje.inicio"/></span></a></li>
+    <li id="inicio-menu"><a href="/MISED/mi-perfil.htm"><i class="material-icons">account_box</i><span><fmt:message
+            key="mensaje.informacion-personal"/></span></a></li>
+
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header"><span><i class="material-icons">format_shapes</i><fmt:message
+                        key="mensaje.arbol-menu"/></span><i class="material-icons right">play_for_work</i></a>
+                <div class="collapsible-body">
+                    <ul>
                         <li id="opcion-captura-objetivos">
-                            <a href="#"><fmt:message key="mensaje.objetivos-captura" /></a>
+                            <a href="#"><fmt:message key="mensaje.objetivos-captura"/></a>
                         </li>
                         <li id="opcion-actualizacion-objetivos">
-                            <a href="#"><fmt:message key="mensaje.objetivos-actualizacion" /></a>
+                            <a href="#"><fmt:message key="mensaje.objetivos-actualizacion"/></a>
                         </li>
                         <li id="opcion-baja-objetivos">
-                            <a href="#"><fmt:message key="mensaje.objetivos-borrado" /></a>
+                            <a href="#"><fmt:message key="mensaje.objetivos-borrado"/></a>
                         </li>
                         <li id="opcion-creacion-arbol-objetivos">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-creacion" /></a>
+                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-creacion"/></a>
                         </li>
                         <li id="opcion-borrar-arbol-objetivos">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-borrado" /></a>
+                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-borrado"/></a>
                         </li>
                         <li id="opcion-busqueda-arbol-objetivos-historial">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-busqueda-historico" /></a>
+                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-busqueda-historico"/></a>
                         </li>
                         <li id="opcion-reportes-arbol-objetivos">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-reportes" /></a>
+                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-reportes"/></a>
                         </li>
-                    </ol>
-                </li>
-                <li id="matriz-indicadores-resultados-menu">
-                    <a class="menu-toggle">
-                        <i class="material-icons">view_list</i>
-                        <span>Matriz de Indicadores para Resultados</span>
-                    </a>
-                    <ol class="ml-menu">
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header"><i class="material-icons">view_list</i>
+                    <span>Matriz de Indicadores para Resultados</span>
+                    <i class="material-icons right">play_for_work</i>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
                         <li class="opcion-captura-indicador">
                             <a href="#">Captura de Indicadores</a>
                         </li>
@@ -103,16 +122,24 @@
                         <li id="opcion-reportes-matriz-indicadores-resultados">
                             <a href="#">Reportes de la Matriz de Indicadores para Resultados</a>
                         </li>
-                    </ol>
-                </li>
-                <li id="cuestionario-menu">
-                    <a class="menu-toggle">
-                        <i class="material-icons">style</i>
-                        <span>Cuestionarios de Calidad de la ESP</span>
-                    </a>
-                    <ol class="ml-menu">
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header"><i class="material-icons">style</i>
+                    <span>Cuestionarios de Calidad de la ESP</span>
+                    <i class="material-icons right">play_for_work</i>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
                         <li id="opcion-calculo-muestra-y-formato-cuestionario">
-                            <a href="#">C&aacute;lculo del tama&ntilde;o de la muestra y obtenci&oacute;n del Formato del Cuestionario</a>
+                            <a href="#">C&aacute;lculo del tama&ntilde;o de la muestra y obtenci&oacute;n del Formato
+                                del Cuestionario</a>
                         </li>
                         <li id="opcion-captura-resultados-cuestionarios-esp">
                             <a href="#">Captura de Resultados de los Cuestionarios de Calidad de la ESP</a>
@@ -127,7 +154,8 @@
                             <ol class="ml-menu">
                                 <li id="sub-opcion-busqueda-cuestionarios-calidad-esp-ejercicio-presente">
                                     <a href="#">
-                                        B&uacute;squeda de Cuestionarios de Calidad de la ESP del Ejercicio Fiscal Presente
+                                        B&uacute;squeda de Cuestionarios de Calidad de la ESP del Ejercicio Fiscal
+                                        Presente
                                     </a>
                                 </li>
                                 <li id="sub-opcion-busqueda-cuestionarios-calidad-esp-historial">
@@ -135,6 +163,7 @@
                                         B&uacute;squeda de Cuestionarios de Calidad de la ESP en el Historial
                                     </a>
                                 </li>
+
                             </ol>
                         </li>
                         <li id="opcion-consulta-estadisticas-y-sugerencias-obtenidas-cuestionarios-calidad-esp">
@@ -144,8 +173,43 @@
                         <li id="opcion-reportes-cuestionarios-calidad-esp">
                             <a href="#">Reportes de Cuestionarios de Calidad de la ESP</a>
                         </li>
-                    </ol>
-                </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+
+
+<%--<div class="user-info">--%>
+<%--<div class="info-container">--%>
+<%--<div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>--%>
+<%--<div class="email"></div>--%>
+<%--<div class="btn-group user-helper-dropdown">--%>
+<%--<i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>--%>
+<%--<ul class="dropdown-menu pull-right">--%>
+<%--<li><a href="#"><i class="material-icons">person</i>Perfil</a></li>--%>
+<%--<li role="seperator" class="divider"></li>--%>
+<%--<li><a href="#"><i class="material-icons">build</i>Configuraci&oacute;n</a></li>--%>
+<%--<li role="seperator" class="divider"></li>--%>
+<%--<li><a href="#"><i class="material-icons">input</i>Cerrar sesi&oacute;n</a></li>--%>
+<%--</ul>--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
+
+<section>
+    <aside id="leftsidebar" class="sidebar">
+
+        <div class="menu">
+            <ol class="list">
+
                 <li id="calendario-metas-menu">
                     <a class="menu-toggle">
                         <i class="material-icons">date_range</i>
@@ -211,7 +275,8 @@
                             </ol>
                         </li>
                         <li id="opcion-actualizacion-informe-indicador">
-                            <a href="#">Actualizaci&oacute;n de Informes Cuatrimestrales de Avances de los Indicadores</a>
+                            <a href="#">Actualizaci&oacute;n de Informes Cuatrimestrales de Avances de los
+                                Indicadores</a>
                         </li>
                         <li id="opcion-reportes-informe-indicador">
                             <a href="#">Reportes de Informes Cuatrimestrales de Avances de los Indicadores</a>
@@ -253,8 +318,8 @@
                             <span>Administraci&oacute;n del Sistema</span>
                         </a>
                         <ol class="ml-menu">
-                            
-                            
+
+
                             <li id="opcion-programa-institucional">
                                 <a class="menu-toggle">
                                     <i class="material-icons">view_agenda</i>
@@ -265,10 +330,10 @@
                                         <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
                                             Administraci&oacute;n de Programas Institucionales
                                         </a>
-                                    </li>   
+                                    </li>
                                 </ul>
                             </li>
-                                
+
                             <li id="opcion-organo-direccion-estrategica">
                                 <a class="menu-toggle">
                                     <i class="material-icons">book</i>
@@ -276,20 +341,20 @@
                                 </a>
                                 <ul class="ml-menu">
                                     <li id="sub-opcion-administracion-organos-direccion-estrategica">
-                                         <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
+                                        <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
                                             <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
-                                         </a>
-                                    </li>   
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
-                                
+
                             <li id="opcion-unidad-apoyo">
                                 <a href="/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
                                     <i class="material-icons">bookmark_border</i>
                                     <span>Unidades de Apoyo</span>
                                 </a>
                             </li>
-                                
+
                             <li id="opcion-usuario">
                                 <a class="menu-toggle">
                                     <i class="material-icons">people</i>
@@ -348,17 +413,17 @@
                                 <ul class="ml-menu">
                                     <li id="sub-opcion-alta-objetivos-admin">
                                         <a href="#">
-                                            Alta de Objetivos	
+                                            Alta de Objetivos
                                         </a>
                                     </li>
                                     <li id="sub-opcion-edicion-objetivos-admin">
                                         <a href="#">
-                                            Edición de Objetivos	
+                                            Edición de Objetivos
                                         </a>
                                     </li>
                                     <li id="sub-opcion-baja-objetivos-admin">
                                         <a href="#">
-                                            Baja de Objetivos	
+                                            Baja de Objetivos
                                         </a>
                                     </li>
                                     <li id="sub-opcion-edicion-arbol-objetivos-admin">
@@ -377,7 +442,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>                            
+                            </li>
                             <li id="opcion-matriz-indicadores-resultados-admin">
                                 <a class="menu-toggle">
                                     <i class="material-icons">view_list</i>
@@ -424,7 +489,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li> 
+                            </li>
                             <li id="opcion-calendario-metas-indicadores-admin">
                                 <a class="menu-toggle">
                                     <i class="material-icons">date_range</i>
@@ -448,8 +513,8 @@
                                     </li>
                                 </ul>
                             </li>
-                                
-                                
+
+
                             <li id="opcion-informes-cuatrimestrales-admin">
                                 <a class="menu-toggle">
                                     <i class="material-icons">insert_drive_file</i>
@@ -473,8 +538,8 @@
                                     </li>
                                 </ul>
                             </li>
-                                
-                                
+
+
                             <li class="opcion-cuadros-mando-admin" style="margin-bottom: 60px;">
                                 <a class="menu-toggle">
                                     <i class="material-icons">grid_on</i>
@@ -502,11 +567,11 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>  
-                                
-                        </ol>     
+                            </li>
+
+                        </ol>
                     </li>
-                </sec:authorize>	
+                </sec:authorize>
                 <!-- 					<sec:authorize access="hasRole('SEGP')"> -->
                 <!-- 					<li id="inicio-menu"> -->
                 <!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
@@ -515,7 +580,7 @@
                 <!--                         </a> -->
                 <!--                     </li> 	 -->
                 <!--                     </sec:authorize> -->
-                    
+
                 <!--                     <sec:authorize access="hasRole('SEGA')"> -->
                 <!--                     <li id="inicio-menu"> -->
                 <!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
@@ -524,15 +589,16 @@
                 <!--                         </a> -->
                 <!--                     </li> 	 -->
                 <!--                     </sec:authorize>	 -->
-                    
+
                 <li id="cerrar-sesion">
-                    <form method="post" id="frmCierreSesion" action="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />">
-                          <a onclick="cerrarSesion();">
+                    <form method="post" id="frmCierreSesion"
+                          action="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />">
+                        <a onclick="cerrarSesion();">
                             <i class="material-icons glyphicon glyphicon-log-in"></i>
                             <span>Cerrar Sesi&oacute;n</span>
                         </a>
                     </form>
-                </li> 
+                </li>
             </ol>
         </div>
     </aside>
