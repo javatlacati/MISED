@@ -12,15 +12,6 @@
                 </a>
             </div>
             <div class="right hide-on-med-and-down">
-                <%--<div class="search-bar">--%>
-                <%--<div class="search-icon">--%>
-                <%--<i class="material-icons">search</i>--%>
-                <%--</div>--%>
-                <%--<input type="text" placeholder="Comience a escribir.">--%>
-                <%--<div class="close-search">--%>
-                <%--<i class="material-icons">close</i>--%>
-                <%--</div>--%>
-                <%--</div>--%>
                 <form>
                     <div class="input-field">
                         <input id="search" type="search" placeholder="Comience a escribir." required>
@@ -179,43 +170,16 @@
         </ul>
     </li>
 
-    <li>
-        <div class="divider"></div>
-    </li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-</ul>
-
-
-<%--<div class="user-info">--%>
-<%--<div class="info-container">--%>
-<%--<div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>--%>
-<%--<div class="email"></div>--%>
-<%--<div class="btn-group user-helper-dropdown">--%>
-<%--<i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>--%>
-<%--<ul class="dropdown-menu pull-right">--%>
-<%--<li><a href="#"><i class="material-icons">person</i>Perfil</a></li>--%>
-<%--<li role="seperator" class="divider"></li>--%>
-<%--<li><a href="#"><i class="material-icons">build</i>Configuraci&oacute;n</a></li>--%>
-<%--<li role="seperator" class="divider"></li>--%>
-<%--<li><a href="#"><i class="material-icons">input</i>Cerrar sesi&oacute;n</a></li>--%>
-<%--</ul>--%>
-<%--</div>--%>
-<%--</div>--%>
-<%--</div>--%>
-
-<section>
-    <aside id="leftsidebar" class="sidebar">
-
-        <div class="menu">
-            <ol class="list">
-
-                <li id="calendario-metas-menu">
-                    <a class="menu-toggle">
-                        <i class="material-icons">date_range</i>
-                        <span>Calendario de Metas de la Matriz de Indicadores para Resultados</span>
-                    </a>
-                    <ol class="ml-menu">
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">
+                    <i class="material-icons">date_range</i>
+                    <span>Calendario de Metas de la Matriz de Indicadores para Resultados</span>
+                    <i class="material-icons right">play_for_work</i>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
                         <li id="opcion-captura-calendario-metas-mir">
                             <a href="#">Captura de Calendarios de Metas de la MIR</a>
                         </li>
@@ -244,14 +208,22 @@
                         <li id="opcion-actualizacion-reportes-calendarios-metas-mir">
                             <a href="#">Reportes de Calendarios de Metas de la MIR</a>
                         </li>
-                    </ol>
-                </li>
-                <li id="informe-menu">
-                    <a class="menu-toggle">
-                        <i class="material-icons">insert_drive_file</i>
-                        <span>Informe Cuatrimestral de Avance de los Indicadores</span>
-                    </a>
-                    <ol class="ml-menu">
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">
+                    <i class="material-icons">insert_drive_file</i>
+                    <span>Informe Cuatrimestral de Avance de los Indicadores</span>
+                    <i class="material-icons right">play_for_work</i>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
                         <li id="opcion-captura-informe-indicador">
                             <a href="#">Captura de Informe Cuatrimestral de Avance de los Indicadores</a>
                         </li>
@@ -281,14 +253,22 @@
                         <li id="opcion-reportes-informe-indicador">
                             <a href="#">Reportes de Informes Cuatrimestrales de Avances de los Indicadores</a>
                         </li>
-                    </ol>
-                </li>
-                <li id="cuadro-mando-menu">
-                    <a class="menu-toggle">
-                        <i class="material-icons">grid_on</i>
-                        <span>Cuadros de Mando</span>
-                    </a>
-                    <ol class="ml-menu">
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">
+                    <i class="material-icons">grid_on</i>
+                    <span>Cuadros de Mando</span>
+                    <i class="material-icons right">play_for_work</i>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
                         <li id="opcion-busqueda-cuadro-mando">
                             <a href="#" class="menu-toggle">
                                 B&uacute;squeda de Cuadros de Mando
@@ -309,30 +289,70 @@
                         <li id="opcion-reportes-cuadro-mando">
                             <a href="#">Reportes de Cuadros de Mando</a>
                         </li>
-                    </ol>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <sec:authorize access="hasRole('ADMINISTRADOR')">
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader"><i class="material-icons">build</i>
+            <span>Administraci&oacute;n del Sistema</span></a></li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">view_agenda</i>
+                        <span>Programas Institucionales</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-administracion-programas-institucionales">
+                                <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
+                                    Administraci&oacute;n de Programas Institucionales
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
+            </ul>
+        </li>
+
+    </sec:authorize>
+</ul>
+
+
+<%--<div class="user-info">--%>
+<%--<div class="info-container">--%>
+<%--<div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>--%>
+<%--<div class="email"></div>--%>
+<%--<div class="btn-group user-helper-dropdown">--%>
+<%--<i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>--%>
+<%--<ul class="dropdown-menu pull-right">--%>
+<%--<li><a href="#"><i class="material-icons">person</i>Perfil</a></li>--%>
+<%--<li role="seperator" class="divider"></li>--%>
+<%--<li><a href="#"><i class="material-icons">build</i>Configuraci&oacute;n</a></li>--%>
+<%--<li role="seperator" class="divider"></li>--%>
+<%--<li><a href="#"><i class="material-icons">input</i>Cerrar sesi&oacute;n</a></li>--%>
+<%--</ul>--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
+
+<section>
+    <aside id="leftsidebar" class="sidebar">
+
+        <div class="menu">
+            <ol class="list">
+
                 <sec:authorize access="hasRole('ADMINISTRADOR')">
                     <li id="administracion-sistema-menu">
-                        <a class="menu-toggle">
-                            <i class="material-icons">build</i>
-                            <span>Administraci&oacute;n del Sistema</span>
-                        </a>
                         <ol class="ml-menu">
 
-
-                            <li id="opcion-programa-institucional">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">view_agenda</i>
-                                    <span>Programas Institucionales</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-administracion-programas-institucionales">
-                                        <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
-                                            Administraci&oacute;n de Programas Institucionales
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
 
                             <li id="opcion-organo-direccion-estrategica">
                                 <a class="menu-toggle">
