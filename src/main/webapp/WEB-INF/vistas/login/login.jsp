@@ -22,27 +22,8 @@
     <%--<link href="${animateCss}" rel="stylesheet" />--%>
     <%--<link href="${styleCss}" rel="stylesheet">--%>
     <link href="${materializeCss}" rel="stylesheet">
-    <%--<style>--%>
-    <%--.error {--%>
-    <%--padding: 15px;--%>
-    <%--margin-bottom: 20px;--%>
-    <%--border: 1px solid transparent;--%>
-    <%--border-radius: 4px;--%>
-    <%--color: #a94442;--%>
-    <%--background-color: #f2dede;--%>
-    <%--border-color: #ebccd1;--%>
-    <%--}--%>
-    <%----%>
-    <%--.msg {--%>
-    <%--padding: 15px;--%>
-    <%--margin-bottom: 20px;--%>
-    <%--border: 1px solid transparent;--%>
-    <%--border-radius: 4px;--%>
-    <%--color: #000;--%>
-    <%--background-color: #9e9e9e;--%>
-    <%--border-color: #000;--%>
-    <%--}--%>
-    <%--</style>--%>
+    <spring:url value="/resources/css/custom.min.css" var="custom"/>
+    <link href="${custom}" rel="stylesheet">
     <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
     <spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializeJS"/>
     <!-- Jquery Core Js -->
@@ -50,7 +31,7 @@
     <script src="${materializeJS}"></script>
 </head>
 
-<body>
+<body class="login-page">
 
 
 <div class="section hide-on-small-only"></div>
@@ -108,7 +89,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-4">
-                                        <button class="btn btn-block bg-grey waves-effect" type="submit">Acceder
+                                        <button class="btn btn-block bg-grey verdepalma waves-effect" type="submit">Acceder
                                         </button>
                                     </div>
                                 </div>
@@ -139,16 +120,17 @@
 <%--<script src="${wavesJs}"></script>--%>
 <!-- Custom Js -->
 <%--<script src="${adminJs}"></script>--%>
-<%--<script type="text/javascript">--%>
-<%--$(function(){--%>
-<%--setTimeout(function() {--%>
-<%--$('#msg-cs').fadeOut('fast');--%>
-<%--}, 2000);--%>
-<%--setTimeout(function() {--%>
-<%--$('#msg-error').fadeOut('fast');--%>
-<%--}, 3000);--%>
-<%--});--%>
-<%--</script>--%>
+<script type="text/javascript">
+    //hace que los mensajes desaparezcan tras cierto tiempo
+    $(function () {
+        setTimeout(function () {
+            $('#msg-cs').fadeOut('fast');
+        }, 2000);
+        setTimeout(function () {
+            $('#msg-error').fadeOut('fast');
+        }, 3000);
+    });
+</script>
 
 </body>
 

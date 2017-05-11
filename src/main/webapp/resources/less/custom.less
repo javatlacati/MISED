@@ -1,0 +1,137 @@
+//zona de variables
+//colores
+@negroobscuro: #000000;
+@grisobscuro: #555;
+@verdepalma: #7D8F81;
+@grismedio: #9e9e9e;
+@verdepalmaclaro: #d4dbd5;
+@grisclaro: #e9e9e9;
+@blanco: #fff;
+
+@baseFontSize: 14; //px
+
+.verdepalma {
+  background-color: @verdepalma !important;
+}
+
+input:focus:not([type]):not([readonly]), input[type="text"]:focus:not([readonly]), input[type="password"]:focus:not([readonly]), input[type="email"]:focus:not([readonly]), input[type="url"]:focus:not([readonly]), input[type="time"]:focus:not([readonly]), input[type="date"]:focus:not([readonly]), input[type="datetime"]:focus:not([readonly]), input[type="datetime-local"]:focus:not([readonly]), input[type="tel"]:focus:not([readonly]), input[type="number"]:focus:not([readonly]), input[type="search"]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid @verdepalma !important;
+  box-shadow: 0 1px 0 0 @verdepalma !important
+}
+
+a {
+  color: @verdepalma;
+}
+
+// zona de funcioanes
+.fontSizePx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  font-size: ~"@{pxValue}px";
+  font-size: ~"@{em}em";
+  font-size: ~"@{remValue}rem";
+}
+
+.marginLeftPx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  margin-left: ~"@{pxValue}px";
+  margin-left: ~"@{em}em";
+  margin-left: ~"@{remValue}rem";
+}
+
+.marginRightPx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  margin-right: ~"@{pxValue}px";
+  margin-right: ~"@{em}em";
+  margin-right: ~"@{remValue}rem";
+}
+
+.topPx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  top: ~"@{pxValue}px";
+  top: ~"@{em}em";
+  top: ~"@{remValue}rem";
+}
+
+.leftPx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  left: ~"@{pxValue}px";
+  left: ~"@{em}em";
+  left: ~"@{remValue}rem";
+}
+
+.rightPx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  right: ~"@{pxValue}px";
+  right: ~"@{em}em";
+  right: ~"@{remValue}rem";
+}
+
+.widthPx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  width: ~"@{pxValue}px";
+  width: ~"@{em}em";
+  width: ~"@{remValue}rem";
+}
+
+.heightPx(@pxs) {
+  @remValue: @pxs/10;
+  @pxValue: @pxs;
+  @em: @pxValue/@baseFontSize;
+  height: ~"@{pxValue}px";
+  height: ~"@{em}em";
+  height: ~"@{remValue}rem";
+}
+
+//estilo
+.login-page {
+  background-image: url(../images/fondo3.jpg);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 350s linear infinite;
+}
+
+.error {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  font-size: 12px;
+}
+
+.msg {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #000;
+  background-color: @verdepalmaclaro;
+  border-color: #000;
+  font-size: 12px;
+}
+
+//animaciones
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
