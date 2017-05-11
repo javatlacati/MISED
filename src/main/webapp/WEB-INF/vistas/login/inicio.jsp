@@ -83,7 +83,7 @@
 <section class="content">
     <div class="container-fluid">
 
-        <nav class="container">
+        <nav class="container grey darken-1">
             <div class="nav-wrapper">
                 <div class="col s12">
                     <a href="/MISED/inicio.htm" class="breadcrumb">

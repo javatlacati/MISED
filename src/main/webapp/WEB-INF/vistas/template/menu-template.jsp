@@ -300,6 +300,9 @@
         </li>
         <li><a class="subheader"><i class="material-icons">build</i>
             <span>Administraci&oacute;n del Sistema</span></a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
 
         <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
@@ -322,7 +325,345 @@
             </ul>
         </li>
 
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">book</i>
+                        <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-administracion-organos-direccion-estrategica">
+                                <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
+                                    <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li id="opcion-unidad-apoyo"><a href="/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
+            <i class="material-icons">bookmark_border</i>
+            <span>Unidades de Apoyo</span>
+        </a>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">people</i>
+                        <span>Usuarios</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-captura-usuario">
+                                <a href="/administrador/usuarios/captura-usuarios.htm">
+                                    Captura de Usuarios
+                                </a>
+                            </li>
+                            <li id="sub-opcion-busqueda-usuario">
+                                <a href="/administrador/usuarios/busqueda-usuarios.htm">
+                                    B&uacute;squeda de Usuarios
+                                </a>
+                            </li>
+                            <li id="sub-opcion-permisos-usuario">
+                                <a href="/administrador/usuarios/permisos-usuarios.htm">
+                                    Permisos de Usuarios
+                                </a>
+                            </li>
+                            <li id="sub-opcion-actualizacion-usuario">
+                                <a href="/administrador/usuarios/actualizar-usuarios.htm">
+                                    Actualizaci&oacute;n de Usuarios
+                                </a>
+                            </li>
+                            <li id="sub-opcion-baja-usuario">
+                                <a href="/administrador/usuarios/baja-usuarios.htm">
+                                    Baja de Usuarios
+                                </a>
+                            </li>
+                            <li id="sub-opcion-reestablecer-contrasena-usuario">
+                                <a href="/administrador/usuarios/reestablecer-credenciales-usuarios.htm">
+                                    Reestablecer Contrase&ntilde;a de Usuario
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li id="opcion-aviso-y-archivo-sistema">
+            <a href="/MISED/administrador/avisos/gestion.htm">
+                <i class="material-icons">cast_connected</i>
+                <span>Avisos y Archivos del Sistema</span>
+            </a>
+        </li>
+
+        <li id="opcion-configuracion-fechas">
+            <a href="/MISED/administrador/ejercicios-fiscales/gestion.htm">
+                <i class="material-icons">event</i>
+                <span>Configuraci&oacute;n de Fechas de Captura del Sistema</span>
+            </a>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">format_shapes</i>
+                        <span>&Aacute;rbol de Objetivos</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-alta-objetivos-admin">
+                                <a href="#">
+                                    Alta de Objetivos
+                                </a>
+                            </li>
+                            <li id="sub-opcion-edicion-objetivos-admin">
+                                <a href="#">
+                                    Edición de Objetivos
+                                </a>
+                            </li>
+                            <li id="sub-opcion-baja-objetivos-admin">
+                                <a href="#">
+                                    Baja de Objetivos
+                                </a>
+                            </li>
+                            <li id="sub-opcion-edicion-arbol-objetivos-admin">
+                                <a href="#">
+                                    Edici&oacute;n de &Aacute;rbol de Objetivos
+                                </a>
+                            </li>
+                            <li id="sub-opcion-busqueda-arbol-objetivos-admin">
+                                <a href="#">
+                                    B&uacute;squeda de &Aacute;rboles de Objetivos
+                                </a>
+                            </li>
+                            <li id="sub-opcion-reportes-arboles-objetivos-admin">
+                                <a href="#">
+                                    Reporte de &Aacute;rboles de Objetivos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding" id="opcion-matriz-indicadores-resultados-admin">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">view_list</i>
+                        <span>Matriz de Indicadores para Resultados</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-edicion-indicadores-resultados-admin">
+                                <a href="#">
+                                    Edici&oacute;n de Indicadores para Resultados
+                                </a>
+                            </li>
+                            <li id="sub-opcion-busqueda-indicadores-resultados-admin">
+                                <a href="#">
+                                    Busqueda de Indicadores para Resultados
+                                </a>
+                            </li>
+                            <li id="sub-opcion-reporte-matrices-indicadores-resultados-admin">
+                                <a href="#">
+                                    Reporte de Matrices de Indicadores para Resultados
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding" id="opcion-cuestionarios-calidad-esp-admin">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">style</i>
+                        <span>Cuestionarios de Calidad de la ESP</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-busqueda-cuestionarios-calidad-esp-historial-admin">
+                                <a href="#">
+                                    B&uacute;squeda de Cuestionarios de Calidad de la ESP en el Historial
+                                </a>
+                            </li>
+                            <li id="sub-opcion-consultar-estadisticas-y-sugerencias-cuestionarios-esp-admin">
+                                <a href="#">
+                                    Consultar Estad&iacute;sticas y Sugerencias Obtenidas de
+                                    los Cuestionarios de Calidad de la ESP
+                                </a>
+                            </li>
+                            <li id="sub-opcion-reportes-cuestionarios-calidad-esp-admin">
+                                <a href="#">
+                                    Reportes de Cuestionarios de Calidad de la ESP
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">date_range</i>
+                        <span>Calendario de Metas de la Matriz de Indicadores para Resultados</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-busqueda-calendarios-metas-mir-admin">
+                                <a href="#">
+                                    B&uacute;squeda de Calendarios de Metas de la MIR
+                                </a>
+                            </li>
+                            <li id="sub-opcion-actualizacion-calendarios-metas-mir-admin">
+                                <a href="#">
+                                    Actualizaci&oacute;n de Calendarios de Metas de la MIR
+                                </a>
+                            </li>
+                            <li id="sub-opcion-reporte-calendarios-metas-mir-admin">
+                                <a href="#">
+                                    Reporte de Calendarios de Metas de la MIR
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">insert_drive_file</i>
+                        <span>Informe Cuatrimestral de Avance de los Indicadores</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-busqueda-informe-cuatrimestrales-indicadores-admin">
+                                <a href="#">
+                                    Búsqueda de Informes Cuatrimestrales de Avances de los Indicadores
+                                </a>
+                            </li>
+                            <li id="sub-opcion-actualizacion-informe-cuatrimestrales-indicadores-admin">
+                                <a href="#">
+                                    Actualización de Informe Cuatrimestral de Avance de los Indicadores
+                                </a>
+                            </li>
+                            <li id="sub-opcion-reporte-informe-cuatrimestrales-indicadores-admin">
+                                <a href="#">
+                                    Reporte de Informes Cuatrimestrales de Avances de los Indicadores
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">grid_on</i>
+                        <span>Cuadros de Mando</span>
+                        <i class="material-icons right">play_for_work</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="sub-opcion-generacion-cuadros-mando-admin">
+                                <a href="#">
+                                    Generaci&oacute;n de Cuadros de Mando
+                                </a>
+                            </li>
+                            <li id="sub-opcion-busqueda-cuadros-mando-admin">
+                                <a href="#">
+                                    Busqueda de Cuadros de Mando
+                                </a>
+                            </li>
+                            <li id="sub-opcion-observacion-cuadros-mando-admin">
+                                <a href="#">
+                                    A&ntilde;adir Observaci&oacute;n a Cuadro de Mando
+                                </a>
+                            </li>
+                            <li id="sub-opcion-reportes-cuadros-mando-admin">
+                                <a href="#">
+                                    Reporte de Cuadros de Mando
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
     </sec:authorize>
+
+
+    <!-- 					<sec:authorize access="hasRole('SEGP')"> -->
+    <!-- 					<li id="inicio-menu"> -->
+    <!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
+    <!--                             <i class="material-icons">label</i> -->
+    <!--                             <span>Auditoria de la Gestión Parlamentaria</span> -->
+    <!--                         </a> -->
+    <!--                     </li> 	 -->
+    <!--                     </sec:authorize> -->
+
+    <!--                     <sec:authorize access="hasRole('SEGA')"> -->
+    <!--                     <li id="inicio-menu"> -->
+    <!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
+    <!--                             <i class="material-icons">label</i> -->
+    <!--                             <span>Auditoria de la Gestión Administrativa</span> -->
+    <!--                         </a> -->
+    <!--                     </li> 	 -->
+    <!--                     </sec:authorize>	 -->
+
+
+    <li>
+        <div class="divider"></div>
+    </li>
+
+    <li id="cerrar-sesion">
+        <form method="post" id="frmCierreSesion"
+              action="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />">
+            <a onclick="cerrarSesion();">
+                <i class="material-icons glyphicon glyphicon-log-in"></i>
+                <span>Cerrar Sesi&oacute;n</span>
+            </a>
+        </form>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li id="cerrar-sesion">
+        <a href="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />"><i class="material-icons glyphicon glyphicon-log-in"></i>
+            <span>Cerrar Sesi&oacute;n</span></a>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
 </ul>
 
 
@@ -342,284 +683,3 @@
 <%--</div>--%>
 <%--</div>--%>
 <%--</div>--%>
-
-<section>
-    <aside id="leftsidebar" class="sidebar">
-
-        <div class="menu">
-            <ol class="list">
-
-                <sec:authorize access="hasRole('ADMINISTRADOR')">
-                    <li id="administracion-sistema-menu">
-                        <ol class="ml-menu">
-
-
-                            <li id="opcion-organo-direccion-estrategica">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">book</i>
-                                    <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-administracion-organos-direccion-estrategica">
-                                        <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
-                                            <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li id="opcion-unidad-apoyo">
-                                <a href="/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
-                                    <i class="material-icons">bookmark_border</i>
-                                    <span>Unidades de Apoyo</span>
-                                </a>
-                            </li>
-
-                            <li id="opcion-usuario">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">people</i>
-                                    <span>Usuarios</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-captura-usuario">
-                                        <a href="/administrador/usuarios/captura-usuarios.htm">
-                                            Captura de Usuarios
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-busqueda-usuario">
-                                        <a href="/administrador/usuarios/busqueda-usuarios.htm">
-                                            B&uacute;squeda de Usuarios
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-permisos-usuario">
-                                        <a href="/administrador/usuarios/permisos-usuarios.htm">
-                                            Permisos de Usuarios
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-actualizacion-usuario">
-                                        <a href="/administrador/usuarios/actualizar-usuarios.htm">
-                                            Actualizaci&oacute;n de Usuarios
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-baja-usuario">
-                                        <a href="/administrador/usuarios/baja-usuarios.htm">
-                                            Baja de Usuarios
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-reestablecer-contrasena-usuario">
-                                        <a href="/administrador/usuarios/reestablecer-credenciales-usuarios.htm">
-                                            Reestablecer Contrase&ntilde;a de Usuario
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="opcion-aviso-y-archivo-sistema">
-                                <a href="/MISED/administrador/avisos/gestion.htm">
-                                    <i class="material-icons">cast_connected</i>
-                                    <span>Avisos y Archivos del Sistema</span>
-                                </a>
-                            </li>
-                            <li id="opcion-configuracion-fechas">
-                                <a href="/MISED/administrador/ejercicios-fiscales/gestion.htm">
-                                    <i class="material-icons">event</i>
-                                    <span>Configuraci&oacute;n de Fechas de Captura del Sistema</span>
-                                </a>
-                            </li>
-                            <li id="opcion-menu-arbol-objetivos-admin">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">format_shapes</i>
-                                    <span>&Aacute;rbol de Objetivos</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-alta-objetivos-admin">
-                                        <a href="#">
-                                            Alta de Objetivos
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-edicion-objetivos-admin">
-                                        <a href="#">
-                                            Edición de Objetivos
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-baja-objetivos-admin">
-                                        <a href="#">
-                                            Baja de Objetivos
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-edicion-arbol-objetivos-admin">
-                                        <a href="#">
-                                            Edici&oacute;n de &Aacute;rbol de Objetivos
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-busqueda-arbol-objetivos-admin">
-                                        <a href="#">
-                                            B&uacute;squeda de &Aacute;rboles de Objetivos
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-reportes-arboles-objetivos-admin">
-                                        <a href="#">
-                                            Reporte de &Aacute;rboles de Objetivos
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="opcion-matriz-indicadores-resultados-admin">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">view_list</i>
-                                    <span>Matriz de Indicadores para Resultados</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-edicion-indicadores-resultados-admin">
-                                        <a href="#">
-                                            Edici&oacute;n de Indicadores para Resultados
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-busqueda-indicadores-resultados-admin">
-                                        <a href="#">
-                                            Busqueda de Indicadores para Resultados
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-reporte-matrices-indicadores-resultados-admin">
-                                        <a href="#">
-                                            Reporte de Matrices de Indicadores para Resultados
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="opcion-cuestionarios-calidad-esp-admin">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">style</i>
-                                    <span>Cuestionarios de Calidad de la ESP</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-busqueda-cuestionarios-calidad-esp-historial-admin">
-                                        <a href="#">
-                                            B&uacute;squeda de Cuestionarios de Calidad de la ESP en el Historial
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-consultar-estadisticas-y-sugerencias-cuestionarios-esp-admin">
-                                        <a href="#">
-                                            Consultar Estad&iacute;sticas y Sugerencias Obtenidas de
-                                            los Cuestionarios de Calidad de la ESP
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-reportes-cuestionarios-calidad-esp-admin">
-                                        <a href="#">
-                                            Reportes de Cuestionarios de Calidad de la ESP
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li id="opcion-calendario-metas-indicadores-admin">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">date_range</i>
-                                    <span>Calendario de Metas de la Matriz de Indicadores para Resultados</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-busqueda-calendarios-metas-mir-admin">
-                                        <a href="#">
-                                            B&uacute;squeda de Calendarios de Metas de la MIR
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-actualizacion-calendarios-metas-mir-admin">
-                                        <a href="#">
-                                            Actualizaci&oacute;n de Calendarios de Metas de la MIR
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-reporte-calendarios-metas-mir-admin">
-                                        <a href="#">
-                                            Reporte de Calendarios de Metas de la MIR
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-                            <li id="opcion-informes-cuatrimestrales-admin">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">insert_drive_file</i>
-                                    <span>Informe Cuatrimestral de Avance de los Indicadores</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-busqueda-informe-cuatrimestrales-indicadores-admin">
-                                        <a href="#">
-                                            Búsqueda de Informes Cuatrimestrales de Avances de los Indicadores
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-actualizacion-informe-cuatrimestrales-indicadores-admin">
-                                        <a href="#">
-                                            Actualización de Informe Cuatrimestral de Avance de los Indicadores
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-reporte-informe-cuatrimestrales-indicadores-admin">
-                                        <a href="#">
-                                            Reporte de Informes Cuatrimestrales de Avances de los Indicadores
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-                            <li class="opcion-cuadros-mando-admin" style="margin-bottom: 60px;">
-                                <a class="menu-toggle">
-                                    <i class="material-icons">grid_on</i>
-                                    <span>Cuadros de Mando</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li id="sub-opcion-generacion-cuadros-mando-admin">
-                                        <a href="#">
-                                            Generaci&oacute;n de Cuadros de Mando
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-busqueda-cuadros-mando-admin">
-                                        <a href="#">
-                                            Busqueda de Cuadros de Mando
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-observacion-cuadros-mando-admin">
-                                        <a href="#">
-                                            A&ntilde;adir Observaci&oacute;n a Cuadro de Mando
-                                        </a>
-                                    </li>
-                                    <li id="sub-opcion-reportes-cuadros-mando-admin">
-                                        <a href="#">
-                                            Reporte de Cuadros de Mando
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ol>
-                    </li>
-                </sec:authorize>
-                <!-- 					<sec:authorize access="hasRole('SEGP')"> -->
-                <!-- 					<li id="inicio-menu"> -->
-                <!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
-                <!--                             <i class="material-icons">label</i> -->
-                <!--                             <span>Auditoria de la Gestión Parlamentaria</span> -->
-                <!--                         </a> -->
-                <!--                     </li> 	 -->
-                <!--                     </sec:authorize> -->
-
-                <!--                     <sec:authorize access="hasRole('SEGA')"> -->
-                <!--                     <li id="inicio-menu"> -->
-                <!--                         <a href="/MISED/sadsadasdasdasd.htm"> -->
-                <!--                             <i class="material-icons">label</i> -->
-                <!--                             <span>Auditoria de la Gestión Administrativa</span> -->
-                <!--                         </a> -->
-                <!--                     </li> 	 -->
-                <!--                     </sec:authorize>	 -->
-
-                <li id="cerrar-sesion">
-                    <form method="post" id="frmCierreSesion"
-                          action="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />">
-                        <a onclick="cerrarSesion();">
-                            <i class="material-icons glyphicon glyphicon-log-in"></i>
-                            <span>Cerrar Sesi&oacute;n</span>
-                        </a>
-                    </form>
-                </li>
-            </ol>
-        </div>
-    </aside>
-</section>
