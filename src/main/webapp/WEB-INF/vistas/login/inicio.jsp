@@ -141,13 +141,13 @@
 <%--<spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>--%>
 <%--<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>--%>
 <%--<spring:url value="/resources/js/admin.js" var="adminJs"/>--%>
-<%--<spring:url value="resources/js/funciones/fx-login.js" var="fxLogin"/>--%>
+<spring:url value="resources/js/funciones/fx-login.js" var="fxLogin"/>
 <%--<script src="${jQueryJs}"></script>--%>
 <%--<script src="${bootstrapJs}"></script>--%>
 <%--<script src="${sweetAlertJs}"></script>--%>
 <%--<script src="${wavesJs}"></script>--%>
 <%--<script src="${adminJs}"></script>--%>
-<%--<script src="${fxLogin}"></script>--%>
+<script src="${fxLogin}"></script>
 <%--<script src="${materializecssJs}"></script>--%>
 <script>
     $(document).ready(function () {
