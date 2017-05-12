@@ -31,6 +31,8 @@
     <%--<link href="${allThemesCss}" rel="stylesheet"/>--%>
     <%--<link href="${temaNegro}" rel="stylesheet"/>--%>
     <link href="${materializeCss}" rel="stylesheet"/>
+    <spring:url value="/resources/css/custom.min.css" var="custom"/>
+    <link href="${custom}" rel="stylesheet">
     <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
     <spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializeJS"/>
     <!-- Jquery Core Js -->
@@ -82,7 +84,9 @@
 <%@include file="../template/menu-template.jsp" %>
 <section class="content">
     <div class="container-fluid">
-
+        <div class="section hide-on-small-only"></div>
+        <div class="section hide-on-small-only"></div>
+        <div class="section hide-on-small-only"></div>
         <nav class="container grey darken-1">
             <div class="nav-wrapper">
                 <div class="col s12">
@@ -94,17 +98,17 @@
         </nav>
 
 
-        <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row clearfix container">
+            <div class="col-m-12">
                 <div class="card">
-                    <div class="header bg-grey">
+                    <div class="card-title grey darken-1 white-text">
                         <h2>
                             <spring:message code="mensaje.bienvenida"/>
                         </h2>
                     </div>
-                    <div class="body">
+                    <div class="container">
                         <div class="row">
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="color: #6f7376;">
+                            <div class="col-m10 col-sm10 col-xs10" style="color: #6f7376;">
 
                                 <h3 class="pull-left" style="color: #a17f1a;"><spring:message
                                         code="mensaje.institucion"/></h3>

@@ -1,3 +1,6 @@
+body {
+  font-size: 14;
+}
 .verdepalma {
   background-color: #7D8F81 !important;
 }
@@ -47,7 +50,17 @@ a {
   font-size: 12px;
 }
 .side-nav {
-  font-size: 12px;
+  font-size: 11px;
+}
+.side-nav .side-nav li > a > i .material-icons {
+  font-size: 10px;
+}
+nav .brand-logo {
+  font-size: 22px !important;
+}
+.card-title {
+  font-size: 18px;
+  padding: 14px;
 }
 @keyframes animatedBackground {
   from {

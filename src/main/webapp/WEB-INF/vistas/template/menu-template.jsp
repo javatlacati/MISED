@@ -1,10 +1,12 @@
 <nav class="black">
     <div class="nav-wrapper">
-        <div class="container-fluid">
-            <div class="left">
-                <a href="#" data-activates="slide-out" class="waves-effect waves-light btn button-collapsable"><i
+        <ul class="container-fluid">
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <a href="#" data-activates="slide-out" class="waves-effect waves-light button-collapsable"><i
                         class="material-icons small">menu</i></a>
-            </div>
+                </li>
+            </ul>
             <div class="navbar-header">
                 <%--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>--%>
                 <a class="brand-logo center" href="/MISED/inicio.htm">
@@ -20,7 +22,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+    </div>
     </div>
 </nav>
 
@@ -30,7 +32,7 @@
             <div class="background">
                 <img src="../../../resources/images/image-gallery/1.jpg">
             </div>
-            <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#!user"><img class="circle" src="../../../resources/images/image-gallery/16.jpg"></a>
             <a href="#!name"><span class="white-text name">John Doe</span></a>
             <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
         </div>
@@ -658,7 +660,8 @@
         <div class="divider"></div>
     </li>
     <li id="cerrar-sesion">
-        <a href="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />"><i class="material-icons glyphicon glyphicon-log-in"></i>
+        <a href="<c:url value="/cierre-sesion?${_csrf.parameterName}=${_csrf.token}" />"><i
+                class="material-icons glyphicon glyphicon-log-in"></i>
             <span>Cerrar Sesi&oacute;n</span></a>
     </li>
     <li>

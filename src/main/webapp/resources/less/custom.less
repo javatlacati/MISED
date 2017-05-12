@@ -10,6 +10,10 @@
 
 @baseFontSize: 14; //px
 
+body {
+  font-size: @baseFontSize;
+}
+
 .verdepalma {
   background-color: @verdepalma !important;
 }
@@ -126,8 +130,30 @@ a {
   font-size: 12px;
 }
 
-.side-nav{
-  font-size: 12px;
+.side-nav {
+  font-size: 11px;
+  .side-nav li > a > i {
+    .material-icons {
+      font-size: 10px;
+    }
+  }
+
+}
+
+nav {
+  .brand-logo {
+    font-size: 22px !important;
+  }
+  //.nav-wrapper {
+  //  i{
+  //    font-size: 14px;
+  //  }
+  //}
+}
+
+.card-title{
+  font-size: 18px;
+  padding: 14px;
 }
 
 //animaciones
