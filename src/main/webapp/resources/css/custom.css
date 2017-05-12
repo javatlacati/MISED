@@ -20,6 +20,18 @@ textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #7D8F81 !important;
   box-shadow: 0 1px 0 0 #7D8F81 !important;
 }
+.card .card-title h2 {
+  font-size: 22px;
+}
+.card h3 {
+  font-size: 24px;
+}
+.card h4 {
+  font-size: 22px;
+}
+.card h5 {
+  font-size: 20px;
+}
 a {
   color: #7D8F81;
 }
@@ -54,6 +66,9 @@ a {
 }
 .side-nav .side-nav li > a > i .material-icons {
   font-size: 10px;
+}
+.breadcrumb {
+  font-size: 14px !important;
 }
 nav .brand-logo {
   font-size: 22px !important;
