@@ -124,8 +124,8 @@
                                 <br/><br/>
                                 <p class="text-justify">
                                     <spring:message code="mensaje.lenguaje"/>
-                                    <a class="btn bg-grey waves-effect" href="?lang=en">English</a>
-                                    <a class="btn bg-grey waves-effect" href="?lang=es">Español</a>
+                                    <a class="btn verdepalma waves-effect" href="?lang=en">English</a>
+                                    <a class="btn verdepalma waves-effect" href="?lang=es">Español</a>
                                 </p>
                             </div>
                         </div>
