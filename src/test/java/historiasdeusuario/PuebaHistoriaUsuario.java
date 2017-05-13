@@ -4,7 +4,7 @@ import cucumber.api.java8.En;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 /**
  * Created by Administrador on 21/04/2017.
@@ -21,7 +21,7 @@ public class PuebaHistoriaUsuario implements En {
 
         Given("^I have open the browser$", () -> {
 //            System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Java\\jdk-9\\bin\\chromedriver.exe");
-            driver = new FirefoxDriver();
+            driver = new EdgeDriver();
         });
 
         When("^I open Facebook website$", () -> {
