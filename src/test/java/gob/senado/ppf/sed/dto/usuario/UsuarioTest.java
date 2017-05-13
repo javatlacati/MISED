@@ -1,6 +1,5 @@
 package gob.senado.ppf.sed.dto.usuario;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -12,7 +11,6 @@ import static org.junit.Assert.assertNull;
 public class UsuarioTest {
 
     @Test
-    @Ignore("Aún no implementado")
     public void getIdUsuario() throws Exception {
         Usuario usuario = new Usuario();
         assertEquals(0L, usuario.getIdUsuario());
@@ -53,38 +51,60 @@ public class UsuarioTest {
 
     @Test
     public void getClaveAcceso() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getClaveAcceso());
     }
 
     @Test
     public void setClaveAcceso() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setClaveAcceso("Brayan");
+        assertEquals("Brayan", usuario.getClaveAcceso());
     }
 
     @Test
     public void getNombre() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getNombre());
     }
 
     @Test
     public void setNombre() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setNombre("Brayan");
+        assertEquals("Brayan", usuario.getNombre());
     }
 
     @Test
     public void getApellidoPaterno() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getNombre());
     }
 
     @Test
     public void setApellidoPaterno() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setApellidoPaterno("Brayan");
+        assertEquals("Brayan", usuario.getApellidoPaterno());
     }
 
     @Test
     public void getApellidoMaterno() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getApellidoMaterno());
     }
 
     @Test
     public void setApellidoMaterno() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setApellidoMaterno("Brayan");
+        assertEquals("Brayan", usuario.getApellidoMaterno());
     }
 
     @Test
     public void getPuestoLaboral() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getPuestoLaboral());
     }
 
     @Test
@@ -93,6 +113,8 @@ public class UsuarioTest {
 
     @Test
     public void getCorreoElectronico() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getCorreoElectronico());
     }
 
     @Test
@@ -101,6 +123,8 @@ public class UsuarioTest {
 
     @Test
     public void getExtensionTelefonica() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getExtensionTelefonica());
     }
 
     @Test
@@ -109,6 +133,8 @@ public class UsuarioTest {
 
     @Test
     public void getRolDesignado() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getRolDesignado());
     }
 
     @Test
