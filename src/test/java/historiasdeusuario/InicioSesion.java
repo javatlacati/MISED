@@ -33,6 +33,11 @@ public class InicioSesion implements En {
             System.out.println(campoUsuario.isEnabled() ? "Test 1 Pass" : "Test 1 Fail");
         });
 
+        Then("^Debe existir un campo de texto para la contraseña$", () -> {
+            WebElement campoPassword = driver.findElement(By.name("password"));
+            System.out.println(campoPassword.isEnabled() ? "Test 1 Pass" : "Test 1 Fail");
+        });
+
         Then("^Se cierra el navegador$", () -> {
             driver.close();
         });
