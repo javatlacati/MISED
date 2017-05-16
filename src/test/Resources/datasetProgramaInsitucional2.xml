@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <programa_institucional id_programa_institucional="0"
+                          clave="p00001"
+                          nombre="Programa institucional 1"
+                          descripcion="Programad e ejemplo 1" />
+
+  <programa_institucional id_programa_institucional="1"
+                          clave="p00002"
+                          nombre="Programa institucional 2"
+                          descripcion="Programad e ejemplo 2" />
+</dataset>
