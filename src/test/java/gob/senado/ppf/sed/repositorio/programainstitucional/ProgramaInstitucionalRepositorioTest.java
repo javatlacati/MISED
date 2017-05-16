@@ -40,7 +40,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 })
 @WebAppConfiguration
 @DbUnitConfiguration(databaseConnection = "dataSource")
-@DatabaseSetup(value = "classpath:datasetProgramaInsitucional1.xml",type = com.github.springtestdbunit.annotation.DatabaseOperation.CLEAN_INSERT)
+@DatabaseSetup(value = "classpath:datasetProgramaInsitucional2.xml",type = com.github.springtestdbunit.annotation.DatabaseOperation.CLEAN_INSERT)
 public class ProgramaInstitucionalRepositorioTest {
     @Autowired
     private ProgramaInstitucionalRepositorio programaInstitucionalRepositorio;
