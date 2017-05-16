@@ -143,6 +143,8 @@ public class UsuarioTest {
 
     @Test
     public void getFechaRegistro() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getFechaRegistro());
     }
 
     @Test
@@ -151,6 +153,8 @@ public class UsuarioTest {
 
     @Test
     public void getHoraRegistro() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getHoraRegistro());
     }
 
     @Test
@@ -159,18 +163,12 @@ public class UsuarioTest {
 
     @Test
     public void getUsuarioPermiso() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getUsuarioPermiso());
     }
 
     @Test
     public void setUsuarioPermiso() throws Exception {
-    }
-
-    @Test
-    public void getActividadExtemporanea() throws Exception {
-    }
-
-    @Test
-    public void setActividadExtemporanea() throws Exception {
     }
 
     @Test
