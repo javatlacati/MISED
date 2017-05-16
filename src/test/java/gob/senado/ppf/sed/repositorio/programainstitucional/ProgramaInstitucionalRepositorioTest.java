@@ -8,7 +8,6 @@ import gob.senado.ppf.sed.configuracion.ConfiguracionParaExtras;
 import gob.senado.ppf.sed.configuracion.ConfiguracionParaSeguridad;
 import gob.senado.ppf.sed.configuracion.ConfiguracionParaWeb;
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,12 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.test.context.web.WebAppConfiguration;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 /**
  * Created by Administrador on 15/05/2017.
@@ -40,27 +45,17 @@ import org.springframework.test.context.web.WebAppConfiguration;
 })
 @WebAppConfiguration
 @DbUnitConfiguration(databaseConnection = "dataSource")
-@DatabaseSetup(value = "classpath:datasetProgramaInsitucional2.xml",type = com.github.springtestdbunit.annotation.DatabaseOperation.CLEAN_INSERT)
+@DatabaseSetup(value = "classpath:datasetProgramaInsitucional2.xml", type = com.github.springtestdbunit.annotation.DatabaseOperation.CLEAN_INSERT)
 public class ProgramaInstitucionalRepositorioTest {
     @Autowired
     private ProgramaInstitucionalRepositorio programaInstitucionalRepositorio;
 
-
-//    DataSource dataSource;
-//    @Before
-//    public void setUp() throws Exception {
-//        IDataSet dataSet = new FlatXmlDataSetBuilder().build(new File(getClass().getResource("/datasetProgramaInsitucional2.xml").getFile()));
-//        IDatabaseConnection dbConn = new DatabaseDataSourceConnection(dataSource);
-//        DatabaseOperation.CLEAN_INSERT.execute(dbConn, dataSet);
-//    }
-
-
     @Test
     public void buscarProgramaInstitucional() throws Exception {
         ProgramaInstitucional programaInstitucional = programaInstitucionalRepositorio.buscarProgramaInstitucional(1);
-        Assert.assertNotNull(programaInstitucional);
+        assertNotNull(programaInstitucional);
         programaInstitucional = programaInstitucionalRepositorio.buscarProgramaInstitucional(-1);
-        Assert.assertNull(programaInstitucional);
+        assertNull(programaInstitucional);
     }
 
     @Test
@@ -69,10 +64,17 @@ public class ProgramaInstitucionalRepositorioTest {
 
     @Test
     public void buscarProgramaInstitucional1() throws Exception {
+        ProgramaInstitucional programaInstitucional = programaInstitucionalRepositorio.buscarProgramaInstitucional("p00001");
+        assertNotNull(programaInstitucional);
+        programaInstitucional = programaInstitucionalRepositorio.buscarProgramaInstitucional("sdfsdfsdf");
+        assertNull(programaInstitucional);
     }
 
     @Test
     public void obtenerProgramasInstitucionales() throws Exception {
+        List<ProgramaInstitucional> programas = programaInstitucionalRepositorio.obtenerProgramasInstitucionales();
+        assertNotNull(programas);
+        assertEquals(2, programas.size());
     }
 
     @Test
@@ -93,5 +95,7 @@ public class ProgramaInstitucionalRepositorioTest {
 
     @Test
     public void contarProgramasInstitucionales() throws Exception {
+        assertEquals(2L, programaInstitucionalRepositorio.contarProgramasInstitucionales());
     }
+
 }

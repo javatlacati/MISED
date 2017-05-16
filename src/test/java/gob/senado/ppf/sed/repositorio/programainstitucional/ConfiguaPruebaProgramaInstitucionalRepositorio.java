@@ -7,9 +7,8 @@ import org.dbunit.dataset.builder.DataSetBuilder;
 import org.dbunit.dataset.xml.XmlDataSetWriter;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -20,7 +19,7 @@ import static org.dbunit.dataset.builder.ColumnSpec.newColumn;
  */
 public class ConfiguaPruebaProgramaInstitucionalRepositorio {
 
-    public static void main(String[] args) throws DataSetException, FileNotFoundException, UnsupportedEncodingException {
+    public static void main(String[] args) throws DataSetException, IOException {
         ClassLoader classLoader = ConfiguaPruebaProgramaInstitucionalRepositorio.class.getClassLoader();
 
         final String TABLE_NAME = "programa_institucional";
@@ -50,8 +49,9 @@ public class ConfiguaPruebaProgramaInstitucionalRepositorio {
         IDataSet dataSet = builder.build();
         Path resourceDirectory = Paths.get("src/test/resources");
 
-        File file = new File(resourceDirectory.toString() + "/datasetProgramaInsitucional1.xml");
-        XmlDataSetWriter xmlDataSetWriter = new XmlDataSetWriter(new FileOutputStream(file), "UTF-8");
+        File file = new File(resourceDirectory.toString() + "/datasetProgramaInsitucional.xml");
+//        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        XmlDataSetWriter xmlDataSetWriter = new XmlDataSetWriter(new FileWriter(file), "UTF-8");
         xmlDataSetWriter.write(dataSet);
 
         System.out.println(file.getAbsolutePath());
