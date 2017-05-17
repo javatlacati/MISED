@@ -109,6 +109,9 @@ public class UsuarioTest {
 
     @Test
     public void setPuestoLaboral() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setPuestoLaboral("Brayan");
+        assertEquals("Brayan", usuario.getPuestoLaboral());
     }
 
     @Test
@@ -119,6 +122,9 @@ public class UsuarioTest {
 
     @Test
     public void setCorreoElectronico() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setCorreoElectronico("Brayan");
+        assertEquals("Brayan", usuario.getCorreoElectronico());
     }
 
     @Test
@@ -129,6 +135,9 @@ public class UsuarioTest {
 
     @Test
     public void setExtensionTelefonica() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setExtensionTelefonica("Brayan");
+        assertEquals("Brayan", usuario.getExtensionTelefonica());
     }
 
     @Test
@@ -139,6 +148,9 @@ public class UsuarioTest {
 
     @Test
     public void setRolDesignado() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setRolDesignado("Brayan");
+        assertEquals("Brayan", usuario.getRolDesignado());
     }
 
     @Test
