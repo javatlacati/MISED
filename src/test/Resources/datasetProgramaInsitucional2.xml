@@ -1,12 +1,70 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <programa_institucional id_programa_institucional="0"
-                          clave="p00001"
-                          nombre="Programa institucional 1"
-                          descripcion="Programad e ejemplo 1" />
-
-  <programa_institucional id_programa_institucional="1"
-                          clave="p00002"
-                          nombre="Programa institucional 2"
-                          descripcion="Programad e ejemplo 2" />
+    <programa_institucional id_programa_institucional="1" clave="1.1.01.004.R001-MD003"
+                            nombre="Servicios de Apoyo Técnico" descripcion="Sin descripción"/>
+    <programa_institucional id_programa_institucional="2" clave="1.1.01.004.R001-MD001"
+                            nombre="Servicios de Apoyo Parlamentario" descripcion="Sin descripción"/>
+    <programa_institucional id_programa_institucional="3" clave="1.1.01.004.R001-MD002"
+                            nombre="Servicios de Apoyo Administrativo" descripcion="Sin descripción"/>
+    <organo_direccion_estrategica id_organo_direccion_estrategica="1" id_programa_institucional="1"
+                                  nombre="Mesa Directiva"/>
+    <organo_direccion_estrategica id_organo_direccion_estrategica="2" id_programa_institucional="2"
+                                  nombre="Secretaría General de Servicios Parlamentarios"/>
+    <organo_direccion_estrategica id_organo_direccion_estrategica="3" id_programa_institucional="3"
+                                  nombre="Secretaría General de Servicios Administrativos"/>
+    <unidad_apoyo id_unidad_apoyo="1" id_organo_direccion_estrategica="2"
+                  nombre="Secretaría General de Servicios Parlamentarios"/>
+    <unidad_apoyo id_unidad_apoyo="2" id_organo_direccion_estrategica="2"
+                  nombre="Coordinación de Consultoría Jurídica Legislativa"/>
+    <unidad_apoyo id_unidad_apoyo="3" id_organo_direccion_estrategica="2"
+                  nombre="Dirección General de Apoyo Parlamentario"/>
+    <unidad_apoyo id_unidad_apoyo="4" id_organo_direccion_estrategica="2"
+                  nombre="Coordinación del Cuerpo Técnico Profesional"/>
+    <unidad_apoyo id_unidad_apoyo="5" id_organo_direccion_estrategica="2"
+                  nombre="Dirección General de Archivo Histórico y Memoria Legislativa"/>
+    <unidad_apoyo id_unidad_apoyo="6" id_organo_direccion_estrategica="2"
+                  nombre="Dirección General de Proceso Legislativo"/>
+    <unidad_apoyo id_unidad_apoyo="7" id_organo_direccion_estrategica="3"
+                  nombre="Secretaría General de Servicios Administrativos"/>
+    <unidad_apoyo id_unidad_apoyo="8" id_organo_direccion_estrategica="3"
+                  nombre="Dirección General de Recursos Humanos"/>
+    <unidad_apoyo id_unidad_apoyo="9" id_organo_direccion_estrategica="3"
+                  nombre="Dirección General de Informática y Telecomunicaciones"/>
+    <unidad_apoyo id_unidad_apoyo="10" id_organo_direccion_estrategica="3"
+                  nombre="Dirección General de Recursos Materiales y Servicios Generales"/>
+    <unidad_apoyo id_unidad_apoyo="11" id_organo_direccion_estrategica="3" nombre="Unidad de Eventos"/>
+    <unidad_apoyo id_unidad_apoyo="12" id_organo_direccion_estrategica="3"
+                  nombre="Dirección General de Asuntos Jurídicos"/>
+    <unidad_apoyo id_unidad_apoyo="13" id_organo_direccion_estrategica="3" nombre="Unidad de Atención a Senadores"/>
+    <unidad_apoyo id_unidad_apoyo="14" id_organo_direccion_estrategica="3"
+                  nombre="Dirección General de Resguardo Parlamentario"/>
+    <unidad_apoyo id_unidad_apoyo="15" id_organo_direccion_estrategica="3"
+                  nombre="Dirección General de Servicios Médicos"/>
+    <unidad_apoyo id_unidad_apoyo="16" id_organo_direccion_estrategica="3"
+                  nombre="Unidad de Modernización Administrativa"/>
+    <unidad_apoyo id_unidad_apoyo="17" id_organo_direccion_estrategica="3" nombre="Tesorería"/>
+    <unidad_apoyo id_unidad_apoyo="18" id_organo_direccion_estrategica="3"
+                  nombre="Dirección General de Programación, Presupuesto y Finanzas"/>
+    <unidad_apoyo id_unidad_apoyo="19" id_organo_direccion_estrategica="3" nombre="Unidad de Pago a Senadores"/>
+    <unidad_apoyo id_unidad_apoyo="20" id_organo_direccion_estrategica="3" nombre="Dirección General de Contabilidad"/>
+    <unidad_apoyo id_unidad_apoyo="21" id_organo_direccion_estrategica="1"
+                  nombre="Centro de Estudios Internacionales Gilberto Bosques"/>
+    <unidad_apoyo id_unidad_apoyo="22" id_organo_direccion_estrategica="1"
+                  nombre="Unidad de Enlace para la Transparencia y el Acceso a la Información Pública del Senado"/>
+    <unidad_apoyo id_unidad_apoyo="23" id_organo_direccion_estrategica="1" nombre="Contraloría Interna"/>
+    <unidad_apoyo id_unidad_apoyo="24" id_organo_direccion_estrategica="1"
+                  nombre="Centro de Capacitación y Formación Permanente"/>
+    <unidad_apoyo id_unidad_apoyo="25" id_organo_direccion_estrategica="1" nombre="Instituto Belisario Domínguez"/>
+    <unidad_apoyo id_unidad_apoyo="26" id_organo_direccion_estrategica="1"
+                  nombre="Coordinación de Comunicación Social"/>
+    <unidad_apoyo id_unidad_apoyo="27" id_organo_direccion_estrategica="1" nombre="Canal del Congreso"/>
+    <usuario id_usuario="1" id_unidad_apoyo="19" identidad="benjamin.ocotzi"
+             clave_acceso="$2a$04$/pjtunFYAIzCmjBennRE7OsmTaTTytUKtccJR.iM/tSaCdOTDO4O." nombre="Benjamin Natanael"
+             apellido_paterno="Ocotzi" apellido_materno="Alvarez" puesto_laboral="Proveedor de Soporte"
+             correo_electronico="benist.sci@gmail.com" rol_designado="ROLE_ADMINISTRADOR"
+             tipo_usuario="martes 11 de abril de 2017" fecha_registro="21:57:35.42"/>
+    <usuario id_usuario="2" id_unidad_apoyo="18" identidad="ruslan.lopez"
+             clave_acceso="$2a$10$8UnZCnafgrZoSC/WARL5u.usGM0O2MpyGBPg6/hR7LuMKXTslYZtq" nombre="Ruslan"
+             apellido_paterno="López" apellido_materno="López" puesto_laboral="Tester y Diseñador Grafico"
+             correo_electronico="rustland@gmail.com" rol_designado="ROLE_ADMINISTRADOR"
+             tipo_usuario="martes 11 de abril de 2017" fecha_registro="21:57:35.42"/>
 </dataset>
