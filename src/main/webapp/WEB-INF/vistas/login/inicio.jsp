@@ -90,7 +90,7 @@
         <nav class="container grey darken-1">
             <div class="nav-wrapper">
                 <div class="col s12">
-                    <a href="/MISED/inicio.htm" class="breadcrumb">
+                    <a href="<c:url value='/inicio.htm' />" class="breadcrumb">
                         <i class="material-icons">home</i> <spring:message code="mensaje.inicio"/>
                     </a>
                 </div>
