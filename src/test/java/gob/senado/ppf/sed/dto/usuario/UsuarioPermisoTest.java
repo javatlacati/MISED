@@ -2,12 +2,16 @@ package gob.senado.ppf.sed.dto.usuario;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by Javatlacati on 21/04/2017.
  */
 public class UsuarioPermisoTest {
     @Test
     public void getIdPermiso() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(0, usuarioPermiso.getIdPermiso());
     }
 
     @Test
@@ -40,6 +44,8 @@ public class UsuarioPermisoTest {
 
     @Test
     public void puedeAgregar() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(false, usuarioPermiso.puedeAgregar());
     }
 
     @Test
@@ -48,6 +54,8 @@ public class UsuarioPermisoTest {
 
     @Test
     public void puedeBorrar() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(false, usuarioPermiso.puedeBorrar());
     }
 
     @Test
@@ -56,6 +64,8 @@ public class UsuarioPermisoTest {
 
     @Test
     public void puedeAutenticarse() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(false, usuarioPermiso.puedeAutenticarse());
     }
 
     @Test
