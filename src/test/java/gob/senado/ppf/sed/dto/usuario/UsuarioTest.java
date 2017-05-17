@@ -2,6 +2,8 @@ package gob.senado.ppf.sed.dto.usuario;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -161,6 +163,9 @@ public class UsuarioTest {
 
     @Test
     public void setFechaRegistro() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setFechaRegistro("Brayan");
+        assertEquals("Brayan", usuario.getFechaRegistro());
     }
 
     @Test
@@ -171,6 +176,9 @@ public class UsuarioTest {
 
     @Test
     public void setHoraRegistro() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setHoraRegistro("Brayan");
+        assertEquals("Brayan", usuario.getHoraRegistro());
     }
 
     @Test
@@ -181,15 +189,26 @@ public class UsuarioTest {
 
     @Test
     public void setUsuarioPermiso() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setUsuarioPermiso(new UsuarioPermiso());
+        assertEquals(new UsuarioPermiso(), usuario.getUsuarioPermiso());
+        //TODO add more once UsuarioPermiso is finished testing
     }
 
     @Test
     public void getUsuarioModulos() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getUsuarioModulos());
     }
 
     @Test
     public void setUsuarioModulos() throws Exception {
+        Usuario usuario = new Usuario();
+        ArrayList<UsuarioModulo> usuarioModulos = new ArrayList<>();
+        usuario.setUsuarioModulos(usuarioModulos);
+        assertEquals(usuarioModulos, usuario.getUsuarioModulos());
     }
+
 
     @Test
     public void equals() throws Exception {
