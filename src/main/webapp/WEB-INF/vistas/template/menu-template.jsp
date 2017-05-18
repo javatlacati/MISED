@@ -340,7 +340,7 @@
                     <div class="collapsible-body">
                         <ul>
                             <li id="sub-opcion-administracion-organos-direccion-estrategica">
-                                <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
+                                <a href="<c:url value='/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm' />">
                                     <span>&Oacute;rganos de Direcci&oacute;n Estrat&eacute;gica</span>
                                 </a>
                             </li>
@@ -350,7 +350,7 @@
             </ul>
         </li>
 
-        <li id="opcion-unidad-apoyo"><a href="/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
+        <li id="opcion-unidad-apoyo"><a href="<c:url value='/administrador/unidad-apoyo/administracion-unidades-apoyo.htm' />">
             <i class="material-icons">bookmark_border</i>
             <span>Unidades de Apoyo</span>
         </a>
@@ -367,32 +367,32 @@
                     <div class="collapsible-body">
                         <ul>
                             <li id="sub-opcion-captura-usuario">
-                                <a href="/administrador/usuarios/captura-usuarios.htm">
+                                <a href="<c:url value='/administrador/usuarios/captura-usuarios.htm' />">
                                     Captura de Usuarios
                                 </a>
                             </li>
                             <li id="sub-opcion-busqueda-usuario">
-                                <a href="/administrador/usuarios/busqueda-usuarios.htm">
+                                <a href="<c:url value='/administrador/usuarios/busqueda-usuarios.htm' />">
                                     B&uacute;squeda de Usuarios
                                 </a>
                             </li>
                             <li id="sub-opcion-permisos-usuario">
-                                <a href="/administrador/usuarios/permisos-usuarios.htm">
+                                <a href="<c:url value='/administrador/usuarios/permisos-usuarios.htm' />">
                                     Permisos de Usuarios
                                 </a>
                             </li>
                             <li id="sub-opcion-actualizacion-usuario">
-                                <a href="/administrador/usuarios/actualizar-usuarios.htm">
+                                <a href="<c:url value='/administrador/usuarios/actualizar-usuarios.htm' />">
                                     Actualizaci&oacute;n de Usuarios
                                 </a>
                             </li>
                             <li id="sub-opcion-baja-usuario">
-                                <a href="/administrador/usuarios/baja-usuarios.htm">
+                                <a href="<c:url value='/administrador/usuarios/baja-usuarios.htm' />">
                                     Baja de Usuarios
                                 </a>
                             </li>
                             <li id="sub-opcion-reestablecer-contrasena-usuario">
-                                <a href="/administrador/usuarios/reestablecer-credenciales-usuarios.htm">
+                                <a href="<c:url value='/administrador/usuarios/reestablecer-credenciales-usuarios.htm' />">
                                     Reestablecer Contrase&ntilde;a de Usuario
                                 </a>
                             </li>
