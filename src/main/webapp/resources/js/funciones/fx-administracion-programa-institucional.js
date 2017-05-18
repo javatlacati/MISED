@@ -21,7 +21,8 @@ $(function () {
                     columns: columnas
                 },
                 title: titulo,
-                orientation: orientacion
+                orientation: orientacion,
+                className: 'btn verdepalma'
             }, {
                 extend: 'csv',
                 text: 'Texto separado por comas',
@@ -30,7 +31,8 @@ $(function () {
                     columns: columnas
                 },
                 title: titulo,
-                orientation: orientacion
+                orientation: orientacion,
+                className: 'btn verdepalma'
             }, {
                 extend: 'excel',
                 text: 'Exportar a excel',
@@ -39,7 +41,8 @@ $(function () {
                     columns: columnas
                 },
                 title: titulo,
-                orientation: orientacion
+                orientation: orientacion,
+                className: 'btn verdepalma'
             }, {
                 extend: 'pdf',
                 text: 'Exportar a PDF',
@@ -52,7 +55,8 @@ $(function () {
                 customize: function (doc) {
                     doc.defaultStyle.fontSize = 8;
                 },
-                pageSize: tamanioPagina
+                pageSize: tamanioPagina,
+                className: 'btn verdepalma'
             }, {
                 extend: 'print',
                 text: 'Imprimir',
@@ -61,7 +65,8 @@ $(function () {
                     columns: columnas
                 },
                 title: titulo,
-                orientation: orientacion
+                orientation: orientacion,
+                className: 'btn verdepalma'
             },],
         "pagingType": "full_numbers",
         "lengthMenu": [
@@ -87,8 +92,7 @@ $(function () {
                 "targets": 3,
                 "data": "acciones",
                 "render": function (data, type, row) {
-                    return "<a onclick='actualizacionProgramaInstitucional(" + data + ")' class='btn bg-deep-orange waves-effect' style='margin-right: 7px;'>Actualizar</a>"
-                        + "<a class='btn bg-red waves-effect' style='margin-right: 7px;' onclick='bajaProgramaInstitucional(" + data + ")'>Eliminar</a>";
+                    return "<a onclick='actualizacionProgramaInstitucional(" + data + ")' class='btn bg-deep-orange waves-effect' style='margin-right: 7px;'>Actualizar</a><a class='btn bg-red waves-effect' style='margin-right: 7px;' onclick='bajaProgramaInstitucional(" + data + ")'>Eliminar</a>";
                 }
             }],
         "ajax": {

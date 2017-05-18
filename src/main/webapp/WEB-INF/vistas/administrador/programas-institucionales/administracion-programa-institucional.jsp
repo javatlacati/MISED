@@ -37,6 +37,8 @@
     <link href="${responsiveDataTableCss}" rel="stylesheet"/>
     <%--<link href="${remodalDefaultThemeCss}" rel="stylesheet" />--%>
     <link href="${materializeCss}" rel="stylesheet"/>
+    <spring:url value="/resources/css/custom.min.css" var="custom"/>
+    <link href="${custom}" rel="stylesheet">
     <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
     <spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializeJS"/>
     <!-- Jquery Core Js -->
@@ -123,7 +125,7 @@
                         <form:form methodParam="POST" commandName="programaInstitucional"
                                    id="frm-Registro-Programa-Institucional" htmlEscape="true">
                             <fieldset>
-                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="col s12 m12 l12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <form:input type="text" path="clave" id="nueva-clave"
@@ -132,7 +134,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="col s12 m12 l12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <form:input type="text" path="nombre" id="nuevo-nombre"
@@ -141,7 +143,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="col s12 m12 l12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <form:textarea path="descripcion" id="nueva-descripcion"
@@ -151,7 +153,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="col s12 m12 l12">
                                     <div class="form-group form-float">
                                         <button type="button" class="btn btn-success waves-effect"
                                                 onclick="capturaProgramaInstitucional();">Guardar programa institucional
@@ -167,12 +169,12 @@
     </div>
 
     <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col l12 m12 s12 xs12">
             <div class="card">
                 <div class="header">
-                    <ol class="breadcrumb breadcrumb-bg-grey">
-                        <li class="active"><h3>Busqueda y Actualización de Programas Institucionales</h3></li>
-                    </ol>
+                    <div class="card-title grey darken-1 white-text">
+                        <h3>Busqueda y Actualización de Programas Institucionales</h3>
+                    </div>
                 </div>
                 <div class="body">
 
@@ -265,8 +267,7 @@
 
 </section>
 
-<spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
-<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>
+<%--<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>--%>
 <spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
 <spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>
 <spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>
@@ -290,8 +291,8 @@
 <spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>
 <spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>
 
-<script src="${jQueryJs}"></script>
-<script src="${bootstrapJs}"></script>
+<%--<script src="${jQueryJs}"></script>--%>
+<%--<script src="${bootstrapJs}"></script>--%>
 <script src="${bootstrapSelectJs}"></script>
 <script src="${jQuerySlimScrollJs}"></script>
 <script src="${sweetAlertJs}"></script>
@@ -311,5 +312,12 @@
 <script src="${jszipJs}"></script>
 <script src="${pdfmakeJs}"></script>
 <script src="${vfs_fontsJs}"></script>
+<script>
+    $(document).ready(function () {
+        $(".button-collapsable").sideNav();
+//                $('.button-collapse').sideNav('show');
+    });
+
+</script>
 </body>
 </html>
