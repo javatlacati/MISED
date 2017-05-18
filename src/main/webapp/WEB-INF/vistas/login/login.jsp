@@ -42,7 +42,7 @@
 <div class="section hide-on-small-only"></div>
 <div class="section hide-on-small-only"></div>
 <div style="" class="row">
-    <div style="" class="container col m4 offset-m4">
+    <div style="" class="container col m4 s10 offset-m4 offset-s1">
 
         <center>
             <div class="card-panel container hoverable">
