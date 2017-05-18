@@ -10,11 +10,11 @@
     <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
                 var="fontRoboto"/>
     <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons"/>
-    <%--<spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss" />--%>
+    <spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss" />
     <%--<spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss" />--%>
     <%--<spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss" />--%>
     <%--<spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss" />--%>
-    <%--<spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss" />--%>
+    <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss" />
     <%--<spring:url value="/resources/css/style.min.css" var="styleCss" />--%>
     <%--<spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss" /> --%>
     <%--<spring:url value="/resources/plugins/remodal/remodal-default-theme.css" var="remodalDefaultThemeCss" />--%>
@@ -25,11 +25,11 @@
     <spring:url value="/resources/plugins/jquery-datatable/responsive.dataTables.min.css" var="responsiveDataTableCss"/>
     <link href="${fontRoboto}" rel="stylesheet" type="text/css">
     <link href="${materialIcons}" rel="stylesheet" type="text/css">
-    <%--<link href="${bootstrapCss}" rel="stylesheet">--%>
+    <link href="${bootstrapCss}" rel="stylesheet">
     <%--<link href="${wavesCss}" rel="stylesheet" />--%>
     <%--<link href="${animateCss}" rel="stylesheet" />--%>
     <%--<link href="${mdPreloaderCss}" rel="stylesheet" />--%>
-    <%--<link href="${sweetAlertCss}" rel="stylesheet">--%>
+    <link href="${sweetAlertCss}" rel="stylesheet">
     <%--<link href="${styleCss}" rel="stylesheet">--%>
     <%--<link href="${allThemesCss}" rel="stylesheet" />--%>
     <%--<link href="${bootstrapSelectCss}" rel="stylesheet" />--%>
@@ -93,7 +93,7 @@
     <div class="container-fluid">
         <div class="section hide-on-small-only"></div>
         <div class="section hide-on-small-only"></div>
-        <div class="section hide-on-small-only"></div>
+
         <nav class="container grey darken-1">
             <div class="nav-wrapper">
                 <div class="col s12">
@@ -111,6 +111,7 @@
                 </div>
             </div>
         </nav>
+        <div class="section hide-on-small-only"></div>
 
 
         <div class="row clearfix">
@@ -121,7 +122,7 @@
                             <h3>Captura de Programa Institucional</h3>
                         </div>
                     </div>
-                    <div class="body">
+                    <div class="body" style="padding: 32px;">
                         <form:form methodParam="POST" commandName="programaInstitucional"
                                    id="frm-Registro-Programa-Institucional" htmlEscape="true">
                             <fieldset>

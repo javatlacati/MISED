@@ -114,7 +114,7 @@ function actualizacionProgramaInstitucional(idProgramaInstitucional) {
 }
 function obtenerProgramaInstitucional(idProgramaInstitucional) {
     $.ajax({
-        url: 'buscar-programa-institucional/' + idProgramaInstitucional + '?_csrf=' + token,
+        url: "buscar-programa-institucional/" + idProgramaInstitucional + "?_csrf=" + token,
         type: 'POST',
         data: {
             'idProgramaInstitucional': idProgramaInstitucional
@@ -134,7 +134,7 @@ function capturaProgramaInstitucional() {
     var programaInstitucional = new ProgramaInstitucional(null, $("#nueva-clave").val(), $("#nuevo-nombre").val(), $("#nueva-descripcion").val());
     if (validarCamposProgramaInstitucional(programaInstitucional)) {
         $.ajax({
-            url: 'registro-programa-institucional?_csrf=' + token,
+            url: "registro-programa-institucional?_csrf=" + token,
             type: 'POST',
             data: {
                 'clave': programaInstitucional.clave,
@@ -220,7 +220,7 @@ function bajaProgramaInstitucional(idProgramaInstitucional) {
         closeOnConfirm: false
     }, function () {
         $.ajax({
-            url: 'baja-programa-institucional/' + idProgramaInstitucional + '?_csrf=' + token,
+            url: "baja-programa-institucional/" + idProgramaInstitucional + "?_csrf=" + token,
             type: 'POST',
             data: {
                 'idProgramaInstitucional': idProgramaInstitucional

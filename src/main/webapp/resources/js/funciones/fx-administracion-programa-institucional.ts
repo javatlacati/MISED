@@ -1,4 +1,6 @@
 declare var $: JQueryStatic;
+// import * as swal from 'sweetalert';
+declare var swal: Any;
 let token = $("meta[name='_csrf']").attr("content");
 let fechaActual = new Date();
 let anio = fechaActual.getFullYear();
@@ -99,7 +101,7 @@ $(function () {
                 }
             }],
             "ajax": {
-                url: "programas-institucionales.json?_csrf=" + token,
+                url: `programas-institucionales.json?_csrf=${token}`,
                 type: "POST"
             }
         });
@@ -121,7 +123,7 @@ function actualizacionProgramaInstitucional(idProgramaInstitucional) {
 
 function obtenerProgramaInstitucional(idProgramaInstitucional) {
     $.ajax({
-        url: 'buscar-programa-institucional/' + idProgramaInstitucional + '?_csrf=' + token,
+        url: `buscar-programa-institucional/${idProgramaInstitucional}?_csrf=${token}`,
         type: 'POST',
         data: {
             'idProgramaInstitucional': idProgramaInstitucional
@@ -142,7 +144,7 @@ function capturaProgramaInstitucional() {
     let programaInstitucional = new ProgramaInstitucional(null, $("#nueva-clave").val(), $("#nuevo-nombre").val(), $("#nueva-descripcion").val());
     if (validarCamposProgramaInstitucional(programaInstitucional)) {
         $.ajax({
-            url: 'registro-programa-institucional?_csrf=' + token,
+            url: `registro-programa-institucional?_csrf=${token}`,
             type: 'POST',
             data: {
                 'clave': programaInstitucional.clave,
@@ -225,7 +227,7 @@ function bajaProgramaInstitucional(idProgramaInstitucional) {
         closeOnConfirm: false
     }, function () {
         $.ajax({
-            url: 'baja-programa-institucional/' + idProgramaInstitucional + '?_csrf=' + token,
+            url: `baja-programa-institucional/${idProgramaInstitucional}?_csrf=${token}`,
             type: 'POST',
             data: {
                 'idProgramaInstitucional': idProgramaInstitucional
