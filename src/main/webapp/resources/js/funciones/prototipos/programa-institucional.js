@@ -6,15 +6,16 @@
  * @param pNombre nombre del programa
  * @param pDescripcion descripcion del programa
  */
-function ProgramaInstitucional(pIdProgramaInstitucional = "", pClave = "", pNombre = "", pDescripcion = ""){
-	this.idProgramaInstitucional = pIdProgramaInstitucional;
-	this.clave = pClave;
-	this.nombre = pNombre;
-	this.descripcion = pDescripcion;
+function ProgramaInstitucional(pIdProgramaInstitucional, pClave, pNombre, pDescripcion) {
+    if (pIdProgramaInstitucional === void 0) { pIdProgramaInstitucional = ""; }
+    if (pClave === void 0) { pClave = ""; }
+    if (pNombre === void 0) { pNombre = ""; }
+    if (pDescripcion === void 0) { pDescripcion = ""; }
+    this.idProgramaInstitucional = pIdProgramaInstitucional;
+    this.clave = pClave;
+    this.nombre = pNombre;
+    this.descripcion = pDescripcion;
 }
-
-ProgramaInstitucional.prototype.toString = function(){
-	return this.idProgramaInstitucional + " " + this.clave + " " + this.nombre + " " + this.descripcion;
+ProgramaInstitucional.prototype.toString = function () {
+    return this.idProgramaInstitucional + " " + this.clave + " " + this.nombre + " " + this.descripcion;
 };
-
-
