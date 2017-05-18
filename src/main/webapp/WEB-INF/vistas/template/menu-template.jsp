@@ -1,7 +1,7 @@
 <nav class="black">
     <div class="nav-wrapper">
         <ul class="container-fluid">
-            <ul class="left hide-on-med-and-down">
+            <ul class="left">
                 <li>
                     <a href="#" data-activates="slide-out" class="waves-effect waves-light button-collapsable"><i
                         class="material-icons small">menu</i></a>
