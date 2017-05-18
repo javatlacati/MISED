@@ -1,15 +1,16 @@
 <nav class="black">
     <div class="navbar-fixed">
-    <div class="nav-wrapper">
-        <ul class="container-fluid">
-            <div class="navbar-header">
-                <ul class="left">
-                    <li>
-                        <a href="#" data-activates="slide-out" class="waves-effect waves-light button-collapsable"><i
-                                class="material-icons small">menu</i></a>
-                    </li>
-                </ul>
-                <%--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>--%>
+        <div class="nav-wrapper">
+            <ul class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="left">
+                        <li>
+                            <a href="#" data-activates="slide-out"
+                               class="waves-effect waves-light button-collapsable"><i
+                                    class="material-icons small">menu</i></a>
+                        </li>
+                    </ul>
+                    <%--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>--%>
                     <div class="right hide-on-med-and-down">
                         <form>
                             <div class="input-field">
@@ -19,12 +20,12 @@
                             </div>
                         </form>
                     </div>
-                <a class="center truncate" href="/MISED/inicio.htm">
-                    <fmt:message key="mensaje.nombre-aplicacion"/>
-                </a>
-            </div>
-
-    </div>
+                    <a class="center truncate" href="<c:url value='/inicio.htm' />">
+                        <fmt:message key="mensaje.nombre-aplicacion"/>
+                    </a>
+                </div>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -319,7 +320,7 @@
                     <div class="collapsible-body">
                         <ul>
                             <li id="sub-opcion-administracion-programas-institucionales">
-                                <a href="/MISED/administrador/programa-institucional/administracion-programas-institucionales.htm">
+                                <a href="<c:url value='/administrador/programa-institucional/administracion-programas-institucionales.htm' />">
                                     Administraci&oacute;n de Programas Institucionales
                                 </a>
                             </li>
@@ -350,7 +351,8 @@
             </ul>
         </li>
 
-        <li id="opcion-unidad-apoyo"><a href="<c:url value='/administrador/unidad-apoyo/administracion-unidades-apoyo.htm' />">
+        <li id="opcion-unidad-apoyo"><a
+                href="<c:url value='/administrador/unidad-apoyo/administracion-unidades-apoyo.htm' />">
             <i class="material-icons">bookmark_border</i>
             <span>Unidades de Apoyo</span>
         </a>
