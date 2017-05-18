@@ -1,15 +1,16 @@
 <nav class="black">
+    <div class="navbar-fixed">
     <div class="nav-wrapper">
         <ul class="container-fluid">
             <ul class="left">
                 <li>
                     <a href="#" data-activates="slide-out" class="waves-effect waves-light button-collapsable"><i
-                        class="material-icons small">menu</i></a>
+                            class="material-icons small">menu</i></a>
                 </li>
             </ul>
             <div class="navbar-header">
                 <%--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>--%>
-                <a class="brand-logo center" href="/MISED/inicio.htm">
+                <a class="center truncate" href="/MISED/inicio.htm">
                     <fmt:message key="mensaje.nombre-aplicacion"/>
                 </a>
             </div>
