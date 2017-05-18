@@ -2,27 +2,28 @@
     <div class="navbar-fixed">
     <div class="nav-wrapper">
         <ul class="container-fluid">
-            <ul class="left">
-                <li>
-                    <a href="#" data-activates="slide-out" class="waves-effect waves-light button-collapsable"><i
-                            class="material-icons small">menu</i></a>
-                </li>
-            </ul>
             <div class="navbar-header">
+                <ul class="left">
+                    <li>
+                        <a href="#" data-activates="slide-out" class="waves-effect waves-light button-collapsable"><i
+                                class="material-icons small">menu</i></a>
+                    </li>
+                </ul>
                 <%--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>--%>
+                    <div class="right hide-on-med-and-down">
+                        <form>
+                            <div class="input-field">
+                                <input id="search" type="search" placeholder="Comience a escribir." required>
+                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </div>
                 <a class="center truncate" href="/MISED/inicio.htm">
                     <fmt:message key="mensaje.nombre-aplicacion"/>
                 </a>
             </div>
-            <div class="right hide-on-med-and-down">
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" placeholder="Comience a escribir." required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </div>
+
     </div>
     </div>
 </nav>
