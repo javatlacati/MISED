@@ -33,6 +33,8 @@ public class UsuarioPermisoTest {
 
     @Test
     public void puedeConsultar() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(false, usuarioPermiso.puedeConsultar());
     }
 
     @Test
@@ -41,6 +43,8 @@ public class UsuarioPermisoTest {
 
     @Test
     public void puedeActualizar() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(false, usuarioPermiso.puedeActualizar());
     }
 
     @Test

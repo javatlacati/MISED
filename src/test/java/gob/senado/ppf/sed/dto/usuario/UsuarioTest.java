@@ -4,13 +4,24 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * Created by Administrador on 21/04/2017.
  */
 public class UsuarioTest {
+    @Test
+    public void from() throws Exception {
+    }
+
+    @Test
+    public void canEqual() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setApellidoMaterno("Sodcew");
+        assertFalse(usuario.equals(new Integer(20)));
+        assertFalse(usuario.equals(new UsuarioPermiso()));
+        assertTrue(usuario.equals(new Usuario()));
+    }
 
     @Test
     public void getIdUsuario() throws Exception {

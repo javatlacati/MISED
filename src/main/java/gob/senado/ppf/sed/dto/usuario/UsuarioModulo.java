@@ -14,6 +14,9 @@ public class UsuarioModulo implements Serializable, Formateable {
      * Identificador &uacute;nico de cada usuario.
      */
     private long idUsuario;
+    /**
+     * Identificador &uacute;nico de cada M&oacute;dulo.
+     */
     private long idModulo;
     private boolean puedeAcceder;
 
