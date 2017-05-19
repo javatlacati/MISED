@@ -20,6 +20,8 @@ public class UsuarioPermisoTest {
 
     @Test
     public void getIdUsuario() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(0, usuarioPermiso.getIdUsuario());
     }
 
     @Test

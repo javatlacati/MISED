@@ -156,6 +156,19 @@ public class UsuarioTest {
     }
 
     @Test
+    public void getTipoUsuario() throws Exception {
+        Usuario usuario = new Usuario();
+        assertNull(usuario.getTipoUsuario());
+    }
+
+    @Test
+    public void setTipoUsuario() throws Exception {
+        Usuario usuario = new Usuario();
+        usuario.setTipoUsuario("Brayan");
+        assertEquals("Brayan", usuario.getTipoUsuario());
+    }
+
+    @Test
     public void getFechaRegistro() throws Exception {
         Usuario usuario = new Usuario();
         assertNull(usuario.getFechaRegistro());
