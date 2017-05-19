@@ -57,25 +57,25 @@
                 <div class="collapsible-body">
                     <ul>
                         <li id="opcion-captura-objetivos">
-                            <a href="#"><fmt:message key="mensaje.objetivos-captura"/></a>
+                            <a href="<c:url value='/arboldeobjetivos/captura-objetivos.htm' />"><fmt:message key="mensaje.objetivos-captura"/></a>
                         </li>
                         <li id="opcion-actualizacion-objetivos">
-                            <a href="#"><fmt:message key="mensaje.objetivos-actualizacion"/></a>
+                            <a href="<c:url value='/arboldeobjetivos/actualizar-objetivos.htm' />"><fmt:message key="mensaje.objetivos-actualizacion"/></a>
                         </li>
                         <li id="opcion-baja-objetivos">
-                            <a href="#"><fmt:message key="mensaje.objetivos-borrado"/></a>
+                            <a href="<c:url value='/arboldeobjetivos/baja-objetivos.htm' />"><fmt:message key="mensaje.objetivos-borrado"/></a>
                         </li>
                         <li id="opcion-creacion-arbol-objetivos">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-creacion"/></a>
+                            <a href="<c:url value='/arboldeobjetivos/creacion-arbol-objetivos.htm' />"><fmt:message key="mensaje.arbol-objetivos-creacion"/></a>
                         </li>
                         <li id="opcion-borrar-arbol-objetivos">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-borrado"/></a>
+                            <a href="<c:url value='/arboldeobjetivos/borrar-arbol-objetivos.htm' />"><fmt:message key="mensaje.arbol-objetivos-borrado"/></a>
                         </li>
                         <li id="opcion-busqueda-arbol-objetivos-historial">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-busqueda-historico"/></a>
+                            <a href="<c:url value='/arboldeobjetivos/busqueda-arbol-objetivos-historial.htm' />"><fmt:message key="mensaje.arbol-objetivos-busqueda-historico"/></a>
                         </li>
                         <li id="opcion-reportes-arbol-objetivos">
-                            <a href="#"><fmt:message key="mensaje.arbol-objetivos-reportes"/></a>
+                            <a href="<c:url value='/arboldeobjetivos/reportes-arbol-objetivos.htm' />"><fmt:message key="mensaje.arbol-objetivos-reportes"/></a>
                         </li>
                     </ul>
                 </div>
