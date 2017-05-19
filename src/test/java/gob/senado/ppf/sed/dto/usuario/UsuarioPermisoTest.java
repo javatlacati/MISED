@@ -16,6 +16,9 @@ public class UsuarioPermisoTest {
 
     @Test
     public void setIdPermiso() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        usuarioPermiso.setIdPermiso(120);
+        assertEquals(120, usuarioPermiso.getIdPermiso());
     }
 
     @Test
@@ -76,6 +79,8 @@ public class UsuarioPermisoTest {
 
     @Test
     public void equals() throws Exception {
+        UsuarioPermiso usuarioPermiso = new UsuarioPermiso();
+        assertEquals(new UsuarioPermiso(), usuarioPermiso);
     }
 
     @Test

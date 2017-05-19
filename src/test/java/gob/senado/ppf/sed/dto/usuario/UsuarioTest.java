@@ -225,6 +225,8 @@ public class UsuarioTest {
 
     @Test
     public void equals() throws Exception {
+        Usuario usuario = new Usuario();
+        assertEquals(new Usuario(), usuario);
     }
 
     @Test
