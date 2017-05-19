@@ -10,11 +10,11 @@
     <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
                 var="fontRoboto"/>
     <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons"/>
-    <spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss" />
+    <spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>
     <%--<spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss" />--%>
     <%--<spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss" />--%>
     <%--<spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss" />--%>
-    <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss" />
+    <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss"/>
     <%--<spring:url value="/resources/css/style.min.css" var="styleCss" />--%>
     <%--<spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss" /> --%>
     <%--<spring:url value="/resources/plugins/remodal/remodal-default-theme.css" var="remodalDefaultThemeCss" />--%>
@@ -314,11 +314,12 @@
 <script src="${pdfmakeJs}"></script>
 <script src="${vfs_fontsJs}"></script>
 <script>
-    $(document).ready(function () {
-        $(".button-collapsable").sideNav();
-//                $('.button-collapse').sideNav('show');
+    $(".button-collapsable").sideNav({
+        menuWidth: 450, // Default is 300
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true // Choose whether you can drag to open on touch screens
     });
-
 </script>
 </body>
 </html>
