@@ -44,7 +44,7 @@
     <li>
         <div class="divider"></div>
     </li>
-    <li><a href="/MISED/inicio.htm"><i class="material-icons">home</i><span><fmt:message
+    <li><a href="<c:url value='/inicio.htm' />"><i class="material-icons">home</i><span><fmt:message
             key="mensaje.inicio"/></span></a></li>
     <li id="inicio-menu"><a href="<c:url value='/usuario/mi-perfil.htm' />"><i class="material-icons">account_box</i><span><fmt:message
             key="mensaje.informacion-personal"/></span></a></li>

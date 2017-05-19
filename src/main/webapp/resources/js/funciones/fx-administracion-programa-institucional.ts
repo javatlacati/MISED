@@ -1,6 +1,6 @@
 declare var $: JQueryStatic;
 // import * as swal from 'sweetalert';
-declare var swal: Any;
+declare var swal: any;
 let token = $("meta[name='_csrf']").attr("content");
 let fechaActual = new Date();
 let anio = fechaActual.getFullYear();
@@ -97,7 +97,7 @@ $(function () {
                 "targets": 3,
                 "data": "acciones",
                 "render": function (data, type, row) {
-                    return `<a onclick='actualizacionProgramaInstitucional(${data})' class='btn bg-deep-orange waves-effect' style='margin-right: 7px;'>Actualizar</a><a class='btn bg-red waves-effect' style='margin-right: 7px;' onclick='bajaProgramaInstitucional(${data})'>Eliminar</a>`;
+                    return `<a onclick='actualizacionProgramaInstitucional(${data})' class='btn verdepalma waves-effect' style='margin-right: 7px;'>Actualizar</a><a class='btn verdepalma waves-effect' style='margin-right: 7px;' onclick='bajaProgramaInstitucional(${data})'>Eliminar</a>`;
                 }
             }],
             "ajax": {
@@ -152,15 +152,15 @@ function capturaProgramaInstitucional() {
                 'descripcion': programaInstitucional.descripcion
             },
             success: function (pi) {
-                swal("TAREA EXITOSA!", "Se ha registrado el programa institucional : " + pi.nombre + " con clave: " + pi.clave);
+                swal("TAREA EXITOSA!", `Se ha registrado el programa institucional: ${pi.nombre} con clave: ${pi.clave}`);
                 $("#nueva-clave").val('');
                 $("#nuevo-nombre").val('');
                 $("#nueva-descripcion").val('');
                 webSocket.send('actualizacion');
             },
             error: function () {
-                swal("ERROR", "Se ha perdido la comunicaciÃ³n con el servidor Ã³ el recurso que busca ya no existe" +
-                    " Ã³ la CLAVE del programa institucional esta duplicada y se evito la actualizaciÃ³n!, intentelo mas tarde.");
+                swal("ERROR", "Se ha perdido la comunicación con el servidor o el recurso que busca ya no existe" +
+                    " o la CLAVE del programa institucional esta duplicada y se evito la actualización!, intentelo mas tarde.");
             }
         });
     }
@@ -170,7 +170,7 @@ function realizarActualizacionProgramaInstitucional() {
     let programaInstitucional = new ProgramaInstitucional($("#idProgramaInstitucional").val(), $("#clave").val(), $("#nombre").val(), $("#descripcion").val());
     if (validarCamposProgramaInstitucional(programaInstitucional)) {
         $.ajax({
-            url: 'actualizar-programa-institucional?_csrf=' + token,
+            url: `actualizar-programa-institucional?_csrf=${token}`,
             type: 'POST',
             data: {
                 'idProgramaInstitucional': programaInstitucional.idProgramaInstitucional,
@@ -180,12 +180,11 @@ function realizarActualizacionProgramaInstitucional() {
             },
             success: function (pi) {
                 $('#modal-actualizacion-programa-institucional').modal('hide');
-                swal("TAREA EXITOSA!", "Se ha actualizado el programa institucional : " + pi.nombre + " con clave: " + pi.clave);
+                swal("TAREA EXITOSA!", `Se ha actualizado el programa institucional: ${pi.nombre} con clave: ${pi.clave}`);
                 webSocket.send('actualizacion');
             },
             error: function (data) {
-                swal("ERROR", "Se ha perdido la comunicaciÃ³n con el servidor Ã³ el recurso que busca ya no existe" +
-                    " Ã³ la CLAVE del programa institucional esta duplicada y se evito la actualizaciÃ³n, intentelo mas tarde.");
+                swal("ERROR", "Se ha perdido la comunicación con el servidor o el recurso que busca ya no existe o la CLAVE del programa institucional esta duplicada y se evito la actualización, intentelo mas tarde.");
             }
         });
     }
@@ -219,7 +218,7 @@ function validarCamposProgramaInstitucional({idProgramaInstitucional = "", clave
 function bajaProgramaInstitucional(idProgramaInstitucional) {
     swal({
         title: "¿Estás realmente seguro de borrar este Programa Institucional?",
-        text: "Se borrara este programa institucional permanentemente con todos sus Ã³rganos de direcciÃ³n estratÃ©gica y unidades de apoyo asociadas!",
+        text: "Se borrara este programa institucional permanentemente con todos sus Óganos de dirección estratégica y unidades de apoyo asociadas!",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -233,11 +232,11 @@ function bajaProgramaInstitucional(idProgramaInstitucional) {
                 'idProgramaInstitucional': idProgramaInstitucional
             },
             success: function (pi) {
-                swal("TAREA EXITOSA!", "Se ha correctamente dado de baja el programa institucional: " + pi.nombre + " con clave: " + pi.clave);
+                swal("TAREA EXITOSA!", `Se ha correctamente dado de baja el programa institucional: ${pi.nombre} con clave: ${pi.clave}`);
                 webSocket.send('actualizacion');
             },
             error: function () {
-                swal("ERROR", "Se ha perdido la comunicaciÃ³n con el servidor Ã³ el recurso que busca ya no existe!, intentelo mas tarde.");
+                swal("ERROR", "Se ha perdido la comunicación con el servidor o el recurso que busca ya no existe!, inténtelo mas tarde.");
             }
         });
     });
