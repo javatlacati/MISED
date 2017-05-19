@@ -1,10 +1,12 @@
+declare var $:JQueryStatic;
+declare var swal: any;
 let token = $("meta[name='_csrf']").attr("content");
 let titulo = 'ORGANOS DIRECCION ESTRATEGICA ' + new Date().getFullYear();
 let columnas = [ 0, 1 ];
 let orientacion = 'portrait';
 let tamanioPagina = 'A4';
 let tablaOrganosDireccionEstrategica = null;
-let webSocketOrganosDireccionEstrategica = null;
+let webSocketOrganosDireccionEstrategica = null; //TODO no se usa de momento
 (function(){
     cargarProgramasInstitucionales();
 
@@ -81,12 +83,11 @@ let webSocketOrganosDireccionEstrategica = null;
                 "targets": 2,
                 "data": "acciones",
                 "render": function(data, type, row) {
-                    return "<a onclick='actualizacionOrganoDireccionEstrategica(" + data + ")' class='btn bg-deep-orange waves-effect' style='margin-right: 7px;'>Actualizar</a>"
-                        + "<a class='btn bg-red waves-effect' style='margin-right: 7px;' onclick='bajaOrganoDireccionEstrategica(" + data + ")'>Eliminar</a>";
+                    return `<a onclick='actualizacionOrganoDireccionEstrategica(${data})' class='btn bg-deep-orange waves-effect' style='margin-right: 7px;'>Actualizar</a><a class='btn bg-red waves-effect' style='margin-right: 7px;' onclick='bajaOrganoDireccionEstrategica(${data})'>Eliminar</a>`;
                 }
             }],
             "ajax": {
-                url: "organos-direccion-estrategica.json?_csrf=" + token,
+                url: `organos-direccion-estrategica.json?_csrf=${token}`,
                 type: "POST"
             }
         });
@@ -96,12 +97,12 @@ let webSocketOrganosDireccionEstrategica = null;
 
 function cargarProgramasInstitucionales(){
     $.ajax({
-        url: '../programa-institucional/programas-institucionales.json?_csrf=' + token,
+        url: `../programa-institucional/programas-institucionales.json?_csrf=${token}`,
         type: 'POST',
         success: function(programasInstitucionales) {
             let opciones = "";
             programasInstitucionales.forEach(function(pi){
-                opciones += "<option value='" + pi.idProgramaInstitucional + "'>"+ pi.clave + " " + pi.nombre +"</option>";
+                opciones += `<option value='${pi.idProgramaInstitucional}'>${pi.clave} ${pi.nombre}</option>`;
             });
             $("#selector-id-programaInstitucional").html(opciones);
             $("#selector-id-programaInstitucional").selectpicker('refresh');

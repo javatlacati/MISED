@@ -4,7 +4,7 @@ var columnas = [0, 1];
 var orientacion = 'portrait';
 var tamanioPagina = 'A4';
 var tablaOrganosDireccionEstrategica = null;
-var webSocketOrganosDireccionEstrategica = null;
+var webSocketOrganosDireccionEstrategica = null; //TODO no se usa de momento
 (function () {
     cargarProgramasInstitucionales();
     tablaOrganosDireccionEstrategica = $('#tabla-organos-direccion-estrategica')
@@ -80,8 +80,7 @@ var webSocketOrganosDireccionEstrategica = null;
                 "targets": 2,
                 "data": "acciones",
                 "render": function (data, type, row) {
-                    return "<a onclick='actualizacionOrganoDireccionEstrategica(" + data + ")' class='btn bg-deep-orange waves-effect' style='margin-right: 7px;'>Actualizar</a>"
-                        + "<a class='btn bg-red waves-effect' style='margin-right: 7px;' onclick='bajaOrganoDireccionEstrategica(" + data + ")'>Eliminar</a>";
+                    return "<a onclick='actualizacionOrganoDireccionEstrategica(" + data + ")' class='btn bg-deep-orange waves-effect' style='margin-right: 7px;'>Actualizar</a><a class='btn bg-red waves-effect' style='margin-right: 7px;' onclick='bajaOrganoDireccionEstrategica(" + data + ")'>Eliminar</a>";
                 }
             }],
         "ajax": {
@@ -92,7 +91,7 @@ var webSocketOrganosDireccionEstrategica = null;
 })();
 function cargarProgramasInstitucionales() {
     $.ajax({
-        url: '../programa-institucional/programas-institucionales.json?_csrf=' + token,
+        url: "../programa-institucional/programas-institucionales.json?_csrf=" + token,
         type: 'POST',
         success: function (programasInstitucionales) {
             var opciones = "";
