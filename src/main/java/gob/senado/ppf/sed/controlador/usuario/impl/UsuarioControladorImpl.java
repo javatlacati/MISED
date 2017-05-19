@@ -64,9 +64,9 @@ public class UsuarioControladorImpl implements UsuarioControlador {
     }
 
     @Override
-    @GetMapping(value = "/administrador/usuarios/reestablecer-cedenciales-usuarios.htm")
+    @GetMapping(value = "/administrador/usuarios/reestablecer-credenciales-usuarios.htm")
     public ModelAndView vistaCredencialesUsuarios() {
-        return new ModelAndView("administrador/usuarios/reestablecer-cedenciales-usuarios",
+        return new ModelAndView("/administrador/usuarios/reestablecer-credenciales-usuarios",
                 "usuario", Suppliers.USUARIO.get());
     }
 
