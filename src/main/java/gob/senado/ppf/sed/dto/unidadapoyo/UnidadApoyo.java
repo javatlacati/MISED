@@ -15,19 +15,20 @@ public class UnidadApoyo implements Serializable, Formateable {
     private String proposito;
     private long totalUsuariosAdscritosUnidadApoyo;
 
-    @java.beans.ConstructorProperties({"idUnidadApoyo", "idOrganoDireccionEstrategica", "nombre", "proposito"})
-    private UnidadApoyo(long idUnidadApoyo, long idOrganoDireccionEstrategica, String nombre, String proposito) {
+    @java.beans.ConstructorProperties({"idUnidadApoyo", "idOrganoDireccionEstrategica", "nombre", "proposito", "totalUsuariosAdscritosUnidadApoyo"})
+    private UnidadApoyo(long idUnidadApoyo, long idOrganoDireccionEstrategica, String nombre, String proposito, long totalUsuariosAdscritosUnidadApoyo) {
         this.idUnidadApoyo = idUnidadApoyo;
         this.idOrganoDireccionEstrategica = idOrganoDireccionEstrategica;
         this.nombre = nombre;
         this.proposito = proposito;
+        this.totalUsuariosAdscritosUnidadApoyo = totalUsuariosAdscritosUnidadApoyo;
     }
 
     public UnidadApoyo() {
     }
 
-    public static UnidadApoyo from(long idUnidadApoyo, long idOrganoDireccionEstrategica, String nombre, String proposito) {
-        return new UnidadApoyo(idUnidadApoyo, idOrganoDireccionEstrategica, nombre, proposito);
+    public static UnidadApoyo from(long idUnidadApoyo, long idOrganoDireccionEstrategica, String nombre, String proposito, long totalUsuariosAdscritosUnidadApoyo) {
+        return new UnidadApoyo(idUnidadApoyo, idOrganoDireccionEstrategica, nombre, proposito, totalUsuariosAdscritosUnidadApoyo);
     }
 
     @Override
@@ -51,6 +52,10 @@ public class UnidadApoyo implements Serializable, Formateable {
         return this.proposito;
     }
 
+    public long getTotalUsuariosAdscritosUnidadApoyo() {
+        return this.totalUsuariosAdscritosUnidadApoyo;
+    }
+
     public void setIdUnidadApoyo(long idUnidadApoyo) {
         this.idUnidadApoyo = idUnidadApoyo;
     }
@@ -65,10 +70,6 @@ public class UnidadApoyo implements Serializable, Formateable {
 
     public void setProposito(String proposito) {
         this.proposito = proposito;
-    }
-
-    public long getTotalUsuariosAdscritosUnidadApoyo() {
-        return totalUsuariosAdscritosUnidadApoyo;
     }
 
     public void setTotalUsuariosAdscritosUnidadApoyo(long totalUsuariosAdscritosUnidadApoyo) {
