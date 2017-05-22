@@ -1,9 +1,6 @@
 package historiasdeusuario;
 
-import cucumber.api.CucumberOptions;
 import cucumber.api.java8.En;
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(plugin = { "pretty" }, features = { "src/test/resources" })
+//@RunWith(Cucumber.class)
+//@CucumberOptions(plugin = { "pretty" }, features = { "src/test/resources" })
 public class TestInicioSesion implements En {
 
 	private WebDriver webDriver;
