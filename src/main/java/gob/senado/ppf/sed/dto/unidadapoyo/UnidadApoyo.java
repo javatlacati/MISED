@@ -13,6 +13,7 @@ public class UnidadApoyo implements Serializable, Formateable {
     private long idOrganoDireccionEstrategica;
     private String nombre;
     private String proposito;
+    private long totalUsuariosAdscritosUnidadApoyo;
 
     @java.beans.ConstructorProperties({"idUnidadApoyo", "idOrganoDireccionEstrategica", "nombre", "proposito"})
     private UnidadApoyo(long idUnidadApoyo, long idOrganoDireccionEstrategica, String nombre, String proposito) {
@@ -64,6 +65,14 @@ public class UnidadApoyo implements Serializable, Formateable {
 
     public void setProposito(String proposito) {
         this.proposito = proposito;
+    }
+
+    public long getTotalUsuariosAdscritosUnidadApoyo() {
+        return totalUsuariosAdscritosUnidadApoyo;
+    }
+
+    public void setTotalUsuariosAdscritosUnidadApoyo(long totalUsuariosAdscritosUnidadApoyo) {
+        this.totalUsuariosAdscritosUnidadApoyo = totalUsuariosAdscritosUnidadApoyo;
     }
 
     public boolean equals(Object o) {
