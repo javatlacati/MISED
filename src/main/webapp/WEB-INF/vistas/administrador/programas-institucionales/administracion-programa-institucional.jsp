@@ -280,7 +280,7 @@
 <spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>
 <spring:url value="/resources/js/admin.js" var="adminJs"/>
 <spring:url value="/resources/js/funciones/constantes.js" var="constantes"/>
-<spring:url value="/resources/js/funciones/fx-administracion-programa-institucional.js"
+<spring:url value="/resources/js/funciones/administracion-programa-institucional/fx-administracion-programa-institucional.js"
             var="fxAdministracionProgramaInstitucional"/>
 <spring:url value="/resources/js/funciones/prototipos/programa-institucional.js" var="prototypeProgramaInstitucional"/>
 <spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin"/>
