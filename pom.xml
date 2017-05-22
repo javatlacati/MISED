@@ -364,10 +364,10 @@
             <scope>test</scope>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.projectlombok</groupId>-->
-            <!--<artifactId>lombok</artifactId>-->
-            <!--<version>1.16.8</version>-->
-            <!--<scope>provided</scope>-->
+        <!--<groupId>org.projectlombok</groupId>-->
+        <!--<artifactId>lombok</artifactId>-->
+        <!--<version>1.16.8</version>-->
+        <!--<scope>provided</scope>-->
         <!--</dependency>-->
 
     </dependencies>
@@ -530,8 +530,12 @@
                     <targetClasses>
                         <class>gob.senado.ppf.sed.dto.usuario.Usuario</class>
                         <class>gob.senado.ppf.sed.dto.usuario.UsuarioPermiso</class>
+                        <class>gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional</class>
+                        <class>gob.senado.ppf.sed.dto.organodireccionestrategica.OrganoDireccionEstrategica</class>
                         <class>gob.senado.ppf.sed.dto.usuario.UsuarioTest</class>
                         <class>gob.senado.ppf.sed.dto.usuario.UsuarioPermisoTest</class>
+                        <class>gob.senado.ppf.sed.dto.organodireccionestrategica.TestOrganoDireccionEstrategica</class>
+                        <class>gob.senado.ppf.sed.dto.programainstitucional.TestProgramaInstitucional</class>
                     </targetClasses>
                 </configuration>
             </plugin>
