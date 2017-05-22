@@ -3,36 +3,56 @@ package gob.senado.ppf.sed.dto.organodireccionestrategica;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.io.Serializable;
 
 public class OrganoDireccionEstrategica implements Serializable, Formateable {
 
     private static final long serialVersionUID = 1L;
 
+    private String claveProgramaInstitucional;
+    private String nombreProgramaInstitucional;
+    private String descripcionProgramaInstitucional;
     private long idOrganoDireccionEstrategica;
     private long idProgramaInstitucional;
     private String nombre;
     private String descripcion;
     private long totalUnidadesApoyoAdscritas;
 
-    @java.beans.ConstructorProperties({"idOrganoDireccionEstrategica", "idProgramaInstitucional", "nombre", "descripcion"})
-    private OrganoDireccionEstrategica(long idOrganoDireccionEstrategica, long idProgramaInstitucional, String nombre, String descripcion) {
+    @java.beans.ConstructorProperties({"claveProgramaInstitucional", "nombreProgramaInstitucional", "descripcionProgramaInstitucional", "idOrganoDireccionEstrategica", "idProgramaInstitucional", "nombre", "descripcion", "totalUnidadesApoyoAdscritas"})
+    private OrganoDireccionEstrategica(String claveProgramaInstitucional, String nombreProgramaInstitucional, String descripcionProgramaInstitucional, long idOrganoDireccionEstrategica, long idProgramaInstitucional, String nombre, String descripcion, long totalUnidadesApoyoAdscritas) {
+        this.claveProgramaInstitucional = claveProgramaInstitucional;
+        this.nombreProgramaInstitucional = nombreProgramaInstitucional;
+        this.descripcionProgramaInstitucional = descripcionProgramaInstitucional;
         this.idOrganoDireccionEstrategica = idOrganoDireccionEstrategica;
         this.idProgramaInstitucional = idProgramaInstitucional;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.totalUnidadesApoyoAdscritas = totalUnidadesApoyoAdscritas;
     }
 
     public OrganoDireccionEstrategica() {
     }
 
-    public static OrganoDireccionEstrategica from(long idOrganoDireccionEstrategica, long idProgramaInstitucional, String nombre, String descripcion) {
-        return new OrganoDireccionEstrategica(idOrganoDireccionEstrategica, idProgramaInstitucional, nombre, descripcion);
+    public static OrganoDireccionEstrategica from(String claveProgramaInstitucional, String nombreProgramaInstitucional, String descripcionProgramaInstitucional, long idOrganoDireccionEstrategica, long idProgramaInstitucional, String nombre, String descripcion, long totalUnidadesApoyoAdscritas) {
+        return new OrganoDireccionEstrategica(claveProgramaInstitucional, nombreProgramaInstitucional, descripcionProgramaInstitucional, idOrganoDireccionEstrategica, idProgramaInstitucional, nombre, descripcion, totalUnidadesApoyoAdscritas);
     }
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+    }
+
+    public String getClaveProgramaInstitucional() {
+        return this.claveProgramaInstitucional;
+    }
+
+    public String getNombreProgramaInstitucional() {
+        return this.nombreProgramaInstitucional;
+    }
+
+    public String getDescripcionProgramaInstitucional() {
+        return this.descripcionProgramaInstitucional;
     }
 
     public long getIdOrganoDireccionEstrategica() {
@@ -51,6 +71,22 @@ public class OrganoDireccionEstrategica implements Serializable, Formateable {
         return this.descripcion;
     }
 
+    public long getTotalUnidadesApoyoAdscritas() {
+        return this.totalUnidadesApoyoAdscritas;
+    }
+
+    public void setClaveProgramaInstitucional(String claveProgramaInstitucional) {
+        this.claveProgramaInstitucional = claveProgramaInstitucional;
+    }
+
+    public void setNombreProgramaInstitucional(String nombreProgramaInstitucional) {
+        this.nombreProgramaInstitucional = nombreProgramaInstitucional;
+    }
+
+    public void setDescripcionProgramaInstitucional(String descripcionProgramaInstitucional) {
+        this.descripcionProgramaInstitucional = descripcionProgramaInstitucional;
+    }
+
     public void setIdOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
         this.idOrganoDireccionEstrategica = idOrganoDireccionEstrategica;
     }
@@ -65,10 +101,6 @@ public class OrganoDireccionEstrategica implements Serializable, Formateable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public long getTotalUnidadesApoyoAdscritas() {
-        return totalUnidadesApoyoAdscritas;
     }
 
     public void setTotalUnidadesApoyoAdscritas(long totalUnidadesApoyoAdscritas) {
