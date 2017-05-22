@@ -1,5 +1,6 @@
 package gob.senado.ppf.sed.controlador.arboldeobjetivos;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -17,4 +18,7 @@ public interface ArbolDeObjetivosControlador {
     ModelAndView vistaCreacionArbolObjetivos();
 
     ModelAndView vistaReportesArbolObjetivos();
+
+    @GetMapping(value = "/busqueda-arbol-objetivos-historial.html")
+    ModelAndView vistaBusquedaArbolObjetivosHistorial();
 }

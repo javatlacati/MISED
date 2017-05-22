@@ -16,42 +16,49 @@ public class ArbolDeObjetivosControladorImpl implements ArbolDeObjetivosControla
     @Override
     @GetMapping(value = "/actualizar-objetivos.htm")
     public ModelAndView vistaActualizarObjetivos() {
-        return new ModelAndView("/actualizar-objetivos",
+        return new ModelAndView("/arboldeobjetivos/actualizar-objetivos",
                 "arbol-de-objetivos", Suppliers.USUARIO.get()); //TODO corregir supplier
     }
 
     @Override
     @GetMapping(value = "/baja-objetivos.htm")
     public ModelAndView vistaBajaObjetivos() {
-        return new ModelAndView("/baja-objetivos",
+        return new ModelAndView("/arboldeobjetivos/baja-objetivos",
                 "arbol-de-objetivos", Suppliers.USUARIO.get()); //TODO corregir supplier
     }
 
     @Override
     @GetMapping(value = "/captura-objetivos.htm")
     public ModelAndView vistaCapturaObjetivos() {
-        return new ModelAndView("/captura-objetivos",
+        return new ModelAndView("/arboldeobjetivos/captura-objetivos",
                 "arbol-de-objetivos", Suppliers.USUARIO.get()); //TODO corregir supplier
     }
 
     @Override
     @GetMapping(value = "/creacion-arbol-objetivos.htm")
     public ModelAndView vistaCreacionArbolObjetivos() {
-        return new ModelAndView("/creacion-arbol-objetivos",
+        return new ModelAndView("/arboldeobjetivos/creacion-arbol-objetivos",
                 "arbol-de-objetivos", Suppliers.USUARIO.get()); //TODO corregir supplier
     }
 
     @Override
     @GetMapping(value = "/borrar-arbol-objetivos.htm")
     public ModelAndView vistaBorrarArbolObjetivos() {
-        return new ModelAndView("/borrar-arbol-objetivos",
+        return new ModelAndView("/arboldeobjetivos/borrar-arbol-objetivos",
                 "arbol-de-objetivos", Suppliers.USUARIO.get()); //TODO corregir supplier
     }
 
     @Override
     @GetMapping(value = "/reportes-arbol-objetivos.htm")
     public ModelAndView vistaReportesArbolObjetivos() {
-        return new ModelAndView("/reportes-arbol-objetivos",
+        return new ModelAndView("/arboldeobjetivos/reportes-arbol-objetivos",
+                "arbol-de-objetivos", Suppliers.USUARIO.get()); //TODO corregir supplier
+    }
+
+    @Override
+    @GetMapping(value = "/busqueda-arbol-objetivos-historial.htm")
+    public ModelAndView vistaBusquedaArbolObjetivosHistorial() {
+        return new ModelAndView("/arboldeobjetivos/busqueda-arbol-objetivos-historial",
                 "arbol-de-objetivos", Suppliers.USUARIO.get()); //TODO corregir supplier
     }
 
