@@ -25,7 +25,7 @@ public class InicioSesion implements En {
         });
 
         When("^Se abre la url del sistema$", () -> {
-            driver.navigate().to("http://localhost:8080/");
+            driver.navigate().to("http://localhost:8081/");
         });
 
         Then("^Debe existir un campo de texto para el nombre de usuario$", () -> {
