@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="SENADO_SED@localhost">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.1">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
     <root id="1"/>
     <database id="2" parent="1" name="SENADO_SED">
       <ObjectId>16393</ObjectId>
@@ -9,7 +9,7 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-05-02.01:35:36.640</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-05-17.20:06:55.174</IntrospectionTimestamp>
       <IntrospectionStateNumber>556</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>

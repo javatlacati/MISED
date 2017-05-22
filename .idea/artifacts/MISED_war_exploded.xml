@@ -7,6 +7,8 @@
           <element id="module-output" name="MISED" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: io.reactivex.rxjava2:rxjava:2.1.0" />
+          <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.0.final" />
           <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.3" />
           <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
@@ -71,8 +73,10 @@
           <element id="library" level="project" name="Maven: org.olap4j:olap4j:0.9.7.309-JS-3" />
           <element id="library" level="project" name="Maven: com.google.zxing:core:3.2.1" />
           <element id="library" level="project" name="Maven: com.ibm.icu:icu4j:57.1" />
+          <element id="library" level="project" name="Maven: net.sf.jasperreports:jasperreports-fonts:6.0.0" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: postgresql:postgresql:9.0-801.jdbc4" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-test:4.2.2.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

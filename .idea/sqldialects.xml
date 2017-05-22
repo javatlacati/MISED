@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/gob/senado/ppf/sed/repositorio/programainstitucional/impl/ProgramaInstitucionalRepositorioImpl.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/gob/senado/ppf/sed/repositorio/unidadapoyo/impl/UnidadApoyoRepositorioImpl.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/gob/senado/ppf/sed/repositorio/usuario/impl/UsuarioRepositorioImpl.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/scriptsdb/datos.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/scriptsdb/esquema_base_datos.sql" dialect="PostgreSQL" />
