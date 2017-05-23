@@ -82,6 +82,7 @@ public class SesionControladorImpl implements SesionControlador {
             mv.addObject("unidadApoyo", ua.getNombre());
             mv.addObject("fechaActual", Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
             mv.addObject("nombreCompleto", u.getNombre() + " " + u.getApellidoPaterno() + " " + u.getApellidoMaterno());
+            mv.addObject("correoElectronico", u.getCorreoElectronico());
             return mv;
         } else {
             return vistaInicioSesion(null, null);

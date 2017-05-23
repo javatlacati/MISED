@@ -36,8 +36,8 @@
                 <img src="../../../resources/images/image-gallery/1.jpg">
             </div>
             <a href="#!user"><img class="circle" src="../../../resources/images/image-gallery/16.jpg"></a>
-            <a href="#!name"><span class="white-text name">John Doe</span></a>
-            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            <a href="#!name"><span class="white-text name">${nombreCompleto}</span></a>
+            <a href="#!email"><span class="white-text email">${correoElectronico}</span></a>
         </div>
     </li>
     <li class="header"><fmt:message key="mensaje.label-menu"/></li>
