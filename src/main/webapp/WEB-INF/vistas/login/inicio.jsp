@@ -66,7 +66,7 @@
 <body>
 <div class="preloader-background">
     <spring:url value="/resources/images/logo senado 100x100 animado.svg" var="senadoAnimado"/>
-    <img src="${senadoAnimado}" >
+    <img src="${senadoAnimado}" width="250" height="250">
 </div>
 
 
