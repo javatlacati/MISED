@@ -52,10 +52,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #aee;
+            background-color: #fff;
 
             position: fixed;
-            z-index: 100;
+            z-index: 150;
             top: 0;
             left: 0;
             right: 0;
@@ -65,19 +65,8 @@
 </head>
 <body>
 <div class="preloader-background">
-    <div class="preloader-wrapper active">
-        <div class="spinner-layer spinner-red-only">
-            <div class="circle-clipper left">
-                <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-                <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-        </div>
-    </div>
+    <spring:url value="/resources/images/logo senado 100x100 animado.svg" var="senadoAnimado"/>
+    <img src="${senadoAnimado}" >
 </div>
 
 
@@ -156,10 +145,13 @@
 <script>
     $(document).ready(function () {
         $('.parallax').parallax();
-        $(".button-collapsable").sideNav();
-//                $('.button-collapse').sideNav('show');
+        $(".button-collapsable").sideNav({
+            menuWidth: 450, // Default is 300
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true // Choose whether you can drag to open on touch screens
+        });
     });
-
 </script>
 </body>
 </html>
