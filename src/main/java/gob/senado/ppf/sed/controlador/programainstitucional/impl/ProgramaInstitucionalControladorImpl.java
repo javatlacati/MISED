@@ -4,6 +4,7 @@ import gob.senado.ppf.sed.controlador.programainstitucional.ProgramaInstituciona
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 import gob.senado.ppf.sed.servicio.programainstitucional.ProgramaInstitucionalServicio;
 import gob.senado.ppf.sed.utilidades.Suppliers;
+import gob.senado.ppf.sed.utilidades.vistas.ExcelProgramaInstitucionalBuilder;
 import gob.senado.ppf.sed.utilidades.vistas.PDFProgramaInstitucionalBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -29,14 +30,17 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
     }
 
     @RequestMapping(value = "/programa-institucional/downloadPDF.htm", method = RequestMethod.GET)
-    public ModelAndView downloadExcel() {
-        // create some sample data
+    public ModelAndView downloadPDF() {
         List<ProgramaInstitucional> programas = new ArrayList<>();
         programas.addAll(programaInstitucionalServicio.obtenerProgramasInstitucionales());
-
-
-        // return a view which will be resolved by an excel view resolver
         return new ModelAndView(new PDFProgramaInstitucionalBuilder(), "programas", programas);
+    }
+
+    @RequestMapping(value = "/programa-institucional/downloadXLS.xls", method = RequestMethod.GET)
+    public ModelAndView downloadXLS() {
+        List<ProgramaInstitucional> programas = new ArrayList<>();
+        programas.addAll(programaInstitucionalServicio.obtenerProgramasInstitucionales());
+        return new ModelAndView(new ExcelProgramaInstitucionalBuilder(), "programas", programas);
     }
 
     @Override

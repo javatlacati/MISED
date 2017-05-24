@@ -450,6 +450,13 @@
             <version>5.5.11</version>
         </dependency>
 
+        <!--Generación de excel al vuelo-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.16</version>
+        </dependency>
+
 
         <!--Dependencias de pruebas-->
         <dependency>

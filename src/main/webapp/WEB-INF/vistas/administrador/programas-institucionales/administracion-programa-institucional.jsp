@@ -61,7 +61,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #aee;
+            background-color: #fff;
 
             position: fixed;
             z-index: 100;
@@ -171,6 +171,7 @@
                 </div>
                 <div class="body">
                     <h3><a href="<c:url value='/administrador/programa-institucional/downloadPDF.htm' />">Descargar como PDF</a></h3>
+                    <h3><a href="<c:url value='/administrador/programa-institucional/downloadXLS.xls' />">Descargar como XLS</a></h3>
 
                     <table id="tabla-programas-institucionales"
                            class="table table-striped display responsive nowrap text-justify"
