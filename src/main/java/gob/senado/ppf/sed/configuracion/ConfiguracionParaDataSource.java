@@ -94,13 +94,15 @@ public class ConfiguracionParaDataSource {
     private String maximumPoolSize;
 
     /**
-     * Tiempo m&iacute;nimo que una conexion puede permanecer sin realizar ninguna transacci&oacute;n antes de ser devuelta a la pisina de conexiones.
+     * Tiempo m&iacute;nimo que una conexion puede permanecer sin realizar ninguna transacci&oacute;n antes de ser
+     * devuelta a la pisina de conexiones.
      */
     @Value("${minimumIdle}")
     private String minimumIdle;
 
     /**
-     * Tiempo en que una conexi&oacute;n puede estar fuera del pool de conexiones sin recibir ningun log indicando que hay
+     * Tiempo en que una conexi&oacute;n puede estar fuera del pool de conexiones sin recibir ningun log
+     * indicando que hay
      * posiblemente un estancamiento de la conexi&oacute;n.
      */
     @Value("${leakDetectionThreshold}")
@@ -124,9 +126,11 @@ public class ConfiguracionParaDataSource {
     }
 
     /**
-     * Bean de configuraci&oacute;n que crea un objeto que almacena las propiedades de la configuraci&oacute;n para la pisina de conexiones a la base de datos.
+     * Bean de configuraci&oacute;n que crea un objeto que almacena las propiedades de la configuraci&oacute;n para la
+     * pisina de conexiones a la base de datos.
      *
-     * @return HikariConfig objeto que guarda las propiedades para la conexi&oacute;n a la base de datos y la pisina de conexiones.
+     * @return HikariConfig objeto que guarda las propiedades para la conexi&oacute;n a la base de datos y la pisina
+     * de conexiones.
      */
     @Bean
     public HikariConfig hikariConfig() {
@@ -149,7 +153,8 @@ public class ConfiguracionParaDataSource {
      * Bean de configuraci&oacute;n que administra las transacciones a la base de datos.
      *
      * @param dataSource DataSource que crea el puente de conexi&oacute;n a la base de datos.
-     * @return PlatformTransactionManager que administra las transacciones de los metodos que tengan la anotaci&oacute;n @Transactional.
+     * @return PlatformTransactionManager que administra las transacciones de los metodos que tengan la
+     * anotaci&oacute;n @Transactional.
      */
     @Bean
     public PlatformTransactionManager transactionManager(DataSource dataSource) {
@@ -157,7 +162,8 @@ public class ConfiguracionParaDataSource {
     }
 
     /**
-     * Bean de configuraci&oacute;n que retorna una implementaci&oacute;n de un DataSource que establece el puente de conexi&oacute;n a la base de datos.
+     * Bean de configuraci&oacute;n que retorna una implementaci&oacute;n de un DataSource que establece el puente de
+     * conexi&oacute;n a la base de datos.
      *
      * @return DataSource implementado por Hikari.
      */
