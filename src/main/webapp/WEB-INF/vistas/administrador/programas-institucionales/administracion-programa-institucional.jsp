@@ -74,19 +74,8 @@
 </head>
 <body>
 <div class="preloader-background">
-    <div class="preloader-wrapper active">
-        <div class="spinner-layer spinner-red-only">
-            <div class="circle-clipper left">
-                <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-                <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-        </div>
-    </div>
+    <spring:url value="/resources/images/logo senado 100x100 animado.svg" var="senadoAnimado"/>
+    <img src="${senadoAnimado}" width="250" height="250">
 </div>
 
 
