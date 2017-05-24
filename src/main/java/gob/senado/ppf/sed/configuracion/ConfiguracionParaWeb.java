@@ -34,10 +34,10 @@ public class ConfiguracionParaWeb extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
     
-    @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
+//    @Override
+//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+//        configurer.enable();
+//    }
     
     @Bean(name = "messageSource")
     public ReloadableResourceBundleMessageSource messageSource() {

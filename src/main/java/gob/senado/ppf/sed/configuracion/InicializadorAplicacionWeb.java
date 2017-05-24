@@ -1,12 +1,13 @@
 package gob.senado.ppf.sed.configuracion;
 
-import javax.servlet.FilterRegistration;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletRegistration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
+
+import javax.servlet.FilterRegistration;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletRegistration;
 
 public class InicializadorAplicacionWeb implements WebApplicationInitializer {
 
@@ -33,8 +34,10 @@ public class InicializadorAplicacionWeb implements WebApplicationInitializer {
         dispatcherServlet.register(ConfiguracionParaWeb.class);
 
         // Register and map the dispatcher servlet
+        DispatcherServlet servletDisp = new DispatcherServlet(dispatcherServlet);
+        servletDisp.setThrowExceptionIfNoHandlerFound(true);
         ServletRegistration.Dynamic dispatcher = container.addServlet("dispatcher",
-                new DispatcherServlet(dispatcherServlet));
+                servletDisp);
         dispatcher.setAsyncSupported(true);
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
