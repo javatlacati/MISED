@@ -14,7 +14,7 @@
     <%--<spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss" />--%>
     <%--<spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss" />--%>
     <%--<spring:url value="/resources/css/style.min.css" var="styleCss" />--%>
-    <spring:url value="/resources/plugins/materialize-css/css/materialize.css" var="materializeCss"/>
+    <spring:url value="/resources/plugins/materialize/css/materialize.min.css" var="materializeCss"/>
     <link href="${fontRoboto}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
     <%--<link href="${bootstrapCss}" rel="stylesheet">--%>
@@ -25,7 +25,7 @@
     <spring:url value="/resources/css/custom.min.css" var="custom"/>
     <link href="${custom}" rel="stylesheet">
     <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
-    <spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializeJS"/>
+    <spring:url value="/resources/plugins/materialize/js/materialize.min.js" var="materializeJS"/>
     <!-- Jquery Core Js -->
     <script src="${jQueryJs}"></script>
     <script src="${materializeJS}"></script>

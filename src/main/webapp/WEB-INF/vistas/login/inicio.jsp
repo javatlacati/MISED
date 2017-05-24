@@ -18,7 +18,7 @@
     <%--<spring:url value="/resources/css/style.min.css" var="styleCss"/>--%>
     <%--<spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss"/>--%>
     <%--<spring:url value="/resources/css/mytheme-black.min.css" var="temaNegro"/>--%>
-    <spring:url value="/resources/plugins/materialize-css/css/materialize.css" var="materializeCss"/>
+    <spring:url value="/resources/plugins/materialize/css/materialize.min.css" var="materializeCss"/>
 
     <link href="${fontRoboto}" rel="stylesheet" type="text/css">
     <link href="${materialIcons}" rel="stylesheet" type="text/css">
@@ -34,7 +34,7 @@
     <spring:url value="/resources/css/custom.min.css" var="custom"/>
     <link href="${custom}" rel="stylesheet">
     <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
-    <spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializeJS"/>
+    <spring:url value="/resources/plugins/materialize/js/materialize.js" var="materializeJS"/>
     <!-- Jquery Core Js -->
     <script src="${jQueryJs}"></script>
     <script src="${materializeJS}"></script>

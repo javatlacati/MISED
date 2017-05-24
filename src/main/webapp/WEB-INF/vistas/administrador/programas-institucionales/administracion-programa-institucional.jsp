@@ -9,23 +9,26 @@
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
     <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
                 var="fontRoboto"/>
+    <spring:url value="/resources/plugins/font-awesome/css/font-awesome.min.css"
+                var="fontAwesome"/>
     <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons"/>
-    <spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>
+    <%--<spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>--%>
     <%--<spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss" />--%>
     <%--<spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss" />--%>
     <%--<spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss" />--%>
-    <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss"/>
+    <spring:url value="/resources/plugins/sweetalert/sweetalert.min.css" var="sweetAlertCss"/>
     <%--<spring:url value="/resources/css/style.min.css" var="styleCss" />--%>
     <%--<spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss" /> --%>
     <%--<spring:url value="/resources/plugins/remodal/remodal-default-theme.css" var="remodalDefaultThemeCss" />--%>
     <%--<spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss"/>--%>
-    <spring:url value="/resources/plugins/materialize-css/css/materialize.css" var="materializeCss"/>
-    <spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css"
+    <spring:url value="/resources/plugins/materialize/css/materialize.min.css" var="materializeCss"/>
+    <spring:url value="/resources/plugins/datatables/css/dataTables.material.min.css"
                 var="dataTablesBootstrapCss"/>
-    <spring:url value="/resources/plugins/jquery-datatable/responsive.dataTables.min.css" var="responsiveDataTableCss"/>
+    <%--<spring:url value="/resources/plugins/jquery-datatable/responsive.dataTables.min.css" var="responsiveDataTableCss"/>--%>
     <link href="${fontRoboto}" rel="stylesheet" type="text/css">
+    <link href="${fontAwesome}" rel="stylesheet" type="text/css">
     <link href="${materialIcons}" rel="stylesheet" type="text/css">
-    <link href="${bootstrapCss}" rel="stylesheet">
+    <%--<link href="${bootstrapCss}" rel="stylesheet">--%>
     <%--<link href="${wavesCss}" rel="stylesheet" />--%>
     <%--<link href="${animateCss}" rel="stylesheet" />--%>
     <%--<link href="${mdPreloaderCss}" rel="stylesheet" />--%>
@@ -34,13 +37,13 @@
     <%--<link href="${allThemesCss}" rel="stylesheet" />--%>
     <%--<link href="${bootstrapSelectCss}" rel="stylesheet" />--%>
     <link href="${dataTablesBootstrapCss}" rel="stylesheet"/>
-    <link href="${responsiveDataTableCss}" rel="stylesheet"/>
+    <%--<link href="${responsiveDataTableCss}" rel="stylesheet"/>--%>
     <%--<link href="${remodalDefaultThemeCss}" rel="stylesheet" />--%>
     <link href="${materializeCss}" rel="stylesheet"/>
     <spring:url value="/resources/css/custom.min.css" var="custom"/>
     <link href="${custom}" rel="stylesheet">
     <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
-    <spring:url value="/resources/plugins/materialize-css/js/materialize.js" var="materializeJS"/>
+    <spring:url value="/resources/plugins/materialize/js/materialize.min.js" var="materializeJS"/>
     <!-- Jquery Core Js -->
     <script src="${jQueryJs}"></script>
     <script src="${materializeJS}"></script>
@@ -269,39 +272,40 @@
 </section>
 
 <%--<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>--%>
-<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
-<spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>
+<%--<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>--%>
 <spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/jquery.dataTables.js" var="jQueryDataTableJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.min.js"
+<spring:url value="/resources/plugins/datatables/js/jquery.dataTables.js" var="jQueryDataTableJs"/>
+<spring:url value="/resources/plugins/datatables/js/dataTables.material.js"
             var="dataTablesBoostrapJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/dataTables.responsive.min.js" var="responsiveDataTableJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/responsive.bootstrap.min.js" var="responsiveBootstrap"/>
-<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>
+<%--skin/bootstrap/js/dataTables.bootstrap.min.js--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/dataTables.responsive.min.js" var="responsiveDataTableJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/responsive.bootstrap.min.js" var="responsiveBootstrap"/>--%>
+<%--<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>--%>
 <spring:url value="/resources/js/admin.js" var="adminJs"/>
 <spring:url value="/resources/js/funciones/constantes.js" var="constantes"/>
 <spring:url value="/resources/js/funciones/administracion-programa-institucional/fx-administracion-programa-institucional.js"
             var="fxAdministracionProgramaInstitucional"/>
 <spring:url value="/resources/js/funciones/prototipos/programa-institucional.js" var="prototypeProgramaInstitucional"/>
 <spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"
+<spring:url value="/resources/plugins/datatables/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js"/>
+<spring:url value="/resources/plugins/datatables/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
+<spring:url value="/resources/plugins/datatables/extensions/export/dataTables.buttons.min.js"
             var="dataTablesButtonsJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>--%>
 
 <%--<script src="${jQueryJs}"></script>--%>
 <%--<script src="${bootstrapJs}"></script>--%>
-<script src="${bootstrapSelectJs}"></script>
-<script src="${jQuerySlimScrollJs}"></script>
+<%--<script src="${bootstrapSelectJs}"></script>--%>
+<%--<script src="${jQuerySlimScrollJs}"></script>--%>
 <script src="${sweetAlertJs}"></script>
 <script src="${jQueryDataTableJs}"></script>
 <script src="${dataTablesBoostrapJs}"></script>
-<script src="${responsiveDataTableJs}"></script>
-<script src="${responsiveBootstrap}"></script>
-<script src="${wavesJs}"></script>
+<%--<script src="${responsiveDataTableJs}"></script>--%>
+<%--<script src="${responsiveBootstrap}"></script>--%>
+<%--<script src="${wavesJs}"></script>--%>
 <script src="${adminJs}"></script>
 <script src="${constantes}"></script>
 <script src="${fxLogin}"></script>
@@ -310,9 +314,9 @@
 <script src="${buttonsHtml5Js}"></script>
 <script src="${buttonsPrintJs}"></script>
 <script src="${dataTablesButtonsJs}"></script>
-<script src="${jszipJs}"></script>
-<script src="${pdfmakeJs}"></script>
-<script src="${vfs_fontsJs}"></script>
+<%--<script src="${jszipJs}"></script>--%>
+<%--<script src="${pdfmakeJs}"></script>--%>
+<%--<script src="${vfs_fontsJs}"></script>--%>
 <script>
     $(".button-collapsable").sideNav({
         menuWidth: 450, // Default is 300
