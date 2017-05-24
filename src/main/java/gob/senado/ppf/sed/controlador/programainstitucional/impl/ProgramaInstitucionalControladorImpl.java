@@ -4,6 +4,7 @@ import gob.senado.ppf.sed.controlador.programainstitucional.ProgramaInstituciona
 import gob.senado.ppf.sed.dto.programainstitucional.ProgramaInstitucional;
 import gob.senado.ppf.sed.servicio.programainstitucional.ProgramaInstitucionalServicio;
 import gob.senado.ppf.sed.utilidades.Suppliers;
+import gob.senado.ppf.sed.utilidades.vistas.PDFProgramaInstitucionalBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller(value = "programaInstitucionalControlador")
@@ -19,19 +22,30 @@ import java.util.List;
 public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucionalControlador {
     
     private final ProgramaInstitucionalServicio programaInstitucionalServicio;
-    
+
     @Autowired
     public ProgramaInstitucionalControladorImpl(ProgramaInstitucionalServicio programaInstitucionalServicio) {
         this.programaInstitucionalServicio = programaInstitucionalServicio;
     }
-    
+
+    @RequestMapping(value = "/programa-institucional/downloadPDF.htm", method = RequestMethod.GET)
+    public ModelAndView downloadExcel() {
+        // create some sample data
+        List<ProgramaInstitucional> programas = new ArrayList<>();
+        programas.addAll(programaInstitucionalServicio.obtenerProgramasInstitucionales());
+
+
+        // return a view which will be resolved by an excel view resolver
+        return new ModelAndView(new PDFProgramaInstitucionalBuilder(), "programas", programas);
+    }
+
     @Override
     @GetMapping(value = "/programa-institucional/administracion-programas-institucionales.htm")
     public ModelAndView vistaAdministracionProgramasInstitucionales() {
         return new ModelAndView("administrador/programas-institucionales/administracion-programa-institucional",
                 "programaInstitucional", Suppliers.PROGRAMA_INSTITUCIONAL.get());
     }
-    
+
     @Override
     @PostMapping(value = "/programa-institucional/programas-institucionales.json")
     public HttpEntity<List<ProgramaInstitucional>> obtenerProgramasInstitucionales() {
@@ -43,7 +57,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(programasInstitucionales, HttpStatus.OK);
         }
     }
-    
+
     @Override
     @PostMapping(value = "/programa-institucional/registro-programa-institucional")
     public ResponseEntity<ProgramaInstitucional> registroProgramaInstitucional(
@@ -54,7 +68,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.SERVICE_UNAVAILABLE);
         }
     }
-    
+
     @Override
     @PostMapping(value = "/programa-institucional/baja-programa-institucional/{idProgramaInstitucional}")
     public ResponseEntity<ProgramaInstitucional> bajaProgramaInstitucional(
@@ -76,7 +90,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
-    
+
     @Override
     @PostMapping(value = "/programa-institucional/buscar-programa-institucional/{idProgramaInstitucional}")
     public HttpEntity<ProgramaInstitucional> buscarProgramaInstitucional(
@@ -94,7 +108,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
-    
+
     @Override
     @PostMapping(value = "/programa-institucional/actualizar-programa-institucional")
     public ResponseEntity<ProgramaInstitucional> actualizarProgramaInstitucional(
@@ -111,7 +125,7 @@ public class ProgramaInstitucionalControladorImpl implements ProgramaInstitucion
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    
+
     
     
 }

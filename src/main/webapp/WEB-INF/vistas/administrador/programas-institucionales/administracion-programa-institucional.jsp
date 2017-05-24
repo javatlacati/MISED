@@ -181,6 +181,7 @@
                     </div>
                 </div>
                 <div class="body">
+                    <h3><a href="<c:url value='/administrador/programa-institucional/downloadPDF.htm' />">Descargar como PDF</a></h3>
 
                     <table id="tabla-programas-institucionales"
                            class="table table-striped display responsive nowrap text-justify"
