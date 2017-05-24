@@ -6,7 +6,6 @@ The configuration is intended to be shared among all the users of project and
 therefore it is assumed to be part of version control checkout.
 Without this configuration present, some functionality in the IDE may be limited or fail altogether.
 -->
-    <libraries xmlns="http://www.netbeans.org/ns/cdnjs-libraries/1"/>
     <properties xmlns="http://www.netbeans.org/ns/maven-properties-data/1">
         <!--
 Properties that influence various parts of the IDE, especially code formatting and the like.
@@ -15,7 +14,7 @@ That way multiple projects can share the same settings (useful for formatting ru
 Any value defined here will override the pom.xml file value but is only applicable to the current project.
 -->
         <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>Tomcat</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>
-        <org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>js/libs</org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>
+        <org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>resources/plugins</org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>
         <org-netbeans-modules-css-prep.less_2e_mappings>/resources/less:/resources/css</org-netbeans-modules-css-prep.less_2e_mappings>
         <org-netbeans-modules-css-prep.less_2e_enabled>true</org-netbeans-modules-css-prep.less_2e_enabled>
         <org-netbeans-modules-css-prep.less_2e_configured>true</org-netbeans-modules-css-prep.less_2e_configured>
@@ -25,4 +24,89 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-css-prep.sass_2e_mappings>/scss:/css</org-netbeans-modules-css-prep.sass_2e_mappings>
         <netbeans.compile.on.save>none</netbeans.compile.on.save>
     </properties>
+    <libraries xmlns="http://www.netbeans.org/ns/cdnjs-libraries/1">
+        <library name="datatables" version="1.10.15">
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.bootstrap.css" path="css/dataTables.bootstrap.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.bootstrap.min.css" path="css/dataTables.bootstrap.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.bootstrap4.css" path="css/dataTables.bootstrap4.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.bootstrap4.min.css" path="css/dataTables.bootstrap4.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.foundation.css" path="css/dataTables.foundation.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.foundation.min.css" path="css/dataTables.foundation.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.jqueryui.css" path="css/dataTables.jqueryui.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.jqueryui.min.css" path="css/dataTables.jqueryui.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.material.css" path="css/dataTables.material.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.material.min.css" path="css/dataTables.material.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.semanticui.css" path="css/dataTables.semanticui.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.semanticui.min.css" path="css/dataTables.semanticui.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.uikit.css" path="css/dataTables.uikit.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/dataTables.uikit.min.css" path="css/dataTables.uikit.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/jquery.dataTables_themeroller.css" path="css/jquery.dataTables_themeroller.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/jquery.dataTables.css" path="css/jquery.dataTables.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/css/jquery.dataTables.min.css" path="css/jquery.dataTables.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/images/sort_asc_disabled.png" path="images/sort_asc_disabled.png"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/images/sort_asc.png" path="images/sort_asc.png"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/images/sort_both.png" path="images/sort_both.png"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/images/sort_desc_disabled.png" path="images/sort_desc_disabled.png"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/images/sort_desc.png" path="images/sort_desc.png"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.bootstrap.js" path="js/dataTables.bootstrap.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.bootstrap.min.js" path="js/dataTables.bootstrap.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.bootstrap4.js" path="js/dataTables.bootstrap4.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.bootstrap4.min.js" path="js/dataTables.bootstrap4.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.foundation.js" path="js/dataTables.foundation.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.foundation.min.js" path="js/dataTables.foundation.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.jqueryui.js" path="js/dataTables.jqueryui.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.jqueryui.min.js" path="js/dataTables.jqueryui.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.material.js" path="js/dataTables.material.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.material.min.js" path="js/dataTables.material.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.semanticui.js" path="js/dataTables.semanticui.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.semanticui.min.js" path="js/dataTables.semanticui.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.uikit.js" path="js/dataTables.uikit.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/dataTables.uikit.min.js" path="js/dataTables.uikit.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/jquery.dataTables.js" path="js/jquery.dataTables.js"/>
+            <file localPath="src/main/webapp/resources/plugins/datatables/js/jquery.dataTables.min.js" path="js/jquery.dataTables.min.js"/>
+        </library>
+        <library name="font-awesome" version="4.7.0">
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/css/font-awesome.css" path="css/font-awesome.css"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/css/font-awesome.css.map" path="css/font-awesome.css.map"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/css/font-awesome.min.css" path="css/font-awesome.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/fonts/FontAwesome.otf" path="fonts/FontAwesome.otf"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/fonts/fontawesome-webfont.eot" path="fonts/fontawesome-webfont.eot"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/fonts/fontawesome-webfont.svg" path="fonts/fontawesome-webfont.svg"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/fonts/fontawesome-webfont.ttf" path="fonts/fontawesome-webfont.ttf"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/fonts/fontawesome-webfont.woff" path="fonts/fontawesome-webfont.woff"/>
+            <file localPath="src/main/webapp/resources/plugins/font-awesome/fonts/fontawesome-webfont.woff2" path="fonts/fontawesome-webfont.woff2"/>
+        </library>
+        <library name="jquery" version="3.2.1">
+            <file localPath="src/main/webapp/resources/plugins/jquery/core.js" path="core.js"/>
+            <file localPath="src/main/webapp/resources/plugins/jquery/jquery.js" path="jquery.js"/>
+            <file localPath="src/main/webapp/resources/plugins/jquery/jquery.min.js" path="jquery.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/jquery/jquery.min.map" path="jquery.min.map"/>
+            <file localPath="src/main/webapp/resources/plugins/jquery/jquery.slim.js" path="jquery.slim.js"/>
+            <file localPath="src/main/webapp/resources/plugins/jquery/jquery.slim.min.js" path="jquery.slim.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/jquery/jquery.slim.min.map" path="jquery.slim.min.map"/>
+        </library>
+        <library name="materialize" version="0.98.2">
+            <file localPath="src/main/webapp/resources/plugins/materialize/css/materialize.css" path="css/materialize.css"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/css/materialize.min.css" path="css/materialize.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Bold.woff" path="fonts/roboto/Roboto-Bold.woff"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Bold.woff2" path="fonts/roboto/Roboto-Bold.woff2"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Light.woff" path="fonts/roboto/Roboto-Light.woff"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Light.woff2" path="fonts/roboto/Roboto-Light.woff2"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Medium.woff" path="fonts/roboto/Roboto-Medium.woff"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Medium.woff2" path="fonts/roboto/Roboto-Medium.woff2"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Regular.woff" path="fonts/roboto/Roboto-Regular.woff"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Regular.woff2" path="fonts/roboto/Roboto-Regular.woff2"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Thin.woff" path="fonts/roboto/Roboto-Thin.woff"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/fonts/roboto/Roboto-Thin.woff2" path="fonts/roboto/Roboto-Thin.woff2"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/js/materialize.js" path="js/materialize.js"/>
+            <file localPath="src/main/webapp/resources/plugins/materialize/js/materialize.min.js" path="js/materialize.min.js"/>
+        </library>
+        <library name="sweetalert" version="1.1.3">
+            <file localPath="src/main/webapp/resources/plugins/sweetalert/sweetalert-dev.js" path="sweetalert-dev.js"/>
+            <file localPath="src/main/webapp/resources/plugins/sweetalert/sweetalert-dev.min.js" path="sweetalert-dev.min.js"/>
+            <file localPath="src/main/webapp/resources/plugins/sweetalert/sweetalert.css" path="sweetalert.css"/>
+            <file localPath="src/main/webapp/resources/plugins/sweetalert/sweetalert.min.css" path="sweetalert.min.css"/>
+            <file localPath="src/main/webapp/resources/plugins/sweetalert/sweetalert.min.js" path="sweetalert.min.js"/>
+        </library>
+    </libraries>
 </project-shared-configuration>
