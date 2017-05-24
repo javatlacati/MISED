@@ -100,7 +100,7 @@ $(function () {
             type: "POST"
         }
     });
-    webSocket = new WebSocket('ws://localhost:8080/MISED/actualizacion-programa-institucional');
+    webSocket = new WebSocket('ws://localhost:8081/actualizacion-programa-institucional');
     webSocket.onmessage = function (mensaje) {
         if (mensaje.data === 'actualizacion') {
             tablaProgramasInstitucionales.clear().draw();
@@ -201,7 +201,7 @@ function validarCamposProgramaInstitucional(_a) {
         return false;
     }
     else if (descripcion.length > 1200) {
-        swal("ERROR", "La descripciÃ³n del programa institucional no puede superar los 1200 caracteres");
+        swal("ERROR", "La descripción del programa institucional no puede superar los 1200 caracteres");
         return false;
     }
     else {
