@@ -3,8 +3,8 @@ package gob.senado.ppf.sed.dto.usuario;
 import gob.senado.ppf.sed.utilidades.Formateable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.io.Serializable;
-import java.util.List;
 
 // Person person = Person.from(123123L,123123L,"ssdfsdf","asd");
 public class Usuario implements Serializable, Formateable {
@@ -69,17 +69,25 @@ public class Usuario implements Serializable, Formateable {
      * Hora en que se rergistr&oacute; en el sistema.
      */
     private String horaRegistro;
-    /**
+
+    /*
      * Permisos parar el usuario actual.
      */
-    private UsuarioPermiso usuarioPermiso;
-    /**
-     * M&oacute;dulos en los que tiene permisos el usuario actual.
-     */
-    private List<UsuarioModulo> usuarioModulos;
 
-    @java.beans.ConstructorProperties({"idUsuario", "idUnidadApoyo", "identidad", "claveAcceso", "nombre", "apellidoPaterno", "apellidoMaterno", "puestoLaboral", "correoElectronico", "extensionTelefonica", "rolDesignado", "tipoUsuario", "fechaRegistro", "horaRegistro", "usuarioPermiso", "usuarioModulos"})
-    private Usuario(long idUsuario, long idUnidadApoyo, String identidad, String claveAcceso, String nombre, String apellidoPaterno, String apellidoMaterno, String puestoLaboral, String correoElectronico, String extensionTelefonica, String rolDesignado, String tipoUsuario, String fechaRegistro, String horaRegistro, UsuarioPermiso usuarioPermiso, List<UsuarioModulo> usuarioModulos) {
+
+    private boolean puedeConsultar;
+    private boolean puedeActualizar;
+    private boolean puedeAgregar;
+    private boolean puedeBorrar;
+    private boolean puedeAutenticarse;
+
+    private String claveProgramaInstitucionalAdscrito;
+    private String nombreProgramaInstitucionalAdscrito;
+    private String nombreOrganoDireccionEstrategicaAdscrito;
+    private String nombreUnidadApoyoAdscrito;
+
+    @java.beans.ConstructorProperties({"idUsuario", "idUnidadApoyo", "identidad", "claveAcceso", "nombre", "apellidoPaterno", "apellidoMaterno", "puestoLaboral", "correoElectronico", "extensionTelefonica", "rolDesignado", "tipoUsuario", "fechaRegistro", "horaRegistro", "puedeConsultar", "puedeActualizar", "puedeAgregar", "puedeBorrar", "puedeAutenticarse", "claveProgramaInstitucionalAdscrito", "nombreProgramaInstitucionalAdscrito", "nombreOrganoDireccionEstrategicaAdscrito", "nombreUnidadApoyoAdscrito"})
+    private Usuario(long idUsuario, long idUnidadApoyo, String identidad, String claveAcceso, String nombre, String apellidoPaterno, String apellidoMaterno, String puestoLaboral, String correoElectronico, String extensionTelefonica, String rolDesignado, String tipoUsuario, String fechaRegistro, String horaRegistro, boolean puedeConsultar, boolean puedeActualizar, boolean puedeAgregar, boolean puedeBorrar, boolean puedeAutenticarse, String claveProgramaInstitucionalAdscrito, String nombreProgramaInstitucionalAdscrito, String nombreOrganoDireccionEstrategicaAdscrito, String nombreUnidadApoyoAdscrito) {
         this.idUsuario = idUsuario;
         this.idUnidadApoyo = idUnidadApoyo;
         this.identidad = identidad;
@@ -94,16 +102,28 @@ public class Usuario implements Serializable, Formateable {
         this.tipoUsuario = tipoUsuario;
         this.fechaRegistro = fechaRegistro;
         this.horaRegistro = horaRegistro;
-        this.usuarioPermiso = usuarioPermiso;
-        this.usuarioModulos = usuarioModulos;
+        this.puedeConsultar = puedeConsultar;
+        this.puedeActualizar = puedeActualizar;
+        this.puedeAgregar = puedeAgregar;
+        this.puedeBorrar = puedeBorrar;
+        this.puedeAutenticarse = puedeAutenticarse;
+        this.claveProgramaInstitucionalAdscrito = claveProgramaInstitucionalAdscrito;
+        this.nombreProgramaInstitucionalAdscrito = nombreProgramaInstitucionalAdscrito;
+        this.nombreOrganoDireccionEstrategicaAdscrito = nombreOrganoDireccionEstrategicaAdscrito;
+        this.nombreUnidadApoyoAdscrito = nombreUnidadApoyoAdscrito;
     }
 
     public Usuario() {
     }
 
-    public static Usuario from(long idUsuario, long idUnidadApoyo, String identidad, String claveAcceso, String nombre, String apellidoPaterno, String apellidoMaterno, String puestoLaboral, String correoElectronico, String extensionTelefonica, String rolDesignado, String tipoUsuario, String fechaRegistro, String horaRegistro, UsuarioPermiso usuarioPermiso, List<UsuarioModulo> usuarioModulos) {
-        return new Usuario(idUsuario, idUnidadApoyo, identidad, claveAcceso, nombre, apellidoPaterno, apellidoMaterno, puestoLaboral, correoElectronico, extensionTelefonica, rolDesignado, tipoUsuario, fechaRegistro, horaRegistro, usuarioPermiso, usuarioModulos);
+    public static Usuario from(long idUsuario, long idUnidadApoyo, String identidad, String claveAcceso, String nombre, String apellidoPaterno, String apellidoMaterno, String puestoLaboral, String correoElectronico, String extensionTelefonica, String rolDesignado, String tipoUsuario, String fechaRegistro, String horaRegistro, boolean puedeConsultar, boolean puedeActualizar, boolean puedeAgregar, boolean puedeBorrar, boolean puedeAutenticarse, String claveProgramaInstitucionalAdscrito, String nombreProgramaInstitucionalAdscrito, String nombreOrganoDireccionEstrategicaAdscrito, String nombreUnidadApoyoAdscrito) {
+        return new Usuario(idUsuario, idUnidadApoyo, identidad, claveAcceso, nombre, apellidoPaterno, apellidoMaterno, puestoLaboral, correoElectronico, extensionTelefonica, rolDesignado, tipoUsuario, fechaRegistro, horaRegistro, puedeConsultar, puedeActualizar, puedeAgregar, puedeBorrar, puedeAutenticarse, claveProgramaInstitucionalAdscrito, nombreProgramaInstitucionalAdscrito, nombreOrganoDireccionEstrategicaAdscrito, nombreUnidadApoyoAdscrito);
     }
+
+    /*
+     * M&oacute;dulos en los que tiene permisos el usuario actual.
+     */
+//    private List<UsuarioModulo> usuarioModulos;
 
     @Override
     public String toString() {
@@ -166,12 +186,40 @@ public class Usuario implements Serializable, Formateable {
         return this.horaRegistro;
     }
 
-    public UsuarioPermiso getUsuarioPermiso() {
-        return this.usuarioPermiso;
+    public boolean isPuedeConsultar() {
+        return this.puedeConsultar;
     }
 
-    public List<UsuarioModulo> getUsuarioModulos() {
-        return this.usuarioModulos;
+    public boolean isPuedeActualizar() {
+        return this.puedeActualizar;
+    }
+
+    public boolean isPuedeAgregar() {
+        return this.puedeAgregar;
+    }
+
+    public boolean isPuedeBorrar() {
+        return this.puedeBorrar;
+    }
+
+    public boolean isPuedeAutenticarse() {
+        return this.puedeAutenticarse;
+    }
+
+    public String getClaveProgramaInstitucionalAdscrito() {
+        return this.claveProgramaInstitucionalAdscrito;
+    }
+
+    public String getNombreProgramaInstitucionalAdscrito() {
+        return this.nombreProgramaInstitucionalAdscrito;
+    }
+
+    public String getNombreOrganoDireccionEstrategicaAdscrito() {
+        return this.nombreOrganoDireccionEstrategicaAdscrito;
+    }
+
+    public String getNombreUnidadApoyoAdscrito() {
+        return this.nombreUnidadApoyoAdscrito;
     }
 
     public void setIdUsuario(long idUsuario) {
@@ -230,12 +278,40 @@ public class Usuario implements Serializable, Formateable {
         this.horaRegistro = horaRegistro;
     }
 
-    public void setUsuarioPermiso(UsuarioPermiso usuarioPermiso) {
-        this.usuarioPermiso = usuarioPermiso;
+    public void setPuedeConsultar(boolean puedeConsultar) {
+        this.puedeConsultar = puedeConsultar;
     }
 
-    public void setUsuarioModulos(List<UsuarioModulo> usuarioModulos) {
-        this.usuarioModulos = usuarioModulos;
+    public void setPuedeActualizar(boolean puedeActualizar) {
+        this.puedeActualizar = puedeActualizar;
+    }
+
+    public void setPuedeAgregar(boolean puedeAgregar) {
+        this.puedeAgregar = puedeAgregar;
+    }
+
+    public void setPuedeBorrar(boolean puedeBorrar) {
+        this.puedeBorrar = puedeBorrar;
+    }
+
+    public void setPuedeAutenticarse(boolean puedeAutenticarse) {
+        this.puedeAutenticarse = puedeAutenticarse;
+    }
+
+    public void setClaveProgramaInstitucionalAdscrito(String claveProgramaInstitucionalAdscrito) {
+        this.claveProgramaInstitucionalAdscrito = claveProgramaInstitucionalAdscrito;
+    }
+
+    public void setNombreProgramaInstitucionalAdscrito(String nombreProgramaInstitucionalAdscrito) {
+        this.nombreProgramaInstitucionalAdscrito = nombreProgramaInstitucionalAdscrito;
+    }
+
+    public void setNombreOrganoDireccionEstrategicaAdscrito(String nombreOrganoDireccionEstrategicaAdscrito) {
+        this.nombreOrganoDireccionEstrategicaAdscrito = nombreOrganoDireccionEstrategicaAdscrito;
+    }
+
+    public void setNombreUnidadApoyoAdscrito(String nombreUnidadApoyoAdscrito) {
+        this.nombreUnidadApoyoAdscrito = nombreUnidadApoyoAdscrito;
     }
 
     public boolean equals(Object o) {
