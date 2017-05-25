@@ -123,7 +123,8 @@
             </div>
         </div>
         <div class="parallax-container">
-            <div class="parallax"><img src="../../../resources/images/image-gallery/1.jpg"></div>
+            <spring:url value="/resources/images/image-gallery/1.jpg" var="imagenParallax"/>
+            <div class="parallax"><img src="${imagenParallax}"></div>
         </div>
     </div>
 </section>
