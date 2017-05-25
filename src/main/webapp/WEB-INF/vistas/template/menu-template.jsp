@@ -33,9 +33,11 @@
     <li>
         <div class="userView">
             <div class="background">
-                <img src="../../../resources/images/image-gallery/1.jpg">
+                <spring:url value="/resources/images/image-gallery/1.jpg" var="fondoUsuario"/>
+                <img src="${fondoUsuario}">
             </div>
-            <a href="#!user"><img class="circle" src="../../../resources/images/image-gallery/16.jpg"></a>
+            <spring:url value="/resources/images/image-gallery/16.jpg" var="fotoUsuario"/>
+            <a href="#!user"><img class="circle" src="${fotoUsuario}"></a>
             <a href="#!name"><span class="white-text name">${nombreCompleto}</span></a>
             <a href="#!email"><span class="white-text email">${correoElectronico}</span></a>
         </div>
