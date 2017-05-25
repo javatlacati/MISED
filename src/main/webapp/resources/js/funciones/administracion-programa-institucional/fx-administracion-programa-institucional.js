@@ -103,7 +103,7 @@ $(function () {
             type: "POST"
         }
     });
-    webSocket = new WebSocket("ws://" + pathws + ":8081" + appName + "/actualizacion-programa-institucional");
+    webSocket = new WebSocket("ws://" + pathws + ":" + portNumber + appName + "/actualizacion-programa-institucional");
     webSocket.onmessage = function (mensaje) {
         if (mensaje.data === 'actualizacion') {
             tablaProgramasInstitucionales.clear().draw();

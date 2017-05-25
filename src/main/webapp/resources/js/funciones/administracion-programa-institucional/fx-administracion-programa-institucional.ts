@@ -6,6 +6,7 @@ declare var appName: string;
 // import * as swal from 'sweetalert';
 /**Funcion de sweet alert*/
 declare var swal: any;
+declare var portNumber:number;
 /**Token de seguridad*/
 let token = $("meta[name='_csrf']").attr("content");
 let fechaActual = new Date();
@@ -114,7 +115,7 @@ $(function () {
             }
         });
 
-    webSocket = new WebSocket(`ws://${pathws}:8081${appName}/actualizacion-programa-institucional`);
+    webSocket = new WebSocket(`ws://${pathws}:${portNumber}${appName}/actualizacion-programa-institucional`);
     webSocket.onmessage = function (mensaje) {
         if (mensaje.data === 'actualizacion') {
             tablaProgramasInstitucionales.clear().draw();
