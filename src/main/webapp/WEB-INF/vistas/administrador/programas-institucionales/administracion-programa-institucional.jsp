@@ -301,6 +301,12 @@
 <script src="${constantes}"></script>
 <script src="${fxLogin}"></script>
 <script src="${prototypeProgramaInstitucional}"></script>
+<script>
+    var pathws="${pageContext.request.serverName}";//contextPath
+    var appName="${pageContext.servletContext.contextPath}";
+    console.log("pathws:"+pathws)
+    console.log("appName:"+appName)
+</script>
 <script src="${fxAdministracionProgramaInstitucional}"></script>
 <script src="${buttonsHtml5Js}"></script>
 <script src="${buttonsPrintJs}"></script>

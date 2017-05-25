@@ -57,7 +57,12 @@ public class PDFProgramaInstitucionalBuilder extends AbstractITextPdfView {
             tabla.addCell(programaInstitucional.getNombre());
             tabla.addCell(programaInstitucional.getDescripcion());
             tabla.addCell(String.valueOf(programaInstitucional.getIdProgramaInstitucional()));
-            tabla.addCell(String.valueOf(programaInstitucional.getTotalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos()));
+            tabla.addCell(
+                    String.valueOf(
+                            programaInstitucional
+                                    .getTotalUnidadesApoyoAsociadasPorOrganosDireccionEstrategicaAdscritos()
+                    )
+            );
         }
 
         documento.add(tabla);

@@ -1,6 +1,12 @@
 declare var $: JQueryStatic;
+/**URL del servidor*/
+declare var pathws: string;
+/**Nombre de el WAR*/
+declare var appName: string;
 // import * as swal from 'sweetalert';
+/**Funcion de sweet alert*/
 declare var swal: any;
+/**Token de seguridad*/
 let token = $("meta[name='_csrf']").attr("content");
 let fechaActual = new Date();
 let anio = fechaActual.getFullYear();
@@ -8,9 +14,11 @@ let titulo = 'PROGRAMAS INSTITUCIONALES ' + anio;
 let columnas = [0, 1, 2];
 let orientacion = 'portrait';
 let tamanioPagina = 'A4';
+/**Tabla HTML donde se pintan los datos de los programas institucionales*/
 let tablaProgramasInstitucionales = null;
-
+/**Objeto para actualizar en tiempo real los datos de la pagina conforme cambian*/
 let webSocket = null;
+
 
 $(function () {
     tablaProgramasInstitucionales = $('#tabla-programas-institucionales')
@@ -106,7 +114,7 @@ $(function () {
             }
         });
 
-    webSocket = new WebSocket('ws://localhost:8081/actualizacion-programa-institucional');
+    webSocket = new WebSocket(`ws://${pathws}:8081${appName}/actualizacion-programa-institucional`);
     webSocket.onmessage = function (mensaje) {
         if (mensaje.data === 'actualizacion') {
             tablaProgramasInstitucionales.clear().draw();
@@ -142,6 +150,7 @@ function obtenerProgramaInstitucional(idProgramaInstitucional) {
 
 function capturaProgramaInstitucional() {
     let programaInstitucional = new ProgramaInstitucional(null, $("#nueva-clave").val(), $("#nuevo-nombre").val(), $("#nueva-descripcion").val());
+    console.log("programaInstitucional" + programaInstitucional);
     if (validarCamposProgramaInstitucional(programaInstitucional)) {
         $.ajax({
             url: `registro-programa-institucional?_csrf=${token}`,
