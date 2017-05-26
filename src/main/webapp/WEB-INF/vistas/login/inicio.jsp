@@ -6,7 +6,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <sec:csrfMetaTags/>
     <title><spring:message code="mensaje.tab-inicio"/></title>
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <spring:url value="/resources/images/favicon.ico" var="favicon"/>
+    <link rel="icon" href="${favicon}" type="image/x-icon">
     <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
                 var="fontRoboto"/>
     <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons"/>
