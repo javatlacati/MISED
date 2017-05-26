@@ -54,7 +54,7 @@ public class TestUnidadApoyoRepositorio {
 		assertNotNull(ua);
 		assertEquals(1, ua.getIdUnidadApoyo());
 		assertEquals(2, ua.getIdOrganoDireccionEstrategica());
-		assertEquals("Secretaría General de Servicios Parlamentarios", ua.getNombre());
+		assertEquals("Secretar\u00eda General de Servicios Parlamentarios", ua.getNombre());
 		assertEquals("", ua.getProposito());
 	}
 	
@@ -62,11 +62,11 @@ public class TestUnidadApoyoRepositorio {
 	@Transactional(readOnly = true, isolation = Isolation.READ_COMMITTED)
 	@Ignore
 	public void testBuscarUnidadApoyoPorNombreUnidadApoyo(){
-		UnidadApoyo ua = unidadApoyoRepositorio.buscarUnidadApoyo("Secretaría General de Servicios Parlamentarios");
+		UnidadApoyo ua = unidadApoyoRepositorio.buscarUnidadApoyo("Secretar\u00eda General de Servicios Parlamentarios");
 		assertNotNull(ua);
 		assertEquals(1, ua.getIdUnidadApoyo());
 		assertEquals(2, ua.getIdOrganoDireccionEstrategica());
-		assertEquals("Secretaría General de Servicios Parlamentarios", ua.getNombre());
+		assertEquals("Secretar\u00eda General de Servicios Parlamentarios", ua.getNombre());
 		assertEquals("", ua.getProposito());
 	}
 	
