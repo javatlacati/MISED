@@ -12,7 +12,7 @@ public class RunnerSuiteTestProgramaInstitucional {
 			System.out.println("Se ha encontrado una falla en : " + falla.getDescription() + "\nLa causa fue: "
 					+ falla.getMessage());
 		}
-		System.out.println("Se encontrarón " + resultado.getFailureCount() + " falla(s) potenciales");
+		System.out.println("Se encontraron " + resultado.getFailureCount() + " falla(s) potenciales");
 		System.out.println("Fue exitoso: " + resultado.wasSuccessful());
 	}
 }
