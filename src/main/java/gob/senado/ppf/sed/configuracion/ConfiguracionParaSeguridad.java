@@ -17,6 +17,8 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.sql.DataSource;
 
+import static gob.senado.ppf.sed.utilidades.GlobalConfig.DESARROLLO;
+
 /**
  * Configuraci&oacute;n de seguidad de la aplicaci&oacute;n.
  * Define las pol&iacute;ticas de acceso hacia los controladores, niveles de acceso mediante roles, login y logout de la aplicaci&oacute;n.
@@ -36,14 +38,14 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
      * Consulta que obtiene la identidad (nombre de usuario) y la contrase&ntilde;a hasheada de la tabla usuario junto con
      * sus permisos si la condici&oacute;n de que la identidad sea igual a la del valor literal y si tiene el permiso de autenticarse se cumple.
      */
-    private static final String USUARIOS_POR_USUARIO = "SELECT U.IDENTIDAD, U.CLAVE_ACCESO, UP.PUEDE_AUTENTICARSE FROM USUARIO U " +
-            "INNER JOIN USUARIO_PERMISO UP ON U.ID_USUARIO = UP.ID_USUARIO WHERE U.IDENTIDAD = ? AND UP.PUEDE_AUTENTICARSE = true";
+    private static final String USUARIOS_POR_USUARIO = "SELECT U.IDENTIDAD, U.CLAVE_ACCESO, U.PUEDE_AUTENTICARSE "
+            + "FROM USUARIO U WHERE U.IDENTIDAD = ? AND U.PUEDE_AUTENTICARSE = true";
 
     /**
      * Consulta que obtiene el rol de usuario de acuerdo a su identidad (nombre de usuario) con el permiso de autenticarse en la aplicaci&oacute;n.
      */
-    private static final String AUTORIDADES_POR_USUARIO = "SELECT U.IDENTIDAD, U.ROL_DESIGNADO FROM USUARIO U INNER JOIN USUARIO_PERMISO UP " +
-            "ON U.ID_USUARIO = UP.ID_USUARIO WHERE U.IDENTIDAD = ? AND UP.PUEDE_AUTENTICARSE = true";
+    private static final String AUTORIDADES_POR_USUARIO = "SELECT U.IDENTIDAD, U.ROL_DESIGNADO "
+            + "FROM USUARIO U WHERE U.IDENTIDAD = ? AND U.PUEDE_AUTENTICARSE = true";
 
     /**
      * L&iacute;mite m&aacute;ximo de sesiones por usuario del sistema.
@@ -73,6 +75,12 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
      */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        if(DESARROLLO )
+                auth.jdbcAuthentication()
+                        .dataSource(dataSource)
+                        .usersByUsernameQuery(ConfiguracionParaSeguridad.USUARIOS_POR_USUARIO)
+                        .authoritiesByUsernameQuery(ConfiguracionParaSeguridad.AUTORIDADES_POR_USUARIO);
+        else
         auth.jdbcAuthentication()
                 .passwordEncoder(passwordEncoder())
                 .dataSource(dataSource)
@@ -106,6 +114,7 @@ public class ConfiguracionParaSeguridad extends WebSecurityConfigurerAdapter {
                 .antMatchers("/administrador/**").hasRole("ADMINISTRADOR")
                 .antMatchers("/inicio-sesion", "/inicio.htm", "/").permitAll()
                 .antMatchers("/forgot", "/forgot.htm").permitAll()
+                .antMatchers("/usuario/**").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/inicio-sesion").permitAll()
