@@ -1,16 +1,293 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrador
-  Date: 18/05/2017
-  Time: 03:53 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="../../template/tags.jsp" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <sec:csrfMetaTags/>
+    <title>MISED :: Captura de usuario </title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
+                var="fontRoboto"/>
+    <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons"/>
+    <spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>
+    <spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss"/>
+    <spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss"/>
+    <spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss"/>
+    <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss"/>
+    <spring:url value="/resources/css/style.min.css" var="styleCss"/>
+    <spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss"/>
+    <spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss"/>
+    <spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss"/>
+    <spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css"
+                var="dataTablesBootstrapCss"/>
+    <spring:url value="/resources/plugins/jquery-datatable/responsive.dataTables.min.css" var="responsiveDataTableCss"/>
+    <link href="${fontRoboto}" rel="stylesheet" type="text/css"/>
+    <link href="${materialIcons}" rel="stylesheet" type="text/css"/>
+    <link href="${bootstrapCss}" rel="stylesheet"/>
+    <link href="${wavesCss}" rel="stylesheet"/>
+    <link href="${animateCss}" rel="stylesheet"/>
+    <link href="${mdPreloaderCss}" rel="stylesheet"/>
+    <link href="${sweetAlertCss}" rel="stylesheet"/>
+    <link href="${styleCss}" rel="stylesheet"/>
+    <link href="${bootstrapSelectCss}" rel="stylesheet"/>
+    <link href="${allThemesCss}" rel="stylesheet"/>
+    <link href="${bootstrapSelectCss}" rel="stylesheet"/>
+    <link href="${dataTablesBootstrapCss}" rel="stylesheet"/>
+    <link href="${responsiveDataTableCss}" rel="stylesheet"/>
+    <style type="text/css">
+        .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small {
+            color: red;
+
+        }
+    </style>
 </head>
-<body>
-captura usuarios
+<body class="theme-black">
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="md-preloader pl-size-md">
+            <svg viewbox="0 0 75 75">
+                <circle cx="37.5" cy="37.5" r="33.5" class="pl-black" stroke-width="4"/>
+            </svg>
+        </div>
+        <p><spring:message code="mensaje.espere"/></p>
+    </div>
+</div>
+<div class="overlay"></div>
+
+<%@include file="../../template/menu-template.jsp" %>
+
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ol class="breadcrumb breadcrumb-bg-black">
+                    <li>
+                        <i class="material-icons">build</i> Administraci&oacute;n del Sistema
+                    </li>
+                    <li>
+                        <i class="material-icons">people</i> Usuarios
+                    </li>
+                    <li class="active">
+                        <a href="/MISED/administrador/usuario/captura-usuarios.htm">
+                            Captura de Usuarios
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <ol class="breadcrumb breadcrumb-bg-black">
+                            <li class="active"><h3>Captura de Usuario</h3></li>
+                        </ol>
+                    </div>
+                    <div class="body">
+                        <form method="POST" id="frm-registro-usuario">
+                            <fieldset>
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <p>
+                                        <b>Seleccione la Unidad de Apoyo para este Usuario:</b>
+                                    </p>
+                                    <select class="form-control" name="idUnidadApoyo" id="selector-id-unidadApoyo"
+                                            data-size="5" data-live-search="true">
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="identidad" id="identidad"
+                                                   class="form-control" autocomplete="off" maxlength="18"/>
+                                            <label class="form-label">Nombre de usuario</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="clave-acceso" id="clave-acceso"
+                                                   class="form-control" autocomplete="off" maxlength="20"/>
+                                            <label class="form-label">Contrase�a</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="verificacion-claveAcceso"
+                                                   id="verificacion-claveAcceso"
+                                                   class="form-control" autocomplete="off" maxlength="20"/>
+                                            <label class="form-label">Repita la contrase�a</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="nombre" id="nombre"
+                                                   class="form-control" autocomplete="off" maxlength="50"/>
+                                            <label class="form-label">Nombre</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="apellido-paterno" id="apellido-paterno"
+                                                   class="form-control" autocomplete="off" maxlength="50"/>
+                                            <label class="form-label">Apellido Paterno</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="apellido-materno" id="apellido-materno"
+                                                   class="form-control" autocomplete="off" maxlength="50"/>
+                                            <label class="form-label">Apellido Materno</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="puesto-laboral" id="puesto-laboral"
+                                                   class="form-control" autocomplete="off" maxlength="120"/>
+                                            <label class="form-label">Puesto Laboral</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="correo-electronico" id="correo-electronico"
+                                                   class="form-control" autocomplete="off" maxlength="120"/>
+                                            <label class="form-label">E-mail</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" name="extension-telefonica" id="extension-telefonica"
+                                                   class="form-control" autocomplete="off" maxlength="14"/>
+                                            <label class="form-label">Extensi�n telefonica</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <p>
+                                        <b>Seleccione un rol para este usuario:</b>
+                                    </p>
+                                    <select class="form-control show-tick" name="selector-rol-usuario"
+                                            id="selector-rol-usuario"
+                                            data-size="5" data-live-search="true">
+                                        <option value="ROLE_USUARIO" selected="selected">Rol de Usuario</option>
+                                        <option value="ROLE_ADMINISTRADOR">Rol de Administrador</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <p>
+                                        <b>Permisos de usuario:</b>
+                                    </p>
+                                    <select class="form-control show-tick" multiple
+                                            title="Seleccione los permisos de usuario"
+                                            name="selector-permisos-usuario" id="selector-permisos-usuario"
+                                            data-size="5" data-live-search="true">
+                                        <option value="CONSULTAR">Consultar registros</option>
+                                        <option value="ACTUALIZAR">Actualizar registros</option>
+                                        <option value="AGREGAR">Agregar registros</option>
+                                        <option value="BORRAR">Borrar registros</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <p>
+                                        <b>Tipo de usuario:</b>
+                                    </p>
+                                    <select class="form-control show-tick" name="selector-tipo-usuario"
+                                            id="selector-tipo-usuario" data-size="5" data-live-search="true">
+                                        <option value="ENLACE" selected="selected">Enlace</option>
+                                        <option value="TITULAR">Titular</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group form-float">
+                                        <button type="button" class="btn btn-success waves-effect"
+                                                onclick="capturarUsuario();">Guardar usuario
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
+<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>
+<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
+<spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>
+<spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/jquery.dataTables.js" var="jQueryDataTableJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.min.js"
+            var="dataTablesBoostrapJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/dataTables.responsive.min.js" var="responsiveDataTableJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/responsive.bootstrap.min.js" var="responsiveBootstrap"/>
+<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>
+<spring:url value="/resources/js/admin.js" var="adminJs"/>
+<spring:url value="/resources/js/funciones/constantes.js" var="constantes"/>
+<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
+
+<spring:url value="/resources/js/funciones/usuario/fx-captura-usuario.js" var="fxCapturaUsuario"/>
+<spring:url value="/resources/js/funciones/prototipos/usuario.js" var="usuario"/>
+
+
+<spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin"/>
+<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js"/>
+<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"
+            var="dataTablesButtonsJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>
+<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>
+
+<script src="${jQueryJs}"></script>
+<script src="${bootstrapJs}"></script>
+<script src="${bootstrapSelectJs}"></script>
+<script src="${jQuerySlimScrollJs}"></script>
+<script src="${sweetAlertJs}"></script>
+<script src="${jQueryDataTableJs}"></script>
+<script src="${dataTablesBoostrapJs}"></script>
+<script src="${responsiveDataTableJs}"></script>
+<script src="${responsiveBootstrap}"></script>
+<script src="${wavesJs}"></script>
+<script src="${adminJs}"></script>
+<script src="${constantes}"></script>
+<script src="${bootstrapSelectJs}"></script>
+<script src="${fxLogin}"></script>
+<script src="${usuario}"></script>
+<script src="${fxCapturaUsuario}"></script>
+<script src="${buttonsHtml5Js}"></script>
+<script src="${buttonsPrintJs}"></script>
+<script src="${dataTablesButtonsJs}"></script>
+<script src="${jszipJs}"></script>
+<script src="${pdfmakeJs}"></script>
+<script src="${vfs_fontsJs}"></script>
 </body>
 </html>

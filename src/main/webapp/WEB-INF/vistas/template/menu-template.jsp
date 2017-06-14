@@ -376,6 +376,11 @@
                                 </a>
                             </li>
                             <li id="sub-opcion-busqueda-usuario">
+                                <a href="/MISED/administrador/usuario/administracion-usuario.htm">
+                                    Administraci&oacute;n de Usuarios
+                                </a>
+                            </li>
+                            <li id="sub-opcion-busqueda-usuario">
                                 <a href="<c:url value='/administrador/usuarios/busqueda-usuarios.htm' />">
                                     B&uacute;squeda de Usuarios
                                 </a>
