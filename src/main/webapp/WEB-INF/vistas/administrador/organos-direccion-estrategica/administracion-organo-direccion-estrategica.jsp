@@ -9,55 +9,74 @@
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
     <spring:url value="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
                 var="fontRoboto"/>
+    <spring:url value="/resources/plugins/font-awesome/css/font-awesome.min.css"
+                var="fontAwesome"/>
     <spring:url value="https://fonts.googleapis.com/icon?family=Material+Icons" var="materialIcons"/>
-    <spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>
-    <spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss"/>
-    <spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss"/>
-    <spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss"/>
-    <spring:url value="/resources/plugins/sweetalert/sweetalert.css" var="sweetAlertCss"/>
-    <spring:url value="/resources/css/style.min.css" var="styleCss"/>
-    <spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss"/>
-    <spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss"/>
-    <spring:url value="/resources/plugins/remodal/remodal-default-theme.css" var="remodalDefaultThemeCss"/>
-    <spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss"/>
-    <spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.min.css"
+    <%--<spring:url value="/resources/plugins/bootstrap/css/bootstrap.min.css" var="bootstrapCss"/>--%>
+    <%--<spring:url value="/resources/plugins/node-waves/waves.min.css" var="wavesCss" />--%>
+    <%--<spring:url value="/resources/plugins/animate-css/animate.min.css" var="animateCss" />--%>
+    <%--<spring:url value="/resources/plugins/material-design-preloader/md-preloader.min.css" var="mdPreloaderCss" />--%>
+    <spring:url value="/resources/plugins/sweetalert/sweetalert.min.css" var="sweetAlertCss"/>
+    <%--<spring:url value="/resources/css/style.min.css" var="styleCss" />--%>
+    <%--<spring:url value="/resources/css/themes/all-themes.min.css" var="allThemesCss" /> --%>
+    <%--<spring:url value="/resources/plugins/remodal/remodal-default-theme.css" var="remodalDefaultThemeCss" />--%>
+    <%--<spring:url value="/resources/plugins/bootstrap-select/css/bootstrap-select.min.css" var="bootstrapSelectCss"/>--%>
+    <spring:url value="/resources/plugins/materialize/css/materialize.min.css" var="materializeCss"/>
+    <spring:url value="/resources/plugins/datatables/css/dataTables.material.min.css"
                 var="dataTablesBootstrapCss"/>
-    <spring:url value="/resources/plugins/jquery-datatable/responsive.dataTables.min.css" var="responsiveDataTableCss"/>
-    <link href="${fontRoboto}" rel="stylesheet" type="text/css"/>
-    <link href="${materialIcons}" rel="stylesheet" type="text/css"/>
-    <link href="${bootstrapCss}" rel="stylesheet"/>
-    <link href="${wavesCss}" rel="stylesheet"/>
-    <link href="${animateCss}" rel="stylesheet"/>
-    <link href="${mdPreloaderCss}" rel="stylesheet"/>
-    <link href="${sweetAlertCss}" rel="stylesheet"/>
-    <link href="${styleCss}" rel="stylesheet"/>
-    <link href="${bootstrapSelectCss}" rel="stylesheet"/>
-    <link href="${allThemesCss}" rel="stylesheet"/>
-    <link href="${bootstrapSelectCss}" rel="stylesheet"/>
+    <%--<spring:url value="/resources/plugins/jquery-datatable/responsive.dataTables.min.css" var="responsiveDataTableCss"/>--%>
+    <link href="${fontRoboto}" rel="stylesheet" type="text/css">
+    <link href="${fontAwesome}" rel="stylesheet" type="text/css">
+    <link href="${materialIcons}" rel="stylesheet" type="text/css">
+    <%--<link href="${bootstrapCss}" rel="stylesheet">--%>
+    <%--<link href="${wavesCss}" rel="stylesheet" />--%>
+    <%--<link href="${animateCss}" rel="stylesheet" />--%>
+    <%--<link href="${mdPreloaderCss}" rel="stylesheet" />--%>
+    <link href="${sweetAlertCss}" rel="stylesheet">
+    <%--<link href="${styleCss}" rel="stylesheet">--%>
+    <%--<link href="${allThemesCss}" rel="stylesheet" />--%>
+    <%--<link href="${bootstrapSelectCss}" rel="stylesheet" />--%>
     <link href="${dataTablesBootstrapCss}" rel="stylesheet"/>
-    <link href="${responsiveDataTableCss}" rel="stylesheet"/>
-    <link href="${remodalDefaultThemeCss}" rel="stylesheet"/>
+    <%--<link href="${responsiveDataTableCss}" rel="stylesheet"/>--%>
+    <%--<link href="${remodalDefaultThemeCss}" rel="stylesheet" />--%>
+    <link href="${materializeCss}" rel="stylesheet"/>
+    <spring:url value="/resources/css/custom.min.css" var="custom"/>
+    <link href="${custom}" rel="stylesheet">
+    <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
+    <spring:url value="/resources/plugins/materialize/js/materialize.min.js" var="materializeJS"/>
+    <!-- Jquery Core Js -->
+    <script src="${jQueryJs}"></script>
+    <script src="${materializeJS}"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            $('.preloader-background').delay(1700).fadeOut('slow');
+
+            $('.preloader-wrapper')
+                .delay(1700)
+                .fadeOut();
+        });
+    </script>
+    <style>
+        .preloader-background {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
 </head>
-<body class="theme-grey">
-<div class="page-loader-wrapper">
-    <div class="loader">
-        <div class="md-preloader pl-size-md">
-            <svg viewbox="0 0 75 75">
-                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4"/>
-            </svg>
-        </div>
-        <p><spring:message code="mensaje.espere"/></p>
-    </div>
-</div>
-<div class="overlay"></div>
-<div class="search-bar">
-    <div class="search-icon">
-        <i class="material-icons">search</i>
-    </div>
-    <input type="text" placeholder="Comience a escribir.">
-    <div class="close-search">
-        <i class="material-icons">close</i>
-    </div>
+<body>
+<div class="preloader-background">
+    <spring:url value="/resources/images/logo senado 100x100 animado.svg" var="senadoAnimado"/>
+    <img src="${senadoAnimado}" width="250" height="250">
+    <p><spring:message code="mensaje.espere"/></p>
 </div>
 
 <%@include file="../../template/menu-template.jsp" %>
@@ -246,8 +265,9 @@
 <spring:url value="/resources/js/funciones/constantes.js" var="constantes"/>
 <spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
 
-<spring:url value="/resources/js/funciones/administracion-organo-direccion-estrategica/fx-administracion-organo-direccion-estrategica.js"
-            var="fxAdministracionOrganoDireccionEstrategica"/>
+<spring:url
+        value="/resources/js/funciones/administracion-organo-direccion-estrategica/fx-administracion-organo-direccion-estrategica.js"
+        var="fxAdministracionOrganoDireccionEstrategica"/>
 <spring:url value="/resources/js/funciones/prototipos/programa-institucional.js" var="prototypeProgramaInstitucional"/>
 
 
