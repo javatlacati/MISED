@@ -1,5 +1,5 @@
 var token = $("meta[name='_csrf']").attr("content");
-var webSocketUsuarios = new WebSocket('ws://localhost:8080/MISED/actualizacion-usuario');
+var webSocketUsuarios = new WebSocket("ws://" + pathws + ":" + portNumber + appName + "/actualizacion-usuario");
 var graficaUsuariosActivos;
 (function () {
     graficaUsuariosActivos = new Highcharts.Chart({

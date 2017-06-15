@@ -3,10 +3,10 @@ declare var $: JQueryStatic;
 declare var pathws: string;
 /**Nombre de el WAR*/
 declare var appName: string;
+declare var portNumber:number;
 // import * as swal from 'sweetalert';
 /**Funcion de sweet alert*/
 declare var swal: any;
-declare var portNumber:number;
 /**Token de seguridad*/
 let token = $("meta[name='_csrf']").attr("content");
 let fechaActual = new Date();

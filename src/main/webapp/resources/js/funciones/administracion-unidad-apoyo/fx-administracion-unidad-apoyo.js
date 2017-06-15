@@ -4,8 +4,8 @@ var columnas = [0, 1, 2, 3, 4];
 var orientacion = 'portrait';
 var tamanioPagina = 'A4';
 var tablaUnidadesApoyo = null;
-var webSocketUnidadesApoyo = new WebSocket('ws://localhost:8080/MISED/actualizacion-unidad-apoyo');
-var webSocketUsuarios = new WebSocket('ws://localhost:8080/MISED/actualizacion-usuario');
+var webSocketUnidadesApoyo = new WebSocket("ws://" + pathws + ":" + portNumber + appName + "/actualizacion-unidad-apoyo");
+var webSocketUsuarios = new WebSocket("ws://" + pathws + ":" + portNumber + appName + "/actualizacion-usuario");
 (function () {
     cargarOrganosDireccionEstrategica();
     tablaUnidadesApoyo = $('#tabla-unidades-apoyo')

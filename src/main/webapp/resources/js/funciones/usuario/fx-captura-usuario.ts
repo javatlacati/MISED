@@ -2,6 +2,7 @@
 declare var pathws: string;
 /**Nombre de el WAR*/
 declare var appName: string;
+declare var portNumber:number;
 var token = $("meta[name='_csrf']").attr("content");
 var webSocketUsuarios = null;
 (function () {

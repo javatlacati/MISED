@@ -5,8 +5,8 @@ let orientacion = 'portrait';
 let tamanioPagina = 'A4';
 let tablaUnidadesApoyo = null;
 
-const webSocketUnidadesApoyo = new WebSocket('ws://localhost:8080/MISED/actualizacion-unidad-apoyo');
-const webSocketUsuarios = new WebSocket('ws://localhost:8080/MISED/actualizacion-usuario');
+const webSocketUnidadesApoyo = new WebSocket(`ws://${pathws}:${portNumber}${appName}/actualizacion-unidad-apoyo`);
+const webSocketUsuarios = new WebSocket(`ws://${pathws}:${portNumber}${appName}/actualizacion-usuario`);
 
 (function() {
     cargarOrganosDireccionEstrategica();

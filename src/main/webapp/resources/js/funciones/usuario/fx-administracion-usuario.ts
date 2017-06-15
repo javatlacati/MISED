@@ -1,6 +1,11 @@
 let token = $("meta[name='_csrf']").attr("content");
+/**URL del servidor*/
+declare var pathws: string;
+/**Nombre de el WAR*/
+declare var appName: string;
+declare var portNumber:number;
 
-const webSocketUsuarios = new WebSocket('ws://localhost:8080/MISED/actualizacion-usuario');
+const webSocketUsuarios = new WebSocket(`ws://${pathws}:${portNumber}${appName}/actualizacion-usuario`);
 let graficaUsuariosActivos;
 
 (function() {
