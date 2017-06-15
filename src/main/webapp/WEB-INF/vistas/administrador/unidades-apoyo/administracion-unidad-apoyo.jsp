@@ -84,24 +84,27 @@
 
 <section class="content">
     <div class="container-fluid">
+        <div class="section hide-on-small-only"></div>
+        <div class="section hide-on-small-only"></div>
 
-        <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <ol class="breadcrumb breadcrumb-bg-black">
-                    <li>
-                        <i class="material-icons">build</i> Administraci&oacute;n del Sistema
-                    </li>
-                    <li>
+        <nav class="container grey darken-1">
+            <div class="nav-wrapper">
+                <div class="col s12">
+                    <a href="<c:url value='#' />" class="breadcrumb">
+                        Administraci&oacute;n del Sistema
+                    </a>
+                    <a href="<c:url value='#' />" class="breadcrumb">
                         <i class="material-icons">view_agenda</i> Unidades de Apoyo
-                    </li>
-                    <li class="active">
-                        <a href="/MISED/administrador/unidad-apoyo/administracion-unidades-apoyo.htm">
-                            Administraci&oacute;n de Unidades de Apoyo
-                        </a>
-                    </li>
-                </ol>
+                    </a>
+                    <a href="<c:url value='/administrador/unidad-apoyo/administracion-unidades-apoyo.htm' />"
+                       class="breadcrumb">
+                        Administraci&oacute;n de Unidades de Apoyo
+                    </a>
+
+                </div>
             </div>
-        </div>
+        </nav>
+        <div class="section hide-on-small-only"></div>
 
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -280,20 +283,20 @@
 <spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
 <spring:url value="/resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"
             var="dataTablesButtonsJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>--%>
 
-<script src="${jQueryJs}"></script>
-<script src="${bootstrapJs}"></script>
-<script src="${bootstrapSelectJs}"></script>
-<script src="${jQuerySlimScrollJs}"></script>
+<%--<script src="${jQueryJs}"></script>--%>
+<%--<script src="${bootstrapJs}"></script>--%>
+<%--<script src="${bootstrapSelectJs}"></script>--%>
+<%--<script src="${jQuerySlimScrollJs}"></script>--%>
 <script src="${sweetAlertJs}"></script>
 <script src="${jQueryDataTableJs}"></script>
-<script src="${dataTablesBoostrapJs}"></script>
-<script src="${responsiveDataTableJs}"></script>
-<script src="${responsiveBootstrap}"></script>
-<script src="${wavesJs}"></script>
+<%--<script src="${dataTablesBoostrapJs}"></script>--%>
+<%--<script src="${responsiveDataTableJs}"></script>--%>
+<%--<script src="${responsiveBootstrap}"></script>--%>
+<%--<script src="${wavesJs}"></script>--%>
 <script src="${adminJs}"></script>
 <script src="${constantes}"></script>
 <script src="${bootstrapSelectJs}"></script>
@@ -311,9 +314,9 @@
 <script src="${buttonsHtml5Js}"></script>
 <script src="${buttonsPrintJs}"></script>
 <script src="${dataTablesButtonsJs}"></script>
-<script src="${jszipJs}"></script>
-<script src="${pdfmakeJs}"></script>
-<script src="${vfs_fontsJs}"></script>
+<%--<script src="${jszipJs}"></script>--%>
+<%--<script src="${pdfmakeJs}"></script>--%>
+<%--<script src="${vfs_fontsJs}"></script>--%>
 <script>
     $(".button-collapsable").sideNav({
         menuWidth: 450, // Default is 300
