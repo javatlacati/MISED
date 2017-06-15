@@ -107,17 +107,17 @@
         <div class="section hide-on-small-only"></div>
 
         <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col l12 m12 cols12 xs12">
                 <div class="card">
                     <div class="header">
-                        <ol class="breadcrumb breadcrumb-bg-black">
-                            <li class="active"><h3>Captura de Unidad de Apoyo</h3></li>
-                        </ol>
+                        <div class="card-title grey darken-1 white-text">
+                            <h3>Captura de Unidad de Apoyo</h3>
+                        </div>
                     </div>
                     <div class="body">
                         <form method="POST" id="frm-registro-unidad-apoyo">
                             <fieldset>
-                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="col s12 m12 l12">
                                     <p>
                                         <b>Seleccione el &Oacute;rgano de direcci&oacute;n estrat&eacute;gico para esta
                                             nueva unidad de apoyo:</b>
