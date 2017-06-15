@@ -1,8 +1,12 @@
+/**URL del servidor*/
+declare var pathws: string;
+/**Nombre de el WAR*/
+declare var appName: string;
 var token = $("meta[name='_csrf']").attr("content");
 var webSocketUsuarios = null;
 (function () {
     cargarUnidadesApoyo();
-    webSocketUsuarios = new WebSocket('ws://localhost:8080/MISED/actualizacion-usuario');
+    webSocketUsuarios = new WebSocket(`ws://${pathws}:${portNumber}${appName}/actualizacion-usuario`);
 })();
 function cargarUnidadesApoyo() {
     $.ajax({

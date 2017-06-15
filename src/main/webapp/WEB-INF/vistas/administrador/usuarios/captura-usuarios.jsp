@@ -307,6 +307,14 @@
 <script src="${bootstrapSelectJs}"></script>
 <script src="${fxLogin}"></script>
 <script src="${usuario}"></script>
+<script>
+    var pathws="${pageContext.request.serverName}";//contextPath
+    var appName="${pageContext.servletContext.contextPath}";
+    var portNumber="${pageContext.request.serverPort}";
+    console.log("pathws:"+pathws);
+    console.log("appName:"+appName);
+    console.log("portNumber:"+portNumber);
+</script>
 <script src="${fxCapturaUsuario}"></script>
 <script src="${buttonsHtml5Js}"></script>
 <script src="${buttonsPrintJs}"></script>
