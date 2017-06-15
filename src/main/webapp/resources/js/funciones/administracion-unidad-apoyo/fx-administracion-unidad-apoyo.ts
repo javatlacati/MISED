@@ -1,4 +1,9 @@
 let token = $("meta[name='_csrf']").attr("content");
+/**URL del servidor*/
+declare var pathws: string;
+/**Nombre de el WAR*/
+declare var appName: string;
+declare var portNumber:number;
 let titulo = 'UNIDADES DE APOYO ' + (new Date().getFullYear());
 let columnas = [0, 1, 2, 3, 4];
 let orientacion = 'portrait';
