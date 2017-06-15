@@ -95,7 +95,7 @@
                     </a>
                     <a href="<c:url value='/administrador/usuario/captura-usuarios.htm' />"
                        class="breadcrumb">
-                        Administraci&oacute;n de Programas Institucionales
+                        Captura de Usuarios
                     </a>
 
                 </div>
@@ -104,17 +104,17 @@
         <div class="section hide-on-small-only"></div>
 
         <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col l12 m12 cols12 xs12">
                 <div class="card">
                     <div class="header">
-                        <ol class="breadcrumb breadcrumb-bg-black">
-                            <li class="active"><h3>Captura de Usuario</h3></li>
-                        </ol>
+                        <div class="card-title grey darken-1 white-text">
+                            <h3>Captura de Usuario</h3>
+                        </div>
                     </div>
-                    <div class="body">
+                    <div class="body" style="padding: 32px;">
                         <form method="POST" id="frm-registro-usuario">
                             <fieldset>
-                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="col l12 m12 cols12">
                                     <p>
                                         <b>Seleccione la Unidad de Apoyo para este Usuario:</b>
                                     </p>
@@ -138,7 +138,7 @@
                                         <div class="form-line">
                                             <input type="text" name="clave-acceso" id="clave-acceso"
                                                    class="form-control" autocomplete="off" maxlength="20"/>
-                                            <label class="form-label">Contrase�a</label>
+                                            <label class="form-label">Contrase&ntilde;a</label>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                             <input type="text" name="verificacion-claveAcceso"
                                                    id="verificacion-claveAcceso"
                                                    class="form-control" autocomplete="off" maxlength="20"/>
-                                            <label class="form-label">Repita la contrase�a</label>
+                                            <label class="form-label">Repita la contrase&ntilde;a</label>
                                         </div>
                                     </div>
                                 </div>
@@ -204,7 +204,7 @@
                                         <div class="form-line">
                                             <input type="text" name="extension-telefonica" id="extension-telefonica"
                                                    class="form-control" autocomplete="off" maxlength="14"/>
-                                            <label class="form-label">Extensi�n telefonica</label>
+                                            <label class="form-label">Extensi&oacute;n telefonica</label>
                                         </div>
                                     </div>
                                 </div>
@@ -264,17 +264,17 @@
     </div>
 </section>
 
-<spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
-<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>
-<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
-<spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>
+<%--<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>--%>
+<%--<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>--%>
 <spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/jquery.dataTables.js" var="jQueryDataTableJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.min.js"
+<spring:url value="/resources/plugins/datatables/js/jquery.dataTables.js" var="jQueryDataTableJs"/>
+<spring:url value="/resources/plugins/datatables/js/dataTables.material.js"
             var="dataTablesBoostrapJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/dataTables.responsive.min.js" var="responsiveDataTableJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/responsive.bootstrap.min.js" var="responsiveBootstrap"/>
-<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>
+<%--skin/bootstrap/js/dataTables.bootstrap.min.js--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/dataTables.responsive.min.js" var="responsiveDataTableJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/responsive.bootstrap.min.js" var="responsiveBootstrap"/>--%>
+<%--<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>--%>
 <spring:url value="/resources/js/admin.js" var="adminJs"/>
 <spring:url value="/resources/js/funciones/constantes.js" var="constantes"/>
 <spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
@@ -288,20 +288,20 @@
 <spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
 <spring:url value="/resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"
             var="dataTablesButtonsJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>--%>
 
-<script src="${jQueryJs}"></script>
-<script src="${bootstrapJs}"></script>
+<%--<script src="${jQueryJs}"></script>--%>
+<%--<script src="${bootstrapJs}"></script>--%>
 <script src="${bootstrapSelectJs}"></script>
-<script src="${jQuerySlimScrollJs}"></script>
+<%--<script src="${jQuerySlimScrollJs}"></script>--%>
 <script src="${sweetAlertJs}"></script>
 <script src="${jQueryDataTableJs}"></script>
 <script src="${dataTablesBoostrapJs}"></script>
-<script src="${responsiveDataTableJs}"></script>
-<script src="${responsiveBootstrap}"></script>
-<script src="${wavesJs}"></script>
+<%--<script src="${responsiveDataTableJs}"></script>--%>
+<%--<script src="${responsiveBootstrap}"></script>--%>
+<%--<script src="${wavesJs}"></script>--%>
 <script src="${adminJs}"></script>
 <script src="${constantes}"></script>
 <script src="${bootstrapSelectJs}"></script>
@@ -311,8 +311,8 @@
 <script src="${buttonsHtml5Js}"></script>
 <script src="${buttonsPrintJs}"></script>
 <script src="${dataTablesButtonsJs}"></script>
-<script src="${jszipJs}"></script>
-<script src="${pdfmakeJs}"></script>
-<script src="${vfs_fontsJs}"></script>
+<%--<script src="${jszipJs}"></script>--%>
+<%--<script src="${pdfmakeJs}"></script>--%>
+<%--<script src="${vfs_fontsJs}"></script>--%>
 </body>
 </html>
