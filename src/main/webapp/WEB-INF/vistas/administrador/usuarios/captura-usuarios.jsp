@@ -322,5 +322,13 @@
 <%--<script src="${jszipJs}"></script>--%>
 <%--<script src="${pdfmakeJs}"></script>--%>
 <%--<script src="${vfs_fontsJs}"></script>--%>
+<script>
+    $(".button-collapsable").sideNav({
+        menuWidth: 450, // Default is 300
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true // Choose whether you can drag to open on touch screens
+    });
+</script>
 </body>
 </html>
