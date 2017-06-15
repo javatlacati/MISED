@@ -79,30 +79,29 @@
     <p><spring:message code="mensaje.espere"/></p>
 </div>
 
-<div class="overlay"></div>
-
 <%@include file="../../template/menu-template.jsp" %>
 
 <section class="content">
     <div class="container-fluid">
 
-        <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <ol class="breadcrumb breadcrumb-bg-black">
-                    <li>
-                        <i class="material-icons">build</i> Administraci&oacute;n del Sistema
-                    </li>
-                    <li>
+        <nav class="container grey darken-1">
+            <div class="nav-wrapper">
+                <div class="col s12">
+                    <a href="<c:url value='#' />" class="breadcrumb">
+                        Administraci&oacute;n del Sistema
+                    </a>
+                    <a href="<c:url value='#' />" class="breadcrumb">
                         <i class="material-icons">people</i> Usuarios
-                    </li>
-                    <li class="active">
-                        <a href="/MISED/administrador/usuario/captura-usuarios.htm">
-                            Captura de Usuarios
-                        </a>
-                    </li>
-                </ol>
+                    </a>
+                    <a href="<c:url value='/administrador/usuario/captura-usuarios.htm' />"
+                       class="breadcrumb">
+                        Administraci&oacute;n de Programas Institucionales
+                    </a>
+
+                </div>
             </div>
-        </div>
+        </nav>
+        <div class="section hide-on-small-only"></div>
 
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
