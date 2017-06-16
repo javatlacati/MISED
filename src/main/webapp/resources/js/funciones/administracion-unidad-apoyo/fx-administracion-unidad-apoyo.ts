@@ -1,3 +1,4 @@
+declare var $: JQueryStatic;
 let token = $("meta[name='_csrf']").attr("content");
 /**URL del servidor*/
 declare var pathws: string;

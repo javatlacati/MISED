@@ -1,3 +1,4 @@
+declare var $: JQueryStatic;
 /**URL del servidor*/
 declare var pathws: string;
 /**Nombre de el WAR*/
@@ -14,18 +15,36 @@ function cargarUnidadesApoyo() {
         url: '../unidad-apoyo/unidades-apoyo.json?_csrf=' + token,
         type: 'POST',
         success: function (unidadesApoyo) {
+            //reniciamos
+            var $selectDropdown =
+                $("#selector-id-unidadApoyo")
+                    .empty()
+                    .html(' ');
+
             var opciones = "";
             unidadesApoyo.forEach(function (ua) {
-                opciones += "<option data-subtext='" + ua.nombreOrganoDireccionEstrategica +
-                    "' value='" + ua.idUnidadApoyo + "'>" + ua.nombre + "</option>";
+                $selectDropdown.append(
+                    $("<option></option>")
+                        .attr("value", ua.idUnidadApoyo)
+                        .attr("data-subtext",ua.nombreOrganoDireccionEstrategica)
+                        .text(ua.nombre)
+                );
+                // opciones += "<option data-subtext='" + ua.nombreOrganoDireccionEstrategica +
+                //     "' value='" + ua.idUnidadApoyo + "'>" + ua.nombre + "</option>";
+
             });
-            $("#selector-id-unidadApoyo").html(opciones);
-            $("#selector-id-unidadApoyo").selectpicker('refresh');
+            $selectDropdown.trigger('contentChanged');
+            // $("#selector-id-unidadApoyo").html(opciones);
+            // $("#selector-id-unidadApoyo").selectpicker('refresh');
         },
         error: function () {
             swal("ERROR", "Se ha perdido la comunicacion con el servidor " +
                 "o el recurso que busca ya no existe!, intentelo mas tarde.");
         }
+    });
+    $('select').on('contentChanged', function() {
+        // re-initialize (update)
+        $(this).material_select();
     });
 }
 function capturarUsuario() {
