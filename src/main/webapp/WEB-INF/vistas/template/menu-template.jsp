@@ -412,14 +412,14 @@
         </li>
 
         <li id="opcion-aviso-y-archivo-sistema">
-            <a href="/MISED/administrador/avisos/gestion.htm">
+            <a href="<c:url value='/administrador/avisos/gestion.htm' />">
                 <i class="material-icons">cast_connected</i>
                 <span>Avisos y Archivos del Sistema</span>
             </a>
         </li>
 
         <li id="opcion-configuracion-fechas">
-            <a href="/MISED/administrador/ejercicios-fiscales/gestion.htm">
+            <a href="<c:url value='/administrador/ejercicios-fiscales/gestion.htm' />">
                 <i class="material-icons">event</i>
                 <span>Configuraci&oacute;n de Fechas de Captura del Sistema</span>
             </a>
