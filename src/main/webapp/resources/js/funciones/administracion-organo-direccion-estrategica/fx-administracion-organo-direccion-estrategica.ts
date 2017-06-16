@@ -100,16 +100,30 @@ function cargarProgramasInstitucionales(){
         url: `../programa-institucional/programas-institucionales.json?_csrf=${token}`,
         type: 'POST',
         success: function(programasInstitucionales) {
-            let opciones = "";
+            //reniciamos
+            var $selectDropdown =
+                $("#selector-id-unidadApoyo")
+                    .empty()
+                    .html(' ');
+
             programasInstitucionales.forEach(function(pi){
-                opciones += `<option value='${pi.idProgramaInstitucional}'>${pi.clave} ${pi.nombre}</option>`;
+                $selectDropdown.append(
+                    $("<option></option>")
+                        .attr("value", pi.idProgramaInstitucional)
+                        .text(`${pi.clave} ${pi.nombre}`)
+                );
+
             });
-            $("#selector-id-programaInstitucional").html(opciones);
-            $("#selector-id-programaInstitucional").selectpicker('refresh');
+            //$("#selector-id-programaInstitucional").selectpicker('refresh');
+            $selectDropdown.trigger('contentChanged');
         },
         error: function() {
             swal("ERROR", "Se ha perdido la comunicacion con el servidor \n\
                     o el recurso que busca ya no existe!, intentelo mas tarde.");
         }
+    });
+    $('select').on('contentChanged', function() {
+        // re-initialize (update)
+        $(this).material_select();
     });
 }

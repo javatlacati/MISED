@@ -136,7 +136,7 @@
                                 <div class="col-sm-12 col-md-6 col-lg-6">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" name="clave-acceso" id="clave-acceso"
+                                            <input type="password" name="clave-acceso" id="clave-acceso"
                                                    class="form-control" autocomplete="off" maxlength="20"/>
                                             <label class="form-label">Contrase&ntilde;a</label>
                                         </div>

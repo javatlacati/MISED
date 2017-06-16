@@ -94,7 +94,7 @@
                         Programas Institucionales
                     </li>
                     <li class="active">
-                        <a href="/MISED/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm">
+                        <a href="<c:url value='/administrador/organo-direccion-estrategica/administracion-organos-direccion-estrategica.htm' />">
                             <i class="material-icons">view_agenda</i> Administraci&oacute;n de &Oacute;rganos de Direcci&oacute;n
                             Estrat&eacute;gica
                         </a>
