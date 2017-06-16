@@ -284,9 +284,9 @@
 
 
 <spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"
+<spring:url value="/resources/plugins/datatables/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js"/>
+<spring:url value="/resources/plugins/datatables/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
+<spring:url value="/resources/plugins/datatables/extensions/export/dataTables.buttons.min.js"
             var="dataTablesButtonsJs"/>
 <%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>--%>
 <%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>--%>

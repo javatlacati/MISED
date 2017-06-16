@@ -250,17 +250,17 @@
     </div>
 </section>
 
-<spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>
-<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>
-<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
-<spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>
+<%--<spring:url value="/resources/plugins/jquery/jquery.min.js" var="jQueryJs"/>--%>
+<%--<spring:url value="/resources/plugins/bootstrap/js/bootstrap.min.js" var="bootstrapJs"/>--%>
+<%--<spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-slimscroll/jquery.slimscroll.min.js" var="jQuerySlimScrollJs"/>--%>
 <spring:url value="/resources/plugins/sweetalert/sweetalert.min.js" var="sweetAlertJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/jquery.dataTables.js" var="jQueryDataTableJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.min.js"
+<spring:url value="/resources/plugins/datatable/jquery.dataTables.js" var="jQueryDataTableJs"/>
+<spring:url value="/resources/plugins/datatables/js/dataTables.material.js"
             var="dataTablesBoostrapJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/dataTables.responsive.min.js" var="responsiveDataTableJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/responsive.bootstrap.min.js" var="responsiveBootstrap"/>
-<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>
+<%--<spring:url value="/resources/plugins/datatable/dataTables.responsive.min.js" var="responsiveDataTableJs"/>--%>
+<%--<spring:url value="/resources/plugins/datatable/responsive.bootstrap.min.js" var="responsiveBootstrap"/>--%>
+<%--<spring:url value="/resources/plugins/node-waves/waves.min.js" var="wavesJs"/>--%>
 <spring:url value="/resources/js/admin.js" var="adminJs"/>
 <spring:url value="/resources/js/funciones/constantes.js" var="constantes"/>
 <spring:url value="/resources/plugins/bootstrap-select/js/bootstrap-select.min.js" var="bootstrapSelectJs"/>
@@ -272,35 +272,51 @@
 
 
 <spring:url value="/resources/js/funciones/fx-login.js" var="fxLogin"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"
+<spring:url value="/resources/plugins/datatable/extensions/export/buttons.html5.min.js" var="buttonsHtml5Js"/>
+<spring:url value="/resources/plugins/datatable/extensions/export/buttons.print.min.js" var="buttonsPrintJs"/>
+<spring:url value="/resources/plugins/datatable/extensions/export/dataTables.buttons.min.js"
             var="dataTablesButtonsJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>
-<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/jszip.min.js" var="jszipJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/pdfmake.min.js" var="pdfmakeJs"/>--%>
+<%--<spring:url value="/resources/plugins/jquery-datatable/extensions/export/vfs_fonts.js" var="vfs_fontsJs"/>--%>
 
 <script src="${jQueryJs}"></script>
-<script src="${bootstrapJs}"></script>
+<%--<script src="${bootstrapJs}"></script>--%>
 <script src="${bootstrapSelectJs}"></script>
-<script src="${jQuerySlimScrollJs}"></script>
+<%--<script src="${jQuerySlimScrollJs}"></script>--%>
 <script src="${sweetAlertJs}"></script>
 <script src="${jQueryDataTableJs}"></script>
 <script src="${dataTablesBoostrapJs}"></script>
-<script src="${responsiveDataTableJs}"></script>
-<script src="${responsiveBootstrap}"></script>
-<script src="${wavesJs}"></script>
+<%--<script src="${responsiveDataTableJs}"></script>--%>
+<%--<script src="${responsiveBootstrap}"></script>--%>
+<%--<script src="${wavesJs}"></script>--%>
 <script src="${adminJs}"></script>
 <script src="${constantes}"></script>
 <script src="${bootstrapSelectJs}"></script>
 <script src="${fxLogin}"></script>
 <!--    <script src="${prototypeProgramaInstitucional}"></script>-->
+<script>
+    var pathws="${pageContext.request.serverName}";//contextPath
+    var appName="${pageContext.servletContext.contextPath}";
+    var portNumber="${pageContext.request.serverPort}";
+    console.log("pathws:"+pathws);
+    console.log("appName:"+appName);
+    console.log("portNumber:"+portNumber);
+</script>
 <script src="${fxAdministracionOrganoDireccionEstrategica}"></script>
 <script src="${buttonsHtml5Js}"></script>
 <script src="${buttonsPrintJs}"></script>
 <script src="${dataTablesButtonsJs}"></script>
-<script src="${jszipJs}"></script>
-<script src="${pdfmakeJs}"></script>
-<script src="${vfs_fontsJs}"></script>
+<%--<script src="${jszipJs}"></script>--%>
+<%--<script src="${pdfmakeJs}"></script>--%>
+<%--<script src="${vfs_fontsJs}"></script>--%>
+<script>
+    $(".button-collapsable").sideNav({
+        menuWidth: 450, // Default is 300
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true // Choose whether you can drag to open on touch screens
+    });
+</script>
 </body>
 </html>
