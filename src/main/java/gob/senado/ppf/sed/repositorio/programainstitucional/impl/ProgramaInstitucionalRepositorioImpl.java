@@ -16,9 +16,9 @@ import java.util.List;
 
 @Repository(value = "programaInstitucionalRepositorio")
 public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucionalRepositorio {
-    
+
     private JdbcTemplate jdbcTemplate;
-    
+
     @Autowired
     public ProgramaInstitucionalRepositorioImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -26,33 +26,40 @@ public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucion
 
     @Autowired
     private Environment env;
-    
-    
+
+
     @Override
     public boolean altaProgramaInstitucional(ProgramaInstitucional programaInstitucional) {
         System.out.println(programaInstitucional);
-        return jdbcTemplate.update(env.getProperty("inserta_programa_institucional"),
-                programaInstitucional.getClave(), programaInstitucional.getNombre(),
-                programaInstitucional.getDescripcion()) > 0;
+        return jdbcTemplate.update(
+                env.getProperty("inserta_programa_institucional"),
+                programaInstitucional.getClave(),
+                programaInstitucional.getNombre(),
+                programaInstitucional.getDescripcion()
+        ) > 0;
     }
-    
+
     @Override
     public ProgramaInstitucional buscarProgramaInstitucional(long idProgramaInstitucional) {
         try {
-
-            return jdbcTemplate.queryForObject(env.getProperty("busca_programa_institucional_por_id"), new Object[] { idProgramaInstitucional },
-                    RowMappers.ROW_MAPPER_PROGRAMA_INSTITICIONAL);
+            return jdbcTemplate.queryForObject(
+                    env.getProperty("busca_programa_institucional_por_id"),
+                    new Object[]{idProgramaInstitucional},
+                    RowMappers.ROW_MAPPER_PROGRAMA_INSTITICIONAL
+            );
         } catch (EmptyResultDataAccessException erdae) {
             return null;
         } catch (IncorrectResultSizeDataAccessException irsdae) {
             return null;
         }
     }
-    
+
     @Override
     public ProgramaInstitucional buscarProgramaInstitucional(String claveProgramaInstitucional) {
         try {
-            return jdbcTemplate.queryForObject(env.getProperty("busca_programa_institucional_por_clave"), new Object[] { claveProgramaInstitucional },
+            return jdbcTemplate.queryForObject(
+                    env.getProperty("busca_programa_institucional_por_clave"),
+                    new Object[]{claveProgramaInstitucional},
                     RowMappers.ROW_MAPPER_PROGRAMA_INSTITICIONAL);
         } catch (EmptyResultDataAccessException erdae) {
             return null;
@@ -60,41 +67,56 @@ public class ProgramaInstitucionalRepositorioImpl implements ProgramaInstitucion
             return null;
         }
     }
-    
+
     @Override
     public List<ProgramaInstitucional> obtenerProgramasInstitucionales() {
-        return jdbcTemplate.query(env.getProperty("obtener_programas_institucionales"), RowMappers.ROW_MAPPER_PROGRAMA_INSTITICIONAL);
+        return jdbcTemplate.query(
+                env.getProperty("obtener_programas_institucionales")
+                , RowMappers.ROW_MAPPER_PROGRAMA_INSTITICIONAL
+        );
     }
-    
+
     @Override
     public List<OrganoDireccionEstrategica> obtenerOrganosDireccionEstrategicaPorIdProgramaInstitucional(long idProgramaInstitucional) {
-        return jdbcTemplate.query(env.getProperty("obtener_ode_por_idprogramainstitucional"),
-                new Object[]{idProgramaInstitucional}, RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA);
+        return jdbcTemplate.query(
+                env.getProperty("obtener_ode_por_idprogramainstitucional"),
+                new Object[]{idProgramaInstitucional},
+                RowMappers.ROW_MAPPER_ORGANO_DIRECCION_ESTRATEGICA
+        );
     }
-    
+
     @Override
     public List<UnidadApoyo> obtenerUnidadesApoyoPorIdProgramaInstitucional(long idProgramaInstitucional) {
-        return jdbcTemplate.query(env.getProperty("obtener_unidadesapoyo_por_idprogramainstitucional"), new Object[]{idProgramaInstitucional}, RowMappers.ROW_MAPPER_UNIDAD_APOYO);
+        return jdbcTemplate.query(
+                env.getProperty("obtener_unidadesapoyo_por_idprogramainstitucional")
+                , new Object[]{idProgramaInstitucional}, RowMappers.ROW_MAPPER_UNIDAD_APOYO
+        );
     }
-    
-    
+
+
     @Override
     public boolean actualizarProgramaInstitucional(ProgramaInstitucional pi) {
         return jdbcTemplate.update(
-                "UPDATE PROGRAMA_INSTITUCIONAL SET clave = ?, nombre = ?, descripcion = ? WHERE id_programa_institucional = ?",
+                env.getProperty("actualizar_programa_institucional"),
                 pi.getClave(), pi.getNombre(), pi.getDescripcion(),
-                pi.getIdProgramaInstitucional()) > 0;
+                pi.getIdProgramaInstitucional()
+        ) > 0;
     }
-    
+
     @Override
     public boolean bajaProgramaInstitucional(long idProgramaInstitucional) {
-        return jdbcTemplate.update("DELETE FROM PROGRAMA_INSTITUCIONAL WHERE id_programa_institucional = ?",
-                idProgramaInstitucional) > 0;
+        return jdbcTemplate.update(
+                env.getProperty("borrar_programa_institucional"),
+                idProgramaInstitucional
+        ) > 0;
     }
-    
+
     @Override
     public long contarProgramasInstitucionales() {
-        return jdbcTemplate.queryForObject("SELECT total_conteo FROM CONTAR_PROGRAMAS_INSTITUCIONALES", Long.class);
+        return jdbcTemplate.queryForObject(
+                env.getProperty("contar_programas_institucionales"),
+                Long.class
+        );
     }
-    
+
 }
