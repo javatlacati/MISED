@@ -5,6 +5,7 @@ import gob.senado.ppf.sed.repositorio.usuario.UsuarioRepositorio;
 import gob.senado.ppf.sed.utilidades.Activacion;
 import gob.senado.ppf.sed.utilidades.RowMappers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,49 +22,55 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 
     private JdbcTemplate jdbcTemplate;
 
+    private Environment env;
+
     @Autowired
-    public UsuarioRepositorioImpl(JdbcTemplate jdbcTemplate) {
+    public UsuarioRepositorioImpl(JdbcTemplate jdbcTemplate, Environment env) {
         this.jdbcTemplate = jdbcTemplate;
+        this.env = env;
     }
 
     @Override
     public boolean altaUsuario(Usuario usuario) {
-        final StringBuilder sqlUsuario = new StringBuilder();
-        sqlUsuario.append("INSERT INTO USUARIO (id_unidad_apoyo, identidad, clave_acceso, nombre, ")
-                .append("apellido_paterno, apellido_materno, puesto_laboral, correo_electronico, ")
-                .append("extension_telefonica, rol_designado, tipo_usuario, fecha_registro, hora_registro, ")
-                .append("puede_consultar, puede_actualizar, puede_agregar, puede_borrar, puede_autenticarse) ")
-                .append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"); // 18
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        int rowsAffectedUsuario = jdbcTemplate.update((Connection con) -> {
-            PreparedStatement pst = con.prepareStatement(sqlUsuario.toString(), new String[]{"id_usuario"});
-            pst.setLong(1, usuario.getIdUnidadApoyo());
-            pst.setString(2, usuario.getIdentidad());
-            pst.setString(3, usuario.getClaveAcceso());
-            pst.setString(4, usuario.getNombre());
-            pst.setString(5, usuario.getApellidoPaterno());
-            pst.setString(6, usuario.getApellidoMaterno());
-            pst.setString(7, usuario.getPuestoLaboral());
-            pst.setString(8, usuario.getCorreoElectronico());
-            pst.setString(9, usuario.getExtensionTelefonica());
-            pst.setString(10, usuario.getRolDesignado());
-            pst.setString(11, usuario.getTipoUsuario());
-            pst.setString(12, usuario.getFechaRegistro());
-            pst.setString(13, usuario.getHoraRegistro());
-            pst.setBoolean(14, usuario.isPuedeConsultar());
-            pst.setBoolean(15, usuario.isPuedeActualizar());
-            pst.setBoolean(16, usuario.isPuedeAgregar());
-            pst.setBoolean(17, usuario.isPuedeBorrar());
-            pst.setBoolean(18, usuario.isPuedeAutenticarse());
-            return pst;
-        }, keyHolder);
-        return rowsAffectedUsuario > 0;
+        return jdbcTemplate.update(
+                (Connection con) -> {
+                    PreparedStatement pst = con.prepareStatement(
+                            env.getProperty("alta_usuario")
+                            , new String[]{"id_usuario"}
+                    );
+                    pst.setLong(1, usuario.getIdUnidadApoyo());
+                    pst.setString(2, usuario.getIdentidad());
+                    pst.setString(3, usuario.getClaveAcceso());
+                    pst.setString(4, usuario.getNombre());
+                    pst.setString(5, usuario.getApellidoPaterno());
+                    pst.setString(6, usuario.getApellidoMaterno());
+                    pst.setString(7, usuario.getPuestoLaboral());
+                    pst.setString(8, usuario.getCorreoElectronico());
+                    pst.setString(9, usuario.getExtensionTelefonica());
+                    pst.setString(10, usuario.getRolDesignado());
+                    pst.setString(11, usuario.getTipoUsuario());
+                    pst.setString(12, usuario.getFechaRegistro());
+                    pst.setString(13, usuario.getHoraRegistro());
+                    pst.setBoolean(14, usuario.isPuedeConsultar());
+                    pst.setBoolean(15, usuario.isPuedeActualizar());
+                    pst.setBoolean(16, usuario.isPuedeAgregar());
+                    pst.setBoolean(17, usuario.isPuedeBorrar());
+                    pst.setBoolean(18, usuario.isPuedeAutenticarse());
+                    return pst;
+                },
+                keyHolder
+        ) >0;
+
+//        return jdbcTemplate.update(
+//                env.getProperty("alta_usuario")
+//                , new String[]{"id_usuario"}
+//        ) > 0;
     }
 
     @Override
     public boolean actualizarUsuario(Usuario usuario) {
-        final StringBuilder sqlUsuario = new StringBuilder();
-        sqlUsuario.append("UPDATE USUARIO SET id_unidad_apoyo = ?, nombre = ?, ")
+        StringBuilder sqlUsuario = new StringBuilder("UPDATE USUARIO SET id_unidad_apoyo = ?, nombre = ?, ")
                 .append("apellido_paterno = ?, apellido_materno = ?, puesto_laboral = ?, ")
                 .append("correo_electronico = ?, extension_telefonica = ?, rol_designado = ?, tipo_usuario = ?, ")
                 .append("puede_consultar = ?, puede_actualizar = ?, puede_agregar = ?, puede_borrar = ?, puede_autenticarse = ? ")
