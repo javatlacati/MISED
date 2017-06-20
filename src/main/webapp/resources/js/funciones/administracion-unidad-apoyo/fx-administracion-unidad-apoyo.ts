@@ -129,12 +129,16 @@ function cargarOrganosDireccionEstrategica() {
                 opciones += `<option value='${ode.idOrganoDireccionEstrategica}'>${ode.nombre}</option>`;
             });
             $("#selector-id-organoDireccionEstrategica").html(opciones);
-            $("#selector-id-organoDireccionEstrategica").selectpicker('refresh');
+            $("#selector-id-organoDireccionEstrategica").trigger('contentChanged');
         },
         error: function() {
             swal("ERROR", "Se ha perdido la comunicacion con el servidor " +
                 "o el recurso que busca ya no existe!, intentelo mas tarde.");
         }
+    });
+    $('select').on('contentChanged', function() {
+        // re-initialize (update)
+        $(this).material_select();
     });
 }
 
