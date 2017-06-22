@@ -60,7 +60,7 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
                     return pst;
                 },
                 keyHolder
-        ) >0;
+        ) > 0;
 
 //        return jdbcTemplate.update(
 //                env.getProperty("alta_usuario")
@@ -70,13 +70,9 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 
     @Override
     public boolean actualizarUsuario(Usuario usuario) {
-        StringBuilder sqlUsuario = new StringBuilder("UPDATE USUARIO SET id_unidad_apoyo = ?, nombre = ?, ")
-                .append("apellido_paterno = ?, apellido_materno = ?, puesto_laboral = ?, ")
-                .append("correo_electronico = ?, extension_telefonica = ?, rol_designado = ?, tipo_usuario = ?, ")
-                .append("puede_consultar = ?, puede_actualizar = ?, puede_agregar = ?, puede_borrar = ?, puede_autenticarse = ? ")
-                .append("WHERE id_usuario = ?");
+
         int rowsAffectedUsuario = jdbcTemplate.update((Connection con) -> {
-            PreparedStatement pst = con.prepareStatement(sqlUsuario.toString());
+            PreparedStatement pst = con.prepareStatement(env.getProperty("actualiza_usuario"));
             pst.setLong(1, usuario.getIdUnidadApoyo());
             pst.setString(2, usuario.getNombre());
             pst.setString(3, usuario.getApellidoPaterno());
@@ -99,22 +95,21 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 
     @Override
     public boolean bajaUsuario(long idUsuario) {
-        return jdbcTemplate.update("DELETE FROM USUARIO WHERE id_usuario = ?", new Object[]{idUsuario}) > 0;
+        return jdbcTemplate.update(
+                env.getProperty("baja_usuario")
+                , new Object[]{idUsuario}
+        ) > 0;
     }
 
     @Override
     public Usuario buscarUsuario(long idUsuario) {
         try {
-            StringBuilder sql = new StringBuilder();
-            sql.append(" SELECT PI.CLAVE AS CLAVE_PROGRAMA_INSTITUCIONAL, PI.NOMBRE AS NOMBRE_PROGRAMA_INSTITUCIONAL, ")
-                    .append("ODE.NOMBRE AS NOMBRE_ORGANO_DIRECCION_ESTRATEGICA, UA.NOMBRE AS NOMBRE_UNIDAD_APOYO, ")
-                    .append("U.* FROM PROGRAMA_INSTITUCIONAL PI INNER JOIN ORGANO_DIRECCION_ESTRATEGICA ODE ")
-                    .append("ON PI.ID_PROGRAMA_INSTITUCIONAL = ODE.ID_PROGRAMA_INSTITUCIONAL ")
-                    .append("INNER JOIN UNIDAD_APOYO UA ON ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = UA.ID_ORGANO_DIRECCION_ESTRATEGICA ")
-                    .append("INNER JOIN USUARIO U ON UA.ID_UNIDAD_APOYO = U.ID_UNIDAD_APOYO ")
-                    .append("WHERE U.ID_USUARIO = ?");
-            return jdbcTemplate.queryForObject(sql.toString(), new Object[]{idUsuario},
-                    RowMappers.ROW_MAPPER_USUARIO);
+
+            return jdbcTemplate.queryForObject(
+                    env.getProperty("buscar_usuario_por_id")
+                    , new Object[]{idUsuario}
+                    , RowMappers.ROW_MAPPER_USUARIO
+            );
         } catch (EmptyResultDataAccessException erdae) {
             return null;
         } catch (IncorrectResultSizeDataAccessException irsdae) {
@@ -125,16 +120,11 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
     @Override
     public Usuario buscarUsuario(String identidad) {
         try {
-            StringBuilder sql = new StringBuilder();
-            sql.append(" SELECT PI.CLAVE AS CLAVE_PROGRAMA_INSTITUCIONAL, PI.NOMBRE AS NOMBRE_PROGRAMA_INSTITUCIONAL, ")
-                    .append("ODE.NOMBRE AS NOMBRE_ORGANO_DIRECCION_ESTRATEGICA, UA.NOMBRE AS NOMBRE_UNIDAD_APOYO, ")
-                    .append("U.* FROM PROGRAMA_INSTITUCIONAL PI INNER JOIN ORGANO_DIRECCION_ESTRATEGICA ODE ")
-                    .append("ON PI.ID_PROGRAMA_INSTITUCIONAL = ODE.ID_PROGRAMA_INSTITUCIONAL ")
-                    .append("INNER JOIN UNIDAD_APOYO UA ON ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = UA.ID_ORGANO_DIRECCION_ESTRATEGICA ")
-                    .append("INNER JOIN USUARIO U ON UA.ID_UNIDAD_APOYO = U.ID_UNIDAD_APOYO ")
-                    .append("WHERE U.IDENTIDAD = ?");
-            return jdbcTemplate.queryForObject(sql.toString(), new Object[]{identidad},
-                    RowMappers.ROW_MAPPER_USUARIO);
+            return jdbcTemplate.queryForObject(
+                    env.getProperty("buscar_usuario_por_identidad")
+                    , new Object[]{identidad}
+                    , RowMappers.ROW_MAPPER_USUARIO
+            );
         } catch (EmptyResultDataAccessException erdae) {
             return null;
         } catch (IncorrectResultSizeDataAccessException irsdae) {
@@ -144,50 +134,50 @@ public class UsuarioRepositorioImpl implements UsuarioRepositorio {
 
     @Override
     public List<Usuario> obtenerUsuarios() {
-        StringBuilder sql = new StringBuilder();
-        sql.append(" SELECT PI.CLAVE AS CLAVE_PROGRAMA_INSTITUCIONAL, PI.NOMBRE AS NOMBRE_PROGRAMA_INSTITUCIONAL, ")
-                .append("ODE.NOMBRE AS NOMBRE_ORGANO_DIRECCION_ESTRATEGICA, UA.NOMBRE AS NOMBRE_UNIDAD_APOYO, ")
-                .append("U.* FROM PROGRAMA_INSTITUCIONAL PI INNER JOIN ORGANO_DIRECCION_ESTRATEGICA ODE ")
-                .append("ON PI.ID_PROGRAMA_INSTITUCIONAL = ODE.ID_PROGRAMA_INSTITUCIONAL ")
-                .append("INNER JOIN UNIDAD_APOYO UA ON ODE.ID_ORGANO_DIRECCION_ESTRATEGICA = UA.ID_ORGANO_DIRECCION_ESTRATEGICA ")
-                .append("INNER JOIN USUARIO U ON UA.ID_UNIDAD_APOYO = U.ID_UNIDAD_APOYO ");
-        return jdbcTemplate.query(sql.toString(), RowMappers.ROW_MAPPER_USUARIO);
+        return jdbcTemplate.query(env.getProperty("obtener_usuarios"), RowMappers.ROW_MAPPER_USUARIO);
     }
 
     @Override
     public boolean permitirUsoCuentaUsuario(long idUsuario, Activacion activacion) {
-        StringBuilder sql = new StringBuilder();
-        sql.append("UPDATE USUARIO SET puede_autenticarse = ? WHERE id_usuario = ?");
-        return jdbcTemplate.update(sql.toString(), new Object[]{activacion.getEstadoInterruptor(), idUsuario}) > 0;
+        return jdbcTemplate.update(
+                env.getProperty("permitir_uso_cuenta_usuario")
+                , activacion.getEstadoInterruptor(), idUsuario
+        ) > 0;
     }
 
     @Override
     public boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso) {
-        return jdbcTemplate.update("UPDATE USUARIO SET clave_acceso = ? WHERE id_usuario = ?",
-                new Object[]{nuevaClaveAcceso, idUsuario}) > 0;
+        return jdbcTemplate.update(env.getProperty("restablecer_clave_acceso")
+                , nuevaClaveAcceso
+                , idUsuario
+        ) > 0;
     }
 
     @Override
     public long contarUsuarios() {
-        return jdbcTemplate.queryForObject("SELECT TOTAL_CONTEO FROM CONTAR_USUARIOS", Long.class);
+        return jdbcTemplate.queryForObject(env.getProperty("contar_usuarios"), Long.class);
     }
 
     @Override
     public long contarUsuariosPorUnidadApoyo(long idUnidadApoyo) {
-        return jdbcTemplate.queryForObject("SELECT CONTAR_USUARIOS_POR_UNIDAD_APOYO(?)", new Object[]{idUnidadApoyo},
-                Long.class);
+        return jdbcTemplate.queryForObject(env.getProperty("contar_usuarios_por_ua"),
+                new Object[]{idUnidadApoyo},
+                Long.class
+        );
     }
 
     @Override
     public long contarUsuariosPorOrganoDireccionEstrategica(long idOrganoDireccionEstrategica) {
-        return jdbcTemplate.queryForObject("SELECT CONTAR_USUARIOS_POR_ORGANO_DIRECCION_ESTRATEGICA(?)",
-                new Object[]{idOrganoDireccionEstrategica}, Long.class);
+        return jdbcTemplate.queryForObject(env.getProperty("contar_usuarios_por_ode"),
+                new Object[]{idOrganoDireccionEstrategica}, Long.class
+        );
     }
 
     @Override
     public long contarUsuariosPorProgramaInstitucional(long idProgramaInstitucional) {
-        return jdbcTemplate.queryForObject("SELECT CONTAR_USUARIOS_POR_PROGRAMA_INSTITUCIONAL(?)",
-                new Object[]{idProgramaInstitucional}, Long.class);
+        return jdbcTemplate.queryForObject(env.getProperty("contar_usuarios_por_programa"),
+                new Object[]{idProgramaInstitucional}, Long.class
+        );
     }
 
 }
