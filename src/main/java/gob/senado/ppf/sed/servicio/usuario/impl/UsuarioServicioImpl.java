@@ -11,8 +11,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+import static gob.senado.ppf.sed.utilidades.GlobalConfig.DESARROLLO;
 
 @Service(value = "usuarioServicio")
 public class UsuarioServicioImpl implements UsuarioServicio {
@@ -34,7 +37,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     @Transactional
     public boolean altaUsuario(Usuario usuario) {
         if (null == usuarioRepositorio.buscarUsuario(usuario.getIdentidad())) {
-            usuario.setClaveAcceso(passwordEncoder.encode(usuario.getClaveAcceso()));
+            usuario.setClaveAcceso(DESARROLLO ? usuario.getClaveAcceso() : passwordEncoder.encode(usuario.getClaveAcceso()));
             usuario.setFechaRegistro(Fecha.FORMATO_FECHA_PRESENTACION.format(LocalDate.now()));
             usuario.setHoraRegistro(Hora.FORMATO_HORA_PRESENTACION.format(LocalTime.now()));
             return usuarioRepositorio.altaUsuario(usuario);
@@ -94,7 +97,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     @Override
     @Transactional
     public boolean reestablecerClaveAcceso(long idUsuario, String nuevaClaveAcceso) {
-        return usuarioRepositorio.reestablecerClaveAcceso(idUsuario, passwordEncoder.encode(nuevaClaveAcceso));
+        return usuarioRepositorio.reestablecerClaveAcceso(idUsuario, DESARROLLO?nuevaClaveAcceso:passwordEncoder.encode(nuevaClaveAcceso));
     }
 
     /**
