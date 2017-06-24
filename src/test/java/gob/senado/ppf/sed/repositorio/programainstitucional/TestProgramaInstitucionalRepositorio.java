@@ -116,7 +116,7 @@ public class TestProgramaInstitucionalRepositorio {
         programaInstitucional.setIdProgramaInstitucional(3);
         programaInstitucional.setClave("1.1.01.004.R001-MD004");
         programaInstitucional.setNombre("Servicio Extra");
-        programaInstitucional.setDescripcion("Sin descripción");
+        programaInstitucional.setDescripcion("Sin descripci\u00f3n");
         assertTrue(programaInstitucionalRepositorio.actualizarProgramaInstitucional(programaInstitucional));
     }
 
