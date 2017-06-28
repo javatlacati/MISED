@@ -1,5 +1,6 @@
 package gob.senado.ppf.sed.configuracion;
 
+import gob.senado.ppf.sed.utilidades.Consultas;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -11,13 +12,14 @@ import javax.servlet.ServletRegistration;
 
 public class InicializadorAplicacionWeb implements WebApplicationInitializer {
 
+    //    JdbcTemplate template;
     @Override
     public void onStartup(ServletContext container) {
         // Create the 'root' Spring application context
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(ConfiguracionParaExtras.class, ConfiguracionParaDataSource.class,
                 ConfiguracionParaWebSocket.class, ConfiguracionParaWebSocketHandlers.class,
-                ConfiguracionParaSeguridad.class);
+                ConfiguracionParaSeguridad.class, Consultas.class);
 
         //filters
         // Add cuatom filters to servletContext
@@ -41,7 +43,8 @@ public class InicializadorAplicacionWeb implements WebApplicationInitializer {
         dispatcher.setAsyncSupported(true);
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
-
+//        File
+//        template.execute();
     }
 
 }
