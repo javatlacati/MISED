@@ -2,8 +2,6 @@ package gob.senado.ppf.sed.dto.usuario;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
 /**
@@ -205,33 +203,33 @@ public class UsuarioTest {
         assertEquals("Brayan", usuario.getHoraRegistro());
     }
 
-    @Test
-    public void getUsuarioPermiso() throws Exception {
-        Usuario usuario = new Usuario();
-        assertNull(usuario.getUsuarioPermiso());
-    }
-
-    @Test
-    public void setUsuarioPermiso() throws Exception {
-        Usuario usuario = new Usuario();
-        usuario.setUsuarioPermiso(new UsuarioPermiso());
-        assertEquals(new UsuarioPermiso(), usuario.getUsuarioPermiso());
-        //TODO add more once UsuarioPermiso is finished testing
-    }
-
-    @Test
-    public void getUsuarioModulos() throws Exception {
-        Usuario usuario = new Usuario();
-        assertNull(usuario.getUsuarioModulos());
-    }
-
-    @Test
-    public void setUsuarioModulos() throws Exception {
-        Usuario usuario = new Usuario();
-        ArrayList<UsuarioModulo> usuarioModulos = new ArrayList<>();
-        usuario.setUsuarioModulos(usuarioModulos);
-        assertEquals(usuarioModulos, usuario.getUsuarioModulos());
-    }
+//    @Test
+//    public void getUsuarioPermiso() throws Exception {
+//        Usuario usuario = new Usuario();
+//        assertNull(usuario.getUsuarioPermiso());
+//    }
+//
+//    @Test
+//    public void setUsuarioPermiso() throws Exception {
+//        Usuario usuario = new Usuario();
+//        usuario.setUsuarioPermiso(new UsuarioPermiso());
+//        assertEquals(new UsuarioPermiso(), usuario.getUsuarioPermiso());
+//        //TODO add more once UsuarioPermiso is finished testing
+//    }
+//
+//    @Test
+//    public void getUsuarioModulos() throws Exception {
+//        Usuario usuario = new Usuario();
+//        assertNull(usuario.getUsuarioModulos());
+//    }
+//
+//    @Test
+//    public void setUsuarioModulos() throws Exception {
+//        Usuario usuario = new Usuario();
+//        ArrayList<UsuarioModulo> usuarioModulos = new ArrayList<>();
+//        usuario.setUsuarioModulos(usuarioModulos);
+//        assertEquals(usuarioModulos, usuario.getUsuarioModulos());
+//    }
 
 
     @Test
