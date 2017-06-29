@@ -113,7 +113,7 @@ $(function () {
 });
 function actualizacionProgramaInstitucional(idProgramaInstitucional) {
     obtenerProgramaInstitucional(idProgramaInstitucional);
-    $('#modal-actualizacion-programa-institucional').modal('show');
+    $('#modal-actualizacion-programa-institucional').modal('open');
 }
 function obtenerProgramaInstitucional(idProgramaInstitucional) {
     $.ajax({
@@ -172,7 +172,7 @@ function realizarActualizacionProgramaInstitucional() {
                 'descripcion': programaInstitucional.descripcion
             },
             success: function (pi) {
-                $('#modal-actualizacion-programa-institucional').modal('hide');
+                $('#modal-actualizacion-programa-institucional').modal('close');
                 swal("TAREA EXITOSA!", "Se ha actualizado el programa institucional: " + pi.nombre + " con clave: " + pi.clave);
                 webSocket.send('actualizacion');
             },
