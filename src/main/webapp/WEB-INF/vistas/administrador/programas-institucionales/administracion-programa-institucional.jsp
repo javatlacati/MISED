@@ -248,7 +248,7 @@
                                     <button type="button" class="btn btn-success waves-effect"
                                             onclick="realizarActualizacionProgramaInstitucional();">Guardar cambios
                                     </button>
-                                    <button type="button" class="btn bg-red waves-effect" data-dismiss="modal">
+                                    <button type="button" class="btn bg-red waves-effect modal-action modal-close">
                                         Cancelar
                                     </button>
                                 </div>
