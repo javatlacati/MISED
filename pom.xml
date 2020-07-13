@@ -640,5 +640,23 @@
             <id>projectlombok.org</id>
             <url>http://projectlombok.org/mavenrepo</url>
         </repository>
+        <repository>
+            <id>jboss-public-repository</id>
+            <name>JBoss Public</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>alfresco-public</id>
+            <name>alfresco-public</name>
+            <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+        </repository>
     </repositories>
 </project>
