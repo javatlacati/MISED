@@ -636,6 +636,11 @@
         </plugins>
     </reporting>
     <repositories>
+        <repository>
+            <id>Maven Central</id>
+            <name>Maven Central</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
         <repository> <!-- project lombok is not yet in public maven repo -->
             <id>projectlombok.org</id>
             <url>http://projectlombok.org/mavenrepo</url>
@@ -658,10 +663,6 @@
             <name>alfresco-public</name>
             <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
         </repository>
-        <repository>
-            <id>Maven Central</id>
-            <name>Maven Central</name>
-            <url>http://repo1.maven.org/maven2/</url>
-        </repository>
+
     </repositories>
 </project>
