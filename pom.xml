@@ -241,6 +241,11 @@
                     </targetClasses>
                 </configuration>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-dependency-plugin</artifactId>-->
+<!--                <version>3.1.1</version>-->
+<!--            </plugin>-->
         </plugins>
         <finalName>MISED</finalName>
     </build>
@@ -665,4 +670,10 @@
         </repository>
 
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven2</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
