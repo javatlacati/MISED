@@ -45,7 +45,7 @@
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <springframework.version>5.3.18</springframework.version>
         <springsecurity.version>5.3.10.RELEASE</springsecurity.version>
-        <postgresql.version>42.2.25</postgresql.version>
+        <postgresql.version>42.3.3</postgresql.version>
         <hikaricp.version>2.6.1</hikaricp.version>
         <jasperreports.version>6.4.0</jasperreports.version>
 
