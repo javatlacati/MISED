@@ -43,7 +43,7 @@
         <commons.lang.version>3.5</commons.lang.version>
         <commons-io.version>2.7</commons-io.version>
         <commons-fileupload.version>1.5</commons-fileupload.version>
-        <springframework.version>6.0.0</springframework.version>
+        <springframework.version>6.1.14</springframework.version>
         <springsecurity.version>5.5.7</springsecurity.version>
         <postgresql.version>42.4.3</postgresql.version>
         <hikaricp.version>2.6.1</hikaricp.version>
