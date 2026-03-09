@@ -47,7 +47,7 @@
         <springsecurity.version>5.5.7</springsecurity.version>
         <postgresql.version>42.4.3</postgresql.version>
         <hikaricp.version>2.6.1</hikaricp.version>
-        <jasperreports.version>6.4.0</jasperreports.version>
+        <jasperreports.version>7.0.4</jasperreports.version>
 
         <!--handles-->
         <findbugs.disabled>false</findbugs.disabled>
